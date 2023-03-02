@@ -1,23 +1,4 @@
-# first heading
-### second heading
-###### 3rd heading
-## [link] (https://github.com)
-* `@testing `
-
-#table
-
-| Col1			| Col2			|
-|-------------------------------|-----------------|
-| Col1			| Col2			|
-| Col1			| Col2			|
-| Col1			| Col2			|
-
-````yaml
-test:
-	test1
-````
-
-#1. LRU Design:
+**1. LRU Design:**
 	LRU, or Least Recently Used, is a popular algorithm used in computer science to manage cache memory. 
 	It works on the principle of discarding the least recently used items first when the cache becomes full.
 
