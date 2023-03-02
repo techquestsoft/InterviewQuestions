@@ -17,7 +17,7 @@ test:
 	test1
 ````
 
-##1. LRU Design:
+#1. LRU Design:
 	LRU, or Least Recently Used, is a popular algorithm used in computer science to manage cache memory. 
 	It works on the principle of discarding the least recently used items first when the cache becomes full.
 
@@ -29,4 +29,5 @@ test:
 	Implement the operations: The LRU cache typically supports two operations: get and put. When an item is retrieved using the get operation, it is moved to the front of the linked list to indicate that it has been accessed recently. When a new item is added using the put operation, it is added to the front of the linked list and the least recently used item is removed from the end of the linked list.
 	
 	Handle edge cases: When designing an LRU cache, it is important to consider edge cases such as cache hits, cache misses, and what happens when the cache size is smaller than the number of items that need to be cached.
+
 	Overall, designing an LRU cache requires careful consideration of data structures, maximum cache size, and cache management operations.
