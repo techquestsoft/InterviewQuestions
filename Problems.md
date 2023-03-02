@@ -1,4 +1,4 @@
-**1. LRU Design:**
+# 1. LRU Design:
 
 	LRU, or Least Recently Used, is a popular algorithm used in computer science to manage cache memory. 
 	It works on the principle of discarding the least recently used items first when the cache becomes full.
