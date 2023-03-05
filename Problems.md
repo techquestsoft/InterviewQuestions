@@ -23,7 +23,7 @@
     and cache management operations.
 
 
-#2. Two Number Sum Problem Statement
+# 2. Two Number Sum Problem Statement
 
 	Given an array of integers, return the indices of the two numbers whose sum is equal to a given target.
 
@@ -35,7 +35,7 @@
 	
 	Because nums[0] + nums[1] = 2 + 7 = 9.
 
-	## (https://github.com/techquestsoft/CoreJava_Interviews/tree/main/src/com/hi/problems)
+## (https://github.com/techquestsoft/CoreJava_Interviews/tree/main/src/com/hi/problems)
 
 
 
