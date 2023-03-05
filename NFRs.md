@@ -1,5 +1,5 @@
 # NFRs
-	Non-functional requirements refer to the criteria that describe the system's operation and behavior, rather than its specific features or functionalities. These requirements typically include things like performance, reliability, usability, security, maintainability, and scalability. Non-functional requirements are just as important as functional requirements because they define how well the system will work and how easy it will be to maintain over time.
+Non-functional requirements refer to the criteria that describe the system's operation and behavior, rather than its specific features or functionalities. These requirements typically include things like performance, reliability, usability, security, maintainability, and scalability. Non-functional requirements are just as important as functional requirements because they define how well the system will work and how easy it will be to maintain over time.
 
 Examples of non-functional requirements include:
 
