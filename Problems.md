@@ -37,7 +37,15 @@
 
 ## (https://github.com/techquestsoft/CoreJava_Interviews/tree/main/src/com/hi/problems)
 
+# 3. Product of array except self
 
+## Discussed Solution approaches
+	Brute force solution using nested loops
+	Using extra space and loop : prefix and suffix product array
+	Efficient in-place solution using single loop
+
+https://www.enjoyalgorithms.com/blog/product-of-array-except-self
+https://www.youtube.com/watch?v=tSRFtR3pv74
 
 
 
