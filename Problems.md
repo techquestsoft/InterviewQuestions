@@ -38,7 +38,8 @@
 ## (https://github.com/techquestsoft/CoreJava_Interviews/tree/main/src/com/hi/problems)
 
 # 3. Product of array except self
-	Given an array nums of n integers where n > 1, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+
+    Given an array nums of n integers where n > 1, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
 
 # Example:
 	Input: [1,2,3,4]
