@@ -45,9 +45,9 @@
 	Input: [1,2,3,4]
 	Output: [24,12,8,6]
 
-	**Note:** Please solve it wihout division and in O(n).
+**Note:** Please solve it wihout division and in O(n).
 
-    Follow up:
+**Follow up:**
     Could you solve it with constant space complexity? (The output array 
     does not count as extra space for the purpose of the space complexity analysis.)
 
