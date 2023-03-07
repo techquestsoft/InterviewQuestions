@@ -53,6 +53,8 @@
 	Using extra space and loop : prefix and suffix product array
 	Efficient in-place solution using single loop
 
+https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/ProductOfArrayExceptItself.java
+
 https://www.enjoyalgorithms.com/blog/product-of-array-except-self
 
 https://www.youtube.com/watch?v=tSRFtR3pv74
