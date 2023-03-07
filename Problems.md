@@ -53,8 +53,8 @@
 
 ## Discussed Solution approaches
 	Brute force solution using nested loops
-	Using extra space and loop : prefix and suffix product array
-	Efficient in-place solution using single loop
+	Using extra space and loop : left and right product array
+	Efficient in-place solution using single array
 
 https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/ProductOfArrayExceptItself.java
 
