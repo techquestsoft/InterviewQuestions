@@ -126,6 +126,7 @@ Space Complexity
 Input: a3b4c2
 
 Output: aaabbbbcc
+
 https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/CharactersGeneration.java
 
 # 9. Shoretst path algorithm - Dijkstra's algorithm
