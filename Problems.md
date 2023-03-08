@@ -96,10 +96,10 @@ Many developers are concerned about the performance difference between java.util
 Collections.sort() has a input as List so it does a translation of List to array and vice versa which is an additional step while sorting. So this should be used when you are trying to sort a list.
 Arrays.sort is for arrays so the sorting is done directly on the array. So clearly it should be used when you have a array available with you and you want to sort it.
 
-#6. Linear Search complexity
+# 6. Linear Search complexity
 Now, let's see the time complexity of linear search in the best case, average case, and worst case. We will also see the space complexity of linear search.
 
-1. Time Complexity
+Time Complexity
       |Case	|Time Complexity|
       |-------------------------|
       |Best Case	|O(1)|
