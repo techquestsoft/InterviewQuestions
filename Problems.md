@@ -1,3 +1,5 @@
+https://www.javatpoint.com/linear-search
+
 # 1. LRU Design:
 
 	LRU, or Least Recently Used, is a popular algorithm used in computer science to manage cache memory. 
@@ -93,3 +95,22 @@ Collections.sort() has a time complexity of O(nlogn) as it run merge sort in bac
 Many developers are concerned about the performance difference between java.util.Array.sort() & java.util.Collections.sort() methods. Both methods have same algorithm the only difference is type of input to them.
 Collections.sort() has a input as List so it does a translation of List to array and vice versa which is an additional step while sorting. So this should be used when you are trying to sort a list.
 Arrays.sort is for arrays so the sorting is done directly on the array. So clearly it should be used when you have a array available with you and you want to sort it.
+
+#6. Linear Search complexity
+Now, let's see the time complexity of linear search in the best case, average case, and worst case. We will also see the space complexity of linear search.
+
+1. Time Complexity
+      |Case	|Time Complexity|
+      |-------------------------|
+      |Best Case	|O(1)|
+      |Average Case	|O(n)|
+      |Worst Case	|O(n)|
+      Best Case Complexity - In Linear search, best case occurs when the element we are finding is at the first position of the array. The best-case time complexity of linear search is O(1).
+      Average Case Complexity - The average case time complexity of linear search is O(n).
+      Worst Case Complexity - In Linear search, the worst case occurs when the element we are looking is present at the end of the array. The worst-case in linear search could be when the target element is not present in the given array, and we have to traverse the entire array. The worst-case time complexity of linear search is O(n).
+      The time complexity of linear search is O(n) because every element in the array is compared only once.
+
+2. Space Complexity
+   |Space Complexity	|O(1)|
+   |------------------------|
+   The space complexity of linear search is O(1).
