@@ -79,4 +79,17 @@ https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/proble
 
 https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form/
 
+# 5. Difference Btw Arrays.sort() and Collections.sort() ?
+**Arrays.sort():**
+Arrays.sort() is a method residing in Arrays class. It is used to sort the Array passed to it. It can be integer array, float array, String array, Array of objects etc.
+The time complexity for this method is O(nlogn) as it runs TimSort in background. TimSort algorithm makes use of the Insertion sort and the MergeSort algorithms.
+sort() method is best optimized, so if you use this method instead of writing your own, you'll get best results.
 
+**Collections.sort():**
+Collections.sort() is used to sort an object which extends List interface. ArrayList and LinkedList extend List interface, so we can sort them using Collections.sort.
+Collections.sort() has a time complexity of O(nlogn) as it run merge sort in background
+
+**Overview:**
+Many developers are concerned about the performance difference between java.util.Array.sort() & java.util.Collections.sort() methods. Both methods have same algorithm the only difference is type of input to them.
+Collections.sort() has a input as List so it does a translation of List to array and vice versa which is an additional step while sorting. So this should be used when you are trying to sort a list.
+Arrays.sort is for arrays so the sorting is done directly on the array. So clearly it should be used when you have a array available with you and you want to sort it.
