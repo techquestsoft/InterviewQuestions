@@ -124,6 +124,7 @@ Space Complexity
 
 # 8. Write a program that will take a string input and generate the following series.
 Input: a3b4c2
+
 Output: aaabbbbcc
 https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/CharactersGeneration.java
 
