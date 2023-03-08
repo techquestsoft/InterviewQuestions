@@ -101,11 +101,11 @@ Now, let's see the time complexity of linear search in the best case, average ca
 
 Time Complexity
 
-      |Case	|Time Complexity|
-      |-------------------------|
-      |Best Case	|O(1)|
-      |Average Case	|O(n)|
-      |Worst Case	|O(n)|
+|Case	       |Time Complexity|
+|-------------------------     |
+|Best Case	   |O(1)           |
+|Average Case  |O(n)           |
+|Worst Case	   |O(n)           |
 
 Best Case Complexity - In Linear search, best case occurs when the element we are finding is at the first position of the array. The best-case time complexity of linear search is O(1).
       Average Case Complexity - The average case time complexity of linear search is O(n).
