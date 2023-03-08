@@ -115,6 +115,6 @@ Best Case Complexity - In Linear search, best case occurs when the element we ar
 Space Complexity
 
    |Space Complexity	|O(1)|
-   |------------------------|
+   |---------------|---------|
 
    The space complexity of linear search is O(1).
