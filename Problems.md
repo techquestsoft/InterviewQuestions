@@ -1,4 +1,5 @@
 https://www.javatpoint.com/linear-search
+https://www.careercup.com/
 
 # 1. LRU Design:
 
@@ -118,3 +119,15 @@ Space Complexity
    |---------------|---------|
 
    The space complexity of linear search is O(1).
+   
+# 7. {1,0,-1,0,-1,1} -> {0,0,-1,-1,1,1} expected time complexity is o(n)
+
+# 8. Write a program that will take a string input and generate the following series.
+Input: a3b4c2
+Output: aaabbbbcc
+https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/CharactersGeneration.java
+
+# 9. Shoretst path algorithm - Dijkstra's algorithm
+
+# 10. DFS, BFS Trees
+
