@@ -1,9 +1,9 @@
 # SOLID Design Principles:
-    ### S - Single Responsibility Principle
-    ### O - Open/Closed Principle
-    ### L - Liskov Substitution Principle
-    ### I - Interface Segregration Principle
-    ### D - Dependency Inversion
+### S - Single Responsibility Principle
+### O - Open/Closed Principle
+### L - Liskov Substitution Principle
+### I - Interface Segregration Principle
+### D - Dependency Inversion
 
 # 1. Build ecommerce site
 
