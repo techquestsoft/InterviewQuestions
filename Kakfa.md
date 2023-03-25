@@ -21,6 +21,12 @@
         * Too many recors per txn delays the exposure of output
         * Controllable through commit.interval.ms in KStreams
 
+# 6. Interaction with External Systems:
+        Automaic writes to kafka and external systems are nto supported
+            * Instead, write the transactinal output to a kafka topic first
+            * Rely on idempotent to propagate the data from the output topic 
+                to the external system. 
+
 
 
 
