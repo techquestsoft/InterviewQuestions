@@ -24,7 +24,8 @@ Examples of non-functional requirements include:
    Maintainnability, Servicea bility
    Diagnostics, Fault Tolerance, Resiliance _ Reliability Engg
    Safety
-   Security - Authentication, Authorization, Injection Attaches, XSRF, CORS, EncDecrypt, Data at REST, DDOS
+   Security - Authentication, Authorization, Injection Attacks, XSRF, CORS, 
+   EncDecrypt, Data at REST, DDOS
 ````
 #### 2. Reliability: The system must be available for a certain percentage of the time and should be able to recover from any failures quickly.
 
