@@ -8,12 +8,12 @@ Examples of non-functional requirements include:
    List out some Non-Functional Requirements that you have come accross. 
    Performance - Software System - CPU, Memory, Network, IOPS
    100 Concurrent Requests -  REST API Method - Single Thread - 1 Sec to execute
-   1 -> Locks
+     1 -> Locks
    2-100 are waiting
    Response Time
-   100 Request -> REST API - 100 Threads
-   1 Sec
-   Better Response Time - Cost of Memory - 1 Thread - 1MB of Memory
+         100 Request -> REST API - 100 Threads
+         1 Sec
+         Better Response Time - Cost of Memory - 1 Thread - 1MB of Memory
    Throughput
    In-Memory Processing (No Disk IO)
    Scalability - Horizontal (Scale Out) - Vertical (Scale up)
