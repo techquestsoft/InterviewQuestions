@@ -129,7 +129,9 @@ Output: aaabbbbcc
 
 https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/CharactersGeneration.java
 
-# 9. Shoretst path algorithm - Dijkstra's algorithm
+# 9. Code for Factorial
 
-# 10. DFS, BFS Trees
+# 10. Shortest path algorithm - Dijkstra's algorithm
+
+# 11. DFS, BFS Trees
 
