@@ -4,7 +4,8 @@ Non-functional requirements refer to the criteria that describe the system's ope
 Examples of non-functional requirements include:
 
 #### 1. Performance: The system must be able to handle a certain number of requests per second or provide results within a specific time frame.
-   List out some Non-Functional Requirements that you have come accross. Story.
+````
+   List out some Non-Functional Requirements that you have come accross. 
    Performance - Software System - CPU, Memory, Network, IOPS
    100 Concurrent Requests -  REST API Method - Single Thread - 1 Sec to execute
    1 -> Locks
@@ -24,7 +25,7 @@ Examples of non-functional requirements include:
    Diagnostics, Fault Tolerance, Resiliance _ Reliability Engg
    Safety
    Security - Authentication, Authorization, Injection Attaches, XSRF, CORS, EncDecrypt, Data at REST, DDOS
-
+````
 #### 2. Reliability: The system must be available for a certain percentage of the time and should be able to recover from any failures quickly.
 
 #### 3. Usability: The system should be easy to use and navigate for the intended users.
