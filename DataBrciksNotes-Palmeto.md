@@ -399,4 +399,323 @@ dfBuildingCustomers = (spark.read
 display(dfBuildingCustomers.count())
 
 
-https://blobstorsrini2023mar.blob.core.windows.net/courseware/Optum-Azure-Databricks-27-31-Mar-2023-Day03.zip
+# Day 4 ================================
+
+**********Lib from Maven Central for Accessing CosmosDB
+
+com.azure.cosmos.spark:azure-cosmos-spark_3-3_2-12:4
+
+
+cosmosEndPoint = "https://cosmossrinimar2023.documents.azure.com:443/"
+cosmosKey = "W4RbXpH8fVHEKZRDUxCLoAWOKNanSOxDvZrrRrwr4RS8kfcHy9Xi623A9jvVve1qagC7sO3bQqZJACDbMLarng=="
+cosmosDBName = "Covid"
+cosmosCatalogName = "SouthKoreaCovid"
+
+# Spark Configuration
+
+spark.conf.set("spark.sql.catalog.cosmosCatalog","com.azure.cosmos.spark.CosmosCatalog")
+
+spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountEndpoint",cosmosEndPoint)
+
+spark.conf.set("spark.sql.catalog.cosmosCatalog.spark.cosmos.accountKey",cosmosKey)
+
+
+
+dbfs:/databricks-datasets/COVID/coronavirusdataset/SeoulFloating.csv
+
+
+from pyspark.sql.types import *
+
+covidSchema = StructType([
+StructField('date', DateType(), True), StructField('hour', IntegerType(), True), StructField('birth_year', IntegerType(), True), StructField('sex', StringType(), True), StructField('province', StringType(), True), StructField('city', StringType(), True), StructField('fp_num', StringType(), True)])
+
+#dfSeoulCovd.schema
+
+dfSeoulCovid = spark.read.format("csv").option("header","true").schema(covidSchema).load("dbfs:/databricks-datasets/COVID/coronavirusdataset/SeoulFloating.csv")
+
+display(dfSeoulCovid.limit(5))
+
+display(dfSeoulCovid.count())
+
+
+
+cfg = {
+
+    "spark.cosmos.accountEndpoint":cosmosEndPoint,
+    "spark.cosmos.accountKey":cosmosKey,
+    "spark.cosmos.database":cosmosDBName,
+    "spark.cosmos.container":cosmosCatalogName,
+    "spark.cosmos.write.strategy":"ItemOverwrite"
+}
+
+
+#display(dfSeoulCovid.toDF("date","hour","birth_year","sex","province","city","id").limit(10))
+
+#Write to the cosmos db
+
+# it will take a long time
+
+dfSeoulCovid.toDF("date","hour","birth_year","sex","province","city","id").write.format("cosmos.oltp").options(**cfg).mode("APPEND").save()
+
+
+dfRead = spark.read.format("cosmos.oltp").options(**cfg).load()
+display(dfRead.count())
+
+
+#reading complex json with explode
+
+from pyspark.sql.functions import explode
+
+#dfOwners = dfComplexJson.select("_id",explode('owners').alias("myowners"))
+dfOwners = dfComplexJson.select("_id",explode('owners').alias("myowners")).select("_id","myowners.name","myowners.phone")
+
+display(dfOwners.limit(5))
+display(dfOwners.count())
+
+
+#constucting json
+
+from pyspark.sql.functions import to_json,col,struct
+
+dfOwnersJson = dfOwners.withColumn("jsoncol",to_json(struct([dfOwners[x] for x in dfOwners.columns]))).select("jsoncol")
+
+display(dfOwnersJson)
+
+
+
+*****************************************************************************************
+
+***********************Seting up Docker Desktop on Azure Win 11 VM************
+
+1. Download Docker Desktop for
+   https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+   Windows
+
+https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+
+2. Download WSL update 64 bit msi
+
+
+
+3. Install the Docker Dekstop
+
+4. Restart Windows after installnote
+
+Reconnect to VM after 15 secs
+5. Docker Desktop would start with a Startup Screen
+
+Click on Close (DO NOT Click on ACCEPT)
+Wait for 30 secs
+Run WSLUpate msi installer
+Start Docker Desktop from (Desktop Shortcut)
+Now click Accept in the Startup Screen
+
+
+7. Create a folder in C: drive by name kafka
+
+Open notepad and save the following file as "docker-compose.yml" (with quotes)
+
+--------------------------------"docker-compose.yml"-----------------
+version: '2'
+services:
+zookeeper:
+image: confluentinc/cp-zookeeper:6.0.1
+container_name: zookeeper
+environment:
+ZOOKEEPER_CLIENT_PORT: 2181
+ZOOKEEPER_TICK_TIME: 2000
+
+broker:
+image: confluentinc/cp-kafka:6.0.1
+container_name: broker
+depends_on:
+- zookeeper
+ports:
+# "`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-
+# An important note about accessing Kafka from clients on other machines:
+# -----------------------------------------------------------------------
+#
+# The config used here exposes port 9092 for _external_ connections to the broker
+# i.e. those from _outside_ the docker network. This could be from the host machine
+# running docker, or maybe further afield if you've got a more complicated setup.
+# If the latter is true, you will need to change the value 'localhost' in
+# KAFKA_ADVERTISED_LISTENERS to one that is resolvable to the docker host from those
+# remote clients
+#
+# For connections _internal_ to the docker network, such as from other services
+# and components, use broker:29092.
+#
+# See https://rmoff.net/2018/08/02/kafka-listeners-explained/ for details
+# "`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-
+#
+- 9092:9092
+environment:
+KAFKA_BROKER_ID: 1
+KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:29092,PLAINTEXT_HOST://zzzzzzzzzzz.eastus.cloudapp.azure.com:9092
+KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 100
+
+schema-registry:
+image: confluentinc/cp-schema-registry:6.0.1
+container_name: schema-registry
+ports:
+- "8081:8081"
+depends_on:
+- broker
+environment:
+SCHEMA_REGISTRY_HOST_NAME: schema-registry
+SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: broker:29092
+
+kafka-connect:
+image: confluentinc/cp-kafka-connect:5.4.0
+container_name: kafka-connect
+depends_on:
+- zookeeper
+- broker
+- schema-registry
+ports:
+- 8083:8083
+environment:
+CONNECT_LOG4J_APPENDER_STDOUT_LAYOUT_CONVERSIONPATTERN: "[%d] %p %X{connector.context}%m (%c:%L)%n"
+CONNECT_BOOTSTRAP_SERVERS: "broker:29092"
+CONNECT_REST_PORT: 8083
+CONNECT_REST_ADVERTISED_HOST_NAME: "kafka-connect"
+CONNECT_GROUP_ID: kafka-connect
+CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
+CONNECT_OFFSET_STORAGE_TOPIC: docker-connect-offsets
+CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
+CONNECT_KEY_CONVERTER: io.confluent.connect.avro.AvroConverter
+CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+CONNECT_LOG4J_ROOT_LOGLEVEL: "INFO"
+CONNECT_LOG4J_LOGGERS: "org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR"
+CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: "1"
+CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "1"
+CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "1"
+CONNECT_PLUGIN_PATH: '/usr/share/java'
+volumes:
+- $PWD/data:/data
+#   - /my/local/folder/with/jdbc-driver.jar:/usr/share/java/kafka-connect-jdbc/jars/
+command:
+- /bin/bash
+- -c
+- |
+# JDBC Drivers
+# ------------
+# MySQL
+cd /usr/share/java/kafka-connect-jdbc/
+# See https://dev.mysql.com/downloads/connector/j/
+curl https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-8.0.23.tar.gz | tar xz
+# MS SQL
+cd /usr/share/java/kafka-connect-jdbc/
+# See https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/7.0.0.jre8
+curl https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre8/mssql-jdbc-7.0.0.jre8.jar --output mssql-jdbc-7.0.0.jre8.jar
+# # Oracle
+#cp /db-leach/jdbc/lib/ojdbc8.jar /usr/share/java/kafka-connect-jdbc
+# Now launch Kafka Connect
+sleep infinity &
+/etc/confluent/docker/run
+
+control-center:
+image: confluentinc/cp-enterprise-control-center:6.0.1
+container_name: control-center
+depends_on:
+- broker
+- schema-registry
+ports:
+- "9021:9021"
+environment:
+CONTROL_CENTER_BOOTSTRAP_SERVERS: 'broker:29092'
+CONTROL_CENTER_CONNECT_CONNECT_CLUSTER: 'kafka-connect:8083'
+CONTROL_CENTER_SCHEMA_REGISTRY_URL: "http://schema-registry:8081"
+CONTROL_CENTER_KSQL_KSQLDB_URL: "http://ksqldb:8088"
+# The advertised URL needs to be the URL on which the browser
+#  can access the KSQL server (e.g. http://localhost:8088/info)
+CONTROL_CENTER_KSQL_KSQLDB_ADVERTISED_URL: "http://localhost:8088"
+# -v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v-v
+# Useful settings for development/laptop use - modify as needed for Prod
+CONFLUENT_METRICS_TOPIC_REPLICATION: 1
+CONTROL_CENTER_REPLICATION_FACTOR: 1
+CONTROL_CENTER_COMMAND_TOPIC_REPLICATION: 1
+CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_REPLICATION: 1
+CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
+CONTROL_CENTER_INTERNAL_TOPICS_REPLICATION: 1
+CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
+CONTROL_CENTER_STREAMS_NUM_STREAM_THREADS: 1
+CONTROL_CENTER_STREAMS_CACHE_MAX_BYTES_BUFFERING: 104857600
+command:
+- bash
+- -c
+- |
+echo "Waiting two minutes for Kafka brokers to start and
+necessary topics to be available"
+sleep 120  
+/etc/confluent/docker/run
+
+----------------------------------cmfcmd-------------------------------------
+Change the name of the url in "zzzzzzzz.westus.cloudapp.azure.com" to your VM Url and save the file as "docker-compose.yml" in c:\kafka
+
+Open a Command Prompt
+Cd c:\kafka
+docker-compose up -d
+
+
+
+Download and install python with all options checked
+https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe
+
+
+.01PublishKafkaMessages.py
+
+# pip install kafka-python
+# imports
+import time
+import os
+import datetime
+import random
+import json
+from kafka import KafkaProducer
+from json import dumps
+from time import sleep
+
+# create a list of 5 car models
+cars= []
+cars.append("Ambassador Mark IV")
+cars.append("Contessa Classis")
+cars.append("Standard 2000")
+cars.append("Premier Padmini")
+cars.append("Matiz")
+# for each car generate 40 messages and push to kafka topic
+producer = KafkaProducer(bootstrap_servers=['vmwin11srinikafkamar2023.eastus.cloudapp.azure.com:9092'],
+value_serializer = lambda x:
+dumps(x).encode("UTF-8"))
+for y in range (0,40):
+for car in cars:
+# simulate vehicle position
+reading = {'id':car,'timestamp':str(datetime.datetime.utcnow()),'rpm':random.randrange(100),'speed':random.randint(70,100),'kms':random.randint(100,1000)}
+producer.send('vehicleposition',reading)
+sleep(.1)
+print(reading)
+producer.flush
+
+
+
+02SubscribeKafkaMessages.py
+
+from kafka import KafkaConsumer
+consumer = KafkaConsumer(bootstrap_servers=['vmwin11srinikafkamar2023.eastus.cloudapp.azure.com:9092'],
+auto_offset_reset='earliest',api_version=(0,10,1))
+
+#subscribe to the topic
+consumer.subscribe('vehicleposition')
+#when message arrives print
+for msg in consumer:
+print(msg)
+
