@@ -27,6 +27,9 @@
             * Rely on idempotent to propagate the data from the output topic 
                 to the external system. 
 
+# 7. https://www.confluent.io/blog/how-to-survive-a-kafka-outage/
+
+
 
 
 
