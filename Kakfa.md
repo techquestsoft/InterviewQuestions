@@ -27,7 +27,7 @@
             * Rely on idempotent to propagate the data from the output topic 
                 to the external system. 
 
-#### 7. https://www.confluent.io/blog/how-to-survive-a-kafka-outage/
+##### 7. https://www.confluent.io/blog/how-to-survive-a-kafka-outage/
 
  8. https://dzone.com/refcardz/apache-kafka-patterns-and-anti-patterns
 
