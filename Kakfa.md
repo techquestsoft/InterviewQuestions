@@ -22,7 +22,7 @@
         * Controllable through commit.interval.ms in KStreams
 
 # 6. Interaction with External Systems:
-        Automaic writes to kafka and external systems are nto supported
+        Automaic writes to kafka and external systems are not supported
             * Instead, write the transactinal output to a kafka topic first
             * Rely on idempotent to propagate the data from the output topic 
                 to the external system. 
@@ -31,7 +31,7 @@
 
 ##### 8. https://dzone.com/refcardz/apache-kafka-patterns-and-anti-patterns
 
-
+##### 9. https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
 
 
 
