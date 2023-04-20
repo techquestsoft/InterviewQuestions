@@ -719,3 +719,11 @@ consumer.subscribe('vehicleposition')
 for msg in consumer:
 print(msg)
 
+ # Day 5 
+
+add this lib in maven libs in data bricks cluster
+com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
+
+Create Scope  url
+
+https://adb-8575846028995045.5.azuredatabricks.net/#secrets/createScope
