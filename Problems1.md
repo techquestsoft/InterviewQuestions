@@ -38,8 +38,8 @@
 
 
 2. Design and Implement method which takes two parameters: a "left" list of objects and a "right" 
-   list of objects. The objects in both lists are all of the same class. This class has **getId()
-   ** method which returns an int, and a **compareTo()** method which tells you if another 
+   list of objects. The objects in both lists are all of the same class. This class has **getId()** 
+   method which returns an int, and a **compareTo()** method which tells you if another 
    object is equivalent. The method must return a list of strings which represents all the 
    differences between the two lists. If there is an object with id 5 in the left list but not 
    in the right, there should be a string saying "object id 5 in left list but not in right". If 
