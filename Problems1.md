@@ -35,4 +35,15 @@
    **recommend(string userA, Map<string, string[]> shares)**
    
    **output -> string userB**
-2. 
+
+
+2. Design and Implement method which takes two parameters: a "left" list of objects and a "right" 
+   list of objects. The objects in both lists are all of the same class. This class has **getId()
+   ** method which returns an int, and a **compareTo()** method which tells you if another 
+   object is equivalent. The method must return a list of strings which represents all the 
+   differences between the two lists. If there is an object with id 5 in the left list but not 
+   in the right, there should be a string saying "object id 5 in left list but not in right". If 
+   there is an object with id 5 in both lists, but the two objects are not equivalent, there 
+   should be a string which says "object id 5 is in both lists but not equivalent". If this 
+   object is in the right list, but nothing is in the left list with its id, then we would get 
+   the string "object id 5 in right list but not in left".
