@@ -20,4 +20,6 @@
 
 #9. Functional Interface? where can be used?
 
-#10. 
+#10. In what scenarios will you use Abstract Class vs Interfaces? Give Examples.
+
+#11. There are some exceptions that cannot caught by try catch. How to catch such exceptions? Can we prevent our program to crash if we are not able to catch such exceptions.
