@@ -80,6 +80,7 @@ MongoDB and Cassandra are both popular NoSQL databases, but they have different 
 Data Model:
 
 MongoDB: MongoDB is a document-oriented database that stores data in flexible, JSON-like documents. It allows for dynamic schemas and is suitable for handling semi-structured and hierarchical data. MongoDB supports complex queries, indexing, and aggregation operations on documents.
+
 Cassandra: Cassandra is a wide-column database that organizes data in tables with rows and columns. It provides a flexible schema design and can handle large-scale, distributed data. Each row can have a variable number of columns, making it suitable for handling time-series data, sensor data, and high write-throughput workloads.
 Scalability and Performance:
 
