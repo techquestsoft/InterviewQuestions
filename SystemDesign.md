@@ -6,6 +6,12 @@ L - Liskov Substitution Principle
 I - Interface Segregration Principle
 D - Dependency Inversion
 ````
+
+# THE Tweleve-Factor App:
+````
+https://12factor.net
+````
+
 # 1. Build ecommerce site
 
 # 2. Jukebox design
