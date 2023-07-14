@@ -8,8 +8,9 @@ D - Dependency Inversion
 ````
 
 # THE Twelve-Factor App:
-##[https://12factor.net] (https://12factor.net)
-
+````
+https://12factor.net
+````
 
 # 1. Build ecommerce site
 
