@@ -7,9 +7,9 @@ I - Interface Segregration Principle
 D - Dependency Inversion
 ````
 
-# THE Tweleve-Factor App:
+# THE Twelve-Factor App:
 ````
-https://12factor.net
+[https://12factor.net] (https://12factor.net)
 ````
 
 # 1. Build ecommerce site
