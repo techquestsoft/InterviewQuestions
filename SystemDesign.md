@@ -2,8 +2,7 @@
    https://12factor.net
 
 # 2. CAP theorem
-````yaml
-```
+```yaml
 The CAP theorem, also known as Brewer's theorem, is a fundamental principle in distributed computing that addresses the trade-offs between three desirable properties of a distributed system: Consistency, Availability, and Partition Tolerance. It was formulated by computer scientist Eric Brewer in 2000.
 
 Here's a breakdown of the three components of the CAP theorem:
@@ -24,7 +23,6 @@ AP: Availability and Partition Tolerance - Here, the system prioritizes high ava
 
 It's important to note that the CAP theorem doesn't provide a strict binary choice; instead, it highlights the trade-offs and constraints that arise when designing and implementing distributed systems. Different types of systems, applications, and use cases might have varying requirements and can make different choices based on their needs.
 ```
-````
 
 # 3. System architecture and design principle
 
