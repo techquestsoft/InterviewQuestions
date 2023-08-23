@@ -1,7 +1,9 @@
 # 1 THE Twelve-Factor App:
-   https://12factor.net
+
+https://12factor.net
 
 # 2. CAP theorem
+
 ```yaml
 <code>
 The CAP theorem, also known as Brewer's theorem, is a fundamental principle in distributed computing that addresses the trade-offs between three desirable properties of a distributed system: Consistency, Availability, and Partition Tolerance. It was formulated by computer scientist Eric Brewer in 2000.
@@ -22,7 +24,7 @@ CA: Consistency and Availability - This scenario prioritizes strong consistency 
 
 AP: Availability and Partition Tolerance - Here, the system prioritizes high availability and the ability to function during network partitions, but it might relax consistency guarantees. This means that different nodes might see slightly different versions of the data at the same time.
 
-It's important to note that the CAP theorem doesn't provide a strict binary choice; instead, it highlights the trade-offs and constraints that arise when designing and implementing distributed systems. Different types of systems, applications, and use cases might have varying requirements and can make different choices based on their needs.
+  It's important to note that the CAP theorem doesn't provide a strict binary choice; instead, it highligsystems, applications, and use cases might have varying requirements and can make different chohts the trade-offs and constraints that arise when designing and implementing distributed systems. Different types of ices based on their needs.
   </code>
 ```
 
@@ -32,77 +34,78 @@ It's important to note that the CAP theorem doesn't provide a strict binary choi
 System architecture and design principles provide guidelines for creating robust, scalable, and maintainable software systems. These principles help ensure that a system is well-structured, efficient, and capable of meeting its intended requirements. Here are some key system architecture and design principles:
 
 1. Separation of Concerns (SoC):
-Divide the system into distinct modules or components, each responsible for a specific concern.
-Enhances maintainability and makes it easier to modify and extend the system.
+  Divide the system into distinct modules or components, each responsible for a specific concern.
+  Enhances maintainability and makes it easier to modify and extend the system.
 
 2. Modularity:
 
-Design the system as a collection of independent and loosely coupled modules.
-Promotes code reusability, ease of testing, and scalability.
+  Design the system as a collection of independent and loosely coupled modules.
+  Promotes code reusability, ease of testing, and scalability.
 
 3. Single Responsibility Principle (SRP):
 
-Each class or module should have only one reason to change.
-Improves maintainability and minimizes the impact of changes.
+  Each class or module should have only one reason to change.
+  Improves maintainability and minimizes the impact of changes.
 
 4. Open/Closed Principle (OCP):
 
-Software entities should be open for extension but closed for modification.
-Allows for adding new functionality without altering existing code.
+  Software entities should be open for extension but closed for modification.
+  Allows for adding new functionality without altering existing code.
 
 5. Liskov Substitution Principle (LSP):
 
-Objects of a derived class should be substitutable for objects of the base class without affecting program correctness.
-Ensures consistency and compatibility when using inheritance.
+  Objects of a derived class should be substitutable for objects of the base class without affecting program correctness.
+  Ensures consistency and compatibility when using inheritance.
 
 6. Interface Segregation Principle (ISP):
 
-Clients should not be forced to depend on interfaces they don't use.
-Encourages the creation of small and focused interfaces.
+  Clients should not be forced to depend on interfaces they don't use.
+  Encourages the creation of small and focused interfaces.
 
 7. Dependency Inversion Principle (DIP):
 
-High-level modules should not depend on low-level modules. Both should depend on abstractions.
-Decouples components, promotes flexibility, and simplifies testing.
+  High-level modules should not depend on low-level modules. Both should depend on abstractions.
+  Decouples components, promotes flexibility, and simplifies testing.
 
 8. Don't Repeat Yourself (DRY):
 
-Avoid duplication of code. Use abstractions or modularization to eliminate redundancy.
-Improves maintainability and reduces the risk of inconsistencies.
+  Avoid duplication of code. Use abstractions or modularization to eliminate redundancy.
+  Improves maintainability and reduces the risk of inconsistencies.
 
 9. Keep It Simple, Stupid (KISS):
 
-Strive for simplicity in design and implementation.
-Makes the system easier to understand, debug, and maintain.
+  Strive for simplicity in design and implementation.
+  Makes the system easier to understand, debug, and maintain.
 
 10. You Ain't Gonna Need It (YAGNI):
-- Only implement features that are currently needed.
-- Prevents unnecessary complexity and focus on essential functionality.
+  - Only implement features that are currently needed.
+  - Prevents unnecessary complexity and focus on essential functionality.
 
 11. Minimize Coupling, Maximize Cohesion:
-- Minimize the dependencies between components and modules.
-- Encourages independent development and easier testing.
+  - Minimize the dependencies between components and modules.
+  - Encourages independent development and easier testing.
 
 12. Favor Composition Over Inheritance:
-- Prefer using composition to create complex objects rather than relying solely on inheritance.
-- Offers greater flexibility and reduces tight coupling.
+  - Prefer using composition to create complex objects rather than relying solely on inheritance.
+  - Offers greater flexibility and reduces tight coupling.
 
 13. Scalability and Performance Considerations:
-- Design the system with scalability in mind to accommodate growing user loads.
-- Optimize critical paths and data structures for performance.
+  - Design the system with scalability in mind to accommodate growing user loads.
+  - Optimize critical paths and data structures for performance.
 
 14. Security and Privacy:
-- Incorporate security measures at various levels to protect data and prevent unauthorized access.
-- Implement authentication, authorization, and encryption.
+  - Incorporate security measures at various levels to protect data and prevent unauthorized access.
+  - Implement authentication, authorization, and encryption.
 
 15. Flexibility and Future-Proofing:
-- Design the system to accommodate changes and new requirements.
-- Use abstraction layers and modularization to make adaptations easier.
+  - Design the system to accommodate changes and new requirements.
+  - Use abstraction layers and modularization to make adaptations easier.
 
-Applying these principles during the architecture and design phase helps create software systems that are maintainable, extensible, and capable of meeting user needs effectively.
+  Applying these principles during the architecture and design phase helps create software systems that are maintainable, extensible, and capable of meeting user needs effectively.
 ````
 
 # 4. System design principles
+
 ````yaml
 System design principles are guidelines and best practices that help software engineers and architects create efficient, scalable, maintainable, and reliable systems. Here are some key principles to consider when designing a system:
 
@@ -140,7 +143,7 @@ Economy: Be mindful of costs associated with hardware, software, and maintenance
 
 Future-Proofing: Anticipate future needs and changes in technology. Design your system to accommodate growth and evolution without requiring major rewrites.
 
-These principles can help guide the process of designing systems that meet the needs of users, stakeholders, and the business while also maintaining technical excellence. Keep in mind that the application of these principles might vary based on the specific context and requirements of your project.
+  These principles can help guide the process of designing systems that meet the needs of users, stakeholders, and the business while also maintaining technical excellence. Keep in mind that the application of these principles might vary based on the specific context and requirements of your project.
 ````
 
 # 5. application design principles
@@ -149,90 +152,94 @@ These principles can help guide the process of designing systems that meet the n
 Application design principles guide the process of creating software applications that are well-structured, maintainable, scalable, and user-friendly. These principles help ensure that the application meets the needs of users and stakeholders while also adhering to best practices in software development. Here are some key application design principles:
 
 User-Centered Design (UCD):
-Prioritize the needs and preferences of users when designing the application's user interface and overall user experience.
-Conduct user research, create user personas, and incorporate user feedback throughout the design process.
+  Prioritize the needs and preferences of users when designing the application's user interface and overall user experience.
+  Conduct user research, create user personas, and incorporate user feedback throughout the design process.
 
 Modularity:
-Divide the application into smaller, loosely coupled modules or components that can be developed, tested, and maintained independently.
-This promotes code reusability, ease of maintenance, and scalability.
+  Divide the application into smaller, loosely coupled modules or components that can be developed, tested, and maintained independently.
+  This promotes code reusability, ease of maintenance, and scalability.
 
 Separation of Concerns (SoC):
-Separate different aspects of the application, such as business logic, presentation, and data storage, into distinct components.
-This improves code readability, maintainability, and allows for changes in one area without affecting others.
+  Separate different aspects of the application, such as business logic, presentation, and data storage, into distinct components.
+  This improves code readability, maintainability, and allows for changes in one area without affecting others.
 
 DRY (Don't Repeat Yourself):
-Avoid duplicating code by promoting code reuse. If a piece of functionality is needed in multiple places, create a single source of truth for it.
-DRY reduces maintenance effort and helps maintain consistency.
+  Avoid duplicating code by promoting code reuse. If a piece of functionality is needed in multiple places, create a single source of truth for it.
+  DRY reduces maintenance effort and helps maintain consistency.
 
 KISS (Keep It Simple, Stupid):
-Aim for simplicity in design and implementation. Avoid unnecessary complexity that can lead to confusion and bugs.
-Simple designs are often easier to understand, modify, and maintain.
+  Aim for simplicity in design and implementation. Avoid unnecessary complexity that can lead to confusion and bugs.
+  Simple designs are often easier to understand, modify, and maintain.
 
 YAGNI (You Ain't Gonna Need It):
-Only implement features that are currently needed for the application. Avoid adding speculative or unnecessary features.
-This prevents feature bloat and keeps the application focused on its core functionality.
+  Only implement features that are currently needed for the application. Avoid adding speculative or unnecessary features.
+  This prevents feature bloat and keeps the application focused on its core functionality.
 
 Encapsulation:
-Hide internal implementation details of classes and modules, and expose only the necessary interfaces and functionality.
-Encapsulation improves code maintainability and prevents unintended interactions between components.
+  Hide internal implementation details of classes and modules, and expose only the necessary interfaces and functionality.
+  Encapsulation improves code maintainability and prevents unintended interactions between components.
 
 Consistency:
-Maintain consistent coding styles, naming conventions, and design patterns throughout the application.
-Consistency enhances readability and makes it easier for developers to work on different parts of the application.
+  Maintain consistent coding styles, naming conventions, and design patterns throughout the application.
+  Consistency enhances readability and makes it easier for developers to work on different parts of the application.
 
 Testing and Quality Assurance:
-Design the application with testability in mind. Write automated tests to verify the correctness of the code.
-Implement continuous integration and continuous deployment (CI/CD) pipelines to ensure code quality.
+  Design the application with testability in mind. Write automated tests to verify the correctness of the code.
+  Implement continuous integration and continuous deployment (CI/CD) pipelines to ensure code quality.
 
 Performance Optimization:
-Design the application to be performant by considering factors like efficient algorithms, data structures, and resource usage.
-Profile and optimize critical paths for improved response times.
+  Design the application to be performant by considering factors like efficient algorithms, data structures, and resource usage.
+  Profile and optimize critical paths for improved response times.
 
 Security and Privacy:
-Integrate security measures into the design to protect against common vulnerabilities and ensure the privacy of user data.
-Implement authentication, authorization, encryption, and input validation.
+  Integrate security measures into the design to protect against common vulnerabilities and ensure the privacy of user data.
+  Implement authentication, authorization, encryption, and input validation.
 
 Adaptability and Extensibility:
-Design the application to accommodate future changes and additions. Use interfaces, plugins, or modules to allow for easy extensions.
-This helps the application remain relevant as requirements evolve.
+  Design the application to accommodate future changes and additions. Use interfaces, plugins, or modules to allow for easy extensions.
+  This helps the application remain relevant as requirements evolve.
 
 Documentation and Communication:
-Provide clear and thorough documentation for the application's architecture, design decisions, APIs, and codebase.
-Effective communication among team members is crucial for consistent understanding and collaboration.
-Applying these application design principles helps create software that is not only functional but also maintainable, user-friendly, and adaptable to changing needs and technologies.
+  Provide clear and thorough documentation for the application's architecture, design decisions, APIs, and codebase.
+  Effective communication among team members is crucial for consistent understanding and collaboration.
+  Applying these application design principles helps create software that is not only functional but also maintainable, user-friendly, and adaptable to changing needs and technologies.
 ````
 
 # 6. SOLID Design Principles
+
 ````yaml
 The SOLID principles are a set of five design principles in object-oriented programming and software design that aim to create more maintainable, flexible, and robust code. These principles were introduced by Robert C. Martin and provide guidelines for writing clean, understandable, and extensible code. The SOLID acronym stands for:
 
 Single Responsibility Principle (SRP):
 
-This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
-Keep classes focused on a single task or responsibility. This enhances maintainability and reduces the impact of changes.
+  This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
+  Keep classes focused on a single task or responsibility. This enhances maintainability and reduces the impact of changes.
 Open/Closed Principle (OCP):
 
-This principle states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
-You should be able to extend the behavior of a module without modifying its source code. This is often achieved through inheritance or interfaces.
+  This principle states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+  You should be able to extend the behavior of a module without modifying its source code. This is often achieved through inheritance or interfaces.
 Liskov Substitution Principle (LSP):
 
-This principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
-Subtypes should be substitutable for their base types without causing unexpected behavior.
+  This principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
+  Subtypes should be substitutable for their base types without causing unexpected behavior.
 Interface Segregation Principle (ISP):
 
-This principle states that clients should not be forced to depend on interfaces they do not use.
-Avoid creating large, monolithic interfaces. Instead, break them down into smaller, focused interfaces that clients can implement selectively.
+  This principle states that clients should not be forced to depend on interfaces they do not use.
+  Avoid creating large, monolithic interfaces. Instead, break them down into smaller, focused interfaces that clients can implement selectively.
 Dependency Inversion Principle (DIP):
 
-This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
-Abstractions should not depend on details; details should depend on abstractions.
-Encourage the use of interfaces or abstract classes to decouple components and improve flexibility.
-By following these SOLID principles, developers can create code that is easier to understand, modify, and maintain. These principles contribute to building more modular, adaptable, and extensible systems, making it easier to handle changes, accommodate new requirements, and reduce the risk of introducing bugs when making updates.
+  This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
+  Abstractions should not depend on details; details should depend on abstractions.
+  Encourage the use of interfaces or abstract classes to decouple components and improve flexibility.
+  By following these SOLID principles, developers can create code that is easier to understand, modify, and maintain. These principles contribute to building more modular, adaptable, and extensible systems, making it easier to handle changes, accommodate new requirements, and reduce the risk of introducing bugs when making updates.
 ````
+
 # 7. Parking design
+
     https://igotanoffer.com/blogs/tech/system-design-interviews
 
 # 8. parking system design
+
 ````yaml
 Designing an efficient and effective parking system involves considering various factors, including user experience, scalability, security, and ease of maintenance. Here's a high-level overview of a best-practice parking system design:
 
@@ -298,10 +305,11 @@ Navigation Integration: Integrate with navigation apps to guide drivers to avail
 
 APIs and Third-party Services: Provide APIs for integration with payment gateways, mapping services, and other relevant applications.
 
-Remember that each parking system design should be tailored to the specific needs of the location, user base, and technology infrastructure available. Regular updates, user feedback, and continuous improvement are essential to maintaining a successful parking system.
+  Remember that each parking system design should be tailored to the specific needs of the location, user base, and technology infrastructure available. Regular updates, user feedback, and continuous improvement are essential to maintaining a successful parking system.
 ````
 
 # 9. architecture for parking system
+
 ````yaml
 Designing the architecture for a parking system involves defining the components, interactions, and technologies that will be used to create a functional and efficient system. Here's a high-level architecture for a parking system:
 
@@ -373,10 +381,11 @@ Scalability: Utilizes cloud resources to scale the application based on demand.
 
 Data Storage: Hosts databases and file storage in the cloud for easy management and scalability.
 
-This architecture allows drivers to easily find and reserve parking spaces while enabling administrators to efficiently manage the facility. It leverages modern technologies such as mobile apps, cloud services, and real-time data processing to provide a seamless and user-friendly experience. Keep in mind that the specific implementation and technologies used will depend on the requirements and constraints of your parking system project.
+  This architecture allows drivers to easily find and reserve parking spaces while enabling administrators to efficiently manage the facility. It leverages modern technologies such as mobile apps, cloud services, and real-time data processing to provide a seamless and user-friendly experience. Keep in mind that the specific implementation and technologies used will depend on the requirements and constraints of your parking system project.
 ````
 
 # 10. high level design for parking system
+
 ````yaml
 A high-level design for a parking system outlines the major components and their interactions within the system. Here's a simplified high-level design for a parking system:
 
@@ -443,11 +452,11 @@ Data Storage: Hosts databases and files in the cloud for flexibility and scalabi
 
 10. Reporting and Analytics:
 
-markdown
-Copy code
+  markdown
+  Copy code
 - **Analytics Engine**: Processes data to generate reports on occupancy trends, revenue, and user behavior.
 
-This high-level design addresses user needs, integrates with external services, and manages parking space data efficiently. Keep in mind that this is a simplified overview, and the actual design may include more components and intricacies based on the specific requirements of your parking system project.
+  This high-level design addresses user needs, integrates with external services, and manages parking space data efficiently. Keep in mind that this is a simplified overview, and the actual design may include more components and intricacies based on the specific requirements of your parking system project.
 ````
 
 # 11. low level design parking system
@@ -459,110 +468,111 @@ A low-level design (LLD) for a parking system delves into the detailed component
 
 Driver Mobile App:
 
-UI components for searching available parking spaces, making reservations, and payments.
-Integration with navigation APIs to provide directions to reserved spots.
+  UI components for searching available parking spaces, making reservations, and payments.
+  Integration with navigation APIs to provide directions to reserved spots.
 Admin Web Portal:
 
-Dashboard displaying real-time occupancy status and revenue.
-Interface for managing parking spaces, handling customer support, and generating reports.
+  Dashboard displaying real-time occupancy status and revenue.
+  Interface for managing parking spaces, handling customer support, and generating reports.
 2. Parking Facility:
 
 Entry/Exit Points:
 
-Barrier control mechanisms interfaced with the system.
-License plate recognition cameras for automated entry/exit.
+  Barrier control mechanisms interfaced with the system.
+  License plate recognition cameras for automated entry/exit.
 Sensors:
 
-Interface with parking space management to update occupancy status.
-Trigger event when occupancy changes.
+  Interface with parking space management to update occupancy status.
+  Trigger event when occupancy changes.
 Payment Kiosks:
 
-Touchscreen UI for users to make payments.
-Integration with payment processing module.
+  Touchscreen UI for users to make payments.
+  Integration with payment processing module.
 3. Backend Services:
 
 User Management:
 
-Authentication and authorization services.
-User profile management.
+  Authentication and authorization services.
+  User profile management.
 Parking Space Management:
 
-CRUD operations for parking space data.
-Interface with sensors and reservation system.
+  CRUD operations for parking space data.
+  Interface with sensors and reservation system.
 Reservation System:
 
-CRUD operations for reservations.
-Checks availability and handles conflicts.
+  CRUD operations for reservations.
+  Checks availability and handles conflicts.
 Payment Processing:
 
-Integrates with payment gateways for secure transactions.
-Handles payment confirmation and updates reservation status.
+  Integrates with payment gateways for secure transactions.
+  Handles payment confirmation and updates reservation status.
 Notifications:
 
-Sends push notifications to users regarding reservations, payments, and availability changes.
+  Sends push notifications to users regarding reservations, payments, and availability changes.
 4. Middleware:
 
 API Gateway:
 
-Manages API endpoints for mobile app and web portal interactions.
-Handles request routing and validation.
+  Manages API endpoints for mobile app and web portal interactions.
+  Handles request routing and validation.
 Load Balancer:
 
-Distributes traffic across application servers.
-Monitors server health.
+  Distributes traffic across application servers.
+  Monitors server health.
 5. Data Storage:
 
 Database:
-Stores user profiles, parking space data, reservations, payments, and logs.
+  Stores user profiles, parking space data, reservations, payments, and logs.
 6. Security:
 
 Firewall:
 
-Controls incoming and outgoing network traffic.
-Prevents unauthorized access.
+  Controls incoming and outgoing network traffic.
+  Prevents unauthorized access.
 Encryption:
 
-Encrypts sensitive data, including user information and payment details.
+  Encrypts sensitive data, including user information and payment details.
 7. Integration:
 
 Navigation Services:
 
-Communicates with external navigation APIs for directions.
+  Communicates with external navigation APIs for directions.
 Payment Gateways:
 
-Interfaces with third-party payment providers.
+  Interfaces with third-party payment providers.
 8. Monitoring and Logging:
 
 Logging Services:
 
-Captures detailed logs for debugging and auditing.
-Records user activities and system events.
+  Captures detailed logs for debugging and auditing.
+  Records user activities and system events.
 Monitoring Tools:
 
-Monitors system health, performance, and resource usage.
+  Monitors system health, performance, and resource usage.
 9. Cloud Services:
 
 Scalability:
 
-Utilizes cloud-based infrastructure for scalability and flexibility.
+  Utilizes cloud-based infrastructure for scalability and flexibility.
 Data Storage:
 
-Stores databases and backups in the cloud.
+  Stores databases and backups in the cloud.
 10. Reporting and Analytics:
 
-markdown
-Copy code
+  markdown
+  Copy code
 - **Analytics Engine**:
-    - Processes data for generating occupancy reports, revenue analysis, and user behavior insights.
+                - Processes data for generating occupancy reports, revenue analysis, and user behavior insights.
 
-This low-level design provides a comprehensive overview of the individual modules, their interactions, and the data flow within the parking system. Actual implementations might involve further details and optimizations based on specific requirements and technologies chosen for the project.
+  This low-level design provides a comprehensive overview of the individual modules, their interactions, and the data flow within the parking system. Actual implementations might involve further details and optimizations based on specific requirements and technologies chosen for the project.
 ````
 
 # 12. parking system design in java
+
 ````yaml
 Designing a parking system in Java involves creating classes, interfaces, and methods that represent the different components and functionalities of the system. Below is a simplified example of a parking system design in Java:
 
-This is a basic illustration of a parking system design in Java. In practice, a production-ready parking system would involve more complex considerations such as user authentication, payment processing, real-time updates, and possibly integration with external services. The design provided here serves as a starting point for creating a more comprehensive and feature-rich parking system.
+  This is a basic illustration of a parking system design in Java. In practice, a production-ready parking system would involve more complex considerations such as user authentication, payment processing, real-time updates, and possibly integration with external services. The design provided here serves as a starting point for creating a more comprehensive and feature-rich parking system.
 ````
 
 # 13. Build ecommerce site
