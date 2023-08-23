@@ -1,10 +1,29 @@
 # SOLID Design Principles:
 ````
-S - Single Responsibility Principle
-O - Open/Closed Principle
-L - Liskov Substitution Principle
-I - Interface Segregration Principle
-D - Dependency Inversion
+The SOLID principles are a set of five design principles in object-oriented programming and software design that aim to create more maintainable, flexible, and robust code. These principles were introduced by Robert C. Martin and provide guidelines for writing clean, understandable, and extensible code. The SOLID acronym stands for:
+
+Single Responsibility Principle (SRP):
+
+This principle states that a class should have only one reason to change, meaning it should have only one responsibility.
+Keep classes focused on a single task or responsibility. This enhances maintainability and reduces the impact of changes.
+Open/Closed Principle (OCP):
+
+This principle states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+You should be able to extend the behavior of a module without modifying its source code. This is often achieved through inheritance or interfaces.
+Liskov Substitution Principle (LSP):
+
+This principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
+Subtypes should be substitutable for their base types without causing unexpected behavior.
+Interface Segregation Principle (ISP):
+
+This principle states that clients should not be forced to depend on interfaces they do not use.
+Avoid creating large, monolithic interfaces. Instead, break them down into smaller, focused interfaces that clients can implement selectively.
+Dependency Inversion Principle (DIP):
+
+This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions.
+Abstractions should not depend on details; details should depend on abstractions.
+Encourage the use of interfaces or abstract classes to decouple components and improve flexibility.
+By following these SOLID principles, developers can create code that is easier to understand, modify, and maintain. These principles contribute to building more modular, adaptable, and extensible systems, making it easier to handle changes, accommodate new requirements, and reduce the risk of introducing bugs when making updates.
 ````
 
 # THE Twelve-Factor App:
