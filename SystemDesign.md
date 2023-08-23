@@ -1,16 +1,7 @@
-# THE Twelve-Factor App:
+# 1 THE Twelve-Factor App:
    https://12factor.net
 
-# 1. Build ecommerce site
-
-# 2. Jukebox design
-
-# 3. Amazon lock services
-
-# 4. Parking design
-    https://igotanoffer.com/blogs/tech/system-design-interviews
-
-#5. CAP theorem
+# 2. CAP theorem
 ````yaml
 The CAP theorem, also known as Brewer's theorem, is a fundamental principle in distributed computing that addresses the trade-offs between three desirable properties of a distributed system: Consistency, Availability, and Partition Tolerance. It was formulated by computer scientist Eric Brewer in 2000.
 
@@ -33,7 +24,7 @@ AP: Availability and Partition Tolerance - Here, the system prioritizes high ava
 It's important to note that the CAP theorem doesn't provide a strict binary choice; instead, it highlights the trade-offs and constraints that arise when designing and implementing distributed systems. Different types of systems, applications, and use cases might have varying requirements and can make different choices based on their needs.
 ````
 
-#6. System architecture and design principle
+# 3. System architecture and design principle
 
 ````yaml
 System architecture and design principles provide guidelines for creating robust, scalable, and maintainable software systems. These principles help ensure that a system is well-structured, efficient, and capable of meeting its intended requirements. Here are some key system architecture and design principles:
@@ -109,7 +100,7 @@ Makes the system easier to understand, debug, and maintain.
 Applying these principles during the architecture and design phase helps create software systems that are maintainable, extensible, and capable of meeting user needs effectively.
 ````
 
-#7. System design principles
+# 4. System design principles
 ````yaml
 System design principles are guidelines and best practices that help software engineers and architects create efficient, scalable, maintainable, and reliable systems. Here are some key principles to consider when designing a system:
 
@@ -150,7 +141,7 @@ Future-Proofing: Anticipate future needs and changes in technology. Design your 
 These principles can help guide the process of designing systems that meet the needs of users, stakeholders, and the business while also maintaining technical excellence. Keep in mind that the application of these principles might vary based on the specific context and requirements of your project.
 ````
 
-#8. application design principles
+# 5. application design principles
 
 ````yaml
 Application design principles guide the process of creating software applications that are well-structured, maintainable, scalable, and user-friendly. These principles help ensure that the application meets the needs of users and stakeholders while also adhering to best practices in software development. Here are some key application design principles:
@@ -209,7 +200,7 @@ Effective communication among team members is crucial for consistent understandi
 Applying these application design principles helps create software that is not only functional but also maintainable, user-friendly, and adaptable to changing needs and technologies.
 ````
 
-#9. SOLID Design Principles
+# 6. SOLID Design Principles
 ````yaml
 The SOLID principles are a set of five design principles in object-oriented programming and software design that aim to create more maintainable, flexible, and robust code. These principles were introduced by Robert C. Martin and provide guidelines for writing clean, understandable, and extensible code. The SOLID acronym stands for:
 
@@ -236,8 +227,10 @@ Abstractions should not depend on details; details should depend on abstractions
 Encourage the use of interfaces or abstract classes to decouple components and improve flexibility.
 By following these SOLID principles, developers can create code that is easier to understand, modify, and maintain. These principles contribute to building more modular, adaptable, and extensible systems, making it easier to handle changes, accommodate new requirements, and reduce the risk of introducing bugs when making updates.
 ````
+# 7. Parking design
+    https://igotanoffer.com/blogs/tech/system-design-interviews
 
-#10. parking system design
+# 8. parking system design
 ````yaml
 Designing an efficient and effective parking system involves considering various factors, including user experience, scalability, security, and ease of maintenance. Here's a high-level overview of a best-practice parking system design:
 
@@ -306,7 +299,7 @@ APIs and Third-party Services: Provide APIs for integration with payment gateway
 Remember that each parking system design should be tailored to the specific needs of the location, user base, and technology infrastructure available. Regular updates, user feedback, and continuous improvement are essential to maintaining a successful parking system.
 ````
 
-# 11. architecture for parking system
+# 9. architecture for parking system
 ````yaml
 Designing the architecture for a parking system involves defining the components, interactions, and technologies that will be used to create a functional and efficient system. Here's a high-level architecture for a parking system:
 
@@ -381,7 +374,7 @@ Data Storage: Hosts databases and file storage in the cloud for easy management 
 This architecture allows drivers to easily find and reserve parking spaces while enabling administrators to efficiently manage the facility. It leverages modern technologies such as mobile apps, cloud services, and real-time data processing to provide a seamless and user-friendly experience. Keep in mind that the specific implementation and technologies used will depend on the requirements and constraints of your parking system project.
 ````
 
-#12. high level design for parking system
+# 10. high level design for parking system
 ````yaml
 A high-level design for a parking system outlines the major components and their interactions within the system. Here's a simplified high-level design for a parking system:
 
@@ -455,7 +448,7 @@ Copy code
 This high-level design addresses user needs, integrates with external services, and manages parking space data efficiently. Keep in mind that this is a simplified overview, and the actual design may include more components and intricacies based on the specific requirements of your parking system project.
 ````
 
-#13. low level design parking system
+# 11. low level design parking system
 
 ````yaml
 A low-level design (LLD) for a parking system delves into the detailed components, modules, and interactions that make up the system. Below is a simplified example of a low-level design for a parking system:
@@ -563,9 +556,15 @@ Copy code
 This low-level design provides a comprehensive overview of the individual modules, their interactions, and the data flow within the parking system. Actual implementations might involve further details and optimizations based on specific requirements and technologies chosen for the project.
 ````
 
-#14. parking system design in java
+# 12. parking system design in java
 ````yaml
 Designing a parking system in Java involves creating classes, interfaces, and methods that represent the different components and functionalities of the system. Below is a simplified example of a parking system design in Java:
 
 This is a basic illustration of a parking system design in Java. In practice, a production-ready parking system would involve more complex considerations such as user authentication, payment processing, real-time updates, and possibly integration with external services. The design provided here serves as a starting point for creating a more comprehensive and feature-rich parking system.
 ````
+
+# 13. Build ecommerce site
+
+# 14. Jukebox design
+
+# 15. Amazon lock services
