@@ -532,43 +532,50 @@ This is a basic illustration of a parking system design in Java. In practice, a 
 ```` yaml
 System architecture and design principles provide guidelines for creating robust, scalable, and maintainable software systems. These principles help ensure that a system is well-structured, efficient, and capable of meeting its intended requirements. Here are some key system architecture and design principles:
 
-**1. Separation of Concerns (SoC):**
-
-
+1. Separation of Concerns (SoC):
 Divide the system into distinct modules or components, each responsible for a specific concern.
 Enhances maintainability and makes it easier to modify and extend the system.
+
 2. Modularity:
 
 Design the system as a collection of independent and loosely coupled modules.
 Promotes code reusability, ease of testing, and scalability.
+
 3. Single Responsibility Principle (SRP):
 
 Each class or module should have only one reason to change.
 Improves maintainability and minimizes the impact of changes.
+
 4. Open/Closed Principle (OCP):
 
 Software entities should be open for extension but closed for modification.
 Allows for adding new functionality without altering existing code.
+
 5. Liskov Substitution Principle (LSP):
 
 Objects of a derived class should be substitutable for objects of the base class without affecting program correctness.
 Ensures consistency and compatibility when using inheritance.
+
 6. Interface Segregation Principle (ISP):
 
 Clients should not be forced to depend on interfaces they don't use.
 Encourages the creation of small and focused interfaces.
+
 7. Dependency Inversion Principle (DIP):
 
 High-level modules should not depend on low-level modules. Both should depend on abstractions.
 Decouples components, promotes flexibility, and simplifies testing.
+
 8. Don't Repeat Yourself (DRY):
 
 Avoid duplication of code. Use abstractions or modularization to eliminate redundancy.
 Improves maintainability and reduces the risk of inconsistencies.
+
 9. Keep It Simple, Stupid (KISS):
 
 Strive for simplicity in design and implementation.
 Makes the system easier to understand, debug, and maintain.
+
 10. You Ain't Gonna Need It (YAGNI):
 - Only implement features that are currently needed.
 - Prevents unnecessary complexity and focus on essential functionality.
