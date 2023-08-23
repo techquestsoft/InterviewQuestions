@@ -532,7 +532,7 @@ This is a basic illustration of a parking system design in Java. In practice, a 
 ````
 System architecture and design principles provide guidelines for creating robust, scalable, and maintainable software systems. These principles help ensure that a system is well-structured, efficient, and capable of meeting its intended requirements. Here are some key system architecture and design principles:
 
-**1. Separation of Concerns (SoC):**
+````1. Separation of Concerns (SoC):````
 
 Divide the system into distinct modules or components, each responsible for a specific concern.
 Enhances maintainability and makes it easier to modify and extend the system.
