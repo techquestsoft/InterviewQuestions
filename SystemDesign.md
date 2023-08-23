@@ -240,7 +240,8 @@ Encapsulation:
 Consistency:
    Maintain consistent coding styles, naming conventions, and design patterns throughout the 
   application.
-  Consistency enhances readability and makes it easier for developers to work on different parts of the application.
+   Consistency enhances readability and makes it easier for developers to work on different 
+  parts of the application.
 
 Testing and Quality Assurance:
    Design the application with testability in mind. Write automated tests to verify the 
