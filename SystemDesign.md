@@ -529,7 +529,7 @@ This is a basic illustration of a parking system design in Java. In practice, a 
 
 #13. System architecture and design principle
 
-````
+```` yaml
 System architecture and design principles provide guidelines for creating robust, scalable, and maintainable software systems. These principles help ensure that a system is well-structured, efficient, and capable of meeting its intended requirements. Here are some key system architecture and design principles:
 
 **1. Separation of Concerns (SoC):**
