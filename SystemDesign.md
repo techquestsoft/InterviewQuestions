@@ -263,7 +263,8 @@ Adaptability and Extensibility:
   This helps the application remain relevant as requirements evolve.
 
 Documentation and Communication:
-  Provide clear and thorough documentation for the application's architecture, design decisions, APIs, and codebase.
+   Provide clear and thorough documentation for the application's architecture, design decisions,
+  APIs, and codebase.
   Effective communication among team members is crucial for consistent understanding and collaboration.
    Applying these application design principles helps create software that is not only 
   functional but also maintainable, user-friendly, and adaptable to changing needs and technologies.
@@ -342,7 +343,8 @@ Infrastructure and Hardware:
 
 Sensors and Cameras: Implement sensors and cameras to monitor parking space occupancy and assist with security.
 
-Automated Payment Systems: Use automated payment kiosks or mobile apps to streamline the payment process for users.
+Automated Payment Systems:  Use automated payment kiosks or mobile apps to streamline the 
+  payment process for users.
 
 License Plate Recognition: Implement license plate recognition technology for seamless entry and exit.
 
@@ -350,9 +352,11 @@ Barrier Systems: Use automated barrier systems to control entry and exit points.
 
 Scalability:
 
-Cloud Infrastructure: Consider using cloud services for scalability and easy management of data and resources.
+Cloud Infrastructure:  Consider using cloud services for scalability and easy management of data 
+  and resources.
 
-Distributed Architecture: Design the system with a distributed architecture to handle high traffic during peak times.
+Distributed Architecture:  Design the system with a distributed architecture to handle high 
+  traffic during peak times.
 
 Load Balancing: Use load balancers to distribute traffic evenly across servers and prevent bottlenecks.
 
@@ -524,11 +528,14 @@ Notifications: Sends notifications to users about reservations, payments, and av
 
 API Gateway: Acts as a single entry point for external requests from mobile apps and web portals.
 
-Load Balancer: Distributes incoming traffic across multiple servers for improved performance and scalability.
+Load Balancer:  Distributes incoming traffic across multiple servers for improved performance 
+   and scalability.
 
 5. Data Storage:
 
-Database: Stores user profiles, parking space information, reservations, payments, and transaction history.
+Database:  Stores user profiles, parking space information, reservations, payments, and 
+   transaction history.
+ 
 6. Security:
 
 Firewall: Protects the system from unauthorized access and cyber threats.
@@ -572,7 +579,8 @@ Data Storage: Hosts databases and files in the cloud for flexibility and scalabi
 
 ````yaml
  A low-level design (LLD) for a parking system delves into the detailed components, modules, and 
- interactions that make up the system. Below is a simplified example of a low-level design for a parking system:
+  interactions that make up the system. Below is a simplified example of a low-level design for 
+ a parking system.
 
 1. User Interfaces:
 
@@ -676,7 +684,8 @@ Data Storage:
 
      This low-level design provides a comprehensive overview of the individual modules, their 
      interactions, and the data flow within the parking system. Actual implementations might 
-      involve further details and optimizations based on specific requirements and technologies chosen for the project.
+     involve further details and optimizations based on specific requirements and technologies 
+      chosen for the project.
 ````
 
 # 12. parking system design in java
@@ -689,7 +698,8 @@ Data Storage:
  This is a basic illustration of a parking system design in Java. In practice, a 
    production-ready parking system would involve more complex considerations such as user 
    authentication, payment processing, real-time updates, and possibly integration with external 
-   services. The design provided here serves as a starting point for creating a more comprehensive and feature-rich parking system.
+  services. The design provided here serves as a starting point for creating a more 
+   comprehensive and feature-rich parking system.
 ````
 
 # 13. Build ecommerce site
