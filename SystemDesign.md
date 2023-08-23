@@ -5,18 +5,27 @@ https://12factor.net
 # 2. CAP theorem
 
 ```yaml
-The CAP theorem, also known as Brewer's theorem, is a fundamental principle in 
-distributed computing that addresses the trade-offs between three desirable 
-properties of a distributed system: Consistency, Availability, and Partition Tolerance. 
-It was formulated by computer scientist Eric Brewer in 2000.
+The CAP theorem, also known as Brewer's theorem, is a fundamental principle in
+  distributed computing that addresses the trade-offs between three desirable
+properties of a distributed system: Consistency, Availability, and Partition Tolerance.
+  It was formulated by computer scientist Eric Brewer in 2000.
 
 Here's a breakdown of the three components of the CAP theorem:
 
-Consistency: This property ensures that all nodes in a distributed system see the same data at the same time. In other words, any read operation on the system will return the most recent write. Achieving strong consistency can be challenging in distributed systems, especially in the presence of network delays and failures.
+Consistency:  This property ensures that all nodes in a distributed system see the same data at 
+   the same time. In other words, any read operation on the system will return the most recent 
+   write. Achieving strong consistency can be challenging in distributed systems, especially in 
+  the presence of network delays and failures.
 
-Availability: Availability means that every request to the system, whether it's a read or a write operation, receives a response. In other words, the system is up and operational. High availability is important for systems that need to provide uninterrupted service to users.
+Availability:  Availability means that every request to the system, whether it's a read or a 
+   write operation, receives a response. In other words, the system is up and operational. High 
+  availability is important for systems that need to provide uninterrupted service to users.
 
-Partition Tolerance: Partition tolerance refers to a system's ability to continue functioning even if network partitions occur, meaning communication between nodes becomes unreliable or fails. Network partitions are inevitable in distributed systems due to factors like network failures or latency. Partition tolerance ensures that the system can still operate in the presence of these partitions.
+Partition Tolerance:  Partition tolerance refers to a system's ability to continue functioning 
+   even if network partitions occur, meaning communication between nodes becomes unreliable or 
+   fails. Network partitions are inevitable in distributed systems due to factors like network 
+   failures or latency. Partition tolerance ensures that the system can still operate in the 
+  presence of these partitions.
 
 The CAP theorem asserts that in a distributed system, you can achieve at most two out of these three properties simultaneously. This means you have to make trade-offs based on your system's requirements and priorities. The three possible scenarios are:
 
@@ -453,11 +462,11 @@ Data Storage: Hosts databases and files in the cloud for flexibility and scalabi
 
 10. Reporting and Analytics:
 
-  markdown
-  Copy code
-- **Analytics Engine**: Processes data to generate reports on occupancy trends, revenue, and user behavior.
+    markdown
+      Copy code
+      - **Analytics Engine**: Processes data to generate reports on occupancy trends, revenue, and user behavior.
 
-  This high-level design addresses user needs, integrates with external services, and manages parking space data efficiently. Keep in mind that this is a simplified overview, and the actual design may include more components and intricacies based on the specific requirements of your parking system project.
+      This high-level design addresses user needs, integrates with external services, and manages parking space data efficiently. Keep in mind that this is a simplified overview, and the actual design may include more components and intricacies based on the specific requirements of your parking system project.
 ````
 
 # 11. low level design parking system
@@ -560,12 +569,12 @@ Data Storage:
   Stores databases and backups in the cloud.
 10. Reporting and Analytics:
 
-  markdown
-  Copy code
-- **Analytics Engine**:
-                - Processes data for generating occupancy reports, revenue analysis, and user behavior insights.
+    markdown
+      Copy code
+      - **Analytics Engine**:
+      - Processes data for generating occupancy reports, revenue analysis, and user behavior insights.
 
-  This low-level design provides a comprehensive overview of the individual modules, their interactions, and the data flow within the parking system. Actual implementations might involve further details and optimizations based on specific requirements and technologies chosen for the project.
+      This low-level design provides a comprehensive overview of the individual modules, their interactions, and the data flow within the parking system. Actual implementations might involve further details and optimizations based on specific requirements and technologies chosen for the project.
 ````
 
 # 12. parking system design in java
