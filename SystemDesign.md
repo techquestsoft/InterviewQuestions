@@ -36,7 +36,7 @@ By following these SOLID principles, developers can create code that is easier t
 
 # 3. Amazon lock services
 
-# 4. Parkinglot design
+# 4. Parking design
     https://igotanoffer.com/blogs/tech/system-design-interviews
 
 #5. CAP theorem
