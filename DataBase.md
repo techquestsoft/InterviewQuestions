@@ -1,5 +1,5 @@
 #1. High-level list of typical database layers 
-````
+````yaml
     - SQL API
     - Client Library / Driver
     - Server Connection Manager
