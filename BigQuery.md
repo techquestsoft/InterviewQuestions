@@ -9,12 +9,13 @@
 
 #table
 
-| Data Engineers                                            | Analytics Engineers		                                                                                        | Data Analysts                                                                                       |
-|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Build custom data ingestion integrations                  | Provide clean, transformed data ready for analysis                                                           | Deep insights work (ex: Why did churn spike last month? What are the best acquisition channels?)    |
-| Manage overall pipeline orchestration                     | Apply software engineering practices to analytics code (ex: version control, testing continuous integration) | Work with business users to      understand data requirements    |
-| Develop and deploy machine learning endpoints             | Maintain data documentation & definitions                                                                    |    Build critical dashboards                                                                                                  |
-| Build and maintain the data platform                      | Train business users on how to sue a data platform data visualization tools                                                         |          Build critical dashboards                                                                                               | Data warehouse performance optimization                   |                                                                                                              | Forecasting                                                                                         | 
+| Data Engineers                                | Analytics Engineers		                                                                                        | Data Analysts                                                                                       |
+|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Build custom data ingestion integrations      | Provide clean, transformed data ready for analysis                                                           | Deep insights work (ex: Why did churn spike last month? What are the best acquisition channels?)    |
+| Manage overall pipeline orchestration         | Apply software engineering practices to analytics code (ex: version control, testing continuous integration) | Work with business users to      understand data requirements    |
+| Develop and deploy machine learning endpoints | Maintain data documentation & definitions                                                                    |    Build critical dashboards                                                                                                  |
+| Build and maintain the data platform          | Train business users on how to sue a data platform data visualization tools                                                         |          Build critical dashboards                                                                                               | 
+| Data warehouse performance optimization       |                                                                                                              | Forecasting                                                                                         | 
 
 
 **Shards**:
