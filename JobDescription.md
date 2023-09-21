@@ -14,16 +14,34 @@ The leader in this role will provide technical oversight and direction to our so
 
 Want to explore a day in a life of a PepsiCo Software Engineer?? Checkout the below link: https://bit.ly/PepsiCo_Advanced_Software_Engineering
 
-Responsibilities
+###Responsibilities
+<ul>
+<li>
 Support the vision and guide a team of engineers to build and support digital products and services (DPS) across S&T core priorities
+</li>
+<li>
 Drive partnerships with User Experience, Product Management, IT, Data & Analytics, Emerging Tech, Innovation, and Process Engineering teams to deliver the Digital Products portfolio
+</li>
+<li>
 Develop software development strategy utilizing industry standards. Create roadmap and timing of implementation of the roadmap based on business requirements and strategy.
+</li>
+<li>
 Lead multi-discipline, high-performance work teams distributed across remote locations effectively. Build, manage, develop, and mentor a team of engineers.
+</li>
+<li>
 Interact with executives across the company to lead the narrative around software engineering
+</li>
+<li>
 Develop and expand DPS capabilities through a customer obsessed, services-driven digital solutions platform that leverages data and AI to deliver automated and personalized experiences
+</li>
+<li>
 Manage and appropriately escalate delivery impediments, risks, issues, and changes tied to the engineering initiatives to the stakeholders
+</li>
+<li>
 Interact with key business partners to recommend solutions that best meet the strategic needs of the business
-Qualifications
+</li>
+
+###Qualifications
 Minimum Qualifications:
 
 A Bachelor’s Degree in Computer Science, Engineering or a related field
@@ -40,7 +58,7 @@ Experience with JavaScript/TypeScript, Node.js, React-Redux or other front-end f
 Full stack engineering experience
 
 
-Qualities
+###Qualities
 
 Strong attention to detail and extremely well-organized
 Ability to run a large team of software engineers
