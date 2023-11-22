@@ -35,10 +35,15 @@
 
 ##### 10.  How to overcome message droppings or data packets missing in Kafka? 
 ````yaml
-Message dropping or data packet loss in Apache Kafka can occur due to various reasons, and addressing this issue requires a combination of proper configuration, monitoring, and handling potential failure scenarios. Here are several strategies to overcome message droppings or data packets missing in Kafka:
+Message dropping or data packet loss in Apache Kafka can occur due to various reasons, 
+and addressing this issue requires a combination of proper configuration, monitoring, 
+and handling potential failure scenarios. Here are several strategies to overcome 
+message droppings or data packets missing in Kafka.
 
 1. Increase Replication Factor:
-    Ensure that the replication factor for your Kafka topics is appropriately set. This ensures that multiple copies (replicas) of each partition exist across different brokers. If one broker goes down, another replica can serve the data.
+    Ensure that the replication factor for your Kafka topics is appropriately set. 
+  This ensures that multiple copies (replicas) of each partition exist across different brokers. 
+  If one broker goes down, another replica can serve the data.
 
 2. Monitor Consumer Lag:
     Use tools like Kafka Manager, Confluent Control Center, or Burrow to monitor consumer lag. Consumer lag represents the time it takes for a consumer to catch up with the latest messages. Identifying and addressing lag can help prevent message dropping.
