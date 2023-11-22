@@ -34,6 +34,7 @@
 ##### 9. https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
 
 ##### 10.  How to overcome message droppings or data packets missing in Kafka? 
+    ````yaml
     Message dropping or data packet loss in Apache Kafka can occur due to various reasons, and addressing this issue requires a combination of proper configuration, monitoring, and handling potential failure scenarios. Here are several strategies to overcome message droppings or data packets missing in Kafka:
     
     ###1. Increase Replication Factor:
@@ -68,7 +69,7 @@
         Kafka provides exactly once semantics, which ensures that each message is processed by the consumer exactly once, even in the presence of failures. This can be achieved using features like idempotent producers and transactions.
     
     Remember that the specific steps to address message dropping can depend on the details of your Kafka deployment, including your use case, workload, and cluster architecture. Regularly review and update your configuration and procedures based on your evolving requirements.
-
+    ````
 
 
 
