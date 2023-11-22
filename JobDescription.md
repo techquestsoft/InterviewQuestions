@@ -53,10 +53,14 @@ Master’s or PhD in Computer Science or Engineering preferred
 </li>
 <li>
 Minimum of 11 plus years of relevant software development and engineering management experience
+</li>
+<li>
 3+ years’ experience managing people
 </li>
 <li>
 Commanding knowledge of data structures, algorithms, and object-oriented design  
+</li>
+<li>
 Working knowledge of multiple programming languages Java, Python, JavaScript (NodeJS) and their ecosystems / frameworks like SpringBoot, tools like npm / React / ReactNative, etc.
 </li>
 <li>
