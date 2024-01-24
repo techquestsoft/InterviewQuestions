@@ -127,8 +127,28 @@ In summary, MongoDB tends to prioritize consistency over availability in certain
 
 | Feature                   |                                       MongoDB                                        |                                                                               Cassandra |
 |:--------------------------|:------------------------------------------------------------------------------------:|----------------------------------------------------------------------------------------:|
-| Data Model                |              Document-oriented database with BSON (Binary JSON) format.              |                                                       Wide-column store NoSQL database. |
+| Data Model                |              Document-oriented database with BSON (Binary JSON) format. MongoDB is a NoSQL (Not Only SQL) database. It is a document-oriented database that falls under the category of NoSQL databases.             |                                                       Wide-column store NoSQL database. |
 | Schema                    |   Dynamic schema - documents in a collection do not need to have the same fields.    |                 Schema is defined per column family, but columns within a row can vary. |
 | Query Language			         | Rich query language with support for complex queries, indexing, and aggregation.			  |        Query language known as CQL (Cassandra Query Language), which is similar to SQL. |
 | Consistency Model         |        Supports eventual consistency and provides tunable consistency levels.        | Offers tunable consistency with options for eventual consistency or strong consistency. |
 | Partitioning and Scaling  |  Horizontal scaling using sharding, automatic partitioning based on the shard key.   |        Automatic partitioning based on consistent hashing, supports horizontal scaling. |
+
+## 2. Is MongoDB is NoSQL database?
+    Yes, MongoDB is a NoSQL (Not Only SQL) database. It is a document-oriented 
+    database that falls under the category of NoSQL databases. MongoDB is designed to store, retrieve, and manage data in a flexible, schema-less document format. It uses BSON (Binary JSON) as the storage format for documents.
+
+    Key characteristics of MongoDB as a NoSQL database include:
+
+    Document-Oriented: MongoDB stores data in flexible, JSON-like documents, allowing for a dynamic and schema-free data model. Each document can have a different structure, providing flexibility in data representation.
+
+    Scalability: MongoDB is horizontally scalable, allowing for the distribution of data across multiple servers or nodes. It supports sharding to handle large amounts of data and traffic.
+
+    Query Language: MongoDB supports a rich query language that includes a variety of query operators for searching and filtering documents. Queries can be expressed in a JSON-like syntax.
+
+    Indexes: MongoDB supports the creation of indexes to improve query performance. Indexes can be created on single fields, compound fields, arrays, and other data types.
+
+    Aggregation Framework: MongoDB includes a powerful aggregation framework that enables users to perform complex data transformations, aggregations, and computations within the database.
+
+    Flexible Schema: Unlike traditional relational databases, MongoDB does not enforce a fixed schema. Each document in a collection can have different fields, and fields can be added or removed dynamically.
+
+    MongoDB is widely used for various types of applications, including web development, content management systems, real-time analytics, and more, due to its flexibility, scalability, and ease of use in handling unstructured or semi-structured data.
