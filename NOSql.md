@@ -103,3 +103,32 @@ Cassandra: Cassandra is commonly used for applications that require high scalabi
 
 In summary, MongoDB is a document-oriented database known for its flexibility, rich querying 
 capabilities, and dynamic schema, while Cassandra is a wide-column database designed for high scalability, high availability, and write-intensive workloads. The choice between MongoDB and Cassandra depends on factors such as the data model requirements, scalability needs, query patterns, consistency and availability requirements, and the specific use case or application.
+
+
+The CAP theorem (Consistency, Availability, Partition Tolerance) states that a distributed system can only achieve two out of three of these attributes at the same time. Here's how MongoDB and Cassandra align with the CAP theorem:
+
+MongoDB:
+
+Consistency: MongoDB provides strong consistency by default, and it supports tunable consistency levels. However, in scenarios of network partitions or failures, MongoDB might sacrifice either availability or partition tolerance to maintain consistency, depending on the configured consistency level.
+
+Availability: MongoDB aims to be highly available, but in the presence of network partitions or failures, it may choose to sacrifice availability to maintain consistency.
+
+Partition Tolerance: MongoDB is designed to be partition-tolerant, ensuring that the system can continue to operate even when communication between nodes is lost.
+
+Cassandra:
+
+Consistency: Cassandra provides tunable consistency, allowing users to balance between consistency and availability. It supports eventual consistency and strong consistency levels, depending on the configuration.
+
+Availability: Cassandra prioritizes availability and partition tolerance. In the event of network partitions or failures, Cassandra will choose to remain available and provide eventual consistency.
+
+Partition Tolerance: Cassandra is explicitly designed to be partition-tolerant, allowing the system to continue functioning even when network partitions occur.
+
+In summary, MongoDB tends to prioritize consistency over availability in certain situations, while Cassandra leans towards availability and partition tolerance. Both databases allow for tunable consistency, providing flexibility for users to choose the level of consistency based on their application requirements. The specific configuration and behavior may vary based on the chosen consistency level and the circumstances in a distributed environment.
+
+| Feature                   |                                       MongoDB                                        |                                                                               Cassandra |
+|:--------------------------|:------------------------------------------------------------------------------------:|----------------------------------------------------------------------------------------:|
+| Data Model                |              Document-oriented database with BSON (Binary JSON) format.              |                                                       Wide-column store NoSQL database. |
+| Schema                    |   Dynamic schema - documents in a collection do not need to have the same fields.    |                 Schema is defined per column family, but columns within a row can vary. |
+| Query Language			         | Rich query language with support for complex queries, indexing, and aggregation.			  |        Query language known as CQL (Cassandra Query Language), which is similar to SQL. |
+| Consistency Model         |        Supports eventual consistency and provides tunable consistency levels.        | Offers tunable consistency with options for eventual consistency or strong consistency. |
+| Partitioning and Scaling  |  Horizontal scaling using sharding, automatic partitioning based on the shard key.   |        Automatic partitioning based on consistent hashing, supports horizontal scaling. |
