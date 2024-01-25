@@ -279,7 +279,8 @@ and user satisfaction. Let's explore the differences between these concepts with
 
 Reliability:
 
-Definition: Reliability in software refers to the ability of a system to consistently perform its intended functions without errors or failures.
+Definition: Reliability in software refers to the ability of a system to 
+  consistently perform *** its intended functions without errors or failures.
 Focus: It emphasizes the stability and predictability of the software's behavior.
 Measurement: Reliability can be measured by metrics such as Mean Time Between Failures (MTBF) or the number of software failures over a specific time period.
 Example: A reliable e-commerce platform ensures that users can consistently browse products, add items to their cart, and complete transactions without encountering system errors or crashes.
