@@ -273,7 +273,9 @@ Documentation and Communication:
 
 # 5.1 Reliability, Availability, and Resiliency
 ````yaml
-In the context of software products, reliability, availability, and resiliency are key attributes that contribute to the overall performance and user satisfaction. Let's explore the differences between these concepts with examples:
+In the context of software products, reliability, availability, and 
+resiliency --- are key attributes that contribute to the overall performance 
+and user satisfaction. Let's explore the differences between these concepts with examples:
 
 Reliability:
 
