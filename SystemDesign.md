@@ -271,6 +271,33 @@ Documentation and Communication:
   functional but also maintainable, user-friendly, and adaptable to changing needs and technologies.
 ````
 
+# 5.1 Reliability, Availability, and Resiliency
+````yaml
+In the context of software products, reliability, availability, and resiliency are key attributes that contribute to the overall performance and user satisfaction. Let's explore the differences between these concepts with examples:
+
+Reliability:
+
+Definition: Reliability in software refers to the ability of a system to consistently perform its intended functions without errors or failures.
+Focus: It emphasizes the stability and predictability of the software's behavior.
+Measurement: Reliability can be measured by metrics such as Mean Time Between Failures (MTBF) or the number of software failures over a specific time period.
+Example: A reliable e-commerce platform ensures that users can consistently browse products, add items to their cart, and complete transactions without encountering system errors or crashes.
+
+Availability:
+
+Definition: Availability in software pertains to the accessibility and readiness of a system to perform its functions when needed.
+Focus: It considers the percentage of time a software system is operational and accessible.
+Measurement: Availability is often measured as a percentage, calculated as (Uptime / (Uptime + Downtime)) * 100.
+Example: A highly available cloud-based document storage service ensures that users can access their files and collaborate in real-time with minimal downtime. If the service has an availability of 99.9%, it means it is operational 99.9% of the time.
+
+Resiliency:
+
+Definition: Resiliency in software refers to the ability of a system to recover quickly and gracefully from failures, disruptions, or unexpected events.
+Focus: It emphasizes the system's capacity to adapt and continue functioning even in the face of adverse conditions.
+Examples:
+Example 1: An online streaming service exhibits resiliency by automatically switching to lower resolutions or buffering content during network congestion, ensuring users can continue watching without interruption.
+Example 2: A web application designed with resiliency might implement redundant servers and load balancing to distribute traffic, ensuring that if one server fails, others can seamlessly take over to maintain service.
+In summary, while reliability focuses on consistent and error-free performance, availability emphasizes the accessibility of the system, and resiliency highlights the system's ability to recover and adapt to adverse conditions. In the dynamic landscape of software development, considering all three aspects is crucial to delivering a robust and user-friendly product.
+````
 # 6. SOLID Design Principles
 
 ````yaml
