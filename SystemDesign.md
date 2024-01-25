@@ -366,6 +366,104 @@ Dependency Inversion Principle (DIP):
 
     https://igotanoffer.com/blogs/tech/system-design-interviews
 
+# 7.1 Designing a high-level system for a parking lot
+````yaml
+    Designing a high-level system for a parking lot involves breaking down the problem into components and defining their interactions. Below is a high-level design for an efficient parking lot system:
+
+1. Components:
+    Parking Lot Management System:
+    Orchestrates the overall functionality of the parking lot system.
+    Manages the allocation of parking spaces, incoming vehicles, and departing vehicles.
+    Coordinates with the Payment System for fee calculation and transactions.
+    
+    Parking Lot:
+    Represents the physical parking spaces.
+    Manages the status (occupied or vacant) of each parking spot.
+    Provides methods for allocating and freeing parking spaces.
+    
+    Vehicle:
+    Represents the vehicles that will be parked in the parking lot.
+    Stores information like license plate, size, and type of the vehicle.
+    
+    Parking Ticket:
+    Issued to each vehicle upon entry.
+    Contains information about the entry time, parking spot, and vehicle details.
+    
+    Payment System:
+    Handles transactions related to parking fees.
+    Calculates fees based on the duration of parking and any additional services (if applicable).
+    May interact with external payment gateways or systems.
+    
+    User Interface (UI):
+    Provides a user-friendly interface for drivers to enter and exit the parking lot.
+    Displays information about available parking spaces, fees, and other relevant details.
+
+2. Interactions:
+    Vehicle Entry:
+    User enters the parking lot.
+    Parking Lot Management System allocates a parking spot to the vehicle.
+    A Parking Ticket is issued.
+    
+    Vehicle Exit:
+    User exits the parking lot.
+    Parking Lot Management System frees up the parking spot.
+    Calculates the parking fee using the Parking Ticket information.
+    Sends the fee information to the Payment System.
+    
+    Payment Process:
+    Payment System processes the fee.
+    May involve credit/debit card transactions, mobile payments, or other payment methods.
+    
+    Status Updates:
+    Parking Lot Management System updates the status of parking spots in real-time.
+    UI displays information about available parking spaces and other relevant details.
+    
+    User Interaction:
+    Users interact with the UI to get information, pay fees, or request additional services.
+
+Flow of Operations:
+  Vehicle Entry:
+  User enters the parking lot.
+  Parking Lot Management System allocates a parking spot and issues a Parking Ticket.
+
+  Parking Duration:
+  Parking Lot Management System tracks the duration of each vehicle's stay.
+
+  Vehicle Exit:
+  User exits the parking lot.
+  Parking Lot Management System calculates the parking fee and sends the information to the Payment System.
+
+  Payment Process:
+  Payment System processes the fee through various payment methods.
+
+  Status Updates:
+  Parking Lot Management System updates the status of parking spots.
+  UI displays real-time information about available parking spaces.
+  This high-level design provides a modular and scalable architecture for a parking lot system, accommodating future enhancements and extensions. It separates concerns, making the system easy to maintain and extend.
+  
+Extensions and Enhancements:
+    Security System:
+    Integrate a security system with cameras to monitor the parking lot.
+    Implement license plate recognition for automated entry and exit.
+    
+    Reservation System:
+    Allow users to reserve parking spaces in advance.
+    
+    Smart Parking System:
+    Implement sensors to detect available parking spaces automatically.
+    
+    Mobile App Integration:
+    Develop a mobile app for users to manage parking, make payments, and receive notifications.
+    
+    Subscription Service:
+    Offer subscription-based services for frequent parkers.
+    
+    Environmental Sensors:
+    Use sensors to monitor environmental conditions (e.g., air quality, temperature) in the parking lot.
+
+````
+
+
 # 8. parking system design
 
 ````yaml
@@ -754,94 +852,91 @@ Data Storage:
 
 # 14. Jukebox design
 
-````yaml
+```yaml
 
 A high-level design for a Jukebox involves considering various components 
 and their interactions. Here's a high-level design *** for a Jukebox system:
 
-Components:
+1. Components:
+    
+    Jukebox Controller:
+    Responsible for managing the overall flow and coordination of the Jukebox.
+    Handles user interactions, button presses, and commands.
+    
+    Audio Player:
+    Manages the playback of audio tracks.
+    Controls play, pause, stop, volume, and track navigation.
+    
+    Song Library:
+    Stores information about available songs.
+    Includes metadata such as title, artist, genre, duration, etc.
+    
+    Playlist Manager:
+    Manages playlists created by users.
+    Allows users to create, edit, and delete playlists.
+    
+    User Interface (UI):
+    Presents information to the user and receives user input.
+    May include a display, buttons, touch screen, etc.
+    
+    Payment System:
+    Handles transactions for paid services (if applicable).
+    Could include features like coin slots, card readers, or digital payment.
 
-Jukebox Controller:
-Responsible for managing the overall flow and coordination of the Jukebox.
-Handles user interactions, button presses, and commands.
+2. Interactions:
+    
+    User Commands:
+    The user interacts with the Jukebox through the UI, selecting songs, adjusting volume, creating playlists, etc.
+    
+    Jukebox Controller and Audio Player Interaction:
+    The Jukebox Controller communicates with the Audio Player to control playback, volume, and track navigation.
+    
+    Jukebox Controller and Song Library Interaction:
+    The Jukebox Controller queries the Song Library for information about available songs, genres, etc.
+    
+    Jukebox Controller and Playlist Manager Interaction:
+    The Jukebox Controller communicates with the Playlist Manager to handle user-created playlists.
+    
+    Payment System and Jukebox Controller Interaction:
+    If there's a payment system, the Jukebox Controller communicates with it to 
+      handle transactions *** for premium features or paid songs.
 
-Audio Player:
-Manages the playback of audio tracks.
-Controls play, pause, stop, volume, and track navigation.
+3. Flow of Operations:
+    
+    Initialization:
+    Initialize the Jukebox Controller, Audio Player, Song Library, Playlist Manager, and UI.
+    
+    User Interaction:
+    Users interact with the UI to select songs, adjust volume, create playlists, etc.
+    
+    Jukebox Controller Orchestrates:
+    The Jukebox Controller coordinates actions based on user inputs, interacts with other components accordingly.
+    
+    Audio Playback:
+    The Audio Player handles the playback of selected songs, manages the playlist queue, and controls audio-related functions.
+    
+    Metadata and Information:
+    The Jukebox Controller queries the Song Library for information about songs, genres, artists, etc., to display on the UI.
+    
+    Playlist Management:
+    Users can create, edit, or delete playlists using the Playlist Manager through the UI.
+    
+    Payment Handling (Optional):
+    If there's a payment system, the Jukebox Controller communicates with it to handle transactions for premium features.
 
-Song Library:
-Stores information about available songs.
-Includes metadata such as title, artist, genre, duration, etc.
+4. Extensions and Enhancements:
 
-Playlist Manager:
-Manages playlists created by users.
-Allows users to create, edit, and delete playlists.
-
-User Interface (UI):
-Presents information to the user and receives user input.
-May include a display, buttons, touch screen, etc.
-
-Payment System:
-Handles transactions for paid services (if applicable).
-Could include features like coin slots, card readers, or digital payment.
-
-Interactions:
-
-User Commands:
-The user interacts with the Jukebox through the UI, selecting songs, adjusting volume, creating playlists, etc.
-
-Jukebox Controller and Audio Player Interaction:
-The Jukebox Controller communicates with the Audio Player to control playback, volume, and track navigation.
-
-Jukebox Controller and Song Library Interaction:
-The Jukebox Controller queries the Song Library for information about available songs, genres, etc.
-
-Jukebox Controller and Playlist Manager Interaction:
-The Jukebox Controller communicates with the Playlist Manager to handle user-created playlists.
-
-Payment System and Jukebox Controller Interaction:
-If there's a payment system, the Jukebox Controller communicates with it to 
-  handle transactions *** for premium features or paid songs.
-
-Flow of Operations:
-
-Initialization:
-Initialize the Jukebox Controller, Audio Player, Song Library, Playlist Manager, and UI.
-
-User Interaction:
-Users interact with the UI to select songs, adjust volume, create playlists, etc.
-
-Jukebox Controller Orchestrates:
-The Jukebox Controller coordinates actions based on user inputs, interacts with other components accordingly.
-
-Audio Playback:
-The Audio Player handles the playback of selected songs, manages the playlist queue, and controls audio-related functions.
-
-Metadata and Information:
-The Jukebox Controller queries the Song Library for information about songs, genres, artists, etc., to display on the UI.
-
-Playlist Management:
-Users can create, edit, or delete playlists using the Playlist Manager through the UI.
-
-Payment Handling (Optional):
-If there's a payment system, the Jukebox Controller communicates with it to handle transactions for premium features.
-
-<div style="font-size: 18px;">
-Extensions and Enhancements:
-</div>
-
-User Accounts: Implement user accounts to save preferences, playlists, and payment details.
-
-Remote Control: Allow users to control the Jukebox remotely through a mobile app.
-
-Recommendation Engine: Implement a recommendation system based on user preferences.
-
-Queue Management: Allow users to queue up multiple songs for continuous playback.
-
-This high-level design provides a modular and scalable architecture for a 
-  Jukebox system, allowing for *** future enhancements and extensions. Each 
-  component is responsible for a specific aspect of the system, promoting a clean and maintainable design.
-
-````
+    User Accounts: Implement user accounts to save preferences, playlists, and payment details.
+    
+    Remote Control: Allow users to control the Jukebox remotely through a mobile app.
+    
+    Recommendation Engine: Implement a recommendation system based on user preferences.
+    
+    Queue Management: Allow users to queue up multiple songs for continuous playback.
+    
+    This high-level design provides a modular and scalable architecture for a 
+      Jukebox system, allowing for *** future enhancements and extensions. Each 
+      component is responsible for a specific aspect of the system, promoting a clean and maintainable design.
+```
 
 # 15. Amazon lock services
