@@ -826,7 +826,7 @@ Users can create, edit, or delete playlists using the Playlist Manager through t
 Payment Handling (Optional):
 If there's a payment system, the Jukebox Controller communicates with it to handle transactions for premium features.
 
-Extensions and Enhancements:
+###Extensions and Enhancements:
 
 User Accounts: Implement user accounts to save preferences, playlists, and payment details.
 
