@@ -32,13 +32,13 @@ https://www.careercup.com/
 
 	You may assume that each input would have exactly one solution, and you may not use the same element twice.
 	
-	Example: Given nums = [2, 7, 11, 15], target = 22.
+	Example: Given nums = [2, 7, 11, 15], target = 9.
 	
 	The output should be [0, 1]. 
 	
 	Because nums[0] + nums[1] = 2 + 7 = 9.
 
-## (https://github.com/techquestsoft/CoreJava_Interviews/tree/main/src/com/hi/problems)
+## (https://github.com/techquestsoft/CoreJavaTrainingWS/tree/main/src/com/hi/problems)
 
 # 3. Product of array except self
     Given an array nums of n integers where n > 1, return an array output such that output[i] is 
@@ -47,6 +47,20 @@ https://www.careercup.com/
 # Example:
 	Input: [1,2,3,4]
 	Output: [24,12,8,6]
+    input :: [10, 3, 5, 6, 2]
+    Left Product :: [1, 10, 30, 150, 900] -- 
+        initialize first element as 1
+        loop to calucate or get value from 2 element to end in left product 
+        that is left product[2] = input[0]* left product[0]; current element 
+        from input and left product
+    output :: [180, 600, 360, 300, 900]
+        loop left product from last element and muliply with input last 
+        element (for 1st iteration declare as 1), from next iteration multiple this 
+        with input element
+        1st iteration -> 900 * 1 -> here muliplicatoin value is 1 -> muliply 
+        with value with input last value that is 2 -> now value 2 for next iteration.
+        2nd iteration -> 150 * 2 -> 300 -> now multiplication values is 2*6=12.
+        3rd iteration -> 30 * 12 = 360 ....
 
 **Note:** Please solve it wihout division and in O(n).
 
@@ -59,7 +73,7 @@ https://www.careercup.com/
 	Using extra space and loop : left and right product array
 	Efficient in-place solution using single array
 
-https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/ProductOfArrayExceptItself.java
+https://github.com/techquestsoft/CoreJavaTrainingWS/blob/main/src/com/hi/problems/ProductOfArrayExceptItself.java
 
 https://www.enjoyalgorithms.com/blog/product-of-array-except-self
 
@@ -78,7 +92,7 @@ Input: arr[] = {1, 2, 3, 4, 5, 6}
 
 Output: arr[] = {6, 1, 5, 2, 4, 3} 
 
-https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/RearrangeSortedArrayInMaximumMinimumForm.java
+https://github.com/techquestsoft/CoreJavaTrainingWS/blob/main/src/com/hi/problems/RearrangeSortedArrayInMaximumMinimumForm.java
 
 https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form/
 
@@ -127,7 +141,7 @@ Input: a3b4c2
 
 Output: aaabbbbcc
 
-https://github.com/techquestsoft/CoreJava_Interviews/blob/main/src/com/hi/problems/CharactersGeneration.java
+https://github.com/techquestsoft/CoreJavaTrainingWS/blob/main/src/com/hi/problems/CharactersGeneration.java
 
 # 9. Code for Factorial
 
