@@ -365,13 +365,16 @@ Dependency Inversion Principle (DIP):
 ````yaml
 1
 SOLID Principles and Design Patterns
-The SOLID principles are five fundamental design principles for object-oriented programming that promote well-structured, maintainable, and flexible code. These principles don't directly map to specific design patterns, but some patterns align with and help achieve the goals of each principle. Let's explore how:
+The SOLID principles are five fundamental design principles for object-oriented programming that promote
+well-structured, maintainable, and flexible code. These principles don't directly map to specific design 
+patterns, but some patterns align with and help achieve the goals of each principle. Let's explore how:
 
 1. Single Responsibility Principle (SRP):
     Goal: A class should have only one reason to change (one responsibility).
     Patterns:
     Command Pattern: Encapsulates an action as an object, promoting focused classes and modularity.
-    Strategy Pattern: Allows for implementing different algorithms for a specific operation without modifying the overall class, respecting SRP.
+    Strategy Pattern: Allows for implementing different algorithms for a 
+  specific operation without modifying ** the overall class, respecting SRP.
     ===
     A class should have only one reason to change.
     Design Pattern: Observer Pattern, Command Pattern.
@@ -383,13 +386,16 @@ The SOLID principles are five fundamental design principles for object-oriented 
     Subject (WeatherData): Responsible for tracking and notifying observers of changes in weather conditions.
     Observer (Display): Responsible for displaying weather information.
     Explanation:
-      The WeatherData class has the responsibility of tracking weather conditions and notifying observers. If the weather-related logic changes, this class is the only one affected.
+      The WeatherData class has the responsibility of tracking weather conditions and notifying observers. 
+      If the weather-related logic changes, this class is the only one affected.
     
 2. Open-Closed Principle (OCP):
     Goal: Open for extension, closed for modification. Software should be extensible without modifying existing code.
     Patterns:
-    Template Method Pattern: Defines the skeleton of an algorithm in a superclass, allowing subclasses to specialize steps without altering the overall structure.
-    Abstract Factory Pattern: Creates families of related objects without modifying existing code, facilitating extension when new object types are needed.
+    Template Method Pattern: Defines the skeleton of an algorithm in a superclass, allowing subclasses 
+      to specialize steps without altering the overall structure.
+    Abstract Factory Pattern: Creates families of related objects without modifying existing code, 
+     facilitating extension when new object types are needed.
     =============
     Software entities should be open for extension but closed for modification.
     Design Pattern: Strategy Pattern, Decorator Pattern.
@@ -400,29 +406,38 @@ The SOLID principles are five fundamental design principles for object-oriented 
     Application in Observer Pattern:
       New display modules can be added without modifying existing code.
     Explanation:
-      If you want to add a new type of display, you can create a new class implementing the Observer interface without modifying the existing WeatherData class.
+      If you want to add a new type of display, you can create a new class implementing the Observer 
+      interface without modifying the existing WeatherData class.
     
 3. Liskov Substitution Principle (LSP):
-    Goal: Objects of a superclass should be replaceable with objects of its subclasses without altering the correctness of the program.
+    Goal: Objects of a superclass should be replaceable with objects of its subclasses without 
+          altering the correctness of the program.
     Patterns:
-    Decorator Pattern: Dynamically adds responsibilities to an object without changing its original class, ensuring subclasses respect LSP by extending but not breaking functionality.
-    Bridge Pattern: Decouples an abstraction from its implementation, allowing subclasses to implement different concrete strategies while maintaining compatibility with the existing interface.
+    Decorator Pattern: Dynamically adds responsibilities to an object without changing its original class, 
+        ensuring subclasses respect LSP by extending but not breaking functionality.
+    Bridge Pattern: Decouples an abstraction from its implementation, allowing subclasses to implement 
+      different concrete strategies while maintaining compatibility with the existing interface.
     ============
       Subtypes must be substitutable for their base types without altering the correctness of the program.
     Design Pattern: Template Method Pattern.
-    Template Method Pattern: Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps.
+    Template Method Pattern: Defines the skeleton of an algorithm in the superclass but lets subclasses 
+        override specific steps.
       ==================
       Subtypes must be substitutable for their base types without altering the correctness of the program.
     Application in Observer Pattern:
       Any class implementing the Observer interface can be used interchangeably to receive weather updates.
     Explanation:
-      If you have different types of displays (e.g., current conditions display, statistics display), they can all be treated as Observer objects, and you can switch between them without affecting the correctness of the program.
+      If you have different types of displays (e.g., current conditions display, statistics display), 
+        they can all be treated as Observer objects, and you can switch between them without affecting the correctness of the program.
 
 4. Interface Segregation Principle (ISP):
-    Goal: Clients should not be forced to depend on interfaces they don't use. Large interfaces should be split into smaller, more specific ones.
+    Goal: Clients should not be forced to depend on interfaces they don't use. Large interfaces should be 
+        split into smaller, more specific ones.
     Patterns:
-    Facade Pattern: Provides a simplified interface to a complex system, reducing client dependencies and promoting ISP compliance.
-    Adapter Pattern: Allows incompatible interfaces to work together by translating between them, aligning with the principle of separating interfaces from implementations.
+    Facade Pattern: Provides a simplified interface to a complex system, reducing client dependencies and 
+          promoting ISP compliance.
+    Adapter Pattern: Allows incompatible interfaces to work together by translating between them, 
+      aligning with the principle of separating interfaces from implementations.
     ================
       A class should not be forced to implement interfaces it does not use.
     Design Pattern: Adapter Pattern.
@@ -432,29 +447,40 @@ The SOLID principles are five fundamental design principles for object-oriented 
     Application in Observer Pattern:
       The Observer interface should only include methods necessary for receiving updates.
     Explanation:
-      The Observer interface might have methods like update(). A specific display class only needs to implement this method, and it is not forced to implement unnecessary methods.
+      The Observer interface might have methods like update(). A specific display class only needs to 
+        implement this method, and it is not forced to implement unnecessary methods.
 
 5. Dependency Inversion Principle (DIP):
-    Goal: Depend on abstractions, not concretions. High-level modules should not depend on low-level modules; both should depend on abstractions.
+    Goal: Depend on abstractions, not concretions. High-level modules should not depend on low-level modules;
+      both should depend on abstractions.
     Patterns:
-    Dependency Injection (DI): Injects dependencies into classes at runtime, allowing for loose coupling and easier switching between concrete implementations.
-    Observer Pattern: Defines a one-to-many dependency where objects observe each other through abstractions, decoupling them from specific implementations.
+    Dependency Injection (DI): Injects dependencies into classes at runtime, allowing for loose coupling and 
+      easier switching between concrete implementations.
+    Observer Pattern: Defines a one-to-many dependency where objects observe each other through abstractions, 
+        decoupling them from specific implementations.
     Important Note:
     =============
       High-level modules should not depend on low-level modules; both should depend on abstractions.
     Design Pattern: Dependency Injection, Factory Method Pattern.
     Dependency Injection: Provides a way to create loosely coupled components by injecting dependencies.
-    Factory Method Pattern: Defines an interface for creating an object but leaves the choice of its type to the subclasses.
+    Factory Method Pattern: Defines an interface for creating an object but leaves the choice of its type to 
+        the subclasses.
     ======================
       High-level modules should not depend on low-level modules; both should depend on abstractions.
     Application in Observer Pattern:
-      The WeatherData class (high-level module) depends on the abstraction (Observer interface) rather than on specific display classes (low-level modules).
+      The WeatherData class (high-level module) depends on the abstraction (Observer interface) rather 
+        than on specific display classes (low-level modules).
     Explanation:
-      The WeatherData class interacts with objects through the Observer interface, allowing it to work with any class that implements that interface. This makes the system more flexible and adheres to the Dependency Inversion Principle.
+      The WeatherData class interacts with objects through the Observer interface, allowing it to work 
+        with any class that implements that interface. This makes the system more flexible and adheres to the Dependency Inversion Principle.
 
-Choosing the right design pattern depends on the specific context and problem you're trying to solve. While some patterns naturally align with specific SOLID principles, they don't automatically guarantee adherence to those principles. Always prioritize understanding the principles and applying them consciously based on your specific software needs.
+Choosing the right design pattern depends on the specific context and problem you're trying to solve. 
+  While some patterns naturally align with specific SOLID principles, they don't automatically 
+  guarantee adherence to those principles. Always prioritize understanding the principles and applying 
+  them consciously based on your specific software needs.
 
-I hope this detailed explanation clarifies the relationship between SOLID principles and design patterns! Feel free to ask if you have any further questions about specific patterns or principles.
+I hope this detailed explanation clarifies the relationship between SOLID principles and design patterns!
+  Feel free to ask if you have any further questions about specific patterns or principles.
 
 ````
 # 7. Parking design
