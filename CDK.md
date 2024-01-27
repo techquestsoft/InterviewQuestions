@@ -6,7 +6,7 @@ In Spring Framework, both @Controller and @RestController are used to handle HTT
 @Controller is a stereotype annotation used to define a Spring MVC controller.
 Controllers annotated with @Controller are typically used in traditional Spring MVC applications, where the response can be a rendered HTML page or a view resolved by a view resolver.
 These controllers are responsible for processing user input, interacting with the model, and returning a view to be rendered by the browser.
-
+````java
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +17,7 @@ public class MyController {
         return "hello"; // Returns a view name, to be resolved by a ViewResolver
     }
 }
-
+````
 @RestController:
 
 @RestController is a specialized version of @Controller that is used for building RESTful web services.
