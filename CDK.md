@@ -24,6 +24,7 @@ public class MyController {
 Controllers annotated with @RestController are specifically designed for scenarios where the response should be the data itself (e.g., JSON or XML) rather than a view.
 Methods in @RestController are annotated with @RequestMapping or other HTTP method annotations, and the return values are directly serialized into the response body.
 
+````java
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class MyRestController {
         return "Hello, World!"; // Returns the actual data in the response body
     }
 }
-
+````
 In summary, the key difference lies in the type of response they produce:
 
 @Controller is used for building web applications with traditional views, where the response is typically an HTML page.
