@@ -39,24 +39,31 @@ public class MyRestController {
 ````
 In summary, the key difference lies in the type of response they produce:
 
-@Controller is used for building web applications with traditional views, where the response is typically an HTML page.
+@Controller is used for building web applications with traditional views, where the response 
+is typically an HTML page.
 
-@RestController is used for building RESTful web services, where the response is often in the form of data (JSON or XML) rather than a view.
+@RestController is used for building RESTful web services, where the response is often in the 
+form of data (JSON or XML) rather than a view.
 
-In practice, you might use a combination of @Controller and @RestController within the same application, depending on your application's architecture and the type of endpoints you need to expose.
+In practice, you might use a combination of @Controller and @RestController within the same application, 
+depending on your application's architecture and the type of endpoints you need to expose.
 
 
 
 
 Example to for a rest service to create and find user.
-Certainly! Below is a simple example of a Spring Boot REST microservice for creating and finding a user. This example uses Spring Boot, Spring Data JPA for data access, and H2 Database for simplicity. You can adapt it to use your preferred database.
+Certainly! Below is a simple example of a Spring Boot REST microservice for creating and finding a user. 
+This example uses Spring Boot, Spring Data JPA for data access, and H2 Database for simplicity. 
+You can adapt it to use your preferred database.
 
 Create a Spring Boot Project:
-Create a new Spring Boot project using your favorite build tool (e.g., Maven or Gradle). If you're using Spring Initializr, make sure to include the "Spring Web" and "Spring Data JPA" dependencies.
+Create a new Spring Boot project using your favorite build tool (e.g., Maven or Gradle). If you're using 
+Spring Initializr, make sure to include the "Spring Web" and "Spring Data JPA" dependencies.
 
 Define the User Entity:
 Create a User entity with an id, name, and email.
 
+````java
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -74,19 +81,21 @@ public class User {
 
     // Constructors, getters, setters, etc.
 }
-
+````
 Create UserRepository:
 Create a repository interface for the User entity that extends JpaRepository.
 
+````java
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     // Additional queries can be defined here if needed
 }
+````
 
 Create UserController:
 Create a REST controller to handle HTTP requests related to users.
-
+````java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -117,7 +126,7 @@ public class UserController {
 
     // Additional endpoints can be added for updating, deleting, etc.
 }
-
+````
 
 In this example:
 
@@ -150,18 +159,21 @@ To get a user by ID:
 GET http://localhost:8080/api/users/{userId}
 
 
-This is a basic example to get you started. Depending on your requirements, you may want to add more features, validation, error handling, security, etc.
+This is a basic example to get you started. Depending on your requirements, you may want to add more features, 
+validation, error handling, security, etc.
 
 
 
 GET vs POST
-In a RESTful microservice architecture, the HTTP methods GET and POST serve different purposes and are used in different contexts.
+In a RESTful microservice architecture, the HTTP methods GET and POST serve different purposes and 
+are used in different contexts.
 
 GET Request:
 Purpose:
 
 The primary purpose of the GET method is to retrieve information from the server.
-It is considered a safe and idempotent operation, meaning that it should not have any side effects on the server, and repeating the same request should produce the same result.
+It is considered a safe and idempotent operation, meaning that it should not have any side effects on the server,
+and repeating the same request should produce the same result.
 Use Cases:
 
 Retrieving a resource: Use GET to retrieve information about a resource or a collection of resources.
@@ -191,35 +203,42 @@ Content-Type: application/json
 
 
 Key Differences:
+````yaml
 Idempotence:
+    GET is idempotent; repeating the same request should have the same result.
+    POST is not idempotent; repeating the same request may lead to different outcomes, 
+    especially if it involves creating a new resource.
 
-GET is idempotent; repeating the same request should have the same result.
-POST is not idempotent; repeating the same request may lead to different outcomes, especially if it involves creating a new resource.
 Data Handling:
+    GET requests typically do not have a request body; parameters are often included in the URL.
+    POST requests often include a request body where data to be processed is sent, for example, 
+    when creating a new resource.
 
-GET requests typically do not have a request body; parameters are often included in the URL.
-POST requests often include a request body where data to be processed is sent, for example, when creating a new resource.
 Visibility:
+    GET requests are often visible in the browser's address bar and can be bookmarked.
+    POST requests, especially those submitting sensitive data, are not typically visible in the address bar.
 
-GET requests are often visible in the browser's address bar and can be bookmarked.
-POST requests, especially those submitting sensitive data, are not typically visible in the address bar.
 Caching:
+    GET requests can be cached because they are idempotent and safe.
+    POST requests are generally not cached by default because they may have side effects.
 
-GET requests can be cached because they are idempotent and safe.
-POST requests are generally not cached by default because they may have side effects.
 Security Implications:
-
-GET requests are generally considered safer and are less likely to have security implications.
-POST requests, especially when used to modify data or perform actions, may have security considerations and should be protected accordingly.
-In a RESTful microservice, the choice between GET and POST depends on the specific operation and the nature of the request (read-only vs. modifying data). Design your API to follow REST principles and use the appropriate HTTP methods based on the desired behavior.
-
-
-
-
+    GET requests are generally considered safer and are less likely to have security implications.
+    POST requests, especially when used to modify data or perform actions, may have security considerations and 
+    should be protected accordingly.
+    In a RESTful microservice, the choice between GET and POST depends on the specific operation and 
+    the nature of the request (read-only vs. modifying data). Design your API to follow REST principles and 
+    use the appropriate HTTP methods based on the desired behavior.
+````
 Many-to-Many in Hibernate:
-In Hibernate, handling many-to-many relationships involves creating a link table that maps the relationships between two entities. Each entity has a collection of the other entity type. Below is an example of a many-to-many relationship between two entities using Hibernate annotations.
+In Hibernate, handling many-to-many relationships involves creating a link table that maps 
+the relationships between two entities. Each entity has a collection of the other entity type. 
+Below is an example of a many-to-many relationship between two entities using Hibernate annotations.
 
-Let's consider two entities: Student and Course. Each student can enroll in multiple courses, and each course can have multiple students.
+Let's consider two entities: Student and Course. Each student can enroll in multiple courses, 
+and each course can have multiple students.
+
+````java
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -246,8 +265,8 @@ public class Student {
 
     // Constructors, getters, setters, etc.
 }
-
-
+````
+````java
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -269,15 +288,19 @@ public class Course {
 
     // Constructors, getters, setters, etc.
 }
-
+````
 
 In this example:
 
 The Student class has a set of Course objects, annotated with @ManyToMany.
-The Course class has a set of Student objects, annotated with @ManyToMany(mappedBy = "courses"). The mappedBy attribute indicates that the relationship is managed by the courses property in the Student class.
-The @JoinTable annotation is used to specify the details of the link table, including its name (student_course), the foreign key columns (student_id and course_id), and the columns that link the tables.
-Now, you can use Hibernate to persist these entities and manage the many-to-many relationship. Here's a simple example:
+The Course class has a set of Student objects, annotated with @ManyToMany(mappedBy = "courses"). 
+The mappedBy attribute indicates that the relationship is managed by the courses property in the Student class.
+The @JoinTable annotation is used to specify the details of the link table, including 
+its name (student_course), the foreign key columns (student_id and course_id), and the columns that link the tables.
+Now, you can use Hibernate to persist these entities and manage the many-to-many relationship. 
+Here's a simple example:
 
+````java
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("YourPersistenceUnitName");
@@ -309,9 +332,11 @@ public class Main {
         entityManagerFactory.close();
     }
 }
+````
+Make sure to replace "YourPersistenceUnitName" with the actual name of your persistence unit 
+configured in persistence.xml. Additionally, handle exceptions and resource cleanup appropriately in a real-world application.
 
-Make sure to replace "YourPersistenceUnitName" with the actual name of your persistence unit configured in persistence.xml. Additionally, handle exceptions and resource cleanup appropriately in a real-world application.
-
+````java
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -350,19 +375,27 @@ public class Main {
         }
     }
 }
+````
 
 In this example:
 
 We retrieve a Student with ID 1 using entityManager.find().
-We then access the associated courses through the getCourses() method, which returns a set of courses associated with that student.
-Finally, we print out the student's name and the names of the courses they are enrolled in.
-This is a simple retrieval example. Depending on your use case, you may need more sophisticated queries, especially if you want to filter or sort data based on certain criteria.
+We then access the associated courses through the getCourses() method, which returns a 
+set of courses associated with that student. Finally, we print out the 
+student's name and the names of the courses they are enrolled in.
+This is a simple retrieval example. Depending on your use case, you may need more sophisticated queries, 
+especially if you want to filter or sort data based on certain criteria.
 
-Remember to replace "YourPersistenceUnitName" with the actual name of your persistence unit configured in persistence.xml. Additionally, handle exceptions and resource cleanup appropriately in a real-world application.
+Remember to replace "YourPersistenceUnitName" with the actual name of your persistence unit 
+configured in persistence.xml. Additionally, handle exceptions and resource cleanup appropriately in a real-world application.
 
 
 Self-Join:
-A self-join is a specific case of a join operation in a relational database where a table is joined with itself. This is often used when a table contains a hierarchical relationship or when you need to compare rows within the same table. The self-join is accomplished by creating two instances (aliases) of the same table within the query and then specifying the conditions for the join.
+A self-join is a specific case of a join operation in a relational database where a 
+table is joined with itself. This is often used when a table contains a hierarchical 
+relationship or when you need to compare rows within the same table. 
+The self-join is accomplished by creating two instances (aliases) of the same table 
+within the query and then specifying the conditions for the join.
 
 Here's a simple example to illustrate a self-join:
 
@@ -372,6 +405,7 @@ EmployeeID (unique identifier for each employee)
 Name (name of the employee)
 ManagerID (identifies the manager of the employee, where the manager is also an employee in the same table)
 
+````roomsql
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     Name VARCHAR(255),
@@ -384,11 +418,16 @@ INSERT INTO Employees (EmployeeID, Name, ManagerID) VALUES
 (3, 'Alice Johnson', NULL),
 (4, 'Bob Williams', 2),
 (5, 'Eva Davis', 2);
+````
 
-In this example, the ManagerID column references the EmployeeID of the manager for each employee. A NULL value in the ManagerID column indicates that the employee does not have a manager.
+In this example, the ManagerID column references the EmployeeID of the 
+manager for each employee. \A NULL value in the ManagerID column indicates that 
+the employee does not have a manager.
 
-Now, let's say you want to retrieve a list of employees along with their managers. You can use a self-join to achieve this:
+Now, let's say you want to retrieve a list of employees along with their managers. 
+You can use a self-join to achieve this:
 
+````roomsql
 SELECT 
     e.EmployeeID AS EmployeeID,
     e.Name AS EmployeeName,
@@ -398,9 +437,13 @@ FROM
     Employees e
 LEFT JOIN 
     Employees m ON e.ManagerID = m.EmployeeID;
+````
 
+In this query, the Employees table is aliased as both e and m. The join condition (e.ManagerID = m.EmployeeID) 
+connects the ManagerID of the employee (e) with the EmployeeID of the manager (m). This way, you can retrieve 
+a result set that shows each employee along with their corresponding manager.
 
-In this query, the Employees table is aliased as both e and m. The join condition (e.ManagerID = m.EmployeeID) connects the ManagerID of the employee (e) with the EmployeeID of the manager (m). This way, you can retrieve a result set that shows each employee along with their corresponding manager.
-
-Note: In practical scenarios, you might need to handle cases where an employee does not have a manager (hence the use of LEFT JOIN in the example), and you may need to adjust the query based on your specific database schema and requirements.
+Note: In practical scenarios, you might need to handle cases where an employee does not have a manager 
+(hence the use of LEFT JOIN in the example), and you may need to adjust the query based on your 
+specific database schema and requirements.
 
