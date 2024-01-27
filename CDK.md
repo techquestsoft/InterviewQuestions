@@ -391,7 +391,8 @@ Remember to replace "YourPersistenceUnitName" with the actual name of your persi
 configured in persistence.xml. Additionally, handle exceptions and resource cleanup appropriately in a real-world application.
 
 
-Self-Join:
+# Self-Join:
+
 A self-join is a specific case of a join operation in a relational database where a 
 table is joined with itself. This is often used when a table contains a hierarchical 
 relationship or when you need to compare rows within the same table. 
@@ -405,6 +406,7 @@ Consider a table named Employees with the following columns:
 EmployeeID (unique identifier for each employee)
 Name (name of the employee)
 ManagerID (identifies the manager of the employee, where the manager is also an employee in the same table)
+
 
 ````roomsql
 CREATE TABLE Employees (
