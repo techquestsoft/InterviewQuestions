@@ -140,7 +140,7 @@ Test the Endpoints:
 You can use tools like cURL, Postman, or your preferred REST client to test the endpoints. For example:
 
 To create a user:
-
+````json
 POST http://localhost:8080/api/users
 Content-Type: application/json
 
@@ -148,7 +148,7 @@ Content-Type: application/json
   "name": "John Doe",
   "email": "john.doe@example.com"
 }
-
+````
 
 To get all users:
 
@@ -193,6 +193,7 @@ Creating a resource: Use POST to submit data to create a new resource on the ser
 Form submissions: When submitting form data to the server, especially when the operation may have side effects, use POST.
 Example:
 
+````json
 POST /api/users
 Content-Type: application/json
 
@@ -200,7 +201,7 @@ Content-Type: application/json
   "name": "John Doe",
   "email": "john.doe@example.com"
 }
-
+````
 
 Key Differences:
 ````yaml
