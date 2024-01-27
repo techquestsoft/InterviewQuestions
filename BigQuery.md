@@ -37,16 +37,25 @@ not charge for external table storage, although the external data store might ch
 
 **Row-oriented databases Vs Column-oriented databases**
 ````
-Row-oriented databases are efficient at looking up individual records. However, they can be less efficient at performing analytical functions across many records, because the system has to read every field when accessing a record.
+Row-oriented databases are efficient at looking up individual records. However, 
+they can be less efficient at performing analytical functions across many records, 
+because the system has to read every field when accessing a record.
 
-Column-oriented databases are particularly efficient at scanning individual columns over an entire dataset.
+Column-oriented databases are particularly efficient at scanning individual columns 
+over an entire dataset.
 
-Column-oriented databases are optimized for analytic workloads that aggregate data over a very large number of records. Often, an analytic query only needs to read a few columns from a table. For example, if you want to compute the sum of a column over millions of rows, BigQuery can read that column data without reading every field of every row.
+Column-oriented databases are optimized for analytic workloads that aggregate data 
+over a very large number of records. Often, an analytic query only needs to read 
+a few columns from a table. For example, if you want to compute the sum of a column 
+over millions of rows, BigQuery can read that column data without reading every field of every row.
 
-Another advantage of column-oriented databases is that data within a column typically has more redundancy than data
-across a row. This characteristic allows for greater data compression by using techniques such as run-length 
+Another advantage of column-oriented databases is that data within a column typically 
+has more redundancy than data
+across a row. This characteristic allows for greater data compression by using techniques 
+such as run-length 
 encoding, which can improve read performance.
-BigQuery does not support foreign keys. This makes BigQuery more suitable for OLAP and data warehouse workloads 
+BigQuery does not support foreign keys. This makes BigQuery more suitable for OLAP and 
+data warehouse workloads 
 than OLTP workloads. 
 ````
 
