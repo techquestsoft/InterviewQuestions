@@ -50,10 +50,10 @@ a few columns from a table. For example, if you want to compute the sum of a col
 over millions of rows, BigQuery can read that column data without reading every field of every row.
 
 Another advantage of column-oriented databases is that data within a column typically 
-has more redundancy than data
-across a row. This characteristic allows for greater data compression by using techniques 
-such as run-length 
-encoding, which can improve read performance.
+has more redundancy than data across a row. This characteristic allows for 
+greater data compression by using techniques  such as run-length  encoding, 
+which can improve read performance.
+
 BigQuery does not support foreign keys. This makes BigQuery more suitable for OLAP and 
 data warehouse workloads 
 than OLTP workloads. 
