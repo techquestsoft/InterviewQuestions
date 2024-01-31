@@ -144,8 +144,44 @@ Output: aaabbbbcc
 https://github.com/techquestsoft/CoreJavaTrainingWS/blob/main/src/com/hi/problems/CharactersGeneration.java
 
 # 9. Code for Factorial
+    Whether it's better to use recursion or a loop to calculate the factorial depends on various factors, 
+    including readability, performance, and the specific requirements of your application. 
+    Let's compare the two approaches:
+    
+    Recursive Method:
+    
+    Pros:
+        Concise and elegant code.
+        Reflects the mathematical definition of factorial.
+        Can be easier to understand for certain programmers, especially those familiar with recursion.
+    
+    Cons:
+        Recursive calls consume additional memory space on the call stack, which can lead to a 
+        stack overflow error if the recursion depth is too deep.
+        Recursive calls might be less efficient in terms of performance compared to iterative solutions, 
+        especially for large inputs, due to the overhead of method calls and stack management.
+        
+    Iterative (Loop) Method:
+    
+    Pros:
+    Typically more efficient in terms of both time and space complexity compared to recursion.
+    Less likely to cause stack overflow errors, making it more suitable for large inputs.
+    Easier to optimize and fine-tune for performance.
+    
+    Cons:
+    May require more code compared to the recursive approach, potentially sacrificing some readability.
+    Might not be as intuitive for those who are more comfortable with recursive thinking.
+    In general, if performance and memory efficiency are critical concerns, especially for large inputs, 
+    an iterative approach is often preferred. However, if readability and adherence to the mathematical 
+    definition of the problem are more important, recursion might be a better choice.
+    
+    For factorial calculations specifically, where the problem can be solved very efficiently using a simple loop, 
+    an iterative approach is often favored in practice. However, recursive implementations can still be used in 
+    situations where clarity and elegance are valued more than performance optimization.
+
 
 # 10. Shortest path algorithm - Dijkstra's algorithm
+    https://www.youtube.com/watch?v=oNI0rf2P9gE
 
 # 11. DFS, BFS Trees
 

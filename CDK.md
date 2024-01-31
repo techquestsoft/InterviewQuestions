@@ -424,7 +424,7 @@ INSERT INTO Employees (EmployeeID, Name, ManagerID) VALUES
 ````
 
 In this example, the ManagerID column references the EmployeeID of the 
-manager for each employee. \A NULL value in the ManagerID column indicates that 
+manager for each employee. A NULL value in the ManagerID column indicates that 
 the employee does not have a manager.
 
 Now, let's say you want to retrieve a list of employees along with their managers. 
