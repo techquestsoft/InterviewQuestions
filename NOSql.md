@@ -5,27 +5,39 @@ Document Databases:
 
 Examples: MongoDB, Couchbase, Apache CouchDB
 Document databases store and retrieve data in flexible, self-describing documents (e.g., JSON or XML) rather than rows and columns. They allow for dynamic schemas and can handle semi-structured and hierarchical data.
+
 Key-Value Stores:
 
 Examples: Redis, Amazon DynamoDB, Riak
 Key-value stores store data as a collection of key-value pairs. They offer simple operations like put, get, and delete based on the key. They are efficient for high-speed retrieval and write-heavy workloads.
+
 Column-Family Stores:
 
 Examples: Apache Cassandra, Apache HBase, ScyllaDB
 Column-family stores organize data into column families, which are containers for columns that can vary for each row. They are optimized for high scalability, low-latency data access, and handling large amounts of structured or semi-structured data.
+
 Graph Databases:
 
 Examples: Neo4j, Amazon Neptune, JanusGraph
 Graph databases store and process data as nodes, edges, and properties, allowing for efficient representation and querying of complex relationships and network structures. They are suitable for applications involving social networks, recommendation systems, and knowledge graphs.
+
 Wide-Column Stores:
 
 Examples: Google Cloud Bigtable, Apache Cassandra, Apache HBase
 Wide-column stores organize data in tables with rows and columns but provide more flexibility in the number and types of columns compared to traditional relational databases. They are designed for high scalability, low-latency access, and handling massive amounts of data.
+
 Time-Series Databases:
 
 Examples: InfluxDB, Prometheus, TimescaleDB
 Time-series databases are optimized for storing and retrieving time-stamped data, such as metrics, sensor data, and logs. They provide efficient data ingestion, storage, and analysis of time-series data with support for specific time-based queries and aggregations.
 It's important to note that these categories are not mutually exclusive, and some databases may exhibit characteristics of multiple types. The choice of NoSQL database depends on factors such as the data model requirements, scalability needs, query patterns, and the specific use case or application.
+
+### 1.1 
+|  |Cassandra  |  MongoDB | Hbase |
+|:------|:--:|--------------------------:|------------|
+|Distributed| Yes | yes | Yes|
+|Column Oriented | Yes | No | Yes|
+|De-centralized | Yes | Yes | No|
 
 ## 2. mongodb vs bigtable
 MongoDB and Google Cloud Bigtable are both popular database systems, but they have different characteristics and use cases. Here's a comparison between MongoDB and Bigtable:
