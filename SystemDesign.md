@@ -1,3 +1,10 @@
+#System design is an iterative process. Continuously evaluate and refine your design based on feedback 
+    from  stakeholders, technical feasibility, and evolving business needs.
+
+#There's no one-size-fits-all
+
+# https://www.interviewbit.com/system-design-interview-questions/#latency-throughput-availability-of-system
+
 # 1 THE Twelve-Factor App:
 
 https://12factor.net
