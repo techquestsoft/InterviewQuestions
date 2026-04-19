@@ -37,13 +37,13 @@
   - I have around 20 years of experience across banking and healthcare, where I’ve evolved from hands-on development to leading distributed systems and engineering teams.
 
 - Key Achievement  
-  - One of my key achievements was leading a platform modernization at Optum, where we migrated 100+ microservices from OpenShift to Kubernetes, reducing infrastructure costs by approx 5 million dollars annually.
+  - One of my key achievements was leading a platform modernization initiative at Optum, migrating 100+ microservices from OpenShift to Kubernetes, resulting in approximately $5 million in annual infrastructure cost savings.
 
 - Current Responsibilities  
   - Currently, I manage a team of 14 engineers, drive roadmap execution, and lead key initiatives such as AWS to OCI migration and transitioning from rule-based models (V1/V2) to an ML-driven model (V3).
 
 - Focus  
-  - My focus is on delivering reliable systems and improving engineering efficiency aligned with business outcomes.
+  - My focus is on delivering reliable, scalable systems and driving engineering efficiency aligned with business outcomes.
 
 ---
 
