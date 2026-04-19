@@ -1,29 +1,3 @@
----
-
-## Navigation
-
-- [Section 1: Introduction & Career](#section-1-introduction--career)
-  - [Q1: Tell me about yourself](#q1-tell-me-about-yourself)
-  - [Q2: Walk me through your career](#q2-walk-me-through-your-career)
-  - [Q3: Biggest achievement](#q3-what-is-your-biggest-achievement)
-  - [Q4: Current role](#q4-tell-me-about-your-current-role)
-  - [Q5: Banking to healthcare](#q5-why-did-you-move-from-banking-to-healthcare)
-  - [Q6: Why change](#q6-why-are-you-looking-for-a-change)
-
-- [Section 2: Delivery & Execution](#section-2-delivery--execution)
-  - [Q1: Delivery management](#q1-how-do-you-manage-delivery-for-your-teams)
-  - [Q2: Predictability](#q2-how-do-you-ensure-delivery-predictability)
-  - [Q3: Prioritization](#q3-how-do-you-prioritize-work)
-  - [Q4: Multiple initiatives](#q4-how-do-you-handle-multiple-initiatives)
-  - [Q5: Delays](#q5-how-do-you-handle-delays)
-  - [Q6: Sprint execution](#q6-how-do-you-manage-sprint-execution)
-  - [Q7: Stakeholder alignment](#q7-how-do-you-ensure-stakeholder-alignment)
-  - [Q8: Dependencies](#q8-how-do-you-manage-dependencies)
-  - [Q9: Releases](#q9-how-do-you-manage-releases)
-  - [Q10: Quality](#q10-how-do-you-ensure-quality)
-
----
-
 # Section 1: Introduction & Career
 
 ## Q1: Tell me about yourself
