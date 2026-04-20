@@ -26,3 +26,25 @@ Constraints:
 - Do not contradict previous answers
 - Maintain same tone and structure across all questions
 
+======================================================================
+
+Role: You are a Architect and Individual contributer with 20+ years of experience.
+
+Context:
+- I am preparing for to develope front end with Typescirpt, react.js and angular.js.
+- Having good experience in Javascript and jQuery and worked in 2014, after that moved to middleware and data engineering.
+
+Task:
+- Share the best way to understand Typescirpt, react.js and angular.js with simple example.
+
+Format:
+- Use markdown
+- Each question must follow:
+  - 4–5 bullet structure
+  - Include real examples where applicable
+  - Keep answers concise but complete
+
+Constraints:
+- Do not introduce new tools/technologies unless I mentioned them
+- Do not contradict previous answers
+- Maintain same tone and structure across all questions

@@ -1,176 +1,82 @@
-
 # Section 6: System Design & Architecture
 
 ## Q1: How do you approach system design
-
-- Understanding  
-  - I start with business goals and key non-functional requirements like scale, availability, and latency  
-
-- Decomposition  
-  - I break the system into logical components such as API, processing, and data layers  
-
-- Decisions  
-  - I evaluate trade-offs based on scalability, maintainability, and team ownership  
-
-- Collaboration  
-  - I align with architecture and platform teams for standards and governance  
-
-- Outcome  
-  - Ensure simple, scalable design aligned with business needs  
+- Understanding - Start with business goals and non-functional requirements like scale, availability, and latency  
+- Decomposition - Break system into API, processing, and data layers  
+- Decisions - Evaluate trade-offs across scalability, maintainability, and ownership  
+- Collaboration - Align with architecture and platform teams for standards  
+- Outcome - Ensure simple and scalable design aligned with business needs  
 
 ---
 
 ## Q2: Monolith vs Microservices
-
-- Decision Factors  
-  - Domain complexity, team structure, change frequency, and operational maturity  
-
-- Monolith  
-  - Suitable for simpler domains and strong transactional consistency  
-
-- Microservices  
-  - Enables independent scaling, deployments, and team ownership  
-
-- Trade-offs  
-  - Adds distributed complexity, latency, and operational overhead  
-
-- Approach  
-  - Start simple and evolve to microservices as system grows  
+- Decision Factors - Evaluate domain complexity, team structure, change frequency, and maturity  
+- Monolith - Suitable for simple domains with strong consistency needs  
+- Microservices - Enable independent scaling, deployment, and ownership  
+- Trade-offs - Add distributed complexity, latency, and operational overhead  
+- Approach - Start simple and evolve as system grows  
 
 ---
 
 ## Q3: How do you design for scalability
-
-- Service Design  
-  - Build stateless services to enable horizontal scaling  
-
-- Load Handling  
-  - Distribute traffic effectively to avoid bottlenecks  
-
-- Data Strategy  
-  - Optimize data access patterns for increasing load  
-
-- Async Processing  
-  - Use event-driven approach for heavy or background workloads  
-
-- Outcome  
-  - System handles peak load without performance impact  
+- Service Design - Build stateless services for horizontal scaling  
+- Load Handling - Distribute traffic to avoid bottlenecks  
+- Data Strategy - Optimize data access patterns for scale  
+- Async Processing - Use event-driven approach for heavy workloads  
+- Outcome - Handle peak load without performance impact  
 
 ---
 
 ## Q4: Design a notification system
-
-- Architecture  
-  - Event-driven system for decoupled communication  
-
-- Flow  
-  - Producer publishes events → consumer processes and enriches  
-
-- Delivery  
-  - Supports multiple channels like email and SMS  
-
-- Reliability  
-  - Retry with backoff and handle failures through DLQ  
-
-- Tracking  
-  - Maintain status and provide visibility via API/webhook  
-
-- Scalability  
-  - Partition events for load distribution  
+- Architecture - Use event-driven design for decoupling  
+- Flow - Producer publishes events and consumer processes them  
+- Delivery - Support channels like email and SMS  
+- Reliability - Use retries and DLQ for failure handling  
+- Tracking - Maintain status and expose via API/webhook  
+- Scalability - Partition events for load distribution  
 
 ---
 
 ## Q5: When do you use Saga (Choreography vs Orchestration)
-
-- Need  
-  - Used when transactions span multiple services  
-
-- Choreography  
-  - Simple flows with independent event-driven interactions  
-  - Harder to track and debug  
-
-- Orchestration  
-  - Complex workflows with centralized control  
-  - Better visibility and failure handling  
-
-- Trade-off  
-  - Simplicity vs control  
-
-- Approach  
-  - Prefer orchestration for critical business flows  
+- Need - Use when transactions span multiple services  
+- Choreography - Event-driven and simple but harder to debug  
+- Orchestration - Central control for complex workflows and better visibility  
+- Trade-off - Simplicity vs control  
+- Approach - Prefer orchestration for critical flows  
 
 ---
 
 ## Q6: How do you design for failure and reliability
-
-- Design  
-  - Assume failures will happen across services, network, and dependencies  
-
-- Isolation  
-  - Prevent cascading failures across components  
-
-- Recovery  
-  - Use retries and fallback mechanisms for transient failures  
-
-- Degradation  
-  - Support partial functionality instead of full outage  
-
-- Monitoring & Response  
-  - Detect issues early and handle through structured incident response  
-
-- Outcome  
-  - Maintain system stability and minimize customer impact  
+- Design - Assume failures across services, network, and dependencies  
+- Isolation - Prevent cascading failures across components  
+- Recovery - Use retries and fallback mechanisms  
+- Degradation - Support partial functionality instead of full outage  
+- Monitoring - Detect issues early and respond quickly  
+- Outcome - Maintain stability and minimize customer impact  
 
 ---
 
 ## Q7: How do you design for high availability
-
-- Redundancy  
-  - Deploy services across multiple instances  
-
-- Failover  
-  - Ensure backup mechanisms for critical components  
-
-- Load Distribution  
-  - Avoid single points of failure  
-
-- Monitoring  
-  - Continuous health checks and alerts  
-
-- Outcome  
-  - System remains available during failures or outages  
+- Redundancy - Deploy services across multiple instances  
+- Failover - Ensure backup mechanisms for critical components  
+- Load Distribution - Avoid single points of failure  
+- Monitoring - Use health checks and alerts  
+- Outcome - Ensure system availability during failures  
 
 ---
 
 ## Q8: How do you handle data consistency
-
-- Strong Consistency  
-  - Used when correctness is critical  
-
-- Eventual Consistency  
-  - Used in distributed systems for scalability  
-
-- Trade-off  
-  - Balance between consistency and performance  
-
-- Approach  
-  - Prefer eventual consistency with safeguards for critical flows  
+- Strong Consistency - Use when correctness is critical  
+- Eventual Consistency - Use for scalability in distributed systems  
+- Trade-off - Balance consistency vs performance  
+- Approach - Prefer eventual consistency with safeguards  
+- Outcome - Ensure scalable and reliable data handling  
 
 ---
 
 ## Q9: Real example from your experience
-
-- Problem  
-  - High infrastructure cost and inefficiencies in existing microservices platform  
-
-- Approach  
-  - Analyzed service usage and identified optimization opportunities  
-
-- Execution  
-  - Migrated services to a more efficient platform  
-
-- Result  
-  - Reduced cost by ~ $5M annually and improved scalability  
-
-- Learning  
-  - Importance of right platform choice and resource optimization  
+- Problem - High infrastructure cost and inefficiencies in microservices platform  
+- Analysis - Identified underutilized services and inefficiencies  
+- Execution - Migrated to more efficient platform  
+- Result - Reduced cost by ~ $5M annually and improved scalability  
+- Learning - Importance of right platform and resource optimization  
