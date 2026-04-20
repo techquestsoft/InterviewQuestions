@@ -4,16 +4,17 @@
 - Ownership - Take end-to-end ownership from planning to production stability  
 - Problem Solving - Handle production issues calmly using structured approach  
 - Team Leadership - Build strong teams through clear expectations and mentoring  
-- Technical Judgment - Make balanced decisions across scalability and reliability  
+- Technical Judgment - Make balanced decisions across scalability, reliability, performance, cost, and delivery timelines
 - Business Alignment - Align engineering work with business and customer impact  
 
 ---
 
 ## Q2: What are your weaknesses
-- Depth vs Breadth - Earlier focused too much on deep technical details early  
-- Adjustment - Now prioritize high-level decisions before deep dive  
-- Delegation Gap - Tendency to take on more responsibilities myself  
-- Improvement - Actively delegating more and empowering team ownership  
+- Context Switching - Earlier, I used to respond to problems from a deep technical lens, even in leadership scenarios; I’ve improved by consciously separating system design vs operational/management responses
+
+- Structured Communication - In some cases, I tend to go deep into details instead of leading with a crisp, structured summary; I’m actively improving by focusing on “answer first, details later”
+
+- Delegation Depth - I used to take on critical problem-solving myself; I’m improving by pushing ownership to senior engineers and focusing more on direction and decision-making
 
 ---
 
