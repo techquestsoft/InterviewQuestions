@@ -11,7 +11,76 @@
 - From a team perspective, I scale from 2 teams to domain-based pods with clear ownership and improve onboarding and standards.
 
 - Finally, I scale incrementally, onboarding customers in phases to ensure stability.”
+
 ---
+
+## Q2: What changes beyond architecture when system scales?
+
+- Scaling is not just an architecture problem—it’s also a quality, process, and team maturity problem.
+
+- I introduce release gates to ensure quality doesn’t degrade—for example, enforcing test coverage thresholds, defect leakage limits, and security checks in CI/CD.
+
+- I also strengthen operational readiness by defining SLOs, improving observability, and ensuring strong incident response.
+
+- From a process perspective, I standardize coding, logging, and deployment practices, and improve onboarding for new engineers.
+
+- This ensures the system scales with consistent quality and reliability, not just capacity.”
+
+---
+
+## Q3: What happens if Kafka fails after DB commit?
+
+- This creates inconsistency where data is stored but events are not published.
+
+- To handle this, I use the Outbox pattern, where events are stored in the database along with business data.
+
+- A separate process publishes events to Kafka, ensuring reliability.
+
+- If Kafka is down, events are retried later, ensuring eventual consistency.
+
+- This avoids data loss and ensures system reliability.”
+
+---
+
+## Q4: Payment service failure – how do you handle?
+
+- I handle this by focusing on resilience and user impact.
+
+- First, I fail fast instead of blocking the system.
+
+- Then I use retries with backoff and circuit breakers to avoid cascading failures.
+
+- From a user perspective, I ensure clear feedback and allow retry.
+
+- For data consistency, I use Saga patterns for compensation.
+
+- Additionally, failed events can be pushed to DLQ for recovery.
+
+- The goal is to maintain system stability and user experience.
+
+---
+
+## Q5: Testing doesn’t scale with customers – what do you do?
+
+- When testing doesn’t scale, I shift from manual-heavy testing to automation and risk-based testing.
+
+- I prioritize critical and high-impact scenarios and automate regression suites.
+
+- I also balance speed vs coverage based on business needs.
+
+- Additionally, I improve test data management and reuse across customers.
+
+- This allows faster onboarding without compromising critical quality.
+
+---
+
+## Q6: When do you use Saga?
+
+- I use Saga when transactions span multiple services and cannot be handled with a single ACID transaction.
+
+- For simple flows, choreography works well, but for complex and critical flows, I prefer orchestration for better control and observability. Its event driven.
+
+- In critical systems, especially healthcare workflows, I prefer orchestration to ensure better failure handling and traceability. It works in sequence.
 
 ## Q1: How do you approach system design
 - Understanding - Start with business goals and non-functional requirements like scale, availability, and latency  
@@ -93,3 +162,17 @@
 - Execution - Migrated to more efficient platform  
 - Result - Reduced cost by ~ $5M annually and improved scalability  
 - Learning - Importance of right platform and resource optimization  
+
+
+## Diagram (Mermaid)
+
+```mermaid
+flowchart TD
+    A[Producer] --> B[Message Queue (Kafka)]
+    B --> C[Notification Service]
+    C --> D1[Email]
+    C --> D2[SMS]
+    C --> D3[Push]
+    C --> E[Retry / DLQ]
+    C --> F[Status Tracking DB]
+    F --> G[API / Webhook]
