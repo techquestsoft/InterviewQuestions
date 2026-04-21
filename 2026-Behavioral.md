@@ -1,29 +1,53 @@
 # Section 9: Behavioral (Strengths / Failures)
 
+---
+
 ## Q1: What are your key strengths
-- Ownership - Take end-to-end ownership from planning to production stability  
-- Problem Solving - Handle production issues calmly using structured approach  
-- Team Leadership - Build strong teams through clear expectations and mentoring  
-- Technical Judgment - Make balanced decisions across scalability, reliability, performance, cost, and delivery timelines
-- Business Alignment - Align engineering work with business and customer impact  
+
+**Memory Trick**  
+Ownership → Solve → Lead → Decide → Align  
+
+- **Ownership** - I take end-to-end ownership from planning to production stability  
+
+- **Problem Solving** - I handle production issues calmly using a structured approach  
+
+- **Team Leadership** - I build strong teams through clear expectations, mentoring, and feedback  
+
+- **Technical Judgment** - I make balanced decisions across scalability, reliability, performance, cost, and delivery timelines  
+
+- **Business Alignment** - I align engineering work with business goals and customer impact  
 
 ---
 
 ## Q2: What are your weaknesses
-- Context Switching - Earlier, I used to respond to problems from a deep technical lens, even in leadership scenarios; I’ve improved by consciously separating system design vs operational/management responses
 
-- Structured Communication - In some cases, I tend to go deep into details instead of leading with a crisp, structured summary; I’m actively improving by focusing on “answer first, details later”
+**Memory Trick**  
+Depth → Structure → Delegate  
 
-- Delegation Depth - I used to take on critical problem-solving myself; I’m improving by pushing ownership to senior engineers and focusing more on direction and decision-making
+- **Context Switching** - Earlier, I approached problems from a deep technical lens even in leadership scenarios; now I consciously separate system design vs management decisions  
+
+- **Structured Communication** - I used to go deep into details early; I’m improving by leading with a crisp summary followed by details  
+
+- **Delegation Depth** - I used to take on critical problem-solving myself; I now delegate more to senior engineers and focus on direction and decisions  
 
 ---
 
 ## Q3: Tell me about a failure
-- Situation - Underestimated complexity during platform migration  
-- Impact - Caused delays in delivery timelines  
-- Action - Reworked plan, improved estimation, aligned stakeholders  
-- Learning - Validate assumptions early and plan dependencies better  
-- Outcome - Improved planning discipline in future initiatives  
+
+**Memory Trick**  
+Underestimate → Expand Scope → Align → Improve  
+
+- **Situation** - During migration from OpenShift to Kubernetes, we underestimated system complexity and dependencies  
+
+- **Impact** - We discovered redundant services and opportunities for shared components, which increased scope and delayed timelines  
+
+- **Action** - I re-evaluated the plan and aligned with product and leadership on trade-offs between timelines and long-term benefits  
+
+- **Decision** - We chose to invest additional effort to improve maintainability and reduce long-term infrastructure cost  
+
+- **Outcome** - This led to better platform efficiency and significant cost savings  
+
+- **Learning** - I now include a structured discovery phase to validate assumptions and identify optimizations early  
 
 During a platform migration from OpenShift to Kubernetes, we initially underestimated the overall scope and complexity.
 
@@ -69,38 +93,71 @@ I would also involve architecture and product teams earlier in these discussions
 
 This ensures better estimation accuracy and avoids mid-execution scope changes.
 
-
 ---
 
 ## Q4: How do you handle pressure situations
-- Structure - Break problems into smaller manageable parts  
-- Prioritization - Focus on critical issues first  
-- Communication - Keep stakeholders and team aligned  
-- Execution - Address immediate issues and plan long-term fixes  
-- Outcome - Maintain control and guide team effectively under pressure  
+
+**Memory Trick**  
+Break → Prioritize → Communicate → Execute  
+
+- **Structure** - I break problems into smaller, manageable parts  
+
+- **Prioritization** - I focus on critical issues that impact customers or delivery  
+
+- **Communication** - I keep stakeholders and the team aligned with clear updates  
+
+- **Execution** - I handle immediate issues first while planning long-term fixes  
+
+- **Outcome** - I maintain control and guide the team effectively under pressure  
 
 ---
 
 ## Q5: How do you handle conflicts (team or stakeholders)
-- Understanding - Listen and understand all perspectives  
-- Alignment - Align discussions to business goals  
-- Decision - Evaluate trade-offs like impact, timeline, and risk  
-- Resolution - Drive balanced or phased solutions  
-- Example - Balanced model upgrade vs observability priorities  
+
+**Memory Trick**  
+Understand → Align → Evaluate → Resolve  
+
+- **Understanding** - I listen to all perspectives to understand underlying priorities  
+
+- **Alignment** - I align discussions to business goals instead of opinions  
+
+- **Decision** - I evaluate trade-offs like impact, timeline, and risk  
+
+- **Resolution** - I drive a balanced or phased solution  
+
+- **Example** - I balanced compliance-driven model upgrade with observability priorities  
 
 ---
 
 ## Q6: How do you motivate and manage difficult team members
-- Understanding - Identify root cause (skill, clarity, or motivation)  
-- Feedback - Provide clear and constructive feedback  
-- Support - Offer guidance and structured improvement plan  
-- Ownership - Encourage accountability and involvement  
-- Outcome - Most team members improve with right support  
+
+**Memory Trick**  
+Understand → Feedback → Support → Ownership  
+
+- **Understanding** - I identify root cause such as skill gap, clarity, or motivation  
+
+- **Feedback** - I provide clear and constructive feedback  
+
+- **Support** - I offer guidance and a structured improvement plan  
+
+- **Ownership** - I encourage accountability and involvement  
+
+- **Outcome** - Most team members improve with the right support and clarity  
 
 ---
 
 ## Q7: What is your leadership style
-- Approach - Collaborative and outcome-driven  
-- Decision Making - Involve team but take final accountability  
-- Focus - Balance delivery, quality, and team growth  
-- Outcome - Build trust and consistent team performance  
+
+**Memory Trick**  
+Collaborate → Decide → Balance → Deliver  
+
+- **Approach** - I follow a collaborative and outcome-driven leadership style  
+
+- **Decision Making** - I involve the team in discussions but take final accountability  
+
+- **Focus** - I balance delivery, quality, and team growth  
+
+- **Outcome** - I build trust and ensure consistent team performance  
+
+---
+
