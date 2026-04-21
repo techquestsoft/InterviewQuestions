@@ -1,5 +1,35 @@
 # Section 4: Stakeholder & Conflict Management
 
+## Q1: Tell me about a conflict
+
+- In one case, we had a conflict between a compliance-driven model upgrade and a platform-level observability change.
+
+- Both were important, but timelines conflicted.
+
+- I aligned stakeholders by explaining business impact and trade-offs, and proposed a phased approach.
+
+- We prioritized the compliance requirement first and scheduled observability changes later.
+
+- This ensured business goals were met without long-term compromise.
+
+----
+
+## Q2: External API is unreliable – what do you do?
+
+- I handle this by combining resilience and governance.
+
+- Technically, I implement retries, timeouts, and circuit breakers to prevent cascading failures.
+
+- I also monitor latency and failure patterns.
+
+- From a governance perspective, I work with vendors on SLA expectations and escalation paths.
+
+- If needed, I evaluate fallback strategies to reduce dependency impact.
+
+- This ensures system stability even with unreliable dependencies.
+
+---
+
 ## Q1: How do you manage stakeholders and ensure alignment
 - Stakeholder Mapping - Work with product, architecture, platform, and operations teams  
 - Alignment - Sync regularly on priorities through roadmap discussions and reviews  
