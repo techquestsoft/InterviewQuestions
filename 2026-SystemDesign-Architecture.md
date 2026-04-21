@@ -166,9 +166,11 @@
 
 ## Diagram (Mermaid)
 
+## Diagram (Mermaid)
+
 ```mermaid
 flowchart TD
-    A[Producer] --> B[Message Queue (Kafka)]
+    A[Producer] --> B[Message Queue - Kafka]
     B --> C[Notification Service]
     C --> D1[Email]
     C --> D2[SMS]
