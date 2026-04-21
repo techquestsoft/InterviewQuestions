@@ -2,7 +2,7 @@
 
 ## Q1: Tell me about yourself
 - Current Role - I’m currently a Senior Engineering Manager at Oracle Cerner, leading Care Coordination products Care Management and Readmission Prevention, which process large-scale patient data and support clinical decision-making across 100+ customers.  
-- Experience - I have around 20 years of experience across banking and healthcare, where I’ve evolved from hands-on development to leading distributed systems, data platforms and engineering teams.  
+- Experience - I have around 20 years of experience across banking, healthcare and insurance where I’ve evolved from hands-on development to leading distributed systems, data platforms and engineering teams.  
 - Key Achievement - One of my key achievements was leading a platform modernization initiative at Optum, migrating 100+ microservices from OpenShift to Kubernetes, resulting in approximately $5 million in annual infrastructure cost savings.  
 - Current Responsibilities - Currently, I manage a team of 14 engineers, drive roadmap execution, and lead key initiatives such as AWS to OCI migration and transitioning from rule-based models (V1/V2) to an ML-driven model (V3).  
 - Focus - My focus is on delivering reliable, scalable systems and driving engineering efficiency aligned with business outcomes.  
