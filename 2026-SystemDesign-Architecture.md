@@ -168,13 +168,22 @@
 
 ## Diagram (Mermaid)
 
+## Diagram (Mermaid)
+
 ```mermaid
 flowchart TD
-    A[Producer] --> B[Message Queue - Kafka]
+    A[Producer] --> B[Queue - Kafka]
     B --> C[Notification Service]
+
     C --> D1[Email]
     C --> D2[SMS]
     C --> D3[Push]
-    C --> E[Retry / DLQ]
-    C --> F[Status Tracking DB]
-    F --> G[API / Webhook]
+
+    D1 --> H{Success?}
+    D2 --> H
+    D3 --> H
+
+    H -->|Yes| F[Status DB]
+    H -->|No| E[Retry DLQ]
+
+    F --> G[API Webhook]
