@@ -47,3 +47,9 @@
 - Goal - I’m looking for opportunities to contribute to platform-level decision-making and large-scale transformation.  
 - Interest - I’m particularly interested in distributed systems and AI-driven solutions.  
 - Outcome - I want to drive both engineering excellence and measurable business impact.  
+
+I’m looking for an opportunity where I can have a broader impact beyond just delivery and execution.
+
+In my current role, I’ve been managing teams, handling production systems, and leading key initiatives like cloud migration and ML model upgrades. Now, I want to contribute more towards platform-level decisions, improve engineering efficiency at scale, and drive measurable business impact.
+
+I’m particularly interested in Availity’s space around healthcare data exchange and payer-provider connectivity, because it’s a platform problem at scale. Given my experience in building and managing large healthcare systems, I see a strong alignment where I can contribute both in terms of team leadership and platform transformation.
