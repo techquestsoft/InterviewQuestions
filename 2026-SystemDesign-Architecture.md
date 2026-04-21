@@ -110,12 +110,35 @@
 ---
 
 ## Q4: Design a notification system
-- Architecture - Use event-driven design for decoupling  
-- Flow - Producer publishes events and consumer processes them  
-- Delivery - Support channels like email and SMS  
-- Reliability - Use retries and DLQ for failure handling  
-- Tracking - Maintain status and expose via API/webhook  
-- Scalability - Partition events for load distribution  
+
+## Diagram (Mermaid)
+
+```mermaid
+flowchart TD
+    A[Producer] --> B[Queue - Kafka]
+    B --> C[Notification Service]
+
+    C --> D1[Email]
+    C --> D2[SMS]
+    C --> D3[Push]
+
+    D1 --> H{Success?}
+    D2 --> H
+    D3 --> H
+
+    H -->|Yes| F[Status DB]
+    H -->|No| E[Retry DLQ]
+
+    F --> G[API Webhook]
+```
+
+- **Architecture** - I design it as an event-driven system for better decoupling  
+- **Flow** - Producers publish events to a queue, and the notification service consumes and processes them  
+- **Delivery** - It supports multiple channels like email, SMS, and push notifications  
+- **Reliability** - I implement retries with backoff and use DLQ for failed messages  
+- **Tracking** - I maintain notification status and expose it via APIs or webhooks  
+- **Scalability** - I partition events based on user or domain to handle high load  
+- **Key Focus** - Ensuring delivery guarantees and idempotency  
 
 ---
 
@@ -164,26 +187,3 @@
 - Learning - Importance of right platform and resource optimization  
 
 
-## Diagram (Mermaid)
-
-## Diagram (Mermaid)
-
-## Diagram (Mermaid)
-
-```mermaid
-flowchart TD
-    A[Producer] --> B[Queue - Kafka]
-    B --> C[Notification Service]
-
-    C --> D1[Email]
-    C --> D2[SMS]
-    C --> D3[Push]
-
-    D1 --> H{Success?}
-    D2 --> H
-    D3 --> H
-
-    H -->|Yes| F[Status DB]
-    H -->|No| E[Retry DLQ]
-
-    F --> G[API Webhook]
