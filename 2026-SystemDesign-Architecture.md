@@ -1,16 +1,16 @@
 # Section 6: System Design & Architecture
 ## Q1: How do you scale a system from 120 to 1200 customers?
-- “I approach scaling in four areas: capacity, architecture, operations, and team scaling.
+- I approach scaling in four areas: capacity, architecture, operations, and team scaling.
 
-First, I baseline current system metrics like throughput, P95 latency, and storage growth, and project 10x load with buffer to estimate infrastructure and cost.
+- First, I baseline current system metrics like throughput, P95 latency, and storage growth, and project 10x load with buffer to estimate infrastructure and cost.
 
-From an architecture perspective, I ensure services are stateless and horizontally scalable, and for heavy workloads like patient data processing, we use distributed pipelines like EMR and partition data by tenant.
+- From an architecture perspective, I ensure services are stateless and horizontally scalable, and for heavy workloads like patient data processing, we use distributed pipelines like EMR and partition data by tenant.
 
-Operationally, I define SLOs, strengthen observability using metrics, logs, and alerts, and improve on-call readiness.
+- Operationally, I define SLOs, strengthen observability using metrics, logs, and alerts, and improve on-call readiness.
 
-From a team perspective, I scale from 2 teams to domain-based pods with clear ownership and improve onboarding and standards.
+- From a team perspective, I scale from 2 teams to domain-based pods with clear ownership and improve onboarding and standards.
 
-Finally, I scale incrementally, onboarding customers in phases to ensure stability.”
+- Finally, I scale incrementally, onboarding customers in phases to ensure stability.”
 ---
 
 ## Q1: How do you approach system design
