@@ -142,12 +142,22 @@ flowchart TD
 
 ---
 
-## Q5: When do you use Saga (Choreography vs Orchestration)
-- Need - Use when transactions span multiple services  
-- Choreography - Event-driven and simple but harder to debug  
-- Orchestration - Central control for complex workflows and better visibility  
-- Trade-off - Simplicity vs control  
-- Approach - Prefer orchestration for critical flows  
+# Q5: When do you use Saga (Choreography vs Orchestration)
+
+**Memory Trick**  
+Saga = No ACID → Choreo (simple) → Orchestration (control) → Healthcare = orchestration  
+
+---
+
+- **Need** - I use Saga when a transaction spans multiple services and cannot be handled using a single ACID transaction  
+
+- **Choreography** - Suitable for simple workflows where services react to events independently, but it becomes harder to track and debug as complexity increases  
+
+- **Orchestration** - Preferred for complex and critical workflows, as a central coordinator provides better control, observability, and failure handling  
+
+- **Trade-off** - Choreography offers simplicity and loose coupling, while orchestration provides control and visibility  
+
+- **Approach** - In critical healthcare workflows, I prefer orchestration to ensure better traceability and reliability  
 
 ---
 
