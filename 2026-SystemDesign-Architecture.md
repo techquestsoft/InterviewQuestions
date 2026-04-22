@@ -200,3 +200,13 @@ Analyze → Optimize → Save Cost
 - **Execution** - I led migration to Kubernetes-based platform  
 - **Result** - We reduced cost by approximately $5M annually  
 - **Learning** - I learned the importance of platform optimization and right-sizing  
+
+##  Q15: 12 Factor app
+
+- 12-factor app methodology is primarily used in cloud-native and microservices-based systems to ensure scalability, portability, and maintainability.
+
+- In my experience, we apply many of these principles during Kubernetes-based deployments—like keeping services stateless for horizontal scaling, externalizing configuration, and treating dependencies like databases or Kafka as backing services.
+
+- We also follow build-release-run separation in our CI/CD pipelines and treat logs as event streams for observability.
+
+- These principles become especially important when scaling systems and teams, because they ensure consistency across services and environments.
