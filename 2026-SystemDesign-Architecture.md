@@ -1,4 +1,4 @@
-# System Design & Architecture (L6 Revision)
+# System Design & Architecture (Unified Format)
 
 ---
 
@@ -7,11 +7,16 @@
 **Memory Trick**  
 Problem → Break → Trade-offs → Align → Outcome  
 
-- **Understanding** - I start with business goals and key non-functional requirements like scale, availability, and latency  
-- **Decomposition** - I break the system into API, processing, and data layers  
-- **Decisions** - I evaluate trade-offs across scalability, maintainability, and ownership  
-- **Collaboration** - I align with architecture and platform teams to follow standards and governance  
-- **Outcome** - I ensure a simple, scalable system aligned with business needs  
+### Core Answer
+- **Problem** – Start with business goals and NFRs (scale, latency, availability)  
+- **Breakdown** – Decompose into API, processing, and data layers  
+- **Trade-offs** – Evaluate scalability, maintainability, and ownership  
+- **Alignment** – Align with platform and architecture standards  
+- **Outcome** – Design simple, scalable systems  
+
+### If Probed
+- Focus on **business-first design, not tech-first**  
+- Clearly articulate **trade-offs and decisions**  
 
 ---
 
@@ -20,11 +25,16 @@ Problem → Break → Trade-offs → Align → Outcome
 **Memory Trick**  
 Simple → Monolith | Scale → Microservices  
 
-- **Decision Factors** - I evaluate domain complexity, team structure, and change frequency  
-- **Monolith** - I use monolith for simpler systems with strong consistency needs  
-- **Microservices** - I use microservices when independent scaling and team ownership are required  
-- **Trade-off** - Microservices add distributed complexity, latency, and operational overhead  
-- **Approach** - I start simple and evolve to microservices as the system grows  
+### Core Answer
+- Use **monolith** for simpler systems with strong consistency needs  
+- Use **microservices** for independent scaling and team ownership  
+- Decision based on domain complexity and change frequency  
+
+### If Probed
+- Highlight trade-offs:
+  - Microservices → scalability + ownership  
+  - Cost → complexity, latency, ops overhead  
+- Prefer **evolution approach (start simple → scale)**  
 
 ---
 
@@ -33,24 +43,33 @@ Simple → Monolith | Scale → Microservices
 **Memory Trick**  
 Stateless → Distribute → Optimize → Async  
 
-- **Service Design** - I build stateless services to enable horizontal scaling  
-- **Load Handling** - I distribute traffic effectively to avoid bottlenecks  
-- **Data Strategy** - I optimize data access patterns for increasing load  
-- **Async Processing** - I use event-driven processing for heavy workloads  
-- **Outcome** - I ensure the system handles peak load without performance impact  
+### Core Answer
+- Design stateless services for horizontal scaling  
+- Distribute load effectively  
+- Optimize data access  
+- Use async processing for heavy workloads  
+
+### If Probed
+- Use **event-driven architecture (Kafka, queues)**  
+- Focus on **bottleneck identification and removal**  
 
 ---
 
-## Q4: How do you scale a system from 120 to 1200 customers
+## Q4: How do you scale system from 120 → 1200 customers
 
 **Memory Trick**  
 Capacity → Architecture → Ops → Team → Execution  
 
-- **Capacity** - First, I baseline current system metrics like throughput(call volume), latency(P95, P99), and storage growth, and project 10x load with buffer to estimate infrastructure and cost  
-- **Architecture** - From an architecture perspective, I ensure services are stateless and horizontally scalable, and for heavy workloads like patient data processing, we use distributed pipelines like EMR and partition data by tenant  
-- **Operations** - Operationally, I define SLOs, strengthen observability using metrics, logs, and alerts, and improve on-call readiness  
-- **Team Scaling** - From a team perspective, I scale from 2 teams to domain-based pods with clear ownership and improve onboarding and standards  
-- **Execution** - Finally, I scale incrementally, onboarding customers in phases to ensure stability  
+### Core Answer
+- **Capacity** – Baseline metrics (throughput, latency, storage)  
+- **Architecture** – Stateless services, partition data by tenant  
+- **Operations** – Define SLOs, improve observability  
+- **Team** – Scale to domain-based ownership  
+- **Execution** – Incremental onboarding  
+
+### If Probed
+- Plan for **10x growth with buffer**  
+- Balance **tech scaling + team scaling**  
 
 ---
 
@@ -59,108 +78,110 @@ Capacity → Architecture → Ops → Team → Execution
 **Memory Trick**  
 Scale = Tech + Quality + Process  
 
-- **Reality** - Scaling is not just an architecture problem, it also includes quality, process, and team maturity  
-- **Quality Control** - I introduce release gates like test coverage thresholds, defect leakage limits, and security checks in CI/CD  
-- **Operations** - I strengthen observability and incident response  
-- **Process** - I standardize coding, logging, CI/CD, and onboarding practices  
-- **Outcome** - I ensure consistent quality and reliability as the system scales  
+### Core Answer
+- Scaling involves **architecture, quality, and process**  
+- Introduce release gates and standards  
+- Improve observability and operations  
+
+### If Probed
+- Focus on **engineering maturity and consistency across teams**  
 
 ---
 
-## Q6: What happens if Kafka fails after DB commit
+## Q6: Kafka fails after DB commit
 
 **Memory Trick**  
 DB ✅ Event ❌ → Outbox  
 
-- **Problem** - Data is stored in DB but event is not published, leading to inconsistency  
-- **Solution** - I use the Outbox pattern to persist events along with business data  
-- **Processing** - A separate publisher service reads from outbox and pushes events to Kafka  
-- **Recovery** - Events are retried when Kafka becomes available  
-- **Outcome** - I ensure eventual consistency and no data loss  
+### Core Answer
+- Problem: DB success but event failure → inconsistency  
+- Solution: Use **Outbox pattern**  
+- Persist event with business data  
+- Retry publishing  
+
+### If Probed
+- Ensure **eventual consistency + no data loss**  
 
 ---
 
-## Q7: Payment service failure – how do you handle
+## Q7: Payment service failure
 
 **Memory Trick**  
 Fail Fast → Retry → Protect → Compensate  
 
-- **Resilience** - I fail fast instead of blocking the system  
-- **Protection** - I use retries with exponential backoff and circuit breakers  
-- **User Experience** - I provide clear feedback to users and allow retry  
-- **Consistency** - I use Saga pattern for compensation across services  
-- **Recovery** - Failed events are pushed to DLQ for retry  
-- **Outcome** - I maintain system stability and user experience  
+### Core Answer
+- Fail fast to avoid blocking  
+- Use retries and circuit breakers  
+- Provide user retry options  
+- Use Saga for compensation  
+
+### If Probed
+- Use DLQ for failed events  
+- Maintain **user experience + system stability**  
 
 ---
 
-## Q8: Testing doesn’t scale with customers
+## Q8: Testing doesn’t scale
 
 **Memory Trick**  
 Manual ❌ → Automation + Priority  
 
-- **Problem** - Manual testing does not scale with increasing customers  
-- **Strategy** - I shift to automation and regression testing  
-- **Prioritization** - I focus on high-impact and critical scenarios  
-- **Optimization** - I improve test data reuse and management  
-- **Outcome** - I enable faster onboarding without compromising quality  
+### Core Answer
+- Shift from manual to automation  
+- Focus on regression and critical paths  
+- Improve test data management  
+
+### If Probed
+- Optimize for **speed + coverage balance**  
 
 ---
 
 ## Q9: Design a Notification System
 
 **Memory Trick**  
-Producer → Queue → Service → Channel → Retry → DB  
+Producer → Queue → Service → Channel → Retry  
 
-```mermaid
-flowchart TD
-    A[Producer] --> B[Queue]
-    B --> C[Notification Service]
-    C --> D1[Email]
-    C --> D2[SMS]
-    C --> D3[Push]
-    D1 --> H{Success}
-    D2 --> H
-    D3 --> H
-    H -->|Yes| F[Status DB]
-    H -->|No| E[Retry DLQ]
-    F --> G[API Webhook]
-```
+### Core Answer
+- Event-driven design  
+- Producers publish to queue  
+- Service processes and sends notifications  
+- Support multiple channels (email, SMS, push)  
+- Use retries and DLQ  
 
-- **Architecture** - I design it as an event-driven system for better decoupling  
-- **Flow** - Producers publish events to a queue and the notification service consumes and processes them  
-- **Delivery** - I support multiple channels like email, SMS, and push notifications  
-- **Reliability** - I implement retries with backoff and use DLQ for failed messages  
-- **Tracking** - I maintain notification status and expose it via APIs or webhooks  
-- **Scalability** - I partition events based on user or domain  
-- **Key Focus** - I ensure idempotency and delivery guarantees  
+### If Probed
+- Ensure **idempotency and delivery guarantees**  
+- Partition for scalability  
 
 ---
 
-## Q10: When do you use Saga (Choreography vs Orchestration)
+## Q10: When do you use Saga
 
 **Memory Trick**  
-No ACID → Choreo (simple) → Orchestration (control)  
+Choreo → Simple | Orchestrator → Control  
 
-- **Need** - I use Saga when a transaction spans multiple services and cannot be handled using a single ACID transaction  
-- **Choreography** - I use choreography for simple flows where services react to events independently, but it becomes harder to debug  
-- **Orchestration** - I prefer orchestration for complex workflows as it provides better control and observability  
-- **Trade-off** - Choreography provides simplicity, while orchestration provides control and visibility  
-- **Approach** - In critical healthcare workflows, I prefer orchestration for better reliability and traceability  
+### Core Answer
+- Use Saga for distributed transactions  
+- Choreography for simple flows  
+- Orchestration for complex workflows  
+
+### If Probed
+- Prefer orchestration for **critical systems (better control + observability)**  
 
 ---
 
-## Q11: How do you design for failure and reliability
+## Q11: How do you design for failure
 
 **Memory Trick**  
 Fail → Isolate → Recover → Degrade  
 
-- **Design** - I design systems assuming failures across services and dependencies  
-- **Isolation** - I isolate failures to prevent cascading impact  
-- **Recovery** - I implement retries and fallback mechanisms  
-- **Degradation** - I support partial functionality instead of full outage  
-- **Monitoring** - I detect issues early using alerts and observability  
-- **Outcome** - I minimize customer impact  
+### Core Answer
+- Assume failures will happen  
+- Isolate failures  
+- Implement retries and fallback  
+- Support graceful degradation  
+
+### If Probed
+- Detect early using **observability and alerts**  
 
 ---
 
@@ -169,11 +190,13 @@ Fail → Isolate → Recover → Degrade
 **Memory Trick**  
 No Single Point of Failure  
 
-- **Redundancy** - I deploy multiple service instances  
-- **Failover** - I implement backup mechanisms for critical components  
-- **Load Distribution** - I distribute traffic to avoid single points of failure  
-- **Monitoring** - I use health checks and alerts  
-- **Outcome** - I ensure system availability during failures  
+### Core Answer
+- Use redundancy and multiple instances  
+- Implement failover  
+- Distribute load  
+
+### If Probed
+- Multi-region and disaster recovery  
 
 ---
 
@@ -182,31 +205,39 @@ No Single Point of Failure
 **Memory Trick**  
 Correctness vs Scale  
 
-- **Strong Consistency** - I use it when correctness is critical  
-- **Eventual Consistency** - I use it for scalable distributed systems  
-- **Trade-off** - I balance consistency and performance  
-- **Approach** - I prefer eventual consistency with safeguards for critical flows  
-- **Outcome** - I ensure scalable and reliable data handling  
+### Core Answer
+- Use strong consistency when correctness is critical  
+- Use eventual consistency for scalability  
+
+### If Probed
+- Balance **consistency vs performance trade-offs**  
 
 ---
 
-## Q14: Real example from your experience
+## Q14: Real example
 
 **Memory Trick**  
-Analyze → Optimize → Save Cost  
+Analyze → Optimize → Save  
 
-- **Problem** - We had high infrastructure cost and inefficiencies  
-- **Analysis** - I identified underutilized services and inefficiencies  
-- **Execution** - I led migration to Kubernetes-based platform  
-- **Result** - We reduced cost by approximately $5M annually  
-- **Learning** - I learned the importance of platform optimization and right-sizing  
+### Core Answer
+- Identified inefficiencies in platform  
+- Optimized services and infrastructure  
+- Reduced cost significantly  
 
-##  Q15: 12 Factor app
+### If Probed
+- Demonstrates **platform thinking and ROI focus**  
 
-- 12-factor app methodology is primarily used in cloud-native and microservices-based systems to ensure scalability, portability, and maintainability.
+---
 
-- In my experience, we apply many of these principles during Kubernetes-based deployments—like keeping services stateless for horizontal scaling, externalizing configuration, and treating dependencies like databases or Kafka as backing services.
+## Q15: 12 Factor App
 
-- We also follow build-release-run separation in our CI/CD pipelines and treat logs as event streams for observability.
+### Core Answer
+- Used for cloud-native scalability and maintainability  
+- Stateless services  
+- Externalized config  
+- Logs as event streams  
 
-- These principles become especially important when scaling systems and teams, because they ensure consistency across services and environments.
+### If Probed
+- Ensures **consistency across environments and teams**  
+
+---

@@ -1,125 +1,162 @@
-
-# Section 8: GenAI & Innovation
-
-## Q1: How are you using AI/GenAI in your system (real use case)
-
-- Current State  
-  - We use ML models to identify high-risk patients for readmission and rank them based on risk scores  
-
-- Problem  
-  - Care managers see scores but still need to manually analyze multiple data points to understand risk  
-
-- GenAI Enhancement  
-  - I’m exploring GenAI to convert structured data into natural language insights explaining why a patient is high risk  
-
-- Example  
-  - Instead of just showing a score, we provide summaries like:  
-    - “High risk due to recent admissions, chronic conditions, and missed follow-ups”  
-
-- Outcome  
-  - Improves usability and helps care managers make faster, better decisions  
+# Section 8: GenAI & Innovation (Unified Format)
 
 ---
 
-## Q2: How do you design this GenAI solution (high-level)
+## Q0: How are you using GenAI
 
-- Input  
-  - Patient data, historical records, and ML risk scores  
+### Core Answer
+- Use ML to identify high-risk patients  
+- Use GenAI to explain risk in natural language  
+- Improves usability and decision-making  
 
-- Processing  
-  - Retrieve relevant patient context and generate summarized insights  
-
-- Output  
-  - Provide readable explanations alongside risk scores  
-
-- Control  
-  - Ensure outputs are contextual, consistent, and aligned with domain logic  
-
-- Outcome  
-  - Combines ML scoring with explainability for better decision-making  
+### If Probed
+- Combine ML + GenAI for explainability  
+- Focus on workflow integration  
 
 ---
 
-## Q3: How does GenAI improve business outcomes
+## Q1: How do you design GenAI solution
 
-- Efficiency  
-  - Reduces manual analysis effort for care managers  
+### Core Answer
+- Input → process → output  
+- Generate insights from data  
 
-- Decision Quality  
-  - Provides clear reasoning, not just data points  
+### If Probed
+- Use layered architecture  
+- Combine RAG + direct query  
 
+---
+
+## Q2: End-to-End GenAI Architecture
+
+**Memory Trick**  
+Access → Orchestrate → Retrieve → LLM → Guard → Observe  
+
+### Core Answer
+- Access layer (API, auth)  
+- Orchestration (prompt, workflow)  
+- Retrieval (data fetch)  
+- LLM (generation)  
+- Guardrails (security, validation)  
+- Observability (monitoring)  
+
+### If Probed
+- RAG vs direct query decision  
+- Model abstraction  
+- Cost optimization  
+- Multi-tenant governance  
+
+---
+
+## Q3: Build vs Buy
+
+### Core Answer
+- Prefer using existing models  
+- Build integration and logic  
+
+### If Probed
+- Buy models  
+- Build orchestration + domain layer  
+- Decide based on cost and speed  
+
+---
+
+## Q4: Prompt Engineering
+
+### Core Answer
+- Use structured prompts  
+- Provide context and expected output  
+
+### If Probed
+- Use framework: role, task, context, constraints  
+- Maintain templates and versioning  
+
+---
+
+## Q5: RAG vs Direct Query
+
+### Core Answer
+- RAG for unstructured  
+- Direct query for structured  
+
+### If Probed
+- Avoid RAG for low latency or deterministic systems  
+- Use hybrid approach  
+
+---
+
+## Q6: Chunking & Embeddings
+
+### Core Answer
+- Break data into chunks  
+- Convert to embeddings  
+- Retrieve relevant data  
+
+### If Probed
+- Semantic chunking with overlap  
+- Vector similarity search  
+
+---
+
+## Q7: Hallucination handling
+
+### Core Answer
+- Use validation and control  
+
+### If Probed
+- Grounding via retrieval  
+- Prompt constraints  
+- Output validation  
+- Human-in-loop  
+
+---
+
+## Q8: Security
+
+### Core Answer
+- Secure data access  
+- Role-based access  
+
+### If Probed
+- Data isolation  
+- No direct LLM exposure  
+- Audit logging  
+
+---
+
+## Q9: Cost vs Performance
+
+### Core Answer
+- Balance cost and performance  
+
+### If Probed
+- Optimize tokens, caching  
+- Use smaller models when possible  
+
+---
+
+## Q10: Scaling GenAI
+
+### Core Answer
+- Scale system components  
+
+### If Probed
+- Rate limiting  
+- Async processing  
+- Model optimization  
+- Cost control  
+
+---
+
+## Q11: Measuring success
+
+### Core Answer
+- Efficiency improvement  
+- Better decisions  
+
+### If Probed
 - Adoption  
-  - Improves usability for non-technical users  
-
-- Business Impact  
-  - Enables faster interventions and helps reduce readmissions  
+- cost per request  
+- business impact  
 
 ---
-
-## Q4: How do you ensure safe and compliant use of AI
-
-- Data Security  
-  - Patient data remains within secure and controlled environment  
-
-- Access Control  
-  - Strict role-based access  
-
-- Validation  
-  - AI output is assistive, not final decision-making  
-
-- Compliance  
-  - Align with healthcare and platform standards  
-
-- Outcome  
-  - Ensures trust and safe adoption  
-
----
-
-## Q5: Build vs Buy for GenAI in your system
-
-- Data Sensitivity  
-  - Patient data requires strict control  
-
-- Customization  
-  - Healthcare use cases need domain-specific logic  
-
-- Approach  
-  - Prefer controlled/internal implementation  
-
-- Decision  
-  - Extend existing platform capabilities instead of external tools  
-
----
-
-## Q6: How do you measure success of this AI initiative
-
-- Efficiency  
-  - Reduction in time taken for patient analysis  
-
-- Adoption  
-  - Increased usage by care managers  
-
-- Accuracy  
-  - Better identification and prioritization of high-risk patients  
-
-- Business Impact  
-  - Improved patient outcomes and reduced readmissions  
-
----
-
-## Q7: How do you introduce and scale innovation in your team
-
-- Identification  
-  - Start with real business problem (manual patient analysis)  
-
-- Experimentation  
-  - Run small POCs with limited data  
-
-- Validation  
-  - Get feedback from care managers  
-
-- Scaling  
-  - Gradually roll out based on impact  
-
-- Outcome  
-  - Practical, user-driven innovation with measurable value  

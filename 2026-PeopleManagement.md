@@ -1,4 +1,21 @@
-# Section 3: People Management
+# Section 3: People Management (Unified Format)
+
+---
+
+## Q0: What is your overall approach to people management
+
+**Memory Trick**  
+Own → Grow → Evaluate → Improve  
+
+### Core Answer
+- **Ownership Culture** – I focus on building ownership-driven teams with clear expectations  
+- **Growth Focus** – I invest in mentoring and continuous development  
+- **Performance Evaluation** – I use data-driven evaluation across delivery, quality, and behavior  
+- **Improvement Mindset** – I focus on improving people before escalation  
+
+### If Probed
+- Build **scalable team structures and leadership layers**  
+- Balance **delivery, people growth, and organizational impact**  
 
 ---
 
@@ -7,15 +24,15 @@
 **Memory Trick**  
 Clarity → Track → Engage → Intervene  
 
-- **Clarity** - I define clear ownership and sprint goals across two teams (14 engineers)  
+### Core Answer
+- **Clarity** – Define clear ownership and goals  
+- **Tracking** – Monitor commitments vs delivery  
+- **Engagement** – Regular 1:1s to understand progress and challenges  
+- **Intervention** – Step in when needed to remove blockers  
 
-- **Accountability** - I track sprint commitments vs actual delivery  
-
-- **Engagement** - I use regular 1:1s to understand progress and challenges  
-
-- **Intervention** - I step in when I see repeated spillovers or blockers  
-
-- **Outcome** - I ensure predictable delivery and a well-aligned team  
+### If Probed
+- Ensure **alignment across multiple teams**  
+- Focus on **predictable delivery at scale**  
 
 ---
 
@@ -24,17 +41,14 @@ Clarity → Track → Engage → Intervene
 **Memory Trick**  
 Delivery → Quality → Behavior  
 
-- **Dimensions** - I evaluate across delivery, quality, and behavior  
+### Core Answer
+- **Delivery** – Ownership and commitment reliability  
+- **Quality** – Defects, rework, production stability  
+- **Behavior** – Collaboration, initiative, accountability  
 
-- **Delivery** - I track ownership and sprint commitment vs completion  
-
-- **Quality** - I monitor defect leakage, rework, and production issues  
-
-- **Behavior** - I assess collaboration, initiative, and incident ownership  
-
-- **Differentiation** - I set expectations as Junior → execution, Senior → ownership, Architect → decision-making  
-
-- **Outcome** - I ensure balanced and data-backed performance evaluation  
+### If Probed
+- Differentiate expectations by role (Junior → execution, Senior → ownership, Architect → decisions)  
+- Combine **metrics + qualitative feedback**  
 
 ---
 
@@ -43,15 +57,14 @@ Delivery → Quality → Behavior
 **Memory Trick**  
 Deliver → Own → Influence  
 
-- **Signals** - I look for consistent delivery, low rework, and strong ownership in critical situations  
+### Core Answer
+- **Identification** – Look for consistent delivery and ownership  
+- **Validation** – Confirm through sustained performance and peer feedback  
+- **Growth** – Assign critical modules, mentoring roles, and leadership opportunities  
 
-- **Identification** - I identify patterns across multiple sprints, not one-time performance  
-
-- **Validation** - I validate through peer feedback and overall team impact  
-
-- **Growth** - I assign critical modules, mentoring roles, and leadership responsibilities  
-
-- **Outcome** - I develop future leaders within the team  
+### If Probed
+- Build **future leaders, not just strong contributors**  
+- Provide **visibility and ownership at system level**  
 
 ---
 
@@ -60,17 +73,16 @@ Deliver → Own → Influence
 **Memory Trick**  
 Identify → Diagnose → Improve → Decide  
 
-- **Identification** - I identify patterns like missed commitments, quality issues, and low ownership  
+### Core Answer
+- **Identify** – Spot patterns in delivery, quality, and ownership  
+- **Diagnose** – Understand root cause (skill, clarity, motivation)  
+- **Improve** – Provide structured feedback and support  
+- **Track** – Monitor improvement over time  
 
-- **Diagnosis** - I understand root cause such as skill gap, clarity, or motivation  
-
-- **Action** - I provide specific feedback with clear expectations  
-
-- **Tracking** - I monitor improvement over the next 1–2 sprints  
-
-- **Escalation** - If no improvement, I move to a structured plan like PIP  
-
-- **Outcome** - I focus on improvement first, then accountability  
+### If Probed
+- Focus on **improvement before escalation**  
+- Use structured plans only if needed  
+- Balance **individual improvement with team impact**  
 
 ---
 
@@ -79,17 +91,15 @@ Identify → Diagnose → Improve → Decide
 **Memory Trick**  
 Clarity → Ownership → Recognition → Growth  
 
-- **Clarity** - I define clear goals and expectations  
+### Core Answer
+- **Clarity** – Define clear goals  
+- **Ownership** – Assign responsibility and accountability  
+- **Recognition** – Acknowledge strong contributions  
+- **Growth** – Provide learning and leadership opportunities  
 
-- **Accountability** - I track delivery and quality consistently  
-
-- **Recognition** - I acknowledge strong contributions and ownership  
-
-- **Growth** - I provide learning opportunities and leadership exposure  
-
-- **Alignment** - I connect work to business impact  
-
-- **Outcome** - I build an ownership-driven team culture  
+### If Probed
+- Connect work to **business impact**  
+- Build a **culture of ownership and accountability**  
 
 ---
 
@@ -98,15 +108,15 @@ Clarity → Ownership → Recognition → Growth
 **Memory Trick**  
 Need → Evaluate → Fit → Grow  
 
-- **Requirement** - I define role expectations based on team gaps  
+### Core Answer
+- **Need** – Define role based on team gaps  
+- **Evaluate** – Assess skills and ownership mindset  
+- **Fit** – Ensure alignment with team culture  
+- **Grow** – Focus on long-term potential  
 
-- **Evaluation** - I assess both technical skills and ownership mindset  
-
-- **Fit** - I ensure alignment with team culture and collaboration  
-
-- **Decision** - I prioritize candidates with strong growth potential  
-
-- **Outcome** - I build a scalable and high-performing team  
+### If Probed
+- Balance **external hiring and internal upskilling**  
+- Build teams that can **scale with platform needs**  
 
 ---
 
@@ -115,15 +125,15 @@ Need → Evaluate → Fit → Grow
 **Memory Trick**  
 Guide → Plan → Expose → Feedback  
 
-- **Guidance** - I provide direction through regular 1:1s  
+### Core Answer
+- **Guidance** – Provide direction through regular 1:1s  
+- **Planning** – Define growth goals  
+- **Exposure** – Assign challenging work and ownership  
+- **Feedback** – Provide continuous and actionable feedback  
 
-- **Planning** - I define individual growth areas and goals  
-
-- **Exposure** - I assign real ownership and challenging work  
-
-- **Feedback** - I give continuous and actionable feedback  
-
-- **Outcome** - I enable steady career growth  
+### If Probed
+- Align growth with **organizational needs**  
+- Build **next-level leaders within the team**  
 
 ---
 
@@ -132,13 +142,14 @@ Guide → Plan → Expose → Feedback
 **Memory Trick**  
 People First → Stay Connected  
 
-- **Focus** - I prioritize team outcomes and delivery  
+### Core Answer
+- **Focus** – Prioritize team outcomes and delivery  
+- **Involvement** – Stay engaged in key design decisions  
+- **Delegation** – Delegate execution while guiding direction  
 
-- **Involvement** - I stay involved in key architecture and design decisions  
-
-- **Delegation** - I delegate execution while guiding direction  
-
-- **Outcome** - I maintain balance between leadership and technical depth  
+### If Probed
+- Focus on **decision-making rather than implementation**  
+- Maintain **technical depth for effective leadership**  
 
 ---
 
@@ -147,15 +158,14 @@ People First → Stay Connected
 **Memory Trick**  
 Listen → Align → Decide  
 
-- **Understanding** - I listen to all perspectives  
+### Core Answer
+- **Listen** – Understand all perspectives  
+- **Align** – Focus on business and system impact  
+- **Decide** – Evaluate trade-offs and resolve  
 
-- **Alignment** - I align discussions to business and system impact  
-
-- **Decision** - I evaluate trade-offs and guide resolution  
-
-- **Action** - I validate decisions using data or POC if needed  
-
-- **Outcome** - I ensure balanced and effective decisions  
+### If Probed
+- Use **data-driven decision-making**  
+- Align teams based on **objective outcomes, not opinions**  
 
 ---
 
@@ -164,14 +174,48 @@ Listen → Align → Decide
 **Memory Trick**  
 Break → Prioritize → Communicate → Execute  
 
-- **Structure** - I break problems into smaller parts  
+### Core Answer
+- **Break** – Decompose problems  
+- **Prioritize** – Focus on critical issues  
+- **Communicate** – Keep team and stakeholders aligned  
+- **Execute** – Address issues effectively  
 
-- **Prioritization** - I focus on critical issues first  
+### If Probed
+- Balance **short-term fixes with long-term improvements**  
+- Provide **clear leadership during critical situations**  
 
-- **Communication** - I keep team and stakeholders aligned  
+---
 
-- **Execution** - I address immediate issues and plan long-term fixes  
+## Q11: How do you scale engineering organization
 
-- **Outcome** - I maintain control and guide the team effectively  
+**Memory Trick**  
+Structure → Platform → Standards → Grow  
+
+### Core Answer
+- **Structure** – Domain-based teams with clear ownership  
+- **Platform Teams** – Shared capabilities (infra, GenAI, etc.)  
+- **Standards** – Common engineering practices  
+- **Growth** – Balance hiring and upskilling  
+
+### If Probed
+- Build **platform + product team model**  
+- Scale through **clear ownership and reusable systems**  
+
+---
+
+## Q12: How do you build a GenAI engineering team
+
+**Memory Trick**  
+Platform → Product → Governance → Upskill  
+
+### Core Answer
+- **Platform Team** – Core GenAI capabilities (LLM, orchestration)  
+- **Product Teams** – Use case implementation  
+- **Governance** – Security and compliance  
+- **Upskilling** – Train existing engineers  
+
+### If Probed
+- Build **reusable GenAI platform**  
+- Enable **safe and scalable AI adoption across teams**  
 
 ---
