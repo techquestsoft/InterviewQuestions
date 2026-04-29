@@ -25,6 +25,21 @@ Problem → Break → Trade-offs → Align → Outcome
 **Memory Trick**  
 Simple → Monolith | Scale → Microservices  
 
+- I don’t default to microservices — I choose architecture based on scale, team structure, and business needs.
+
+- I evaluate 3 key factors:
+
+- Domain complexity – If domains are clearly separable, microservices make sense
+- Team structure – If multiple teams need independent deployments
+- Scalability & release frequency – High scale + frequent releases favor microservices
+
+### Tradeoffs:
+
+- Microservices → better scalability, but higher operational complexity
+- Monolith → simpler, but harder to scale and release independently
+
+- In many enterprise systems, I prefer a modular monolith or hybrid approach initially, and evolve to microservices where needed.
+
 ### Core Answer
 - Use **monolith** for simpler systems with strong consistency needs  
 - Use **microservices** for independent scaling and team ownership  
@@ -72,6 +87,61 @@ Capacity → Architecture → Ops → Team → Execution
 - Balance **tech scaling + team scaling**  
 
 ---
+## Q6: Design high throughput system
+- To design a high-throughput system, I focus on four layers:
+
+1. Entry Layer
+
+- CDN for caching
+- API Gateway for rate limiting, auth, routing
+
+2. Application Layer
+
+- Stateless services
+- Horizontal scaling (Kubernetes / auto-scaling)
+- Use async processing (queues like Kafka/SQS)
+
+3. Data Layer
+
+- Use sharding for scale
+- Read replicas for read-heavy workloads
+- Caching (Redis)
+
+4. Resilience
+
+- Circuit breakers
+- Retry with backoff
+- Observability (metrics, tracing)
+
+- Design always depends on expected RPS and latency requirements.
+
+## Q6: How do you handle scaling?
+Scaling is handled at multiple layers:
+
+1. Edge Layer
+
+CDN for caching static content
+
+2. API Layer
+
+API Gateway for throttling and routing
+
+3. Compute Layer
+
+Kubernetes auto-scaling (HPA)
+
+4. Data Layer
+
+Read replicas
+Sharding for horizontal scaling
+
+5. Async Processing
+
+Queues for decoupling and handling spikes
+
+Design depends on traffic patterns and latency requirements.
+---
+
 
 ## Q5: What changes beyond architecture when system scales
 
