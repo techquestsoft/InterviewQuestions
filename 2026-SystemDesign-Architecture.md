@@ -239,7 +239,13 @@ For handling heavy workloads, I introduce asynchronous processing using queues l
 
 ### ⚖️ Trade-offs
 
-Scaling always involves trade-offs between consistency and performance, and between cost and scalability.
+Scaling distributed systems always involves trade-offs between consistency, availability, and latency.
+
+Stateless services simplify horizontal scaling at the application layer, but the data layer still needs to handle these trade-offs.
+
+In practice, this translates into engineering trade-offs—for example, asynchronous processing improves scalability but introduces eventual consistency, and increasing partitions or shards improves performance but adds operational complexity and cost.
+
+Modern distributed systems help manage these trade-offs, but they don’t eliminate them.
 
 For example, asynchronous systems improve scalability but introduce eventual consistency. Similarly, adding more shards or partitions improves performance but increases operational complexity.
 
