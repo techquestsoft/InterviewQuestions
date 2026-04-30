@@ -8,13 +8,19 @@
 Present → Experience → Impact → Focus → Vision  
 
 ### Core Answer (Use Always)
-- **Current Role** – I’m currently a Senior Engineering Manager at Oracle Cerner, leading Care Coordination products like Care Management and Readmission Prevention, which process large-scale patient data and support clinical decision-making across 100+ healthcare providers  
+- **Current Role** – 
+I recently wrapped up my role as a Senior Engineering Manager at Oracle Cerner, where I was leading Care Coordination products like Care Management and Readmission Prevention. These products process large-scale patient data and support clinical decision-making across 100+ healthcare providers
 
-- **Experience** – I have around 20 years of experience across banking and healthcare, where I’ve evolved from hands-on engineering to leading distributed systems, data platforms, and engineering teams  
+I’m currently a Senior Engineering Manager at Oracle Cerner, leading Care Coordination products like Care Management and Readmission Prevention, which process large-scale patient data and support clinical decision-making across 100+ healthcare providers  
 
-- **Key Achievement** – One of my key achievements was leading a platform modernization at Optum, migrating 100+ microservices, which resulted in significant cost savings and improved scalability  
+- **Experience** – I have around 20 years of experience across healthcare, banking and insurane, where I’ve evolved from hands-on engineering to leading distributed systems, data platforms, and engineering teams  
+
+- **Key Achievement** – One of my key achievements was leading a platform modernization initiative at Optum, where I migrated 100+ microservices from Red Hat OpenShift to Kubernetes. This resulted in approximately $5 million in annual infrastructure cost savings, while significantly improving scalability and operational efficiency. 
 
 - **Current Focus** – In my current role, I focus on delivering scalable systems, driving engineering efficiency, and leading key initiatives like cloud migration and ML-driven transformation  
+
+Most recently, I’ve been focused on driving cloud migration from AWS to OCI and ML-driven transformation initiatives, while improving engineering efficiency and system scalability.
+
 
 ### If Probed (AVP Depth)
 - **Platform Thinking** – I focus on platform-level decisions and scaling engineering organizations  
