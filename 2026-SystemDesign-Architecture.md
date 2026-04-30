@@ -51,7 +51,7 @@ In a patient processing system:
 - Added composite index  
 - Introduced partitioning by date   
 
-**Result:**:
+**Result:**
 - Query time reduced from seconds → milliseconds  
 
 Partitioning = splitting data on ONE machine  
@@ -119,6 +119,7 @@ Outcome:
 - Avoid premature microservices — it’s a common enterprise anti-pattern
 
 ---
+
 ## Q3: What changes beyond architecture when system scales
 
 ### 🧠 Memory Hook
