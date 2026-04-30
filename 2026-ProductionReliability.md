@@ -242,3 +242,64 @@ Govern → Measure → Improve
 - Focus on **long-term operational maturity**  
 
 ---
+
+## Q9: Distribute tracing
+
+New Relic Distributed Tracing (Your Best Fit)
+Since you're already paying for New Relic, this is the lowest friction path.
+How it works in your stack
+Your Microservice (Spring Boot / Node / Python)
+        │
+        │  New Relic APM Agent (auto-instruments)
+        ▼
+  Trace data sent to New Relic Cloud
+        │
+        ▼
+  New Relic UI → Distributed Tracing view
+Setup — just add the agent, zero code change
+For Java (Spring Boot):
+bash# In your Kubernetes deployment yaml
+containers:
+  - name: orders-service
+    image: orders-service:1.0
+    env:
+      - name: NEW_RELIC_LICENSE_KEY
+        valueFrom:
+          secretKeyRef:
+            name: newrelic-secret
+            key: license-key
+      - name: NEW_RELIC_APP_NAME
+        value: "orders-service"
+      - name: NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
+        value: "true"
+    volumeMounts:
+      - name: newrelic-agent
+        mountPath: /newrelic
+  
+  # JVM arg to load agent
+  command: ["java", "-javaagent:/newrelic/newrelic.jar", "-jar", "app.jar"]
+That's it — New Relic auto-traces HTTP calls, DB queries, external calls across services.
+What you see in New Relic UI
+Trace: POST /api/checkout  [450ms]
+  ├── orders-service       AKS pod: orders-7d9f-xkq2    [15ms]  ✅
+  ├── inventory-service    AKS pod: inventory-5c8b-mnp1  [380ms] ⚠️
+  │     └── SQL SELECT     db: cerner-postgres            [370ms] ❌ slow query
+  └── notification-svc     AKS pod: notify-3a1c-zzr4     [8ms]   ✅
+Click any span → see exact SQL, HTTP headers, error stack trace.
+
+Alert fires in New Relic
+        │
+        ▼
+Open Distributed Trace in New Relic
+  → Find the slow/failed span
+  → Copy the traceId
+        │
+        ▼
+Go to Splunk
+  → Search: traceId="abc123xyz"
+  → See full log story across all services
+        │
+        ▼
+Go back to AKS if needed
+  → kubectl logs <pod> -n <namespace>
+  → kubectl describe pod (if infra-level issue)
