@@ -213,3 +213,78 @@ Approve → Validate → Deploy → Monitor
 - Use data for decisions  
 
 ---
+
+## Q13: Biggest Leadership Failure
+
+## 🧩 Situation
+I led the initiative to upgrade our rule-based model (v1/v2) to an ML-based risk scoring model (v3). I owned the architecture and delivery plan, collaborating closely with the HDI AI platform team for orchestration and the Data Science team for model development.
+
+---
+
+## ⚠️ Task
+My responsibility was to define a realistic plan and ensure we could deliver the ML model within committed timelines, aligning multiple teams.
+
+---
+
+## ❌ What Went Wrong (The Failure)
+During PI planning, I committed timelines based on technical readiness—architecture, platform availability, and model development capacity.  
+However, **I missed validating a critical dependency: client approval to use their data for model training**.
+
+This surfaced later during development:
+- Data Science flagged that training required explicit client approval  
+- The approval process took **4–6 weeks**  
+- Our committed timelines slipped  
+
+👉 The core failure:  
+I **did not identify and de-risk a non-technical dependency early**, and assumed data readiness without formal validation.
+
+---
+
+## 🔍 Root Cause (Self-Awareness)
+This was a leadership gap, not a team issue:
+- I focused heavily on **technical architecture and execution**
+- I did not include **legal/compliance/data governance checks in planning**
+- I assumed cross-team alignment instead of explicitly validating it  
+
+---
+
+## 🛠️ Actions I Took
+I took ownership immediately and worked to recover:
+
+- Communicated transparently with leadership about the gap and revised timelines  
+- Partnered with client stakeholders to **expedite the approval process**  
+- Re-sequenced execution:
+  - Continued platform and pipeline readiness  
+  - Used synthetic/anonymized data for interim development  
+- Introduced a **dependency validation checklist** for future initiatives:
+  - data access approvals  
+  - compliance/legal sign-offs  
+  - external stakeholder dependencies  
+
+---
+
+## 📈 Result
+- Approval secured with minimal additional delay beyond the identified gap  
+- Team productivity maintained despite dependency delay  
+- Future initiatives avoided similar surprises due to improved planning rigor  
+
+---
+
+## 🧠 What I Learned
+> “In ML systems, data readiness is not just technical—it’s legal, ethical, and organizational.”
+
+As a leader, I learned:
+- Validate **non-obvious dependencies early**, especially in regulated domains  
+- Never assume data availability—**treat it as a first-class risk**  
+- Strong planning includes **cross-functional alignment beyond engineering**
+
+---
+
+## 💬 Strong Closing Line
+> “That experience changed how I plan—I now treat data access and compliance as critical path items, not assumptions.”
+
+---
+
+# ⚡ Short 60-Second Version
+
+> I led an ML upgrade initiative and committed timelines based on technical readiness, but missed validating a key dependency—client approval for training data. This surfaced late and caused a 4–6 week delay. I took ownership, communicated transparently, and restructured the plan to keep the team productive while approvals were in progress. The key learning for me was that in ML systems, data readiness isn’t just technical—it involves compliance and external stakeholders. Since then, I’ve built structured dependency validation into all planning.
