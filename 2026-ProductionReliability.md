@@ -75,24 +75,106 @@ Detect → Respond → Stabilize → Improve
 
 ---
 
-## Q4: Tell me about a production incident
+## Q4 Production Incident – External Dependency Failures (STAR, EM-Level)
 
-**Memory Trick**  
-Detect → Fix → Align → Improve  
+### S – Situation
+In our platform, we monitor service health through microservices dashboards. During routine monitoring, we observed intermittent spikes in HTTP 500 errors across a few services.
 
-### Core Answer
-- **Situation** – Data was not available due to OpenSearch index failure  
-- **Detection** – Identified through monitoring alerts  
-- **Action** – Initiated war room and identified impacted workflows  
-- **Fix** – Reprocessed pipeline to restore data consistency  
-- **Communication** – Kept stakeholders informed  
-- **Improvement** – Added validation, alerts, and retry mechanisms  
-
-### If Probed
-- Focused on **root cause elimination, not just recovery**  
-- Strengthened **system resilience and monitoring**  
+While the system was largely self-recovering, these spikes had the potential to impact request success rates and customer experience.
 
 ---
+
+### T – Task
+As the engineering lead, my responsibility was to proactively investigate the issue, minimize any potential customer impact, and ensure system resilience against such intermittent failures.
+
+---
+
+### A – Action
+
+I approached this as a proactive incident.
+
+**First, impact assessment and containment.**  
+We analyzed error patterns and confirmed that failures were intermittent and recovering automatically, but still posed a risk to reliability. We closely monitored affected services and ensured no widespread SLA impact.
+
+**Second, root cause analysis.**  
+We traced the failures to our external authorization dependency, which uses the faraday service. Due to transient network issues, some authorization calls were failing, resulting in temporary 500 errors.
+
+**Third, resilience improvements.**  
+To address this, we strengthened our system’s fault tolerance:
+- Introduced retry mechanisms with exponential backoff for authorization calls  
+- Added timeouts and fallback handling to prevent cascading failures  
+- Improved error handling to gracefully degrade where possible  
+
+**Fourth, observability enhancements.**  
+We enhanced monitoring by:
+- Adding alerts for spikes in 500 errors  
+- Tracking dependency-level failures separately  
+- Improving dashboards to quickly identify external vs internal issues  
+
+---
+
+### R – Result
+These changes significantly reduced the impact of transient failures and improved overall system resilience.
+
+We were able to prevent potential customer impact, improve error visibility, and ensure the system could handle external dependency instability more gracefully.
+
+---
+
+### Key Learning
+This incident reinforced the importance of designing for failure in distributed systems.
+
+Even when issues are transient and self-recovering, proactively strengthening retries, fallbacks, and observability is critical to maintaining a reliable customer experience.
+
+----
+
+## Q4.1 Production Incident – 2-Minute Spoken Script (STAR, EM-Level)
+
+### S – Situation
+In our readmission prevention platform serving around 120 clients, we use metadata-driven pipelines to enable incremental data processing. 
+
+We encountered a production incident where there was a sudden 10x spike in data volume, which led to multiple job failures and one client SLA breach.
+
+---
+
+### T – Task
+As the engineering lead, my immediate priority was to minimize customer impact, quickly restore system stability, and ensure clear and transparent communication, while also identifying the root cause and preventing recurrence.
+
+---
+
+### A – Action
+
+I approached this in three phases.
+
+**First, customer impact mitigation.**  
+We quickly assessed which clients were affected and isolated impacted pipelines. We prioritized recovery for SLA-critical workloads and kept stakeholders informed through the :contentReference[oaicite:0]{index=0}, ensuring transparency throughout the incident.
+
+**Second, system stabilization and recovery.**  
+We paused the pipelines to prevent further overload and began root cause analysis. We discovered that incorrect metadata was causing the system to reprocess historical data. After correcting the metadata, we restarted jobs in a phased and controlled manner, closely monitoring the system to ensure stability.
+
+**Third, root cause and prevention.**  
+We traced the issue to a cleanup script that directly updated a shared metadata table without validation. This exposed a governance gap in how shared components were managed.
+
+To address this, we eliminated direct database writes and introduced API-based controlled updates with validation rules, such as preventing backward timestamp changes. We also implemented approval workflows for high-risk changes, scoped updates to reduce blast radius, and added anomaly detection and alerting for abnormal data volumes.
+
+---
+
+### R – Result
+We were able to restore system stability within hours, prevent further SLA breaches, and minimize broader customer impact.
+
+More importantly, we used this incident to strengthen our system by introducing proper governance, validation, and proactive monitoring, which significantly improved platform reliability and cross-team accountability.
+
+---
+
+### Key Learning (Observability Improvement)
+One key learning was around observability. At that time, our monitoring was largely reactive—we relied on job failure alerts and typically investigated after repeated failures to reduce noise.
+
+This meant we were detecting issues only after impact had begun.
+
+Post-incident, we shifted to a proactive model by introducing data volume anomaly detection, guardrails to prevent abnormal reprocessing, and early SLA warning signals.
+
+So now, instead of reacting to failures, we can detect and stop issues before they impact customers.
+----
+
 
 ## Q5: How do you manage support, on-call, and recurring issues
 
