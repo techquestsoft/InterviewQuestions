@@ -323,15 +323,19 @@ Capacity → Architecture → Ops → Team → Execution
 
 Scaling from 120 to 1200 customers is not just a technical problem—it requires coordinated changes across architecture, operations, and team structure.
 
-I start with capacity planning by understanding current throughput, latency, and data growth trends, and then plan for at least 10x growth with buffer.
+I start with capacity planning by understanding current throughput, latency, and data growth trends, and plan for at least 10x growth with buffer.
 
-From an architecture perspective, I ensure services are stateless and introduce tenant-based data isolation. For example, in relational systems, this could mean partitioning data by tenant or time, and in OpenSearch, using index-level partitioning such as tenant-specific or time-based indices.
+From an architecture perspective, I ensure services are stateless and introduce tenant-based data isolation—for example, partitioning in relational databases or index strategies in OpenSearch.
 
-Operationally, I improve observability by defining SLOs, dashboards, and alerts so that scaling issues are detected early.
+Before making major changes, I always diagnose bottlenecks—whether it’s database, specific services, or search latency—and apply targeted optimizations like caching, query tuning, or connection pooling.
 
-Equally important is team scaling—I align teams to domain ownership so that services can evolve independently.
+At the infrastructure level, I enable horizontal scaling using auto-scaling and load balancing.
 
-Finally, I follow incremental rollout strategies instead of scaling everything at once, which reduces risk.
+Operationally, I define SLOs and set up observability so scaling issues are detected early.
+
+Equally important is team scaling—I align teams to domain ownership to avoid bottlenecks.
+
+Finally, I scale incrementally using canary deployments and load testing, rather than scaling everything at once.
 
 ---
 
@@ -348,10 +352,52 @@ Scaling too fast can introduce instability, while over-standardization can slow 
 In our healthcare system, as customers increased:
 
 - We introduced tenant-based partitioning in Oracle  
-- Used time-based indices in OpenSearch for better query isolation  
+- Used tenant-based indices in OpenSearch for better query isolation  
 - Improved monitoring and alerting  
 
 This allowed us to handle 10x growth without major re-architecture.
+
+
+### More technial
+
+1. DIAGNOSE FIRST
+   "Before scaling, profile the bottleneck —
+    DB? Network? A specific service? Scale the constraint."
+
+2. QUICK WINS (before re-architecture)
+   - Caching (Redis) for read-heavy data
+   - Connection pooling tuning
+   - Query optimization
+   - CDN for static assets
+
+3. HORIZONTAL SCALING
+   - Stateless services → Kubernetes HPA
+   - Load balancer tuning
+   - AKS node pool scaling
+
+4. DATA LAYER SCALING
+   - Read replicas for read traffic
+   - Tenant/time partitioning in Oracle
+   - Index-per-tenant or time-based in OpenSearch
+   - Archiving cold data
+
+5. OPERATIONAL READINESS
+   - SLOs defined per service
+   - Alerting on p99 latency, error rate, consumer lag
+   - Runbooks for common failure modes
+
+6. TEAM SCALING
+   - Domain ownership alignment
+   - Platform team to own shared infra
+   - Avoid teams becoming bottlenecks for each other
+
+7. INCREMENTAL ROLLOUT
+   - Scale one layer at a time
+   - Canary deployments for risky changes
+   - Load test before each major customer onboarding
+
+### Real scenario:
+When our Care Management platform grew from 120 to 400 customers, the first signal was OpenSearch query latency climbing from 80ms to 700ms on readmission risk queries. Rather than immediately re-architecting, we first profiled — the issue was hot shards because all tenants shared one index. We introduced tenant-based index routing and time-based rollover, which dropped latency back to 95ms. For the DB layer, connection pool exhaustion was next — we tuned HikariCP pool sizing and added a Redis cache for frequently accessed patient reference data, cutting Oracle load by 40%. On the infrastructure side, we configured AKS HPA on our API pods so they scaled automatically during peak alert processing windows. Each step was load tested before the next customer cohort onboarded
 
 ---
 
