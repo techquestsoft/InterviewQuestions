@@ -268,6 +268,72 @@ Layer 6 — Observability
 
 ---
 
+# AWS vs Azure — Layered Architecture Comparison
+
+---
+
+## Layer 1 — Edge
+
+| AWS | Azure |
+|-----|------|
+| CloudFront (CDN for static content) | Azure CDN / Azure Front Door |
+| Route 53 (DNS + health checks) | Azure DNS |
+| Front Door (geo-routing for multi-region) | Azure Front Door (global routing + WAF) |
+
+---
+
+## Layer 2 — API & Gateway
+
+| AWS | Azure |
+|-----|------|
+| API Gateway (routing, throttling, authentication) | Azure API Management |
+| WAF (web application firewall) | Azure Web Application Firewall |
+| ALB (application load balancer) | Azure Application Gateway |
+
+---
+
+## Layer 3 — Compute & Orchestration
+
+| AWS | Azure |
+|-----|------|
+| EKS (Kubernetes — microservices) | AKS (Azure Kubernetes Service) |
+| EC2 + EMR (big data batch pipelines) | Azure Virtual Machines + Azure Databricks |
+| Lambda (event triggers, short-lived functions) | Azure Functions |
+
+---
+
+## Layer 4 — Data & Storage
+
+| AWS | Azure |
+|-----|------|
+| S3 (data lake — raw, processed, audit) | Azure Blob Storage |
+| OpenSearch (search, analytics, real-time queries) | Azure Cognitive Search |
+| RDS / Aurora (transactional workloads) | Azure SQL Database |
+| ElastiCache / Redis (caching layer) | Azure Cache for Redis |
+
+---
+
+## Layer 5 — Security
+
+| AWS | Azure |
+|-----|------|
+| IAM (role-based access — least privilege) | Azure Active Directory (Azure AD) |
+| KMS (encryption at rest) | Azure Key Vault |
+| Secrets Manager (credentials management) | Azure Key Vault |
+| VPC + Security Groups (network isolation) | Azure Virtual Network (VNet) + NSG |
+
+---
+
+## Layer 6 — Observability
+
+| AWS | Azure |
+|-----|------|
+| CloudWatch (infrastructure metrics) | Azure Monitor |
+| OpenTelemetry → New Relic (APM, distributed tracing) | Azure Application Insights / OpenTelemetry → New Relic |
+| Splunk (log aggregation and search) | Splunk / Azure Monitor Logs |
+
+---
+
 ### Q10: EC2 vs Lambda — when to use which?
 
 | Decision Factor | Lambda | EC2 |
