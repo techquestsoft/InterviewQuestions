@@ -8,15 +8,15 @@
 
 ## MASTER INTRODUCTION (90 seconds)
 
-> "I am Rajasekhar Reddy Ekuluri — I go by Rajasekhar.
+> "I am Rajasekhar Reddy Yakkaluru — I go by Sekhar.
 >
 > I recently completed my role as a Senior Engineering Manager at Oracle Cerner, where I led two clinical products — Care Management and Readmission Prevention — serving 180+ healthcare providers and processing 500 million patient records annually.
 >
 > I have 20 years of experience across healthcare, insurance, and banking — evolving from hands-on Java and big data engineering to leading distributed systems, data platforms, and engineering teams.
 >
-> My most significant achievement was leading a platform modernization at Optum — migrating 600 microservices from OpenShift to Kubernetes, delivering $9 million in annual infrastructure savings.
+> My most significant achievement was leading a platform modernization at Optum — migrating 100+ microservices from OpenShift to Kubernetes, resulted $5 million in annual infrastructure savings.
 >
-> At Oracle Cerner, I focused on production reliability, cloud migration from AWS to OCI, and introducing ML-driven risk scoring to replace rule-based systems.
+> At Oracle Cerner, I’ve been focused on driving cloud migration from AWS to OCI and upgrading readmission and transition of care rule based risk scoring to ML-Driven risk scoring, while improving engineering efficiency and production reliability.
 >
 > I am now looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact at scale."
 
