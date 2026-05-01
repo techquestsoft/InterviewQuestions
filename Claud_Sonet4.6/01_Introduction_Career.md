@@ -19,9 +19,6 @@
 > At Oracle Cerner, I’ve been focused on driving cloud migration from AWS to OCI and upgrading readmission and transition of care rule based risk scoring to ML-Driven risk scoring, while improving engineering efficiency and production reliability.
 >
 > I’m looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact.
-> I’m also interested in working on modern initiatives like data and AI where they add real value to the business.
-
-> I’m looking for opportunities to operate at a broader scope — contributing to platform-level decisions, engineering org design, and driving meaningful business impact.
 
 **Memory Hook:** Present → Experience → Achievement → Focus → Vision
 
@@ -70,9 +67,9 @@
 
 **Memory Hook:** Problem → Action → Result → Impact
 
-> "The most significant was the platform modernization at Optum. We had 600 SOAP services built over 15 years, costing $24 million annually in infrastructure. Many were unused — no call volume for months.
+> "The most significant was the platform modernization at Optum. We had 600 services built over 15 years, costing $24 million annually in infrastructure. Many were unused — no call volume for months.
 >
-> I led the analysis, rationalized to 200 APIs, containerized the platform on OpenShift, then Kubernetes. We saved $9 million per year in infrastructure costs. P95 latency went from 3 seconds to under 1 second across the critical find-membership and find-individual APIs that handled 5 million weekly transactions.
+> I led the analysis, rationalized to 100+ Eligibility and Memeber Experience APIs, migrated from Openshift to Kubernetes. We saved $5 million per year in infrastructure costs. P95 latency went from 3 seconds to under 1 second across the critical find-membership and find-individual APIs that handled 5 million weekly transactions.
 >
 > Beyond the numbers — this changed how the org thought about platform ownership. We proved India could drive product engineering end-to-end, not just execute tasks."
 
@@ -82,7 +79,7 @@
 
 **Memory Hook:** Own → Deliver → Lead → Align
 
-> "I led Care Management and Readmission Prevention at Oracle Cerner. These are clinical decision-support products installed at 180+ health providers.
+> "I led Care Management and Readmission Prevention at Oracle Cerner. These are clinical decision-support products installed at 120+ health providers.
 >
 > My scope covered two scrum teams — 14 engineers total — spanning India and US. I managed the full product lifecycle: roadmap with product owners, architecture with the HDI platform team, delivery execution, production reliability, and people development.
 >
