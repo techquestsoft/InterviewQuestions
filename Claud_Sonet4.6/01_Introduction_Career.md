@@ -46,9 +46,9 @@
 ## Q2: Why are you looking for a change?
 
 **Memory Hook:** Growth → Impact → Alignment
+> I’m looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact.
+> I’m also interested in working on modern initiatives like data and AI where they add real value to the business.
 
-> "I am looking for opportunities to operate at a broader scope — contributing to platform-level decisions, engineering org design, and AI-driven transformation — not just product delivery within one team.
->
 > My work at Oracle Cerner gave me deep product and engineering ownership, but I am ready to take that to a larger scale, where engineering leadership directly shapes business outcomes."
 
 **Strong Closing:**
