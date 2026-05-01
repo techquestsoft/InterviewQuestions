@@ -18,8 +18,7 @@
 >
 > At Oracle Cerner, I’ve been focused on driving cloud migration from AWS to OCI and upgrading readmission and transition of care rule based risk scoring to ML-Driven risk scoring, while improving engineering efficiency and production reliability.
 >
-> I’m looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact.
-
+> I’m looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact at scale.
 **Memory Hook:** Present → Experience → Achievement → Focus → Vision
 
 ---
