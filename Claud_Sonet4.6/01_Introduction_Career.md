@@ -20,6 +20,7 @@
 >
 > I’m looking for a role where I can combine engineering leadership with platform thinking to drive meaningful business impact.
 > I’m also interested in working on modern initiatives like data and AI where they add real value to the business.
+
 > I’m looking for opportunities to operate at a broader scope — contributing to platform-level decisions, engineering org design, and driving meaningful business impact.
 
 **Memory Hook:** Present → Experience → Achievement → Focus → Vision
