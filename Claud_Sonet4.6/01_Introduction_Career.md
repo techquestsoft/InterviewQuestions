@@ -100,7 +100,7 @@
 >
 > Operationally, every morning I check our New Relic dashboards for any overnight incidents — my team covers 12 hours, US covers 12 hours. I review emails for urgent escalations. I approve second-level PRs. I have a 6 PM standup with the full India and US team. Evenings also include CAB calls for release governance, ops reviews, and CAPA follow-ups from incidents.
 >
-> I stay technically engaged through architecture reviews, code reviews at the second-approval level, and POCs for new capabilities — like the Kafka migration at Optum or the GitHub Actions pipeline conversion at Cerner."
+> I stay technically engaged through architecture reviews, code reviews at the second-approval level, and POCs for new capabilities — like the V1/V2 data migration to V3 or the GitHub Actions pipeline conversion at Optum."
 
 ---
 
