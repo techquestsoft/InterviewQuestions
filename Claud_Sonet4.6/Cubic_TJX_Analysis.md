@@ -115,24 +115,24 @@ For every meaningful question or topic from the two transcripts, here's where it
 | C2 | "What do you mean by balanced architecture vs microservices?" | ✅ Covered | **File 04** | Q2 — Monolith vs Microservices (your "balanced approach" framing fits here) |
 | C3 | Day-to-day activities (quarterly → sprint → daily) | ✅ Covered | **File 01** | Q6 — Day-to-Day, three-layer answer |
 | C4 | Quarterly planning trade-offs (Oracle APM vs New Relic, V3 vs observability) | ✅ Covered | **File 02** Q14 + **File 03** Q3 | Stakeholder conflict + prioritization |
-| C5 | CAB call / change management process | ✅ Covered | **File 03** Q5 + **File 05** Q9 | Release management (File 03) and CI/CD pipeline (File 05) |
-| C6 | COPA (Corrective Action / Preventive Action) | ✅ Covered | **File 05** Q2-Q5 | Incident management — explicitly mentioned |
+| C5 | CAB call / change management process | ✅ Covered | **File 03** Q5 + **File 05** Q8 | Release management (File 03) and CI/CD pipeline (File 05) |
+| C6 | COPA (Corrective Action / Preventive Action) | ✅ Covered | **File 05** Q1-Q2 | Incident management — explicitly mentioned |
 | C7 | Architecture role for V1/V2 → V3 migration | ✅ Covered | **File 01** Q5 + **File 02** Q13 | Current role + leadership failure |
 | C8 | Java/Spark POC for migration | ✅ Covered | **File 01** Q8 | Stay technical — POC examples |
-| C9 | Memory leaks | ✅ Covered | **File 05** Q16 | Memory leak detection/diagnosis/fix — your transcript answer was thin, File 05 has the full answer |
-| C10 | Deadlocks | ✅ Covered | **File 05** Q17 | Deadlocks — File 05 has lock ordering, tryLock, async patterns |
+| C9 | Memory leaks | ✅ Covered | **File 05** Q15 | Memory leak detection/diagnosis/fix — your transcript answer was thin, File 05 has the full answer |
+| C10 | Deadlocks | ✅ Covered | **File 05** Q16 | Deadlocks — File 05 has lock ordering, tryLock, async patterns |
 | C11 | High throughput system design | ✅ Covered | **File 04** Q8 + Q4 | High throughput design + scalability |
-| C12 | Architecture pattern — CDN, edge, API gateway, throttling, WAF, DDoS | ✅ Covered | **File 05** Q11 + **File 04** Q5-Q6 | AWS layered design + scalability |
+| C12 | Architecture pattern — CDN, edge, API gateway, throttling, WAF, DDoS | ✅ Covered | **File 05** Q10 + **File 04** Q5-Q6 | AWS layered design + scalability |
 | C13 | Resiliency4j — circuit breakers, retry, fallback | ✅ Covered | **File 04** Q9 | Backpressure handling — full code examples |
-| C14 | Multi-region — Front Door, geolocation routing | ✅ Covered | **File 04** Q15 + **File 05** Q11 | High availability + AWS layers |
+| C14 | Multi-region — Front Door, geolocation routing | ✅ Covered | **File 04** Q15 + **File 05** Q10 | High availability + AWS layers |
 | C15 | **Partitioning vs Sharding** ⚠️ wrong answer in interview | ✅ Covered with correction | **File 04** Q18 | Clean definitions with code examples — the Cubic-correction answer |
-| C16 | OWASP Top 10 — authentication, authorization, SAST, DAST | ✅ Covered | **File 05** Q18 | API security four layers |
-| C17 | EKS / Kubernetes — Optum OpenShift vs Cerner EKS | ✅ Covered | **File 05** Q15 | Kubernetes capabilities + EKS vs self-managed |
-| C18 | CI/CD detailed walkthrough — PR → SonarQube → Fortify → CAB → Remedy → Spinnaker | ✅ Covered | **File 05** Q9 | Five-stage CI/CD pipeline |
-| C19 | Canary vs Blue-Green deployment | ✅ Covered | **File 05** Q10 | Deployment strategies table |
-| C20 | Rolling update — ⚠️ stumbled in interview | ✅ Covered | **File 05** Q10 | Now in deployment table |
-| C21 | EC2 vs Lambda — ⚠️ "I am not able to recollect" | ✅ Covered with 3 examples | **File 05** Q14 | Lambda use cases — 3 specific examples now memorized |
-| C22 | EMR cluster — 60% reserved + 40% transient | ✅ Covered | **File 05** Q11 (AWS section) | Real cost optimization example |
+| C16 | OWASP Top 10 — authentication, authorization, SAST, DAST | ✅ Covered | **File 05** Q17 | API security four layers |
+| C17 | EKS / Kubernetes — Optum OpenShift vs Cerner EKS | ✅ Covered | **File 05** Q14 | Kubernetes capabilities + EKS vs self-managed |
+| C18 | CI/CD detailed walkthrough — PR → SonarQube → Fortify → CAB → Remedy → Spinnaker | ✅ Covered | **File 05** Q8 | Five-stage CI/CD pipeline |
+| C19 | Canary vs Blue-Green deployment | ✅ Covered | **File 05** Q9 | Deployment strategies table |
+| C20 | Rolling update — ⚠️ stumbled in interview | ✅ Covered | **File 05** Q9 | Now in deployment table |
+| C21 | EC2 vs Lambda — ⚠️ "I am not able to recollect" | ✅ Covered with 3 examples | **File 05** Q13 | Lambda use cases — 3 specific examples now memorized |
+| C22 | EMR cluster — 60% reserved + 40% transient | ✅ Covered | **File 05** Q10 (AWS section) | Real cost optimization example |
 | C23 | Spillovers — burndown, retro, trade-offs | ✅ Covered | **File 03** Q4 | Sprint spillovers — three causes, three responses |
 | **C24** | **"I laid off in Oracle, I need a job, can put a story on that"** | ✅ Covered (warning) | **File 01** Q2 | Why-leaving discipline — explicit "never volunteer the layoff" rule |
 
@@ -145,13 +145,13 @@ For every meaningful question or topic from the two transcripts, here's where it
 | # | Question / Topic | Status | File | Section / Notes |
 |---|------------------|--------|------|------------------|
 | T1 | Self-introduction | ✅ Covered | **File 01** | Master 90-second introduction |
-| T2 | Azure experience + Solutions Architect Expert certification | ✅ Covered | **File 01** Credentials + **File 05** Q12 | Certifications + Azure services table |
-| T3 | Kafka experience | ✅ Covered | **File 04** Q11-Q12 + **File 05** Q14 | SAGA + Outbox + EMR Kafka context |
+| T2 | Azure experience + Solutions Architect Expert certification | ✅ Covered | **File 01** Credentials + **File 05** Q11 | Certifications + Azure services table |
+| T3 | Kafka experience | ✅ Covered | **File 04** Q11-Q12 + **File 05** Q13 | SAGA + Outbox + EMR Kafka context |
 | T4 | Day-to-day with cross teams (product, business, architecture) | ✅ Covered | **File 01** Q6 + **File 02** Q1 | Three-phase day + team management |
 | T5 | CCB (Change Control Board) — features, ops review, COPA in one meeting | ✅ Covered | **File 02** Q1 + **File 05** Q2 | Team management + incident management |
 | T6 | Hiring strategy (6 → 14 engineers) | ✅ Covered | **File 02** Q6 | Hiring and team building |
 | T7 | Decision making — collaboration with architect, deep dives, pros/cons documentation | ✅ Covered | **File 04** Q1 + **File 02** Q18 | System design approach + influencing leadership |
-| T8 | New Relic vs Oracle APM trade-off (real example) | ✅ Covered | **File 02** Q14 + **File 05** Q12 | Unpopular decision + Azure/OCI services |
+| T8 | New Relic vs Oracle APM trade-off (real example) | ✅ Covered | **File 02** Q14 + **File 05** Q11 | Unpopular decision + Azure/OCI services |
 | T9 | Key parameters for technical decision making | ✅ Covered | **File 04** Q1 | System design framework — Goals → Metrics → Constraints → NFRs → Levers → Options |
 | T10 | NFRs — scalability, DR, resiliency, throttling, rate limiting, circuit breakers, fallback | ✅ Covered | **File 04** Q9 + Q15 | Backpressure + High Availability |
 | T11 | DR strategy — Active-Active vs Active-Passive | ✅ Covered | **File 04** Q15 | High availability — multi-region design |
@@ -164,9 +164,9 @@ For every meaningful question or topic from the two transcripts, here's where it
 | T18 | Eventual consistency vs strong consistency (use case driven) | ✅ Covered | **File 04** Q10 | Data consistency in distributed systems |
 | T19 | **Database goes down mid-transaction in active-active** | ✅ Partially Covered | **File 04** Q12 + Q15 | Outbox guarantees atomicity. **GAP: explicit walk-through of "user request lands in zone with downed DB"** — see addition below |
 | T20 | Event-based vs user-transaction-based applications | ✅ Covered | **File 04** Q4 + **File 06** | Architecture choice |
-| T21 | **Cloud-to-cloud migration (AWS → OCI) lessons** | ⚠️ Partial Coverage | **File 05** Q13 (OCI section) + **File 04** | OCI section covers the strategic answer. **GAP: lessons learned about Terraform/IAC absence** — see addition below |
-| T22 | Application stack changes during migration (Kubernetes services + EMR + dashboards) | ✅ Covered | **File 05** Q11-Q13, Q15 | AWS + OCI service mappings |
-| T23 | **Observability gap — New Relic vs Oracle APM** | ✅ Covered | **File 05** Q6-Q7 + **File 07** Q13 | Four pillars + observability gap analysis |
+| T21 | **Cloud-to-cloud migration (AWS → OCI) lessons** | ⚠️ Partial Coverage | **File 05** Q12 (OCI section) + **File 04** | OCI section covers the strategic answer. **GAP: lessons learned about Terraform/IAC absence** — see addition below |
+| T22 | Application stack changes during migration (Kubernetes services + EMR + dashboards) | ✅ Covered | **File 05** Q10-Q14 | AWS + OCI service mappings + Kubernetes |
+| T23 | **Observability gap — New Relic vs Oracle APM** | ✅ Covered | **File 05** Q5-Q7 + **File 07** Q13 | Four pillars + observability gap analysis |
 | T24 | **Conversational AI architecture (NL query → API gateway → LLM agent → MCP → OpenSearch → 2nd LLM)** | ✅ Covered | **File 06** Q1 + Q2 | Full GenAI architecture diagram |
 | T25 | **Team management — 14 people, 6+6+2 (PO + TPM)** | ✅ Covered | **File 02** Q1 + **File 01** Q5 | Team management + current role |
 | T26 | **Developer not getting challenging work — how to handle** | ⚠️ Strong answer in interview, **needs to be added** | **File 02** | **NEW Q22 needed — see below** |
@@ -196,7 +196,7 @@ Your TJX answer about Saffer not using Terraform is a great example you should h
 
 > *"The biggest migration lesson: invest in infrastructure-as-code from day one. At Cerner, Saffer (the acquired health product) had per-team scripts and manual provisioning. That meant migration from AWS to OCI took significantly more effort than it should have — every EMR cluster, every networking rule had to be discovered, documented, and rebuilt rather than re-applied from Terraform. The lesson I now apply: even if you never plan to migrate, infrastructure-as-code is essential for reproducibility, audit, and disaster recovery — and migration becomes a near-side-effect benefit."*
 
-This should be added as **File 05, Q13a** (in the OCI migration section).
+This should be added as **File 05, Q12a** (in the OCI migration section).
 
 ### Gap 3 — Developer Wanting More Challenging Work (File 02)
 
@@ -250,7 +250,7 @@ After applying the 3 additions from Part 3, the 7-file structure stays unchanged
 
 - **File 02:** new Q9a "Developer wanting challenging work"
 - **File 04:** new Q15a "Active-active DB failure walkthrough"
-- **File 05:** new Q13a "Cloud-to-cloud migration lessons"
+- **File 05:** new Q12a "Cloud-to-cloud migration lessons"
 
 I've kept the existing question numbering so cross-references in the main files don't break.
 

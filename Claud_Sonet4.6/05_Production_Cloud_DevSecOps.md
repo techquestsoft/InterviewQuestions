@@ -21,15 +21,17 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ### Q1: What is your overall approach to production reliability?
 
-**Memory Hook:** Observe → Resilience → Improve
+**Memory Hook:** Observe → Resilience → Improve → SLO Buffer
 
-> "Three pillars.
+> "Three pillars, plus an operating discipline.
 >
 > **Observability** — you cannot fix what you cannot see. Metrics, logs, distributed traces, and event markers. All four. Without events, you cannot answer the most important incident question: what changed just before this started?
 >
 > **Resilience** — design assuming failures will happen. Retries with exponential backoff, circuit breakers, fallbacks, bulkheads. Every external dependency is a potential failure point.
 >
 > **Continuous improvement** — every incident produces a structural fix, not just a workaround. RCA within 48 hours. CAPA items with owners and dates.
+>
+> **Operating discipline.** I define SLOs per service and set alerts at 99.5% when the SLO target is 99.9%. That gives me time to investigate before the SLO is breached, not after. Alerts must be actionable — if an alert fires and the response is 'nothing to do, it self-resolved,' the threshold needs adjustment or the alert needs deletion. Recurring incidents without a structural fix indicate a broken CAPA process — that gets escalated.
 >
 > My goal: move from incident handling to incident prevention."
 
@@ -128,25 +130,11 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ---
 
-### Q5: How do you ensure production stability at scale?
-
-**Memory Hook:** Monitor → Prevent → Learn
-
-> "Three practices.
->
-> **Proactive monitoring.** Define SLOs per service, alerts at 99.5% when SLO is 99.9%. Time to investigate before breach, not after. Alerts must be actionable — if an alert fires and the response is 'nothing to do, it self-resolved,' threshold needs adjustment or alert needs deletion.
->
-> **Preventive work.** CVE management, tech upgrades, runbooks for known failure modes — tracked as backlog items with same rigor as features.
->
-> **Feedback loop.** Every incident is an input to the backlog. Every CAPA item has owner and date. Recurring incidents without structural fix indicate broken CAPA process."
-
----
-
 ## SECTION B — OBSERVABILITY
 
 ---
 
-### Q6: How do you design for observability?
+### Q5: How do you design for observability?
 
 **Memory Hook:** Logs + Metrics + Traces + Events = Complete Observability
 
@@ -179,7 +167,7 @@ With deployment event at 14:30:
 
 ---
 
-### Q7: Distributed tracing setup (New Relic + Splunk)
+### Q6: Distributed tracing setup (New Relic + Splunk)
 
 > "Setup is zero code change — just add the agent to Kubernetes deployment.
 >
@@ -217,7 +205,7 @@ With deployment event at 14:30:
 
 ---
 
-### Q8: How do you handle support, on-call, and recurring issues?
+### Q7: How do you handle support, on-call, and recurring issues?
 
 **Memory Hook:** Own → Prioritize → Analyze → Fix
 
@@ -241,7 +229,7 @@ With deployment event at 14:30:
 
 ---
 
-### Q9: Walk me through your CI/CD pipeline end-to-end
+### Q8: Walk me through your CI/CD pipeline end-to-end
 
 **Memory Hook:** Quality → Security → Build → Deploy → Govern
 
@@ -289,7 +277,7 @@ With deployment event at 14:30:
 
 ---
 
-### Q10: Deployment strategies — when to use which?
+### Q9: Deployment strategies — when to use which?
 
 | Strategy | How | When | Rollback |
 |----------|-----|------|----------|
@@ -311,7 +299,7 @@ With deployment event at 14:30:
 
 ---
 
-### Q11: AWS Services — design in layers
+### Q10: AWS Services — design in layers
 
 ```
 Layer 1 — Edge
@@ -353,7 +341,7 @@ Layer 6 — Observability
 
 ---
 
-### Q12: Azure Services — also relevant for your background
+### Q11: Azure Services — also relevant for your background
 
 **You hold Azure Solutions Architect Expert certification.** When asked about Azure:
 
@@ -376,7 +364,7 @@ Layer 6 — Observability
 
 ---
 
-### Q13: OCI Services — for Cerner migration context
+### Q12: OCI Services — for Cerner migration context
 
 **Currently leading AWS → OCI migration.** Be ready to speak about:
 - OCI Compute (equivalent to EC2)
@@ -391,7 +379,7 @@ Layer 6 — Observability
 
 ---
 
-### Q13a: Lessons learned from cloud-to-cloud migration (AWS → OCI)
+### Q12a: Lessons learned from cloud-to-cloud migration (AWS → OCI)
 
 **Memory Hook:** IAC From Day One → Per-Team Scripts Are Tech Debt → Observability Differences
 
@@ -413,7 +401,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-### Q14: EC2 vs Lambda — when to use which?
+### Q13: EC2 vs Lambda — when to use which?
 
 | Decision Factor | Lambda | EC2 |
 |----------------|--------|-----|
@@ -440,7 +428,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-### Q15: Kubernetes — capabilities and real usage
+### Q14: Kubernetes — capabilities and real usage
 
 **Memory Hook:** Deploy → Scale → Network → Secure → Observe
 
@@ -474,7 +462,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-### Q16: Memory Leaks — Detection, Diagnosis, Fix
+### Q15: Memory Leaks — Detection, Diagnosis, Fix
 
 **Memory Hook:** Detect → Diagnose → Fix → Prevent
 
@@ -510,7 +498,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-### Q17: Deadlocks
+### Q16: Deadlocks
 
 **Memory Hook:** Lock Order → Avoid Nesting → Timeout → Async
 
@@ -543,7 +531,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-### Q18: How do you approach API security?
+### Q17: How do you approach API security?
 
 **Memory Hook:** WAF → OWASP → SAST/DAST → Governance
 
