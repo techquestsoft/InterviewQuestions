@@ -131,17 +131,61 @@
 
 ## Q6: How does your day look? (Day-to-Day Activities)
 
-**Memory Hook:** Strategic → Execution → Operational
+**Memory Hook:** Strategic → Execution → Operational + Platform Vigilance
 
-> "Three layers.
+**Spoken version (under 2 minutes — stop here unless probed):**
+
+> "Three layers, plus an underlying platform-vigilance habit.
 >
-> **Quarterly / Strategic.** Each quarter I align with product owners, the architecture team, and the platform team to set the roadmap. I lead prioritization across feature work, tech debt, and compliance items — I do not let product own the entire backlog because deferred tech debt compounds. I create the major features and user stories myself for that quarter.
+> **Quarterly / Strategic.** I align with product owners, architects, and the HDI platform team to set the roadmap. I lead prioritization across features, tech debt, and compliance — I don't let product own the entire backlog because deferred tech debt compounds. I create the major features and user stories myself.
 >
-> **Sprint / Execution.** Weekly grooming sessions, design deep-dives for complex features, and burndown tracking mid-sprint. I surface cross-team dependencies and resolve blockers proactively rather than waiting. I am the mandatory second-level approver on PRs — peer review first, then me.
+> **Sprint / Execution.** Weekly grooming, design deep-dives, code reviews as second-level approver, sprint burndown tracking. I surface cross-team dependencies and resolve blockers myself rather than waiting.
 >
-> **Daily / Operational.** Every morning I check New Relic dashboards for overnight incidents — India covers 12 hours, US covers 12 hours. I review emails for urgent escalations from product, platform, or leadership. Code reviews and design reviews fill the middle of the day. I have a 6 PM standup with the full India and US team. Evenings include CAB calls for release governance, ops reviews, and CAPA follow-ups from incidents.
+> **Daily / Operational.** Every morning I check ops dashboards across New Relic, Grafana, Splunk, plus Slack and email alerts — anything needing immediate attention. We support 12 by 12 hours between India and US, so I'm watching for incidents from overnight US hours. The support workload includes client SRs, ETL failures, and API health checks. I have a 6 PM standup with the full India-US team, weekly 1-on-1s with my engineers.
 >
-> I also stay technically engaged through architecture POCs — for example, I built the Java/Spark POC for migrating data from V1/V2 to V3, and I owned the high-level and low-level design of the V3 ML model integration."
+> **Underlying habit — platform vigilance.** I scan HDI platform Slack channels, Confluence, and wiki pages daily for things that could impact my products — security vulnerabilities like CrowdStrike or Log4j, Java or Ruby version upgrade timelines, OCI observability migration plans, IAM rotation cycles, third-party library vulnerabilities. Catching these signals early lets me plan rather than react.
+>
+> I also stay hands-on through architecture POCs — recently the V1/V2 to V3 OpenSearch data migration utility built in Java/Spark."
+
+---
+
+### Q6a: Release management chain — what does it actually look like at Oracle?
+
+If interviewer probes how releases get to production:
+
+**Memory Hook:** OHRM → HDI CAB → Remedy CR → JFORMs → TTP
+
+> "Five gates between code and production at Oracle Cerner.
+>
+> **OHRM (Oracle Health Release Management) approval** — for any architecture or platform change. I work with enterprise architecture, present the change, and get approval before implementation begins.
+>
+> **HDI CAB (Change Approval Board)** — weekly review for upcoming releases. Submit the change request, explain blast radius, rollback plan, test evidence.
+>
+> **Remedy CR (Change Request)** — formal ticket with all artifacts attached. CAB approval is recorded in Remedy.
+>
+> **JFORMs approval** — testing sign-off documentation. QA confirms test coverage, edge cases validated, regression complete.
+>
+> **TTP (Transfer to Production)** — final manual authorization. Engineering manager signs off. Then the deployment runs through Spinnaker.
+>
+> Beyond release-time governance, I also participate in monthly Dev and Ops Quality Reviews — these feed into yearly audits, internal and external. Solution Record Reviews and Ops Maturity Assessments are the broader continuous-quality cadence at the platform level."
+
+---
+
+### Q6b: What recurring stakeholder meetings do you participate in?
+
+If interviewer probes meeting load (be careful — too many can signal "manager is just in meetings"):
+
+> "I participate in a structured set of recurring forums — each has a specific purpose:
+>
+> **Product alignment** — weekly CCB and feature review with product team for Care Management and Readmission Prevention. This is where roadmap, priorities, and trade-offs get decided.
+>
+> **Operational** — weekly Care Coordination ops review and support handoff between India and US teams. Plus the COPA (corrective and preventive action) calls following incidents.
+>
+> **Cross-team / platform** — weekly OHRM office hours, HDILS Security office hours, HDI CAB. These are where I catch upcoming platform changes that affect my products.
+>
+> **Initiative-specific** — currently I run two parallel initiatives: AWS to OCI migration and the V3 ML model upgrade. Each has its own stakeholder cadence with platform and architecture teams.
+>
+> The total load is significant, but each meeting earns its place — if a forum stops being useful, I push to consolidate or drop it. I treat meeting time as a finite resource, same as engineering capacity."
 
 ---
 
@@ -151,7 +195,24 @@
 
 > "Servant leadership with high accountability. My job is to remove blockers, give engineers clear ownership, and create the conditions for them to do their best work. Their job is to own their commitments and flag risks early. Both sides matter.
 >
-> I keep technical depth — architecture reviews, second-level PR approvals, occasional pairing on hard problems — but I do not become a bottleneck. I delegate execution and stay engaged on direction and decisions."
+> I keep technical depth — architecture reviews, second-level PR approvals, occasional pairing on hard problems — but I do not become a bottleneck. I delegate execution and stay engaged on direction and decisions.
+>
+> The operating principles I emphasize most with my team: own without ego, earn trust and give trust, nail the basics before chasing innovation, and act now and iterate rather than waiting for perfect. These shape how I evaluate engineers and how I make my own calls under pressure."
+
+#### Note on Oracle Health leadership principles
+
+If an Oracle interview comes up and you're asked about cultural fit, the Oracle Health operating principles are:
+- Put customers first
+- Act now, iterate
+- Lead with innovation
+- Take pride in your work
+- Expect and embrace change
+- Earn trust, give trust
+- Own without ego
+- Nail the basics
+- Respect and include
+
+Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how you operate and weave them into your answer naturally.
 
 ---
 

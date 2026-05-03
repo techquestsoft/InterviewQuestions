@@ -267,6 +267,10 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ### Q14: Tell me about an unpopular decision you made
 
+You have **two solid conflict stories** — pick based on the interviewer's framing.
+
+#### Story A — Security vs Feature (CrowdStrike vs V3) — use when asked about cross-team conflict or hard prioritization
+
 **Memory Hook:** Security First → Data → Phased Plan → Own the Communication
 
 > "We had a direct conflict between the compliance team requiring CrowdStrike security installation across all our Kubernetes and EMR instances — about a one-week effort affecting 120+ client environments — and the product team, who wanted us to continue the V3 ML initiative committed for the quarter.
@@ -280,6 +284,22 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > I owned the stakeholder communication myself rather than leaving product to explain it alone.
 >
 > The product team agreed. CrowdStrike installed. V3 resumed one sprint later. No client escalation."
+
+#### Story B — Platform direction vs delivery commitment (OCI Observability vs V3) — use when asked about disagreeing with architects or peer leaders
+
+**Memory Hook:** Compliance Project Has Priority → Acknowledge Direction → Path Forward
+
+> "A more recent conflict: the enterprise architecture team asked all solution architects to migrate from New Relic to OCI Observability. At the same time, I was running a compliance-driven project — migrating Readmission Prevention from V1/V2 rule-based to V3 ML scoring — committed to specific clients with specific dates.
+>
+> The solution architect for our area was pushing for the OCI Observability migration to start that quarter. I disagreed.
+>
+> My case: the V3 migration had clinical compliance implications and committed customer dates. OCI Observability migration was platform direction without a hard deadline. We could not run both simultaneously without putting the V3 commitment at risk — and the V3 commitment had higher business cost if missed.
+>
+> I did not just say 'no.' I explained the priority with the cost-of-delay framing on both sides, and I committed to a specific quarter when our team would start the OCI Observability migration — after V3 was in production. I documented this as a path forward with the architect, so it was a decision with a date, not avoidance.
+>
+> The solution architect agreed. V3 went to production on the original commitment. OCI Observability migration started the following quarter on plan.
+>
+> What this taught me: disagreeing with platform direction is fine, but you owe a clear path forward. 'No' alone burns trust. 'Not now, here's when, here's why' preserves it."
 
 ---
 

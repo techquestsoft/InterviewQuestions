@@ -100,6 +100,30 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ---
 
+### Q5a: Walk me through the actual release management chain at Oracle Cerner
+
+If interviewer probes the formal governance:
+
+**Memory Hook:** OHRM → HDI CAB → Remedy CR → JFORMs → TTP
+
+> "Five formal gates between code-complete and production.
+>
+> **OHRM (Oracle Health Release Management)** — for any architecture or platform-level change, OHRM approval is required before implementation begins. I work with enterprise architecture, present the proposal, get sign-off.
+>
+> **HDI CAB (Change Approval Board)** — weekly review for upcoming releases across the Health Data Intelligence platform. I submit the change request, present blast radius, rollback plan, and test evidence.
+>
+> **Remedy CR (Change Request)** — formal ticket in Remedy with all artifacts attached. CAB approval is recorded here for audit trail.
+>
+> **JFORMs approval** — testing sign-off documentation. QA confirms test coverage, edge cases validated, regression complete.
+>
+> **TTP (Transfer to Production)** — final manual authorization. Engineering manager signs off, then deployment runs through Spinnaker.
+>
+> Beyond release-time governance, ongoing quality is enforced through monthly Dev and Ops Quality Reviews, yearly internal and external audits, Solution Record Reviews, and Ops Maturity Assessments. These are the platform-level continuous-quality mechanisms.
+>
+> The discipline this requires can feel heavy, but it's the right level of governance for healthcare. The cost of a production incident in clinical decision support is regulatory, not just operational."
+
+---
+
 ### Q6: How do you balance execution and quality?
 
 **Memory Hook:** Execute + Control + Feedback Loop
