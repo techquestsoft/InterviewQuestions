@@ -69,19 +69,42 @@
 
 ## Q2: Why did you leave each role / why are you looking now?
 
+> **Critical consistency rule:** Your introduction uses past tense — "I most recently led..." This means the interviewer knows you've already transitioned out of Oracle Cerner. Your "why looking?" and "notice period" answers must align with that. Never claim "30 days notice" if your intro says "most recently led" — that contradiction destroys trust faster than a layoff disclosure would.
+
 **Bank of America (Why I left):**
 > "I had spent 11 years there and built strong foundations in distributed systems and big data. The leadership opportunities I wanted were primarily in the US — India roles were largely IC. I wanted product ownership and team leadership at scale, which Optum offered."
 
 **Optum (Why I left):**
 > "After 6 years and the OpenShift-to-Kubernetes modernization, the platform had stabilized into KTLO mode — keep-the-lights-on. New transformation initiatives had slowed. Oracle Cerner offered me the chance to lead clinical products end-to-end and drive AI/ML transformation, which was where I wanted to grow next."
 
-**Oracle Cerner / Why looking now:**
-> "Oracle went through organizational changes that affected my team. I am using this as an opportunity to find a role where I can combine engineering leadership with platform thinking and AI-driven transformation at a larger scale."
+### Oracle Cerner / Why looking now — three layered answers
 
-**Critical discipline — never volunteer the layoff.**
-- Wells Fargo and Cubic interviews lost ground because you said "I was laid off" unprompted.
-- Only mention organizational changes if directly asked "why are you leaving?"
-- Never say "I need a job" or "I can put a story on that" — that one Cubic line ended any chance of progression.
+Pick the layer that matches the depth of the interviewer's question.
+
+**Layer 1 — Default opening (use first, almost always):**
+> "Oracle went through organizational changes earlier this year that affected my product area. I'm using this transition as an opportunity to find the next step — a role with broader scope across platform, AI-enabled engineering, and team scaling. I want my next role to be one I choose deliberately, not one I default into."
+
+**Layer 2 — Use only if interviewer probes further (e.g., "What kind of organizational changes?"):**
+> "Oracle had a workforce reduction tied to restructuring across several health products. It was a business decision, not performance — the team I built had delivered the V3 ML transformation on track and the AWS-to-OCI migration on plan. I'm now using the time to find a role that matches where I want to grow next, rather than rushing into the fastest available role."
+
+**Layer 3 — Use only if directly asked "Were you laid off?":**
+> "Yes, my role was impacted by an organizational restructuring across several products. It wasn't performance-related — and frankly I'm treating it as an opportunity to be deliberate about what I do next, rather than a setback."
+
+**Discipline rules:**
+- **Layer 1 is your default.** Most interviewers don't push past it.
+- **Never volunteer Layer 2 or 3 unprompted.** That was the Cubic and Wells Fargo mistake.
+- **Never say "I need a job"** — destroys leverage and dignity.
+- **Never say "I can put a story on that"** — destroys integrity. The Cubic interview was lost on this one sentence.
+
+### Why this is actually a positive
+
+Most candidates have 60–90 day notice periods. You can start in 1–2 weeks. For a hiring manager with an open req, that's a real selling point — not a disadvantage. Frame it as such:
+
+> "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes."
+
+You can also volunteer this proactively as a selling point during compensation/timeline discussions:
+
+> "One advantage on my side — I'm immediately available. Most hiring timelines are constrained by candidates' notice periods. If this role is a fit, we can move quickly."
 
 ---
 
@@ -115,7 +138,7 @@
 
 ---
 
-## Q5: Tell me about your current role
+## Q5: Tell me about your most recent role
 
 **Memory Hook:** Own → Deliver → Lead → Align
 
@@ -125,13 +148,15 @@
 >
 > The signature initiatives I owned: the V1/V2 rule-based to V3 ML-driven risk scoring transformation — which delivered ~40% accuracy improvement; cloud migration from AWS to OCI; and a POC for LLM-based conversational AI to enable natural-language queries for care managers.
 >
-> Day-to-day I operate at three levels — strategic (quarterly roadmap), execution (sprint-level grooming, design reviews, dependency resolution), and operational (daily dashboard monitoring, incident response, US-India coordination)."
+> Day-to-day I operated at three levels — strategic (quarterly roadmap), execution (sprint-level grooming, design reviews, dependency resolution), and operational (daily dashboard monitoring, incident response, US-India coordination)."
 
 ---
 
-## Q6: How does your day look? (Day-to-Day Activities)
+## Q6: How does/did your day look? (Day-to-Day Activities)
 
 **Memory Hook:** Strategic → Execution → Operational + Platform Vigilance
+
+> **Tense note:** If asked "how does your day look?" — answer in present tense (engineering managers typically describe their most recent role this way regardless of current employment status). If asked "what did your day look like at Oracle?" — answer in past tense. The content is the same; just match the interviewer's framing.
 
 **Spoken version (under 2 minutes — stop here unless probed):**
 
@@ -171,21 +196,21 @@ If interviewer probes how releases get to production:
 
 ---
 
-### Q6b: What recurring stakeholder meetings do you participate in?
+### Q6b: What recurring stakeholder meetings did you participate in?
 
 If interviewer probes meeting load (be careful — too many can signal "manager is just in meetings"):
 
-> "I participate in a structured set of recurring forums — each has a specific purpose:
+> "I participated in a structured set of recurring forums — each had a specific purpose:
 >
-> **Product alignment** — weekly CCB and feature review with product team for Care Management and Readmission Prevention. This is where roadmap, priorities, and trade-offs get decided.
+> **Product alignment** — weekly CCB and feature review with product team for Care Management and Readmission Prevention. This was where roadmap, priorities, and trade-offs got decided.
 >
 > **Operational** — weekly Care Coordination ops review and support handoff between India and US teams. Plus the COPA (corrective and preventive action) calls following incidents.
 >
-> **Cross-team / platform** — weekly OHRM office hours, HDILS Security office hours, HDI CAB. These are where I catch upcoming platform changes that affect my products.
+> **Cross-team / platform** — weekly OHRM office hours, HDILS Security office hours, HDI CAB. These were where I caught upcoming platform changes that could affect my products.
 >
-> **Initiative-specific** — currently I run two parallel initiatives: AWS to OCI migration and the V3 ML model upgrade. Each has its own stakeholder cadence with platform and architecture teams.
+> **Initiative-specific** — I was running two parallel initiatives at the time: AWS to OCI migration and the V3 ML model upgrade. Each had its own stakeholder cadence with platform and architecture teams.
 >
-> The total load is significant, but each meeting earns its place — if a forum stops being useful, I push to consolidate or drop it. I treat meeting time as a finite resource, same as engineering capacity."
+> The total load was significant, but each meeting earned its place — if a forum stopped being useful, I pushed to consolidate or drop it. I treated meeting time as a finite resource, same as engineering capacity."
 
 ---
 
@@ -244,7 +269,7 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 | **Weaknesses?** | Earlier I went too deep technically in leadership scenarios. I have shifted to leading with the management answer and pulling in technical depth only when it adds value. |
 | **Why this company?** | (Customize per company — research the company's domain, scale, and the specific role challenge before the interview.) |
 | **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, team scaling, and AI-driven transformation. Title matters less than scope and impact." |
-| **Notice period?** | "30 days standard." (Do not volunteer "I am on garden leave" or "I am laid off.") |
+| **Notice period? / When can you start?** | "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes." (Frame as positive — most candidates have 60–90 day notice. Your immediate availability shortens hiring timelines and is a selling point.) |
 | **CTC expectations?** | "I am flexible and open to discussing based on the total compensation package — base, variable, ESOPs, benefits. Happy to share my last CTC if helpful, but I would prefer to understand the role and budget first." (Do not anchor low.) |
 
 ---
