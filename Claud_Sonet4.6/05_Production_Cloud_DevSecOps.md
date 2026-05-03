@@ -391,6 +391,28 @@ Layer 6 — Observability
 
 ---
 
+### Q13a: Lessons learned from cloud-to-cloud migration (AWS → OCI)
+
+**Memory Hook:** IAC From Day One → Per-Team Scripts Are Tech Debt → Observability Differences
+
+This came up at TJX. Memorize this answer with the specific Saffer example.
+
+> "The biggest lesson: invest in infrastructure-as-code from day one, even if you never plan to migrate.
+>
+> At Cerner, the Saffer health product (acquired by Oracle four years ago) didn't have Terraform — they had per-team scripts and some manual provisioning. That meant migration from AWS to OCI was significantly more effort than it should have been. Every EMR cluster, every networking rule, every IAM role had to be discovered, documented, and rebuilt — rather than re-applied from version-controlled IaC.
+>
+> The lesson I now apply: even if you never plan to migrate, infrastructure-as-code is essential for reproducibility, audit, and disaster recovery. Migration becomes a near-side-effect benefit.
+>
+> Three specific lessons from this AWS → OCI work:
+>
+> **One — Application code itself migrates cleanly** if it's cloud-agnostic (12-factor, config via environment, no hardcoded service endpoints). Our Kubernetes services and EMR pipelines moved with mostly configuration changes, not code changes.
+>
+> **Two — Observability has the biggest gap.** New Relic in AWS vs OCI APM are very different. OCI APM is still evolving and doesn't have the same scope. We negotiated to keep New Relic in production while OCI APM matures, then migrate separately. The lesson: build an observability abstraction layer if you anticipate platform changes — common code that supports multiple APM backends saves significant rework.
+>
+> **Three — Identity and access management requires rework.** IAM roles, OAuth providers, and service-to-service auth are the most cloud-specific layer. Plan for this explicitly in the migration roadmap."
+
+---
+
 ### Q14: EC2 vs Lambda — when to use which?
 
 | Decision Factor | Lambda | EC2 |

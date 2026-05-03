@@ -151,6 +151,29 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
+### Q8a: A developer says they're not getting challenging work — how do you handle it?
+
+**Memory Hook:** Two Sprints Data → Normal 1:1 (NOT performance review) → Interest Area → System vs Capable → End-to-End Ownership Aligned to Roadmap
+
+> "This is a growth conversation, not a performance conversation. The two are completely different and need different framing.
+>
+> First, I review two sprints of their data before the conversation — what they've actually delivered, what their work history shows in terms of technical depth, ownership, and problem-solving. I want to understand them before I sit down with them, not during.
+>
+> Then I have a normal one-on-one, explicitly not framed as performance management. The goal is understanding: what interests them, what would feel like growth, are there blockers I'm not seeing.
+>
+> If they show genuine capability AND clear interest in something specific — say, end-to-end ownership of a use case like our conversational AI POC — I align it with the quarterly roadmap. Not extra work piled on existing scope, but a meaningful piece of work that lets them visualize their contribution to the product itself, not just to code.
+>
+> That visibility — connecting their work to product outcome — is what turns a contributor into an engaged contributor.
+>
+> Real example at Cerner: I gave one engineer end-to-end ownership of our V3 Java/Spark POC. He owned the design, the implementation, and the architecture review with the HDI AI team. He went from feeling stuck on maintenance work to becoming the technical lead for that initiative."
+
+**Important distinction from Q4 (low performer):**
+- This question is about growth aspirations from a capable engineer
+- Q4 is about an underperformer
+- Same data-first principle, but completely different conversations
+
+---
+
 ### Q9: How do you handle a team with low morale and missed deadlines (new manager scenario)?
 
 **Memory Hook:** Listen 30 days → Diagnose 60 days → Quick Wins 90 days

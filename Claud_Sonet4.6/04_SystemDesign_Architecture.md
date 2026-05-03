@@ -415,6 +415,35 @@ void releaseInventoryReservation(String reservationId) {
 
 ---
 
+### Q15a: Active-Active design — what happens when the local DB goes down mid-transaction?
+
+**Memory Hook:** Atomicity at Local Zone → User Failure → Retry → Other Zone → Eventual Catch-up
+
+This came up at TJX. You took 3 turns to land it. Memorize this clean answer.
+
+> "If the local DB write and the outbox table write don't both succeed, the @Transactional rolls back — atomicity is preserved at the local zone level. The user sees a failed request.
+>
+> On retry, traffic may route to the healthy zone where the transaction completes. Worst case is brief unavailability for the affected users — not data inconsistency.
+>
+> Eventual consistency between zones is handled by Kafka-based replication of outbox events. Once the failed zone recovers, it catches up via the same Kafka topic.
+>
+> Two key design points:
+> - Atomicity is local — guaranteed by the transactional boundary in the failing zone
+> - Cross-zone consistency is eventual — guaranteed by the outbox + Kafka pattern
+>
+> What I would NEVER do: try to write across zones synchronously to mask the failure. That breaks the active-active model and creates worse failure modes than the one we're trying to handle."
+
+#### When TJX-style mediation layer changes this
+
+If the application is a **stateful mediation layer** (like the TJX Manhattan WMS context) where in-flight transactions must finish in the same zone they started, the design changes:
+- Sticky session routing at the application layer (not just geolocation)
+- Transaction affinity — once a transaction starts in zone A, all subsequent calls go to zone A until commit
+- DR fallback only for new transactions, not for in-flight ones
+
+> "For a mediation layer with stateful in-flight transactions, geolocation routing is the wrong abstraction. You want session/transaction affinity at the application layer. The active-active design protects against zone failure for new traffic — not for transactions already in progress."
+
+---
+
 ### Q16: Design a Notification System
 
 **Memory Hook:** Event → Queue → Processor → Channel → Retry → Status
