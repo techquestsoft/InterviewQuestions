@@ -378,8 +378,23 @@ Layer 6 — Observability
 > "Strategic decision at Oracle level — consolidating cloud spend on OCI for healthcare products. Cost benefits at the tenant level, deeper integration with Oracle databases (which Cerner products heavily use), and unified support model. The migration approach is service-by-service, with parallel running periods to validate parity before cutover."
 
 ---
+### Q12a: AWS vs Azure vs OCI
 
-### Q12a: Lessons learned from cloud-to-cloud migration (AWS → OCI)
+# ☁️ Multi-Cloud Architecture (AWS vs Azure vs OCI)
+
+## 📊 Layered Architecture Mapping
+
+| **Layer** | **AWS** | **Azure** | **OCI (Oracle Cloud)** |
+|-----------|--------|----------|------------------------|
+| **Layer 1 — Edge** | CloudFront *(CDN for static content — JS, images, SPA assets, caching at edge)*<br>Route 53 *(DNS + health checks — failover, latency routing)* | Azure Front Door *(CDN + global routing — edge caching + L7 routing)*<br>Azure Traffic Manager *(DNS routing — geo/latency-based failover)* | OCI CDN *(static content delivery — edge caching)*<br>OCI DNS *(domain resolution + health checks)* |
+| **Layer 2 — API & Gateway** | API Gateway *(routing, throttling, auth — expose REST/GraphQL APIs)*<br>AWS WAF *(web application firewall — block OWASP threats)*<br>ALB *(L7 load balancer — route to microservices)* | Azure API Management *(API gateway — policies, auth, rate limiting)*<br>Azure WAF *(security — SQL injection, XSS protection)*<br>Application Gateway *(L7 routing + load balancing)* | OCI API Gateway *(API exposure — auth, throttling)*<br>OCI WAF *(web protection — attack filtering)*<br>OCI Load Balancer *(traffic distribution — L4/L7)* |
+| **Layer 3 — Compute & Orchestration** | EKS *(Kubernetes — microservices orchestration, scaling)*<br>EC2 + EMR *(VMs + big data — Spark/Hadoop batch pipelines)*<br>Lambda *(event triggers — S3 upload → process file, glue logic between services)* | AKS *(Kubernetes — containerized microservices)*<br>VMs + Azure Databricks *(Spark analytics — ETL pipelines)*<br>Azure Functions *(event-driven compute — queue triggers, HTTP triggers)* | OKE *(Kubernetes — container orchestration)*<br>OCI Compute + Data Flow *(Spark jobs — batch processing)*<br>OCI Functions *(serverless — event-driven workflows)* |
+| **Layer 4 — Data & Storage** | S3 *(data lake — raw, processed, audit zones)*<br>OpenSearch *(search + analytics — logs, real-time dashboards)*<br>RDS / Aurora *(relational — OLTP transactions)*<br>DynamoDB *(NoSQL — high-scale key-value, sessions)*<br>ElastiCache (Redis) *(caching — reduce DB load, improve latency)* | Blob Storage *(data lake — hierarchical storage, analytics)*<br>Azure Cognitive Search *(search + indexing — app search use cases)*<br>Azure SQL / PostgreSQL *(relational — transactions)*<br>Cosmos DB *(NoSQL — global distribution, low latency)*<br>Azure Cache for Redis *(caching — session store, hot data)* | OCI Object Storage *(data lake — durable storage)*<br>OCI Search Service *(OpenSearch-based — log analytics)*<br>Autonomous Database *(relational — self-tuning OLTP/OLAP)*<br>OCI NoSQL *(key-value store — scalable workloads)*<br>OCI Cache (Redis) *(in-memory caching — performance boost)* |
+| **Layer 5 — Security** | IAM *(role-based access — least privilege policies)*<br>KMS *(encryption keys — data at rest protection)*<br>Secrets Manager *(credentials — DB passwords, API keys)*<br>VPC + Security Groups *(network isolation — private subnets)* | Microsoft Entra ID *(identity + RBAC — SSO, enterprise auth)*<br>Azure Key Vault *(keys + secrets — encryption + credentials)*<br>Managed Identities *(secure service auth — no hardcoded secrets)*<br>VNet + NSG *(network isolation — traffic control)* | OCI IAM *(identity + policies — access control)*<br>OCI Vault *(keys + secrets — encryption management)*<br>Compartments *(resource isolation — governance boundaries)*<br>VCN + Security Lists *(network isolation — subnet security)* |
+| **Layer 6 — Observability** | CloudWatch *(metrics + logs — CPU, memory, alarms)*<br>X-Ray *(distributed tracing — request flow across services)*<br>OpenTelemetry → New Relic *(APM — latency, bottlenecks)*<br>Splunk *(log aggregation — centralized logging, search)* | Azure Monitor *(metrics + alerts — infra visibility)*<br>Application Insights *(APM — request tracing, failures)*<br>OpenTelemetry → New Relic *(advanced APM)*<br>Splunk *(centralized logging — enterprise observability)* | OCI Monitoring *(metrics — resource health)*<br>OCI Logging *(log aggregation — audit + app logs)*<br>OCI APM *(performance monitoring — tracing)*<br>Splunk *(external log analytics — optional integration)* |
+---
+
+### Q12b: Lessons learned from cloud-to-cloud migration (AWS → OCI)
 
 **Memory Hook:** IAC From Day One → Per-Team Scripts Are Tech Debt → Observability Differences
 
