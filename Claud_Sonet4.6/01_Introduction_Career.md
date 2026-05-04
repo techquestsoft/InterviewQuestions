@@ -28,10 +28,10 @@
 >
 > I most recently served as a Senior Engineering Manager at Oracle Cerner, leading two Care Coordination products—Care Management and Readmission Prevention—within the Health Data Intelligence platform. These products support over 120 healthcare customers and process more than 500 million patient records, enabling data-driven clinical decision-making at scale.
 >
-> I have 20 years of experience across banking at HSBC and Bank of America, insurance at Optum, and healthcare at Oracle Cerner. I have evolved from hands-on Java and big data engineering into leading distributed systems, data platforms, and engineering teams.
+> I have around 20 years of experience across healthcare, banking and insurane, where I’ve evolved from hands-on engineering to leading distributed systems, data platforms, and engineering teams.
 >
-> My most significant achievement was leading platform modernization at Optum — migrating 110+ microservices from OpenShift to Kubernetes, achieving approximately $5 million in annual infrastructure cost savings while improving scalability and operational efficiency.
->
+> One of my key achievements was leading a platform modernization initiative at Optum, where I migrated 100+ microservices from Red Hat OpenShift to Kubernetes. This resulted in approximately $5 million in annual infrastructure cost savings, while significantly improving scalability and operational efficiency.
+
 > At Oracle Cerner I focused on driving cloud migration from AWS to OCI, upgrading rule-based risk scoring to ML-driven scoring, and improving engineering productivity through AI-assisted development.
 >
 > I am looking for a role where I can combine engineering leadership with platform thinking and AI-driven transformation to drive meaningful business impact at scale."
