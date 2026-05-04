@@ -26,7 +26,7 @@
 
 > "I am Rajasekhar Reddy Yakkaluru — I go by Sekhar.
 >
-> I most recently led two Care Coordination products at Oracle Cerner — Care Management and Readmission Prevention — within the Health Data Intelligence platform, supporting 120+ healthcare customers and processing 500 million patient records.
+> I most recently served as a Senior Engineering Manager at Oracle Cerner, leading two Care Coordination products—Care Management and Readmission Prevention—within the Health Data Intelligence platform. These products support over 120 healthcare customers and process more than 500 million patient records, enabling data-driven clinical decision-making at scale.
 >
 > I have 20 years of experience across banking at HSBC and Bank of America, insurance at Optum, and healthcare at Oracle Cerner. I have evolved from hands-on Java and big data engineering into leading distributed systems, data platforms, and engineering teams.
 >
