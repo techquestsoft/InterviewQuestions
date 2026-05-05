@@ -396,7 +396,7 @@ void releaseInventoryReservation(String reservationId) {
 
 ### Q15: How do you design for high availability?
 
-**Memory Hook:** No SPOF → Redundancy → Failover → Multi-Region
+**Memory Hook:** No SPOF (Single Points of Failure) → Redundancy → Failover → Multi-Region
 
 > "Ensure no single point of failure across any layer.
 >
@@ -589,16 +589,55 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 **Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
 
 > "Five disciplines I enforce on every Spring Boot service.
+## **Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
+
+> **API Governance - Contract first**  
+> I always start with a contract-first approach. Every API is defined using OpenAPI and goes through design review before any code is written.  
 >
-> **Contract first.** Every API has an OpenAPI spec reviewed before code is written. Versioned URIs — /v1, /v2. Backward-compatible changes by default. We never break consumers without a deprecation cycle.
+> We treat APIs as products, not implementation details.  
+> Versioning is explicit—/v1, /v2—and we follow a strict no-breaking-changes policy. If a change is unavoidable, we run a formal deprecation cycle and support N-1 versions.  
 >
-> **Clear service boundaries.** Each microservice owns a bounded context — for an account origination domain that means: application-intake, KYC, document-verification, risk-scoring, decisioning. Each owns its own data store. No cross-service DB joins.
+> This prevents downstream failures and gives consumer teams confidence to integrate.
+
+> **Domain Integrity - Clear service boundaries**  
+> I align services with bounded contexts to ensure high cohesion and low coupling.  
 >
-> **Resilience built in.** Resilience4j for circuit breakers, retries with exponential backoff, timeouts, bulkheads. The Faraday authorization incident I described earlier is exactly what this discipline prevents.
+> For example, in an account origination domain, I would separate services like application-intake, KYC, risk scoring, and decisioning.  
 >
-> **Observability first-class.** Spring Boot Actuator + Micrometer for metrics, correlation IDs across services, structured JSON logging. No new service goes live without a dashboard.
+> Each service owns its own database, and I enforce a hard rule: no cross-service database joins. If we need shared data, we use APIs or asynchronous events.  
 >
-> **Secure by default.** OAuth2/JWT validated at the gateway and re-validated at the service. Bean Validation on every input. Secrets in vault. Audit logging for privileged actions."
+> This ensures scalability and prevents tight coupling across teams.
+
+> **Engineering for Failure - Resilience**  
+> Infrastructure will fail, so the application must be defensive.  
+>
+> I leverage Resilience4j to implement circuit breakers, bulkheads, and retries with exponential backoff.  
+>
+> The goal is to prevent a single downstream delay from cascading into a total system blackout—an anti-fragile approach I've used to mitigate high-pressure incidents in the past.  
+>
+> This builds systems that degrade gracefully instead of failing catastrophically.
+
+> **Observability - No Dark Corners Rule**  
+> A service is invisible without telemetry.  
+>
+> I bake in Spring Boot Actuator and Micrometer from day one.  
+>
+> We use structured JSON logging and propagate correlation IDs through every hop to enable distributed tracing.  
+>
+> My policy is simple: no dashboard, no deploy.  
+>
+> We need to see the health of the system before users report issues.
+
+> **Security - Secure by Default**  
+> Security isn't a perimeter; it’s a layer.  
+>
+> We validate OAuth2/JWT at the API Gateway and re-verify at the service level (Zero Trust).  
+>
+> Beyond that, I enforce strict Bean Validation on all inputs to prevent injection and ensure secrets are never in properties files, but pulled from a secure vault at runtime.  
+>
+> We also enforce audit logging for sensitive operations.  
+>
+> This ensures systems are secure, compliant, and production-ready by default.
 
 ---
 
