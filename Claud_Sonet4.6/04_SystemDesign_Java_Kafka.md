@@ -646,14 +646,23 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 
 > "Three rules.
 >
-> **REST for queries.** When a service needs immediate data — fetch customer profile during origination, validate eligibility — synchronous REST is fine. Latency cost is acceptable, and the consumer needs the answer to proceed.
->
-> **Kafka for state changes that fan out.** When an event triggers downstream work — application.submitted triggers KYC, document verification, risk scoring, notifications — async events decouple producers from consumers. Producers don't wait. Consumers can scale independently.
->
-> **Saga for distributed workflows.** Account origination is a multi-step workflow across services. We use either choreography — services react to each other's events — or orchestration with a coordinator service when sequencing is critical. Add Outbox pattern to guarantee no event is lost when a service crashes mid-transaction.
->
-> Default: REST for reads, Kafka for writes that fan out, Saga + Outbox for true distributed transactions."
+> **Synchronous for Queries (REST/gRPC)**  
+> If a consumer cannot proceed without an immediate response, we use REST. This is typical for 'Read' operations—for instance, an Origination Service fetching a customer's credit score in real-time to render a UI. The latency is the price we pay for immediate consistency. However, I enforce strict timeouts and circuit breakers here to ensure a slow downstream query doesn't hang the upstream service.
 
+---
+
+> **Asynchronous for "Fan-Out" State Changes (Kafka)**  
+> For 'Write' operations or business events, I default to Kafka. When an application is submitted, multiple downstream systems (KYC, Risk, Email) need to react. Using REST here creates a 'distributed monolith' where a failure in the Email service could crash the entire submission flow. Kafka decouples these; the producer fires the event and moves on, while consumers process it at their own pace.
+
+---
+
+> **Distributed Transactions (Saga + Outbox)**  
+> When a business process spans multiple services—like our Account Origination workflow—we move to a Saga Pattern.  
+>
+> Choreography: For simpler flows, services listen and react to each other’s events.  
+>
+> Orchestration: For complex logic, I prefer an orchestrator to manage the sequence and "compensating transactions" (rollbacks) if a step fails.  
+> To bridge the gap between the DB and Kafka, I mandate the Transactional Outbox Pattern. This ensures that we never commit a database change without also successfully emitting the corresponding Kafka event, preserving data integrity even during a crash.
 ---
 
 ### Q22: How do you ensure Spring Boot service performance and tune it?
@@ -662,15 +671,15 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 
 > "Five-step approach.
 >
-> **Measure first.** APM — New Relic, Dynatrace — gives p50/p95/p99 latency, throughput, GC behavior. No optimization without data.
+> **Baselines & APM (Measure First)** I never allow tuning without a baseline. We use APM tools like New Relic or Dynatrace to identify the 'Top 5' slowest transactions. I focus on p95 and p99 latencies rather than averages, as those represent the actual friction points for our users. We also look at 'Error Rates'—often, poor performance is actually a symptom of retries from hidden errors. No optimization without data.
 >
-> **Optimize the hot path.** Database queries are the most common killer — N+1 patterns, missing indexes, full-table scans. Reduce serialization where possible. Lazy-load only what's needed.
+> **The Persistence Layer (Hot Path Optimization)** 90% of Spring Boot performance issues reside in the data layer. I look for the N+1 problem in Hibernate, missing indexes, or expensive full-table scans. We use EXPLAIN ANALYZE to ensure our queries are efficient. At the code level, I enforce 'Lazy Loading' by default but 'Eager Fetching' specifically for the hot paths to reduce round-trips to the DB..
 >
-> **Cache deliberately.** Redis for shared cache, Caffeine for in-process hot data. Always with TTL and clear invalidation. Cache without eviction is a memory leak waiting to happen — I caught one at Cerner that improved memory by 40%.
+> **Intelligent Caching (Cache Deliberately).** Redis for shared cache, Caffeine for in-process hot data. Always with TTL and clear invalidation. Cache without eviction is a memory leak waiting to happen — I caught one at Cerner that improved memory by 40%.
 >
-> **Tune JVM.** Right heap size based on observed allocation, G1GC default for most workloads, Tomcat thread pools sized to actual concurrency. Don't tune blind — change one variable, measure, repeat.
+> **Tune JVM.** Right heap size based on observed allocation, G1GC(Garbage First Garbage Collector) default for most workloads, Tomcat thread pools sized to actual concurrency. Don't tune blind — change one variable, measure, repeat.
 >
-> **Async where it fits.** @Async, CompletableFuture, or WebFlux for I/O-heavy paths. Don't make everything reactive — it's only worth it when I/O concurrency is the actual bottleneck."
+> **Async where it fits.** For I/O-bound services, we utilize @Async or CompletableFuture to free up the main request threads. If we are dealing with massive scale—like a notification engine—we might look at Spring WebFlux (Project Reactor). However, I am cautious here: reactive programming adds significant cognitive complexity, so I only approve it when high I/O concurrency is the proven bottleneck."
 
 ---
 
