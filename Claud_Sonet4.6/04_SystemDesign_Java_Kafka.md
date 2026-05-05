@@ -589,7 +589,6 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 **Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
 
 > "Five disciplines I enforce on every Spring Boot service.
-## **Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
 
 > **API Governance - Contract first**  
 > I always start with a contract-first approach. Every API is defined using OpenAPI and goes through design review before any code is written.  
