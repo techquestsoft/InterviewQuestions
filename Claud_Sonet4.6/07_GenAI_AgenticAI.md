@@ -1,5 +1,7 @@
-# Interview Prep — File 6 of 7
+# Interview Prep — File 7 of 8
 # GenAI, Agentic AI, AI Adoption & Productivity
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. JPMC explicitly calls out AI-enabled capabilities and agent-driven tools as preferred qualifications — this file is a **differentiator**, not just background.
 
 > **Rule 1:** Be honest about what is in production vs design. Interviewers catch inflated claims immediately.
 > **Rule 2:** Your GenAI architecture diagram is your strongest asset — refer to it consistently.
@@ -9,9 +11,10 @@
 
 ## CROSS-FILE INDEX
 
-This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engineering, hallucination handling, GenAI guardrails, AI productivity ROI.
+This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engineering, hallucination handling, GenAI guardrails, AI productivity ROI, agent-driven workflows for engineering automation.
 - AI productivity KPIs (cost-per-feature) → also referenced in File 03 with cross-link
 - People-side AI adoption → File 02
+- Reliability patterns for LLM apps → File 06 (resilience, observability)
 
 ---
 
@@ -356,7 +359,102 @@ This is Ananth's challenge at Availity — "velocity is not business value." You
 
 ---
 
-## QUICK REFERENCE — GENAI ARCHITECTURE DECISION MATRIX
+## SECTION E — AGENTIC AI, RESPONSIBLE AI & LLM RELIABILITY (JPMC PREFERRED QUALS)
+
+The JPMC JD explicitly lists three preferred qualifications around AI:
+1. Experience integrating AI/LLM capabilities into applications
+2. Ability to drive adoption of agent-style tools/workflows for automation and orchestration
+3. Familiarity with reliability patterns for LLM applications and responsible AI fundamentals
+
+Sections A–D cover (1). This section covers (2) and (3) explicitly.
+
+---
+
+### Q17: How would you drive adoption of agent-style tools and workflows for automation?
+
+**Memory Hook:** Identify Toil → Pilot → Measure → Scale → Govern
+
+> "Five steps. Same playbook I used at Cerner for AI-assisted engineering — applied to agentic workflows.
+>
+> **Identify high-toil workflows.** Where engineers spend time on repetitive, structured work — PR review summarization, log triage during incidents, runbook execution, ticket classification, on-call first-response, code refactoring. Agents excel here, not at open-ended creative work.
+>
+> **Pilot with one team.** Pick a willing team and one workflow with measurable success criteria — say, reduce time-to-triage by 30% on Sev3 incidents. Don't boil the ocean.
+>
+> **Measure honestly.** Time saved per task, error rate compared to baseline, engineer satisfaction. Publish the numbers — including the misses.
+>
+> **Scale with templates and guardrails.** Reusable agent patterns, approved tools, action-level audit logs. Engineers get an opinionated platform, not 'go build your own agent.'
+>
+> **Govern from day one.** Agents have access; access has consequences. RBAC on agent tool calls, blast-radius limits (read-only by default, write actions require explicit approval), human-in-the-loop for irreversible operations, full audit trail.
+>
+> Honest framing: I have led adoption of AI-assisted engineering practices at Cerner that delivered roughly 20% productivity improvement. Full agentic workflows — where the agent autonomously completes multi-step tasks — are still earlier-stage industry-wide. I'd bring the adoption playbook and the governance discipline; I would not claim to have shipped a fully autonomous agent in production."
+
+---
+
+### Q18: What reliability patterns do you apply to LLM applications?
+
+**Memory Hook:** Timeout → Retry → Fallback → Cache → Cost Control
+
+> "Five patterns. Same reliability discipline as any other distributed system, plus LLM-specific concerns.
+>
+> **Timeouts and retries.** LLM APIs are slow and occasionally fail. Aggressive timeouts (5–10 seconds for synchronous flows), exponential backoff, jittered retries to avoid thundering herd on the provider.
+>
+> **Fallback strategy.** Primary model unavailable? Failover to a secondary provider or a smaller model. For non-critical paths, degrade gracefully — return a deterministic answer or a 'try again' with a fast path. Hard dependency on one provider is a single point of failure.
+>
+> **Caching aggressively.** Semantic cache for similar queries (vector similarity on prompts), exact-match cache for repeated identical prompts. Cuts cost and latency dramatically — often 30–60% hit rate on production workloads.
+>
+> **Rate limiting and quotas.** Per-user, per-tenant, per-feature. Prevents abuse and runaway cost. Especially important when end-users can compose prompts that trigger expensive model calls.
+>
+> **Cost controls as first-class.** Token budgets per request, smaller models for simpler tasks, prompt optimization (shorter system prompts, response length caps). LLM costs surprise teams — I've seen monthly bills 5x what was forecast because nobody set caps.
+>
+> Plus the standard reliability discipline from File 06: structured logging with correlation IDs, p95/p99 latency tracking per model, error rate per provider, dashboards distinguishing 'our error' from 'provider error.'"
+
+---
+
+### Q19: What does responsible AI mean to you in a banking context?
+
+**Memory Hook:** Bias → Explainability → Human Review → Audit → Kill Switch
+
+> "Five fundamentals. In banking, responsible AI is a regulatory requirement, not an ethics nice-to-have.
+>
+> **Bias testing.** Models can encode bias from training data. For customer-impacting decisions — credit, account approval, fraud scoring — we need bias testing across demographic dimensions before launch and continuously in production. Track approval rates and outcomes by protected attribute classes.
+>
+> **Explainability.** Customer-impacting AI decisions need a reason that can be communicated to the customer and to regulators. For credit decisions, fair-lending laws require this. SHAP values, feature importance, or rule-based fallbacks for highest-stakes decisions.
+>
+> **Human review for high-stakes outputs.** AI suggests; humans decide on irreversible or high-impact actions. Account closure, large transaction blocks, escalations to fraud — humans in the loop.
+>
+> **Audit logging.** Every prompt, every response, every tool call logged with who, what, when, model version. Required for regulator inquiries and for retroactive review when something goes wrong.
+>
+> **Kill switches and rollback.** Ability to disable a model or revert to deterministic logic instantly when behavior drifts or compliance issues surface. Feature-flag the AI path so it can be turned off without redeploying.
+>
+> Honest framing: responsible AI is an organizational discipline, not a single engineer's responsibility. As an engineering manager, my role is to ensure the right governance reviews are in place — model approval boards, security review, legal review — and that my engineers know they can stop a launch if something feels wrong."
+
+---
+
+### Q20: How would you integrate AI into the BBAO account origination journey specifically?
+
+**Memory Hook:** Pain Point → Solution → Architecture → Measure
+
+> "I'd start where customer pain is concrete and measurable.
+>
+> **Pain point.** Customers abandon onboarding because of complex forms, document-upload friction, slow KYC verification, and unclear status during processing.
+>
+> **Three high-value AI plays.**
+>
+> *Smart document understanding* — vision + LLM extracts data from uploaded IDs and supporting documents, pre-fills forms, reduces typing. Confidence threshold; below threshold routes to human review with summarized context.
+>
+> *Conversational assistant* — answers customer questions in real time during the journey. RAG over policies, FAQ, regulatory disclosures. Scoped strictly — never gives investment or eligibility advice. Hand-off to human agent when out of scope or low confidence.
+>
+> *Intelligent agent triage* — classifies edge cases for human reviewers and surfaces a structured summary so the agent isn't reading through every uploaded document. Reduces handle time per escalation.
+>
+> **Architecture.** Document processor → entity extraction → form pre-fill API → guardrails (PII redaction, accuracy threshold, content policy) → human fallback when confidence is low. Conversational layer is a separate service with its own RAG store and model gateway.
+>
+> **Measure.** Onboarding completion rate, time-to-complete, customer satisfaction, agent handle time on escalations, accuracy of auto-extracted data. Bias and fairness metrics across customer demographics.
+>
+> **Honest framing.** I'd lead the engineering side and partner closely with Risk, Compliance, and Legal on responsible AI requirements. I would not propose AI for the core credit or eligibility decision itself — that's a regulated decision space where human-in-the-loop and explainability requirements are highest, and where the bank likely has existing model governance frameworks I'd plug into rather than reinvent."
+
+---
+
+
 
 | Question | Answer |
 |---------|--------|
@@ -396,4 +494,4 @@ This is Ananth's challenge at Availity — "velocity is not business value." You
 
 ---
 
-*File 6 of 7 — GenAI, Agentic AI, AI Adoption*
+*File 7 of 8 — GenAI, Agentic AI, AI Adoption*

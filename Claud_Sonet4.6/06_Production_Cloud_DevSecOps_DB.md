@@ -1,5 +1,7 @@
-# Interview Prep — File 5 of 7
-# Production Reliability, Cloud, DevSecOps & Observability
+# Interview Prep — File 6 of 8
+# Production Reliability, Cloud, DevSecOps, Observability & Databases
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Stack: AWS / Cloud Foundry, Docker / Kubernetes, Oracle / NoSQL (Cassandra, MongoDB).
 
 > **Rule 1:** Production questions — lead with management response (blast radius, communication, mitigation), THEN technical root cause.
 > **Rule 2:** Cloud questions — be specific about which services and WHY. Generic answers score 5/10.
@@ -9,9 +11,11 @@
 
 ## CROSS-FILE INDEX
 
-This file owns: production incidents, observability, AWS/Azure/OCI services, Kubernetes, CI/CD, DevSecOps, security.
+This file owns: production incidents, observability, AWS/Azure/OCI services, Kubernetes, CI/CD, DevSecOps, security, **Oracle/NoSQL database operations**.
 - KPIs (MTTD/MTTR/CFR) → File 03
-- Data quality and pipeline integrity → File 07
+- Java/Spring Boot service patterns and Kafka → File 04
+- Data quality and pipeline integrity → File 08
+- GenAI reliability patterns → File 07
 
 ---
 
@@ -402,18 +406,25 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 > "The biggest lesson: invest in infrastructure-as-code from day one, even if you never plan to migrate.
 >
-> At Cerner, the Saffer health product (acquired by Oracle four years ago) didn't have Terraform — they had per-team scripts and some manual provisioning. That meant migration from AWS to OCI was significantly more effort than it should have been. Every EMR cluster, every networking rule, every IAM role had to be discovered, documented, and rebuilt — rather than re-applied from version-controlled IaC.
+> At Cerner, the Saffer health product — acquired by Oracle four years ago — didn't have Terraform. It had per-team scripts and manual provisioning. That meant migration from AWS to OCI took significantly more effort than it should have. Every EMR cluster, every networking rule, every IAM role had to be discovered, documented, and rebuilt — rather than re-applied from version-controlled IaC.
 >
 > The lesson I now apply: even if you never plan to migrate, infrastructure-as-code is essential for reproducibility, audit, and disaster recovery. Migration becomes a near-side-effect benefit.
 >
-> Three specific lessons from this AWS → OCI work:
+> From that experience, I apply four core principles:
 >
-> **One — Application code itself migrates cleanly** if it's cloud-agnostic (12-factor, config via environment, no hardcoded service endpoints). Our Kubernetes services and EMR pipelines moved with mostly configuration changes, not code changes.
+> **1. Cloud-agnostic application design reduces migration effort.**
+> If services follow 12-factor principles — externalized configuration, no hardcoded endpoints, minimal vendor SDK dependency — most migration effort stays in configuration, not code. Our Kubernetes services and EMR pipelines moved with mostly configuration changes, not code changes. Tightly coupled services would have required rewrites.
 >
-> **Two — Observability has the biggest gap.** New Relic in AWS vs OCI APM are very different. OCI APM is still evolving and doesn't have the same scope. We negotiated to keep New Relic in production while OCI APM matures, then migrate separately. The lesson: build an observability abstraction layer if you anticipate platform changes — common code that supports multiple APM backends saves significant rework.
+> **2. Observability should be decoupled from the platform.**
+> We saw a clear gap between New Relic and OCI APM in maturity and feature scope. Instead of forcing a full switch, we negotiated to retain New Relic in production while OCI APM matures, and treated observability as a separate transition. The broader lesson: build an abstraction layer or use standard instrumentation like OpenTelemetry, so you can support multiple APM backends without rework.
 >
-> **Three — Identity and access management requires rework.** IAM roles, OAuth providers, and service-to-service auth are the most cloud-specific layer. Plan for this explicitly in the migration roadmap."
-
+> **3. IAM and networking are the most cloud-specific layers.**
+> Identity models, role assumptions, and service-to-service authentication required significant rework. Same with VPC-to-VCN differences, subnet design, and security policies. These are the areas where 'lift and shift' breaks down — they need to be explicitly planned early in the migration roadmap, not discovered late.
+>
+> **4. Data migration needs deliberate strategy — transfer time, cost, and consistency.**
+> For our datasets, the trade-off was downtime tolerance vs. operational complexity. Bulk transfer is simpler but requires a freeze window; dual-write keeps both clouds in sync but doubles operational surface during cutover. We staged the migration tenant-by-tenant with parallel running periods to validate parity before cutover — which aligned with the service-by-service approach Oracle mandated for the broader program.
+>
+> Overall: application and compute layers are relatively portable, but identity, networking, observability, and especially data require deliberate planning in any cloud-to-cloud migration."
 ---
 
 ### Q13: EC2 vs Lambda — when to use which?
@@ -576,6 +587,160 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
+## SECTION G — DATABASES (Oracle, Cassandra, MongoDB)
+
+The JPMC JD calls out Oracle and NoSQL datastores (Cassandra, MongoDB) explicitly. Be ready to talk about them at design, operations, and team-practice level.
+
+---
+
+### Q18: How do you decide between Oracle (relational) and NoSQL (Cassandra/MongoDB)?
+
+**Memory Hook:** Schema → Consistency → Scale → Query Pattern
+
+> "Four questions drive the choice.
+>
+> **Schema needs.** Strict, structured, with strong relationships → Oracle. Flexible, evolving schemas → MongoDB.
+>
+> **Consistency requirements.** Strong ACID for account-of-record data — financial transactions, ledger, customer records — Oracle. Eventual consistency acceptable — analytics, time-series, audit trails — Cassandra.
+>
+> **Scale and throughput.** Massive write throughput, horizontal scale, time-series — Cassandra shines. Mid-scale, mixed workloads — MongoDB or Oracle. Single-instance OLTP — Oracle.
+>
+> **Query patterns.** Complex joins and ad-hoc queries — Oracle. Known query patterns by partition key — Cassandra. Document-centric queries with rich filters — MongoDB.
+>
+> Real example: at Optum on the C360 platform, we used Cassandra for high-volume consumer event ingestion, Hive for analytical queries, and Oracle/Postgres for transactional records. Each store served what it was good at. Forcing one tool for all three would have failed."
+
+---
+
+### Q19: How do you guide your team on data access patterns in microservices?
+
+**Memory Hook:** Own Data → No Shared DB → Right Tool → Cache Wisely
+
+> "Four rules.
+>
+> **Each service owns its data.** No cross-service direct DB access. Communication via APIs or events.
+>
+> **No shared databases.** Shared schemas create the worst kind of coupling — every team becomes a stakeholder of every change. I've seen this paralyze release cadence at multiple orgs.
+>
+> **Right tool per service.** One service might use Oracle for transactional data; another might use MongoDB for document storage. That's fine — heterogeneity is not the problem. Coupling is.
+>
+> **Cache where it earns its place.** Redis or in-memory cache for hot, read-heavy data. Always with TTL and a clear invalidation strategy. Cache without eviction is a memory leak — I caught one at Cerner that improved memory by 40% after fixing.
+>
+> Read/write separation when scale demands — read replicas, CQRS where read and write loads truly diverge."
+
+---
+
+### Q20: How do you tune Oracle performance at the team level?
+
+**Memory Hook:** Index → Plan → Monitor → Optimize → Govern
+
+> "Five disciplines.
+>
+> **Index strategy.** Composite indexes on filter and join columns. Too many indexes hurt write performance — balance is the call.
+>
+> **Execution plans.** Review plans for slow queries. Look for full table scans, expensive joins, missing statistics. Use bind variables to leverage cached plans.
+>
+> **Monitoring.** AWR / ASH reports, slow query logs, lock contention metrics. Correlate with application APM at the request level — DB latency often hides at the app layer.
+>
+> **Optimization.** Query rewrites, hints used judiciously, partitioning for large tables.
+>
+> **Governance.** DBA reviews for schema changes and major queries. I don't let every developer add indexes ad-hoc — index sprawl is harder to fix than missing indexes.
+>
+> Real Cerner example: queries were slow due to large table scans on a patient processing system. Added composite indexes plus date-based partitioning. Query time went from seconds to milliseconds."
+
+---
+
+### Q21: How do you model data in Cassandra?
+
+**Memory Hook:** Query First → Partition Wisely → Avoid Joins → Time Bucket
+
+> "Four principles, very different from relational thinking.
+>
+> **Model around queries, not entities.** Cassandra rewards designing tables for specific query patterns. The same logical data may live in two or three differently-keyed tables.
+>
+> **Partition key choice is the single biggest decision.** It determines distribution and query performance. Avoid hot partitions (skewed traffic) and unbounded partitions (one partition growing forever).
+>
+> **No joins. Denormalize.** Duplicate data across tables to support different query patterns. Storage is cheap; latency at scale is not.
+>
+> **Time-bucket time-series data.** For events or audit logs, bucket by day or hour to keep partitions bounded and queries fast.
+>
+> Tune read/write consistency per use case — LOCAL_QUORUM is the common starting point, not globally."
+
+---
+
+### Q22: How do you model data in MongoDB?
+
+**Memory Hook:** Embed vs Reference → Schema Discipline → Index → Aggregation
+
+> "Four practices.
+>
+> **Embed for one-to-few; reference for one-to-many.** Embed when data is read together and changes together. Reference when sub-data evolves independently or grows large.
+>
+> **Schema discipline despite flexibility.** Use schema validation. 'Schemaless' doesn't mean undisciplined — drift across documents creates application-layer chaos.
+>
+> **Indexes are critical.** Compound indexes for multi-field queries. Watch query patterns and add accordingly. Profile before scaling.
+>
+> **Aggregation pipeline for analytics.** Powerful but can be expensive. Test with realistic data sizes before assuming it'll perform.
+>
+> Watch document size — 16MB hard limit. Unbounded arrays in documents are an antipattern that surfaces months later when one customer's document hits the cap."
+
+---
+
+### Q23: How do you handle data migrations safely?
+
+**Memory Hook:** Backward Compat → Dual Write → Validate → Cut Over → Decommission
+
+> "Five-phase approach. Big-bang DB migrations fail; phased migrations work.
+>
+> **Backward-compatible schema changes.** Add new columns or fields, never drop or rename in a single deploy.
+>
+> **Dual-write strategy.** Write to old and new schema/store during migration. Read from old until new is validated.
+>
+> **Validate in parallel.** Compare reads from old vs new. Discrepancies surface bugs before cutover, not after.
+>
+> **Gradual traffic shift.** 1% → 10% → 50% → 100% with monitoring at each step. Roll back instantly on any divergence.
+>
+> **Decommission carefully.** Only after all reads and writes are on the new store, monitored for weeks, with rollback rehearsed.
+>
+> The same playbook applied to the AWS-to-OCI migration at Cerner — service-by-service with parallel running periods to validate parity before cutover. The pattern is universal; the tech changes."
+
+---
+
+### Q24: How do you handle DB connection management in Spring Boot microservices?
+
+**Memory Hook:** Pool → Size → Timeout → Monitor → Leak Detection
+
+> "Five rules.
+>
+> **Use a connection pool — always.** HikariCP is Spring Boot's default. Never create connections per request.
+>
+> **Right-size the pool.** Too small = bottleneck under load. Too large = DB overload and exhausted DB-side resources. Start with ~10–20 per service instance, tune from monitoring.
+>
+> **Configure timeouts.** Connection acquisition, query execution, idle timeout. Prevents one slow query from cascading into a service-wide outage.
+>
+> **Monitor pool health.** Active vs idle connections, wait time, exhaustion events. Alert on saturation.
+>
+> **Detect leaks early.** HikariCP leak-detection threshold catches connections held too long. Connection leaks cause sudden outages under load — they're invisible until they aren't."
+
+---
+
+### Q25: How do you ensure data security and PII protection?
+
+**Memory Hook:** Encrypt → Mask → Access Control → Audit → Tokenize
+
+> "Five layers — non-negotiable in banking.
+>
+> **Encryption at rest and in transit.** TDE for databases, TLS for connections.
+>
+> **Data masking in non-prod.** Never use production PII in dev/test. Mask, anonymize, or use synthetic data.
+>
+> **Strict access control.** Role-based DB access, least privilege, no shared accounts, MFA for admin access.
+>
+> **Audit logging.** Every privileged access and query against sensitive tables logged for forensics and compliance.
+>
+> **Tokenization for high-sensitivity data.** Replace card numbers, SSNs, account numbers with tokens. Original values held in a separate, hardened vault. Reduces blast radius if a service is compromised."
+
+---
+
 ## QUICK REFERENCE — INCIDENT MANAGEMENT
 
 | Phase | Action | Owner |
@@ -600,4 +765,4 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 
 ---
 
-*File 5 of 7 — Production Reliability, Cloud, DevSecOps & Observability*
+*File 6 of 8 — Production Reliability, Cloud, DevSecOps, Observability & Databases*

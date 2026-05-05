@@ -1,5 +1,7 @@
-# Interview Prep — File 4 of 7
-# System Design & Architecture
+# Interview Prep — File 4 of 8
+# System Design, Architecture, Java/Spring Boot & Kafka
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Stack focus: Java/Spring Boot microservices, REST APIs, Kafka event-driven architecture.
 
 > **Rule 1:** Never start with architecture. Always: Goals → Metrics → Constraints → NFRs → Levers → Options → Architecture.
 > **Rule 2:** Every design decision needs a trade-off. No trade-off = not senior-level thinking.
@@ -9,10 +11,11 @@
 
 ## CROSS-FILE INDEX
 
-This file owns: design framework, distributed system patterns, monolith vs microservices, scaling, backpressure, HA, notification system, partitioning/sharding.
-- Production reliability, observability, cloud services → File 05
-- Data quality, ETL, data integrity → File 07
-- GenAI architecture → File 06
+This file owns: design framework, distributed system patterns, monolith vs microservices, scaling, backpressure, HA, notification system, partitioning/sharding, Java/Spring Boot service patterns, Kafka producer/consumer/streaming patterns.
+- Production reliability, observability, cloud services, Kubernetes, databases → File 06
+- Data quality, ETL, data integrity → File 08
+- GenAI architecture → File 07
+- UI architecture (React/Angular) → File 05
 
 ---
 
@@ -575,7 +578,207 @@ Shard count is fixed at index creation — hard to change without reindexing. Re
 
 ---
 
-## QUICK REFERENCE — PATTERN GLOSSARY
+## SECTION F — JAVA / SPRING BOOT MICROSERVICES (JPMC STACK)
+
+The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be ready to talk about them at design and operations level — not just syntax.
+
+---
+
+### Q20: How do you design REST APIs and Spring Boot microservices for production?
+
+**Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
+
+> "Five disciplines I enforce on every Spring Boot service.
+>
+> **Contract first.** Every API has an OpenAPI spec reviewed before code is written. Versioned URIs — /v1, /v2. Backward-compatible changes by default. We never break consumers without a deprecation cycle.
+>
+> **Clear service boundaries.** Each microservice owns a bounded context — for an account origination domain that means: application-intake, KYC, document-verification, risk-scoring, decisioning. Each owns its own data store. No cross-service DB joins.
+>
+> **Resilience built in.** Resilience4j for circuit breakers, retries with exponential backoff, timeouts, bulkheads. The Faraday authorization incident I described earlier is exactly what this discipline prevents.
+>
+> **Observability first-class.** Spring Boot Actuator + Micrometer for metrics, correlation IDs across services, structured JSON logging. No new service goes live without a dashboard.
+>
+> **Secure by default.** OAuth2/JWT validated at the gateway and re-validated at the service. Bean Validation on every input. Secrets in vault. Audit logging for privileged actions."
+
+---
+
+### Q21: How do you decide REST vs Kafka for inter-service communication?
+
+**Memory Hook:** Sync for Read → Async for Write → Saga for Distributed Workflow
+
+> "Three rules.
+>
+> **REST for queries.** When a service needs immediate data — fetch customer profile during origination, validate eligibility — synchronous REST is fine. Latency cost is acceptable, and the consumer needs the answer to proceed.
+>
+> **Kafka for state changes that fan out.** When an event triggers downstream work — application.submitted triggers KYC, document verification, risk scoring, notifications — async events decouple producers from consumers. Producers don't wait. Consumers can scale independently.
+>
+> **Saga for distributed workflows.** Account origination is a multi-step workflow across services. We use either choreography — services react to each other's events — or orchestration with a coordinator service when sequencing is critical. Add Outbox pattern to guarantee no event is lost when a service crashes mid-transaction.
+>
+> Default: REST for reads, Kafka for writes that fan out, Saga + Outbox for true distributed transactions."
+
+---
+
+### Q22: How do you ensure Spring Boot service performance and tune it?
+
+**Memory Hook:** Measure → Hot Path → Cache → JVM → Async
+
+> "Five-step approach.
+>
+> **Measure first.** APM — New Relic, Dynatrace — gives p50/p95/p99 latency, throughput, GC behavior. No optimization without data.
+>
+> **Optimize the hot path.** Database queries are the most common killer — N+1 patterns, missing indexes, full-table scans. Reduce serialization where possible. Lazy-load only what's needed.
+>
+> **Cache deliberately.** Redis for shared cache, Caffeine for in-process hot data. Always with TTL and clear invalidation. Cache without eviction is a memory leak waiting to happen — I caught one at Cerner that improved memory by 40%.
+>
+> **Tune JVM.** Right heap size based on observed allocation, G1GC default for most workloads, Tomcat thread pools sized to actual concurrency. Don't tune blind — change one variable, measure, repeat.
+>
+> **Async where it fits.** @Async, CompletableFuture, or WebFlux for I/O-heavy paths. Don't make everything reactive — it's only worth it when I/O concurrency is the actual bottleneck."
+
+---
+
+### Q23: How do you secure REST APIs in a banking context?
+
+**Memory Hook:** Auth → AuthZ → Validate → Encrypt → Audit
+
+> "Five layers.
+>
+> **Authentication** — OAuth2/OIDC with JWT, validated at the API gateway and re-validated at each service for defense-in-depth. No anonymous access on internal APIs.
+>
+> **Authorization** — RBAC and attribute-based controls via Spring Security. Method-level annotations for fine-grained checks. Principle of least privilege.
+>
+> **Input validation** — Bean Validation at the controller. Reject bad input at the edge, never trust downstream. SQL injection, XSS, schema violations — all caught here.
+>
+> **Encryption** — TLS in transit, AES-256 at rest, secrets in HashiCorp Vault or equivalent. Never in config files, never in environment variables for sensitive secrets.
+>
+> **Audit logging** — Every privileged action — view, modify, approve — logged with who, what, when, correlation ID. Required for SOX, PCI, and regulator inquiries."
+
+---
+
+### Q24: How do you handle errors and exceptions consistently across services?
+
+**Memory Hook:** Centralize → Standardize → No Leaks
+
+> "Three rules.
+>
+> **Centralize.** @ControllerAdvice with @ExceptionHandler for global handling. No try-catch noise scattered through controllers.
+>
+> **Standardize the response format.** RFC 7807 Problem Details — type, title, status, detail, instance. Clients parse one format across all services. Internally generated correlation ID echoed back so support can trace.
+>
+> **No information leakage.** Stack traces, DB schema, internal paths — all stay in logs. Clients see safe, generic messages. Map domain errors properly: ValidationException → 400, AuthorizationException → 403, NotFound → 404. Don't return 500 for everything."
+
+---
+
+## SECTION G — KAFKA & EVENT-DRIVEN ARCHITECTURE (JPMC STACK)
+
+The JD calls out Kafka producers, consumers, and streaming pipelines for real-time data processing. Be ready for both design and operational depth.
+
+---
+
+### Q25: How do you design Kafka topic, partitions, and retention?
+
+**Memory Hook:** Partitions for Scale → Replication for Durability → Retention for Use Case
+
+> "Four decisions for every topic.
+>
+> **Partitions** — set based on expected peak throughput and consumer parallelism. More partitions = more parallel consumers, but rebalancing overhead grows too. Start with what you need; over-partitioning is hard to undo.
+>
+> **Partition key** — chosen carefully. For account events, account-id gives ordering per account but can hot-spot if traffic is skewed. For events where global ordering doesn't matter, hash distribution is fine.
+>
+> **Replication factor** — 3 in production with min.insync.replicas=2. Tolerates one broker failure without data loss. Non-negotiable for tier-1 topics.
+>
+> **Retention** — operational topics 3–7 days. Audit and replay topics 30+ days, or compacted indefinitely. For latest-state topics — like a customer profile snapshot — log compaction keeps the latest value per key forever."
+
+---
+
+### Q26: How do you ensure exactly-once or at-least-once delivery?
+
+**Memory Hook:** Idempotent Producer → Transaction → Idempotent Consumer
+
+> "Three layers.
+>
+> **Idempotent producer.** enable.idempotence=true prevents duplicate writes from retries within Kafka itself.
+>
+> **Transactions for atomic multi-topic writes.** When a single business event needs to land in two topics atomically — say, account.created and audit.event — wrap in a Kafka transaction. Same for read-process-write patterns.
+>
+> **Idempotent consumer is the realistic guarantee.** True end-to-end exactly-once across producer, broker, consumer, and downstream sink is rare in practice. Instead, design consumers to be idempotent — use a deduplication key (event ID) and check before processing. UPSERT, not blind INSERT. Operations safe to repeat.
+>
+> The Outbox pattern (covered in Section C) closes the gap when a producer crashes between DB commit and Kafka send."
+
+---
+
+### Q27: How do you handle errors and dead letter queues in Kafka consumers?
+
+**Memory Hook:** Categorize → Retry → DLQ → Replay → Alert
+
+> "Five-step pipeline.
+>
+> **Categorize errors first.** Transient — network, downstream timeout — vs permanent — bad payload, schema violation. Different errors need different handling.
+>
+> **Retry transient errors with backoff.** Local retry first (one or two attempts), then a dedicated retry topic with delay if it persists.
+>
+> **DLQ for permanent failures.** Send the original payload, error, timestamp, and headers to a dead-letter topic. Don't lose data; quarantine it.
+>
+> **Replay capability.** Tooling to push DLQ messages back into the main topic after the fix is deployed. DLQ is a triage queue, not a graveyard.
+>
+> **Alert on DLQ growth.** Threshold-based alert. If DLQ is filling up, something is broken upstream."
+
+---
+
+### Q28: How do you monitor Kafka pipelines in production?
+
+**Memory Hook:** Lag → Throughput → Errors → Health → Alert on SLO
+
+> "Five signals.
+>
+> **Consumer lag.** The single most important metric. Lag growth means consumers can't keep up. Alert when lag exceeds your data-freshness SLO.
+>
+> **Throughput.** Messages per second per topic, per consumer group. Sudden drops are leading indicators of problems.
+>
+> **Error rate.** Failed messages, deserialization errors, retries, DLQ writes. Trend matters more than absolute number.
+>
+> **Cluster health.** Under-replicated partitions, ISR shrinks, broker disk usage. Platform-team responsibility, but I monitor as a consumer of the platform.
+>
+> **Alerts on SLO breach, not infra noise.** Lag > X minutes, error rate > Y%, throughput drop > Z%. Pages should be actionable."
+
+---
+
+### Q29: How do you handle Kafka schema evolution?
+
+**Memory Hook:** Registry → Compatibility → Additive → Version Explicit
+
+> "Four practices.
+>
+> **Schema Registry.** Confluent or equivalent. All schemas versioned, validated, and central. Producers and consumers register what they expect.
+>
+> **Compatibility rules.** BACKWARD by default — new consumers can read old data. FULL for shared, critical topics — old and new consumers coexist.
+>
+> **Additive changes only.** Add optional fields with defaults. Never remove or rename existing ones. Most so-called 'breaking changes' can be done as additive.
+>
+> **Version explicitly when truly breaking.** Create account.created.v2. Run both topics in parallel during deprecation. Monitor v1 consumer count. Retire only when truly unused — not when you wish it was unused."
+
+---
+
+### Q30: Design a Kafka-driven event flow for an account origination journey
+
+**Memory Hook:** Capture → Orchestrate → Aggregate → Notify → Audit
+
+> "Five stages, all event-driven.
+>
+> **Capture.** application.submitted is published when the customer completes the form. Single source of truth for downstream.
+>
+> **Orchestrate downstream work.** KYC service consumes and runs identity check. Document service consumes and processes uploads. Risk service consumes and runs scoring. Each emits its own completion event — kyc.completed, documents.verified, risk.cleared.
+>
+> **Aggregate state.** An orchestration service consumes the per-step events and emits application.approved or application.rejected based on rules. This is where Saga choreography lives.
+>
+> **Notify and update UI.** Notification service consumes the final state event and sends email/SMS. UI subscribes via WebSocket or polls a status endpoint backed by the consolidated event.
+>
+> **Audit trail.** All events retained in a compacted audit topic for compliance, replay, and analytics. Required for regulator inquiries — bank's reality.
+>
+> Three reliability anchors: Outbox pattern for guaranteed event publication, idempotent consumers for safe retries, DLQ + replay for poison messages."
+
+---
+
+
 
 | Pattern | One-line | Use when |
 |---------|----------|----------|
@@ -610,4 +813,4 @@ Shard count is fixed at index creation — hard to change without reindexing. Re
 
 ---
 
-*File 4 of 7 — System Design & Architecture*
+*File 4 of 8 — System Design, Architecture, Java/Spring Boot & Kafka*

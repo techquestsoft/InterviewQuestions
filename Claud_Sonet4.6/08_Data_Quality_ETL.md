@@ -1,5 +1,7 @@
-# Interview Prep — File 7 of 7
+# Interview Prep — File 8 of 8
 # Data Quality, ETL Pipelines & Deep Observability
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Background context — likely lower priority for this specific JPMC role, but valuable if data integrity / event quality / Kafka pipeline reliability comes up.
 
 > **Rule 1:** Data quality has FOUR levels (Completeness, Validity, Consistency, Accuracy). Memorize them.
 > **Rule 2:** Every quality answer needs healthcare-specific examples — patient encounters, EPMI mapping, ICD-10 codes.
@@ -10,8 +12,9 @@
 ## CROSS-FILE INDEX
 
 This file owns: data quality framework, ETL pipeline integrity, observability gap analysis, big data architecture (C360, Hadoop), Bronze-Silver-Gold pattern, statistical anomaly detection.
-- General observability stack (New Relic, Splunk) → File 05
-- Data store partitioning/sharding → File 04
+- General observability stack (New Relic, Splunk), Kubernetes, cloud, databases → File 06
+- Data store partitioning/sharding, Kafka schema/event patterns → File 04
+- GenAI data pipelines → File 07
 
 ---
 
@@ -427,4 +430,4 @@ This was the key learning from the metadata spike incident at Cerner.
 
 ---
 
-*File 7 of 7 — Data Quality, ETL & Deep Observability*
+*File 8 of 8 — Data Quality, ETL & Deep Observability*

@@ -1,5 +1,7 @@
-# Interview Prep — File 1 of 7
+# Interview Prep — File 1 of 8
 # Introduction, Career Story & Day-to-Day Activities
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team (customer acquisition & account origination journeys).
 
 > **Rule 1:** Introduction = 90 seconds max. Stop, let them ask follow-ups.
 > **Rule 2:** Lead with impact. Numbers first, context second.
@@ -12,13 +14,13 @@
 | Topic | File |
 |-------|------|
 | Self-introduction, career walkthrough, why-leaving, day-to-day | **This file (01)** |
-| Strengths, weaknesses, leadership failure, behavioral STAR stories | File 02 |
-| Stakeholder, conflict, influencing leadership | File 02 |
+| Strengths, weaknesses, leadership failure, behavioral STAR stories, stakeholder, conflict | File 02 |
 | Delivery, SAFe, sprint discipline, KPIs (including 3 executive KPI sets) | File 03 |
-| System design, architecture patterns, scaling | File 04 |
-| Production incidents, observability, cloud, CI/CD, security | File 05 |
-| GenAI architecture, AI productivity, RAG vs direct query | File 06 |
-| Data quality, ETL pipelines, deep observability | File 07 |
+| System design, architecture patterns, scaling, **Java/Spring Boot, Kafka, REST APIs** | File 04 |
+| **UI development — React/Angular** | File 05 |
+| Production incidents, observability, cloud, CI/CD, security, **Kubernetes, Oracle/NoSQL** | File 06 |
+| GenAI architecture, AI productivity, RAG vs direct query, **LLM integration & agents** | File 07 |
+| Data quality, ETL pipelines, deep observability | File 08 |
 
 ---
 
@@ -267,10 +269,43 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 |---------|--------|
 | **Strengths?** | Ownership end-to-end. Structured problem-solving under pressure. Technical judgment at architectural level. Business alignment — connecting engineering to outcomes. Building teams that scale. |
 | **Weaknesses?** | Earlier I went too deep technically in leadership scenarios. I have shifted to leading with the management answer and pulling in technical depth only when it adds value. |
-| **Why this company?** | (Customize per company — research the company's domain, scale, and the specific role challenge before the interview.) |
+| **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
 | **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, team scaling, and AI-driven transformation. Title matters less than scope and impact." |
 | **Notice period? / When can you start?** | "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes." (Frame as positive — most candidates have 60–90 day notice. Your immediate availability shortens hiring timelines and is a selling point.) |
 | **CTC expectations?** | "I am flexible and open to discussing based on the total compensation package — base, variable, ESOPs, benefits. Happy to share my last CTC if helpful, but I would prefer to understand the role and budget first." (Do not anchor low.) |
+
+---
+
+## WHY JPMORGAN CHASE / BBAO — TAILORED ANSWER
+
+**Memory Hook:** Domain → Stack → Scale → AI → Fit
+
+> "Three reasons.
+>
+> **First — domain return.** I started my career in banking at Bank of America for 11 years. I built the real-time credit card decision engine and led the Hadoop fraud analytics platform there. I've always been drawn to the regulatory rigor, scale, and customer-trust expectations that banking demands. JPMorgan is the deepest version of that, and BBAO sits right at the customer-facing edge — account origination is where every customer's relationship with the bank begins.
+>
+> **Second — stack alignment.** The role's stack — Java/Spring Boot microservices, Kafka event-driven architectures, REST APIs, Kubernetes, AWS or Cloud Foundry, Oracle and NoSQL — maps almost one-to-one with what I've built and operated. The OpenShift-to-Kubernetes migration at Optum, the C360 platform with Spark, Kafka, Cassandra, Hive — that's the operational profile this role needs.
+>
+> **Third — AI/agentic adoption is a current focus, not a future plan.** At Cerner I led the V1/V2 to V3 ML risk-scoring transformation and a POC for LLM-based conversational AI for care managers. The JD's call-out for AI-enabled capabilities and agent-driven tools to improve customer and employee experiences is exactly the kind of work I want my next chapter to be about — and I have the recent reps to bring credibility to it from day one.
+>
+> Beyond fit — what excites me is BBAO's combination of customer journey ownership, platform engineering, and AI integration in one scope. That's rare."
+
+**Discipline:** Don't recite all three. Lead with whichever the interviewer's question hooks into. The other two are backup if probed.
+
+---
+
+## QUICK NOTES — JPMC-SPECIFIC FRAMING ACROSS THE INTERVIEW
+
+When relevant in any answer, weave in language the JD uses — it signals you read the role:
+- "customer acquisition and account origination journeys" (BBAO scope)
+- "scalable backend services" / "event-driven architectures (Kafka)"
+- "secure, high-performing APIs"
+- "service reliability, resiliency, performance tuning"
+- "AI-enabled capabilities and agent-driven tools"
+- "responsible AI fundamentals"
+- "engineering automation, developer productivity"
+
+Don't force it — but if a generic example fits, prefer the phrasing the hiring team uses.
 
 ---
 
@@ -288,6 +323,12 @@ Always prepare 2 questions before the interview.
 **For senior interviewers (Director level and above):**
 - "How is this role expected to evolve over the next 12 to 18 months?"
 - "What are the cross-functional partners — product, design, data — and where are the friction points?"
+
+**JPMC / BBAO-specific (signals you read the role):**
+- "How is BBAO thinking about AI-enabled capabilities for the origination journey — pilots already underway, or earlier-stage exploration?"
+- "Where is the team today on Kafka-driven event architecture maturity — are you mid-evolution from request/response, or already streaming-first?"
+- "What's the split between feature delivery and platform/reliability work for this team right now? Is that the steady-state target?"
+- "How is the team organized across India and US currently, and how does ownership flow between geographies?"
 
 ---
 
@@ -343,4 +384,4 @@ Always prepare 2 questions before the interview.
 
 ---
 
-*File 1 of 7 — Introduction, Career & Day-to-Day*
+*File 1 of 8 — Introduction, Career & Day-to-Day*

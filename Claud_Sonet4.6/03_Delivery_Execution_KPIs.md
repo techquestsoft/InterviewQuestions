@@ -1,5 +1,7 @@
-# Interview Prep — File 3 of 7
+# Interview Prep — File 3 of 8
 # Delivery, Execution & KPIs
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team.
 
 > **Rule 1:** Lead with outcomes, not process. Numbers before frameworks.
 > **Rule 2:** Executive KPI questions need 3 clean metrics — no jargon. Two sets memorized below.
@@ -11,8 +13,8 @@
 
 This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, productivity measurement.
 - People-side accountability → File 02
-- Production reliability KPIs (MTTR/MTTD context) → File 05
-- AI productivity ROI → File 06
+- Production reliability KPIs (MTTR/MTTD context) → File 06
+- AI productivity ROI → File 07
 
 ---
 
@@ -404,4 +406,4 @@ This question came up multiple times across interviews. Memorize **both sets** �
 
 ---
 
-*File 3 of 7 — Delivery, Execution & KPIs*
+*File 3 of 8 — Delivery, Execution & KPIs*

@@ -1,5 +1,7 @@
-# Interview Prep — File 2 of 7
+# Interview Prep — File 2 of 8
 # People Management, Behavioral & Stakeholder
+
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team.
 
 > **Rule 1:** Management questions get management answers first. Technical design comes last, if at all.
 > **Rule 2:** Every behavioral answer needs a specific example. Generic STAR scores 5/10. Specific STAR scores 9/10.
@@ -11,7 +13,7 @@
 
 This file owns: team management, behavioral STAR stories, leadership failure, stakeholder & conflict management.
 - KPIs and delivery metrics → File 03
-- Production incident management process → File 05
+- Production incident management process → File 06
 
 ---
 
@@ -429,4 +431,4 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 
 ---
 
-*File 2 of 7 — People Management, Behavioral & Stakeholder*
+*File 2 of 8 — People Management, Behavioral & Stakeholder*
