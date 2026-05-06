@@ -268,9 +268,7 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 | Question | Answer |
 |---------|--------|
 | **Strengths?** | Ownership end-to-end. Structured problem-solving under pressure. Technical judgment at architectural level. Business alignment — connecting engineering to outcomes. Building teams that scale. |
-| **Weaknesses?** | Technical Depth Bias – Earlier, I tended to go deep technically even in leadership scenarios
-Structured Communication – I used to start with detailed explanations instead of summarizing first
-Delegation – I sometimes took on critical problem-solving myself |
+| **Weaknesses?** | Technical Depth Bias – Earlier, I tended to go deep technically even in leadership scenarios |
 | **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
 | **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, team scaling, and AI-driven transformation. Title matters less than scope and impact." |
 | **Notice period? / When can you start?** | "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes." (Frame as positive — most candidates have 60–90 day notice. Your immediate availability shortens hiring timelines and is a selling point.) |
