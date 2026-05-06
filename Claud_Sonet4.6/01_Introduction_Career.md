@@ -270,7 +270,7 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 | **Strengths?** | Ownership end-to-end. Structured problem-solving under pressure. Technical judgment at architectural level. Business alignment — connecting engineering to outcomes. Building teams that scale. |
 | **Weaknesses?** | Technical Depth Bias – Earlier, I tended to go deep technically even in leadership scenarios <br>Structured Communication – I used to start with detailed explanations instead of summarizing first <br>Delegation – I sometimes took on critical problem-solving myself |
 | **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
-| **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, team scaling, and AI-driven transformation. Title matters less than scope and impact." |
+| **What kind of role are you looking for?** | I am looking for a role where I can combine engineering leadership with platform thinking and AI-driven transformation to drive meaningful business impact at scale|
 | **Notice period? / When can you start?** | "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes." (Frame as positive — most candidates have 60–90 day notice. Your immediate availability shortens hiring timelines and is a selling point.) |
 | **CTC expectations?** | "I am flexible and open to discussing based on the total compensation package — base, variable, ESOPs, benefits. Happy to share my last CTC if helpful, but I would prefer to understand the role and budget first." (Do not anchor low.) |
 
@@ -282,13 +282,14 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 
 > "Three reasons.
 >
-> **First — domain return.** I started my career in banking at Bank of America for 11 years. I built the real-time credit card decision engine and led the Hadoop fraud analytics platform there. I've always been drawn to the regulatory rigor, scale, and customer-trust expectations that banking demands. JPMorgan is the deepest version of that, and BBAO sits right at the customer-facing edge — account origination is where every customer's relationship with the bank begins.
+> **First — domain return.** I spent 11 years in banking at Bank of America, where I built a real-time credit card decision engine and later led the Hadoop-based fraud analytics platform. I’ve always been drawn to the scale, regulatory rigor, and customer trust that banking requires. JPMorgan Chase represents that at the highest level, and BBAO is especially compelling because account origination is where the customer’s relationship with the bank truly begins.
 >
-> **Second — stack alignment.** The role's stack — Java/Spring Boot microservices, Kafka event-driven architectures, REST APIs, Kubernetes, AWS or Cloud Foundry, Oracle and NoSQL — maps almost one-to-one with what I've built and operated. The OpenShift-to-Kubernetes migration at Optum, the C360 platform with Spark, Kafka, Cassandra, Hive — that's the operational profile this role needs.
+> **Second — strong technology alignment.** The role’s stack — Java/Spring Boot microservices, Kafka-based event-driven systems, REST APIs, Kubernetes, AWS or Cloud Foundry, and Oracle/NoSQL — closely matches the platforms I’ve built and operated. My experience leading the OpenShift-to-Kubernetes migration at Optum and building the C360 platform using Spark, Kafka, Cassandra, and Hive aligns well with the operational scale this role demands.
 >
-> **Third — AI/agentic adoption is a current focus, not a future plan.** At Cerner I led the V1/V2 to V3 ML risk-scoring transformation and a POC for LLM-based conversational AI for care managers. The JD's call-out for AI-enabled capabilities and agent-driven tools to improve customer and employee experiences is exactly the kind of work I want my next chapter to be about — and I have the recent reps to bring credibility to it from day one.
->
-> Beyond fit — what excites me is BBAO's combination of customer journey ownership, platform engineering, and AI integration in one scope. That's rare."
+> **Third — AI adoption is already an active focus for me, not just a future interest.** At Oracle Cerner, I led the V1/V2 to V3 ML risk-scoring transformation and also drove a POC for LLM-based conversational AI for care managers. The JD’s emphasis on AI-enabled capabilities and agent-driven experiences strongly resonates with the direction I want my next role to take, and I can contribute with hands-on experience from day one.
+
+> What excites me most about BBAO is the combination of customer journey ownership, platform engineering, and AI integration within a single organization scope. That combination is rare.”
+"
 
 **Discipline:** Don't recite all three. Lead with whichever the interviewer's question hooks into. The other two are backup if probed.
 
