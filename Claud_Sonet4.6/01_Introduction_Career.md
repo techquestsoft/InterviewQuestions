@@ -268,11 +268,11 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 | Question | Answer |
 |---------|--------|
 | **Strengths?** | Ownership end-to-end. Structured problem-solving under pressure. Technical judgment at architectural level. Business alignment — connecting engineering to outcomes. Building teams that scale. |
-| **Weaknesses?** | Earlier I went too deep technically in leadership scenarios. I have shifted to leading with the management answer and pulling in technical depth only when it adds value. |
-| **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
-| **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, teTechnical Depth Bias – Earlier, I tended to go deep technically even in leadership scenarios
+| **Weaknesses?** | Technical Depth Bias – Earlier, I tended to go deep technically even in leadership scenarios
 Structured Communication – I used to start with detailed explanations instead of summarizing first
-Delegation – I sometimes took on critical problem-solving myselfam scaling, and AI-driven transformation. Title matters less than scope and impact." |
+Delegation – I sometimes took on critical problem-solving myself |
+| **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
+| **What kind of role are you looking for?** | "An engineering leadership role with scope that spans platform thinking, team scaling, and AI-driven transformation. Title matters less than scope and impact." |
 | **Notice period? / When can you start?** | "I'm immediately available — I recently transitioned out of Oracle. I can start as soon as the offer process completes." (Frame as positive — most candidates have 60–90 day notice. Your immediate availability shortens hiring timelines and is a selling point.) |
 | **CTC expectations?** | "I am flexible and open to discussing based on the total compensation package — base, variable, ESOPs, benefits. Happy to share my last CTC if helpful, but I would prefer to understand the role and budget first." (Do not anchor low.) |
 
