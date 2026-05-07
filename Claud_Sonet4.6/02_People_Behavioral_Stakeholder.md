@@ -193,6 +193,8 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 > "Four things matter when scaling.
 >
+> When I scale an engineering organization, I focus on four areas: team structure, platform enablement, engineering standards, and people growth
+>
 > Structure — move from functional teams to domain-based teams with clear product ownership. Each team owns a domain end-to-end, not a layer of the stack.
 >
 > Platform — create a shared platform team that owns common capabilities: infrastructure, observability, CI/CD, GenAI tooling. Without this, every product team reinvents the same wheel.
