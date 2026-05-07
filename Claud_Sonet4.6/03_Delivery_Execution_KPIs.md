@@ -255,7 +255,7 @@ If interviewer probes the formal governance:
 > Balanced scorecard, not a single metric. Velocity alone can be gamed. Deployment frequency alone ignores quality. The combination is harder to game and more informative."
 
 **Strong line:** "I use KPIs to drive outcomes, not just measure activity."
-
+---
 > **SMART KPI**
 > 
 > “Reduce API response time from 800ms to under 300ms for 95% of requests by the end of Q3.”
