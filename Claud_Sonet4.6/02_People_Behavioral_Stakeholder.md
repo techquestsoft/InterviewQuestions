@@ -25,17 +25,17 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 **Memory Hook:** Clarity → Track → Engage → Intervene
 
-> I generally focus on four things while managing teams.
-
+> I focus on four things while managing teams.
+> 
 > First is clarity — every engineer should know exactly what they own, what success looks like, and how their work connects to the quarterly roadmap.
-
+> 
 > Second is proactive tracking. I review progress continuously through sprint burndowns, 1:1s,  and delivery signals. I do not wait for sprint review to discover slippage.
-
+> 
 > Third is engagement. My 1:1s are not status meetings — I use them to understand blockers, career interests, and where I can help the engineer grow.
-
+> 
 > Fourth is intervention. If I see dependency issues, context switching, or process bottlenecks, I take ownership of removing them quickly.
-
-> For example, at Cerner, I inherited a team where engineers were spread across too many parallel initiatives, which was causing delivery inconsistency and low morale. I reduced active workstreams two per engineer and improved focus. Within about six weeks, delivery predictability and team velocity improved 30% without changing team size.
+> 
+> For example, at Cerner, I inherited a team where engineers were spread across too many parallel initiatives, which was causing delivery inconsistency and low morale. I reduced active workstreams to two per engineer and improved focus. Within about six weeks, delivery predictability and team velocity improved 30% without changing team size.
 
 > "Four practices.
 >
@@ -54,6 +54,17 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 ### Q2: How do you evaluate team performance?
 
 **Memory Hook:** Delivery → Quality → Behavior
+> I evaluate team performance across three dimensions: delivery, quality, and behavior.
+> 
+>  First is delivery — are engineers consistently meeting commitments, communicating risks early, and taking ownership rather than waiting until deadlines slip.
+> 
+> Second is quality — I look at things like defect leakage, rework, production stability, and operational reliability in the areas they own.
+> 
+> Third is behavior — collaboration matters a lot. I value engineers who unblock others, taking initiative, raise issues early, and contribute positively to team execution.
+> 
+> I also calibrate expectations by level. For junior engineers, I focus more on execution consistency and learning agility. For senior engineers, ownership and technical judgment become more important. For architects or leads, I evaluate system-level thinking and cross-team influence.
+> 
+> I use metrics as signals, not as the final verdict. Velocity alone can be misleading — a team delivering fewer but high-impact outcomes is often more effective than a team closing a large number of low-value tasks.
 
 > "Three dimensions.
 >
@@ -72,7 +83,22 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 ### Q3: How do you identify and grow high performers?
 
 **Memory Hook:** Deliver → Own → Influence → Stretch → Visibility → Evidence
-
+> I identify high performers through three signals.
+> 
+> First, consistent delivery — they reliably execute without needing constant follow-up.
+> 
+> Second, ownership — they naturally step beyond their assigned tasks and take responsibility for outcomes, not just tickets.
+> 
+> Third, influence — other engineers start depending on them for technical guidance or execution support.
+> 
+> Once I identify those people, I focus on giving them stretch opportunities rather than just more work. For example, if someone wants to grow into a tech lead role, I’ll give them end-to-end ownership of a feature — including stakeholder communication, coordination across teams, and technical decision-making.
+> 
+> I also believe visibility matters. I rotate responsibilities like sprint demos, architecture discussions, and stakeholder presentations so strong contributors become visible beyond just their direct manager.
+> 
+> And when it comes to promotions, I prefer evidence over narrative. I build a concrete case around measurable impact — things like leading critical initiatives, mentoring engineers, improving reliability, or driving cross-team delivery.
+> 
+> Over the years, that approach helped multiple engineers grow into senior and lead roles across both Optum and Cerner.
+---
 > "High performers reveal themselves through three signals: consistent delivery, proactive ownership beyond assigned scope, and influence over peers.
 >
 > When I identify them, I grow them through stretch assignments — not extra work, but different work. If someone wants to move into a tech lead role, I give them a feature to own end-to-end including stakeholder communication and cross-team coordination. I give the experience before the promotion, then make the case with evidence.
@@ -107,6 +133,16 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 **Memory Hook:** Clarity → Ownership → Recognition → Growth → Connect to Impact
 
+> As a manager, I focus on four things to build a high-performing team: clarity, ownership, recognition, and growth.
+> 
+> First is clarity — I make sure engineers understand not just what they are building, but why it matters to the business and customers. I connect sprint work to outcomes, not just tickets.
+> 
+> Second is ownership — I involve engineers in design discussions and decision-making so they feel accountable for outcomes, not just task completion.
+> 
+> Third is recognition —  I acknowledge strong contributions publicly in sprint reviews and team channels and common forums. Specific acknowledgment, not generic praise. 'How you handled the scope negotiation in Tuesday's planning showed mature judgment' lands. 'Good job' does not.
+> 
+> Fourth is growth — I invest in IDPs (individual development plans) for every engineer. Where do they want to be in 12 months? What specific experiences do they need? I make those experiences available within our roadmap."
+> 
 > "Four things.
 >
 > Clarity — people perform best when they know exactly what they are responsible for and why it matters. I connect sprint work to product outcomes explicitly, not just Jira tickets.
