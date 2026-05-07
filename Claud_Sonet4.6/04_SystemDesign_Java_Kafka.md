@@ -215,6 +215,8 @@ Async             → Kafka/SQS for decoupling and spike absorption
 
 **Simple analogy:** Water tank fills at 100L/min, pipe to bucket emptying at 20L/min. Without flow control, bucket overflows. Backpressure tells the tank to slow down.
 
+Backpressure handling is primarily about controlling overload before the system collapses. Typically I start with rate limiting and bounded buffering, followed by reactive backpressure or flow-control mechanisms. Then I apply isolation patterns like bulkheads, and resiliency patterns such as timeouts, circuit breakers, retries, and fallbacks carefully to avoid retry storms worsening the overload.
+
 #### 5 strategies:
 
 **1. Rate Limiting — reject early at the gate**
@@ -599,7 +601,7 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 > This prevents downstream failures and gives consumer teams confidence to integrate.
 
 > **Domain Integrity - Clear service boundaries**  
-> I align services with bounded contexts to ensure high cohesion and low coupling.  
+> I align services with bounded contexts to ensure high cohesion(one component does one focused job well) and low coupling.  
 >
 > For example, in an account origination domain, I would separate services like application-intake, KYC, risk scoring, and decisioning.  
 >
@@ -760,6 +762,8 @@ The JD calls out Kafka producers, consumers, and streaming pipelines for real-ti
 > **Partition key** — chosen carefully. For account events, account-id gives ordering per account but can hot-spot if traffic is skewed. For events where global ordering doesn't matter, hash distribution is fine.
 >
 > **Replication factor** — 3 in production with min.insync.replicas=2. Tolerates one broker failure without data loss. Non-negotiable for tier-1 topics.
+>
+> min.insync.replicas=2 means Kafka requires at least two in-sync replicas to acknowledge a write before considering it successful when the producer uses acks=all. This improves durability by preventing writes from succeeding with only a single replica available.”
 >
 > **Retention** — operational topics 3–7 days. Audit and replay topics 30+ days, or compacted indefinitely. For latest-state topics — like a customer profile snapshot — log compaction keeps the latest value per key forever."
 
