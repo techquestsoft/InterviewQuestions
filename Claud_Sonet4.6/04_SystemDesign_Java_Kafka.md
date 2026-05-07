@@ -146,14 +146,14 @@ Step 10: PHASES     — Build incrementally
 
 ### Q6: Multi-layer scaling approach
 
-**Memory Hook:** Edge → API → Compute → Data → Async
+**Memory Hook:** Edge → API Gateway → Compute → Data → Async
 
 ```
-Edge       → CDN for static, caching at edge
-API        → API gateway with routing, throttling, security
-Compute    → Kubernetes HPA, auto-scaling cloud services
-Data       → Partitioning, indexing, sharding for horizontal scale
-Async      → Kafka/SQS for decoupling and spike absorption
+Edge              → CDN for static, caching at edge
+API Gateway       → API gateway with routing, throttling, security
+Compute           → Kubernetes HPA(Horizontal Pod Autoscaler), auto-scaling cloud services
+Data              → Partitioning, indexing, sharding for horizontal scale
+Async             → Kafka/SQS for decoupling and spike absorption
 ```
 
 ---
@@ -852,7 +852,34 @@ The JD calls out Kafka producers, consumers, and streaming pipelines for real-ti
 > Three reliability anchors: Outbox pattern for guaranteed event publication, idempotent consumers for safe retries, DLQ + replay for poison messages."
 
 ---
+### Q31: 
+OAuth 1.0 = Signed Courier Package
+OAuth 2.0 = Hotel Temporary Access Card
 
+OAuth 1.0 — “Signed Courier Package”
+Imagine:
+You send an important courier.
+Every package must:
+contain signature,
+tamper-proof seal,
+verification stamp.
+
+Even if intercepted: cannot be modified.
+
+OAuth 2.0 — “Hotel Temporary Access Card”
+
+Imagine:
+You check into hotel.
+Hotel gives temporary access card.
+
+Card allows:
+room access,
+gym access,
+expires later.
+
+You don't carry hotel master password.
+
+That access card = Access Token.
 
 
 | Pattern | One-line | Use when |
