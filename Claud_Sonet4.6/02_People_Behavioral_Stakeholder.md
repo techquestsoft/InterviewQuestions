@@ -25,6 +25,18 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 **Memory Hook:** Clarity → Track → Engage → Intervene
 
+> I generally focus on four things while managing teams.
+
+> First is clarity — every engineer should know exactly what they own, what success looks like, and how their work connects to the quarterly roadmap.
+
+> Second is proactive tracking. I review progress continuously through sprint burndowns, 1:1s,  and delivery signals. I do not wait for sprint review to discover slippage.
+
+> Third is engagement. My 1:1s are not status meetings — I use them to understand blockers, career interests, and where I can help the engineer grow.
+
+> Fourth is intervention. If I see dependency issues, context switching, or process bottlenecks, I take ownership of removing them quickly.
+
+> For example, at Cerner, I inherited a team where engineers were spread across too many parallel initiatives, which was causing delivery inconsistency and low morale. I reduced active workstreams two per engineer and improved focus. Within about six weeks, delivery predictability and team velocity improved 30% without changing team size.
+
 > "Four practices.
 >
 > First, clarity — every engineer knows exactly what they own and what success looks like. Specific, measurable commitments tied to the quarter's roadmap, not vague goals.
