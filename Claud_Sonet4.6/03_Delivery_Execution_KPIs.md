@@ -226,7 +226,7 @@ If interviewer probes the formal governance:
 
 ### Q12: How do you run effective retrospectives?
 
-> "The purpose of retrospective is structural improvement, not catharsis.
+> "The purpose of retrospective is structural improvement, not catharsis(emotional release).
 >
 > Three parts: what produced good outcomes (preserve), what caused friction (change), what we will do differently next sprint with specific owners and dates.
 >
@@ -256,6 +256,17 @@ If interviewer probes the formal governance:
 
 **Strong line:** "I use KPIs to drive outcomes, not just measure activity."
 
+> **SMART KPI**
+> 
+> “Reduce API response time from 800ms to under 300ms for 95% of requests by the end of Q3.”
+
+> Why it is SMART:
+
+> Specific → API response time
+> Measurable → 800ms → 300ms
+> Achievable → realistic target
+> Relevant → improves user experience
+> Time-bound → end of Q3
 ---
 
 ### Q14: Give me 3 executive-level KPIs (TWO ANSWER SETS — pick based on framing)
