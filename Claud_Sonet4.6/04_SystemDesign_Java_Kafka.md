@@ -85,11 +85,7 @@ Step 10: PHASES     — Build incrementally
 |--|---------|--------------|
 | Build speed | Fast initially | Slower — more infrastructure |
 | Debugging | Easy — single codebase | Hard — distributed tracing required |
-| Scaling | Coarse-grained (Single API: GET /patient-dashboard) | Fine-grained (Frontend calls many APIs): <br>
-GET /patient <br>
-GET /risk-score <br>
-GET /medications <br>
-GET /insurance) |
+| Scaling | Coarse-grained (Single API: GET /patient-dashboard) | Fine-grained (Frontend calls many APIs): <br> GET /patient <br> GET /risk-score <br> GET /medications <br> GET /insurance |
 | Team independence | Low | High |
 | Operational overhead | Low | High |
 | Network latency | None | Real cost |
