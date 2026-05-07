@@ -163,7 +163,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 >
 > Phase 1 — Skill matrix before requisitions. For a team supporting distributed systems and data pipelines, I need backend engineers strong in Java and event-driven systems, data engineers, QA automation, and someone with DevSecOps depth. I map the gap first, before opening any roles.
 >
-> Phase 2 — Structured assessment. ICs get coding and design rounds, senior engineers get system design, tech leads get leadership scenarios. Standardized rubrics for every role to reduce bias and make the process defensible.
+> Phase 2 — Structured assessment. For IC roles, I focus more on coding and problem-solving. For senior engineers, I evaluate system design and ownership. For leads, I add leadership and collaboration scenarios. I also prefer standardized rubrics to reduce interview bias and improve hiring consistency.
 >
 > Phase 3 — Onboarding for retention. Most attrition happens in the first 90 days. I assign a buddy, set 30-60-90 day goals, and run weekly 1:1s from day one. Goal: engineer feels productive and connected within two weeks.
 >
@@ -176,6 +176,8 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 **Memory Hook:** Guide → Plan → Expose → Feedback
 
 > "Mentoring is structured, not informal.
+>
+> As a manager, I treat mentoring as a structured responsibility, not something informal that happens occasionally.
 >
 > I run quarterly development conversations with every engineer — separate from performance reviews. We discuss where they want to be in 12 to 18 months and what specific skills or experiences will get them there.
 >
