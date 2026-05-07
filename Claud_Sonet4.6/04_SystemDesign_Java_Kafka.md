@@ -70,7 +70,7 @@ Step 10: PHASES     — Build incrementally
 
 **Memory Hook:** Team + Domain + Scale → Architecture Choice
 
-> "I do not default to microservices. The decision depends on three factors: team structure, domain complexity, and scaling granularity needed.
+> "The decision depends on three factors: team structure, domain complexity, and scaling granularity needed. I do not default to microservices. 
 >
 > **Monolith** is right when the domain is unified, the team is small, change frequency is low, scale is modest. My BoA campaign tool served 1,000–2,000 internal users. Microservices would have added overhead with zero benefit.
 >
@@ -85,7 +85,11 @@ Step 10: PHASES     — Build incrementally
 |--|---------|--------------|
 | Build speed | Fast initially | Slower — more infrastructure |
 | Debugging | Easy — single codebase | Hard — distributed tracing required |
-| Scaling | Coarse-grained | Fine-grained |
+| Scaling | Coarse-grained (Single API: GET /patient-dashboard) | Fine-grained (Frontend calls many APIs): <br>
+GET /patient <br>
+GET /risk-score <br>
+GET /medications <br>
+GET /insurance) |
 | Team independence | Low | High |
 | Operational overhead | Low | High |
 | Network latency | None | Real cost |
