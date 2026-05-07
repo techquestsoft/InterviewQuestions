@@ -259,13 +259,13 @@ If interviewer probes the formal governance:
 > **SMART KPI**
 > 
 > “Reduce API response time from 800ms to under 300ms for 95% of requests by the end of Q3.”
-
+>
 > Why it is SMART:
-
-> Specific → API response time
-> Measurable → 800ms → 300ms
-> Achievable → realistic target
-> Relevant → improves user experience
+> 
+> Specific → API response time <br>
+> Measurable → 800ms → 300ms <br>
+> Achievable → realistic target <br>
+> Relevant → improves user experience <br>
 > Time-bound → end of Q3
 ---
 
