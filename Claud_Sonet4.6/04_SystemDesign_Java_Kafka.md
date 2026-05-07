@@ -706,12 +706,40 @@ The JD calls out Java/Spring Boot, REST APIs, and microservices specifically. Be
 **Memory Hook:** Centralize → Standardize → No Leaks
 
 > "Three rules.
+> **To build a truly mature microservices ecosystem, you cannot have engineers 'improvising' error responses. I enforce a strict, three-tier strategy to ensure consistency, security, and traceability.**
+
+---
+
+> **Centralize with Global Interceptors**  
+> We move error handling out of the business logic. I mandate the use of @ControllerAdvice and @ExceptionHandler in Spring Boot. This allows us to keep our controllers clean and 'noise-free.' Instead of repetitive try-catch blocks, the service layer throws custom functional exceptions (e.g., OrderNotFoundException), and the global advice handles the translation to HTTP status codes.
+
+---
+
+> **Standardize via RFC 7807 (Problem Details)**  
+> Consistency is key for consumer contracts. We follow the RFC 7807 standard for all error responses. Every service returns a structured JSON body containing:  
 >
-> **Centralize.** @ControllerAdvice with @ExceptionHandler for global handling. No try-catch noise scattered through controllers.
+> Type & Title: Categorizes the error.  
 >
-> **Standardize the response format.** RFC 7807 Problem Details — type, title, status, detail, instance. Clients parse one format across all services. Internally generated correlation ID echoed back so support can trace.
+> Status: The HTTP code.  
 >
-> **No information leakage.** Stack traces, DB schema, internal paths — all stay in logs. Clients see safe, generic messages. Map domain errors properly: ValidationException → 400, AuthorizationException → 403, NotFound → 404. Don't return 500 for everything."
+> Detail: A human-readable explanation (safe for clients).  
+>
+> Correlation ID: This is critical. We echo the unique request ID back to the client so that if they call support, we can immediately find the exact trace in our logs.
+
+---
+
+> **Zero-Leakage Security Policy**  
+> I have a 'Hard Ban' on leaking internal system details. Stack traces, database schema names, or internal file paths should never reach the client—this is a significant security vulnerability.  
+>
+> Internal: We log the full technical detail (including the stack trace) in our logging aggregator.  
+>
+> External: The client receives a sanitized, generic message.  
+> We also ensure precise HTTP mapping: we don't 'lazy-load' every error into a 500 Internal Server Error. We map validation failures to 400, permission issues to 403, and missing resources to 404. This allows our API Gateway and monitoring tools to accurately distinguish between 'User Errors' and 'System Failures.'
+
+---
+
+> **My Mantra**  
+> Logs are for engineers; responses are for consumers."
 
 ---
 
