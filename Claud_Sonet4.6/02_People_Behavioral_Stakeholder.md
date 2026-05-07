@@ -159,7 +159,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 **Memory Hook:** Skill Matrix → Structured Assessment → Onboard for Retention
 
-> "Three phases.
+> "As a manager, when I build a team from scratch, I usually focus on three areas:
 >
 > Phase 1 — Skill matrix before requisitions. For a team supporting distributed systems and data pipelines, I need backend engineers strong in Java and event-driven systems, data engineers, QA automation, and someone with DevSecOps depth. I map the gap first, before opening any roles.
 >
