@@ -1,6 +1,26 @@
 https://www.javatpoint.com/linear-search
 https://www.careercup.com/
 
+# Core Interview Pattern Map
+
+| Problem Type | Typical Pattern |
+|---|---|
+| anagram | HashMap + sorting |
+| duplicates | HashSet |
+| two sum | HashMap lookup |
+| intervals | sorting + merge |
+| substring problems | sliding window |
+| top K elements | heap / priority queue |
+| tree traversal | DFS / BFS |
+| shortest path | BFS / Dijkstra |
+| cycle detection | visited set |
+| frequency counting | HashMap |
+| caching | HashMap + LRU |
+| scheduling | heap |
+| continuous sums | prefix sum |
+| matrix traversal | DFS/BFS |
+| parent-child hierarchy | recursion/tree |
+
 # 1. LRU Design:
 
 	LRU, or Least Recently Used, is a popular algorithm used in computer science to manage cache memory. 
