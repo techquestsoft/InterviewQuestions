@@ -304,41 +304,52 @@ With deployment event at 14:30:
 ---
 
 ### Q10: AWS Services — design in layers
-
-```
+````
 Layer 1 — Edge
     CloudFront (CDN for static content)
     Route 53 (DNS + health checks)
-    Front Door equivalent (multi-region routing)
+    AWS Global Accelerator (Global low-latency traffic routing over AWS backbone)
 
 Layer 2 — API & Gateway
-    API Gateway (routing, throttling, auth)
-    WAF (web application firewall)
-    ALB (application load balancer)
+    API Gateway (routing, throttling, authentication, API security, request transformation)
+    AWS Shield (DDoS protection)
+    AWS WAF (web application firewall)
+    ALB (Layer-7 load balancer for HTTP/HTTPS traffic)
 
 Layer 3 — Compute & Orchestration
-    EKS (Kubernetes — microservices)
-    EC2 + EMR (big data batch pipelines)
-    Lambda (event triggers, glue functions)
+    ECS Fargate (serverless container runtime for microservices without managing servers)
+    Lambda (event-driven serverless compute, glue functions, lightweight async processing)
+    Step Functions (workflow orchestration, retries, saga coordination, long-running business flows)
+    EventBridge (event bus for decoupled event-driven communication across services)
+    SQS (durable asynchronous queue for buffering, retries, backpressure handling)
+    SNS (pub-sub fanout notifications to multiple consumers/services)
+    EKS (Kubernetes platform for advanced container orchestration)
+    EC2 + EMR (big data batch processing and Hadoop/Spark workloads)
 
 Layer 4 — Data & Storage
-    S3 (data lake — raw, processed, audit)
-    OpenSearch (search, analytics, real-time queries)
-    RDS / Aurora (transactional)
-    DynamoDB (NoSQL transactional)
-    ElastiCache / Redis (caching layer)
+    S3 (data lake — raw, processed, audit storage)
+    DynamoDB (high-scale NoSQL key-value store)
+    RDS / Aurora (transactional relational database)
+    ElastiCache / Redis (distributed caching and session storage)
+    OpenSearch (search, log analytics, observability queries)
+
+    Amazon Kinesis (real-time streaming ingestion)
+    AWS Glue (ETL/data integration pipelines)
+    Amazon Redshift (data warehouse / analytical workloads)
+    Amazon QuickSight (BI dashboards and visualization)
 
 Layer 5 — Security
-    IAM (role-based, least privilege)
-    KMS (encryption at rest)
-    Secrets Manager (credentials)
-    VPC + Security Groups (network isolation)
+    IAM (role-based access control, least privilege)
+    KMS (encryption key management)
+    Secrets Manager (secure credential storage and rotation)
+    VPC + Security Groups (network isolation and traffic control)
 
 Layer 6 — Observability
-    CloudWatch (infrastructure metrics)
-    OpenTelemetry → New Relic (APM, distributed tracing)
-    Splunk (log aggregation)
-```
+    CloudWatch (metrics, logs, alarms, dashboards)
+    X-Ray / OpenTelemetry (distributed tracing)
+    New Relic / Datadog (APM and observability)
+    Splunk (centralized log aggregation and analytics)
+````
 
 #### Real-world cost optimization (EMR)
 > "For EMR workloads at Cerner: 60% reserved + 40% spot/transient EC2 instances. The 60% provides cluster baseline (always running), 40% scales with data load. Significantly reduced infrastructure cost while handling burst capacity."
@@ -390,10 +401,10 @@ Layer 6 — Observability
 
 | **Layer** | **AWS** | **Azure** | **OCI (Oracle Cloud)** |
 |-----------|--------|----------|------------------------|
-| **Layer 1 — Edge** | CloudFront *(CDN for static content — JS, images, SPA assets, caching at edge)*<br>Route 53 *(DNS + health checks — failover, latency routing)* | Azure Front Door *(CDN + global routing — edge caching + L7 routing)*<br>Azure Traffic Manager *(DNS routing — geo/latency-based failover)* | OCI CDN *(static content delivery — edge caching)*<br>OCI DNS *(domain resolution + health checks)* |
-| **Layer 2 — API & Gateway** | API Gateway *(routing, throttling, auth — expose REST/GraphQL APIs)*<br>AWS WAF *(web application firewall — block OWASP threats)*<br>ALB *(L7 load balancer — route to microservices)* | Azure API Management *(API gateway — policies, auth, rate limiting)*<br>Azure WAF *(security — SQL injection, XSS protection)*<br>Application Gateway *(L7 routing + load balancing)* | OCI API Gateway *(API exposure — auth, throttling)*<br>OCI WAF *(web protection — attack filtering)*<br>OCI Load Balancer *(traffic distribution — L4/L7)* |
-| **Layer 3 — Compute & Orchestration** | EKS *(Kubernetes — microservices orchestration, scaling)*<br>EC2 + EMR *(VMs + big data — Spark/Hadoop batch pipelines)*<br>Lambda *(event triggers — S3 upload → process file, glue logic between services)* | AKS *(Kubernetes — containerized microservices)*<br>VMs + Azure Databricks *(Spark analytics — ETL pipelines)*<br>Azure Functions *(event-driven compute — queue triggers, HTTP triggers)* | OKE *(Kubernetes — container orchestration)*<br>OCI Compute + Data Flow *(Spark jobs — batch processing)*<br>OCI Functions *(serverless — event-driven workflows)* |
-| **Layer 4 — Data & Storage** | S3 *(data lake — raw, processed, audit zones)*<br>OpenSearch *(search + analytics — logs, real-time dashboards)*<br>RDS / Aurora *(relational — OLTP transactions)*<br>DynamoDB *(NoSQL — high-scale key-value, sessions)*<br>ElastiCache (Redis) *(caching — reduce DB load, improve latency)* | Blob Storage *(data lake — hierarchical storage, analytics)*<br>Azure Cognitive Search *(search + indexing — app search use cases)*<br>Azure SQL / PostgreSQL *(relational — transactions)*<br>Cosmos DB *(NoSQL — global distribution, low latency)*<br>Azure Cache for Redis *(caching — session store, hot data)* | OCI Object Storage *(data lake — durable storage)*<br>OCI Search Service *(OpenSearch-based — log analytics)*<br>Autonomous Database *(relational — self-tuning OLTP/OLAP)*<br>OCI NoSQL *(key-value store — scalable workloads)*<br>OCI Cache (Redis) *(in-memory caching — performance boost)* |
+| **Layer 1 — Edge** | CloudFront *(CDN for static content — JS, images, SPA assets, caching at edge)*<br>Route 53 *(DNS + health checks — failover, latency routing)*<br>AWS Global Accelerator *(global low-latency routing over AWS backbone — improves cross-region traffic performance)* | Azure Front Door *(CDN + global routing — edge caching + L7 routing)*<br>Azure Traffic Manager *(DNS routing — geo/latency-based failover)*<br>Not direct equivalent to AWS Global Accelerator *(closest: Front Door Premium + Anycast routing)* | OCI CDN *(static content delivery — edge caching)*<br>OCI DNS *(domain resolution + health checks)*<br>OCI Traffic Management Steering Policies *(geo/latency traffic steering)* |
+| **Layer 2 — API & Gateway** | API Gateway *(routing, throttling, auth — expose REST/GraphQL APIs)*<br>AWS WAF *(web application firewall — block OWASP threats)*<br>AWS Shield *(DDoS protection — volumetric attack mitigation)*<br>ALB *(L7 load balancer — route to microservices)* | Azure API Management *(API gateway — policies, auth, rate limiting)*<br>Azure WAF *(security — SQL injection, XSS protection)*<br>Azure DDoS Protection *(network attack mitigation)*<br>Application Gateway *(L7 routing + load balancing)* | OCI API Gateway *(API exposure — auth, throttling)*<br>OCI WAF *(web protection — attack filtering)*<br>OCI DDoS Protection *(built-in DDoS mitigation)*<br>OCI Load Balancer *(traffic distribution — L4/L7)* |
+| **Layer 3 — Compute & Orchestration** | ECS Fargate *(serverless containers — run microservices without managing VMs)*<br>EKS *(Kubernetes — microservices orchestration, scaling)*<br>EC2 + EMR *(VMs + big data — Spark/Hadoop batch pipelines)*<br>Lambda *(event-driven compute — lightweight async processing, glue functions)*<br>Step Functions *(workflow orchestration — retries, saga coordination, long-running business flows)*<br>EventBridge *(event bus — decoupled event-driven architecture)*<br>SQS *(durable async queue — buffering, retries, backpressure handling)*<br>SNS *(pub-sub messaging — fanout notifications to multiple consumers)* | Azure Container Apps *(serverless containers — simplified container hosting)*<br>AKS *(Kubernetes — containerized microservices)*<br>VMs + Azure Databricks *(Spark analytics — ETL pipelines)*<br>Azure Functions *(event-driven compute — queue triggers, HTTP triggers)*<br>Azure Durable Functions *(workflow orchestration — stateful serverless flows)*<br>Azure Event Grid *(event routing/event bus — reactive architectures)*<br>Azure Service Bus Queue *(durable messaging — enterprise async processing)*<br>Azure Service Bus Topics *(pub-sub messaging — fanout communication)* | OCI Container Instances *(serverless containers — run containers without VM management)*<br>OKE *(Kubernetes — container orchestration)*<br>OCI Compute + Data Flow *(Spark jobs — batch processing)*<br>OCI Functions *(serverless — event-driven workflows)*<br>OCI Workflow *(workflow orchestration — stateful business process automation)*<br>OCI Events *(event routing/event bus)*<br>OCI Queue *(managed async messaging queue)*<br>OCI Notifications *(pub-sub notifications — email/SMS/webhooks)* |
+| **Layer 4 — Data & Storage** | S3 *(data lake — raw, processed, audit zones)*<br>OpenSearch *(search + analytics — logs, real-time dashboards)*<br>RDS / Aurora *(relational — OLTP transactions)*<br>DynamoDB *(NoSQL — high-scale key-value, sessions)*<br>ElastiCache (Redis) *(caching — reduce DB load, improve latency)*<br>Amazon Kinesis *(real-time streaming ingestion)*<br>AWS Glue *(ETL + schema discovery — data integration pipelines)*<br>Amazon Redshift *(data warehouse — analytical workloads)*<br>Amazon QuickSight *(BI dashboards — visualization and reporting)* | Blob Storage *(data lake — hierarchical storage, analytics)*<br>Azure Cognitive Search *(search + indexing — app search use cases)*<br>Azure SQL / PostgreSQL *(relational — transactions)*<br>Cosmos DB *(NoSQL — global distribution, low latency)*<br>Azure Cache for Redis *(caching — session store, hot data)*<br>Azure Event Hubs *(real-time streaming ingestion)*<br>Azure Data Factory *(ETL/orchestration — data movement pipelines)*<br>Azure Synapse Analytics *(data warehouse + big data analytics)*<br>Power BI *(dashboards + enterprise BI reporting)* | OCI Object Storage *(data lake — durable storage)*<br>OCI Search Service *(OpenSearch-based — log analytics)*<br>Autonomous Database *(relational — self-tuning OLTP/OLAP)*<br>OCI NoSQL *(key-value store — scalable workloads)*<br>OCI Cache (Redis) *(in-memory caching — performance boost)*<br>OCI Streaming *(Kafka-compatible streaming ingestion)*<br>OCI Data Integration *(ETL/data pipelines)*<br>Autonomous Data Warehouse *(analytics + warehousing)*<br>Oracle Analytics Cloud *(BI dashboards + visualization)* |
 | **Layer 5 — Security** | IAM *(role-based access — least privilege policies)*<br>KMS *(encryption keys — data at rest protection)*<br>Secrets Manager *(credentials — DB passwords, API keys)*<br>VPC + Security Groups *(network isolation — private subnets)* | Microsoft Entra ID *(identity + RBAC — SSO, enterprise auth)*<br>Azure Key Vault *(keys + secrets — encryption + credentials)*<br>Managed Identities *(secure service auth — no hardcoded secrets)*<br>VNet + NSG *(network isolation — traffic control)* | OCI IAM *(identity + policies — access control)*<br>OCI Vault *(keys + secrets — encryption management)*<br>Compartments *(resource isolation — governance boundaries)*<br>VCN + Security Lists *(network isolation — subnet security)* |
 | **Layer 6 — Observability** | CloudWatch *(metrics + logs — CPU, memory, alarms)*<br>X-Ray *(distributed tracing — request flow across services)*<br>OpenTelemetry → New Relic *(APM — latency, bottlenecks)*<br>Splunk *(log aggregation — centralized logging, search)* | Azure Monitor *(metrics + alerts — infra visibility)*<br>Application Insights *(APM — request tracing, failures)*<br>OpenTelemetry → New Relic *(advanced APM)*<br>Splunk *(centralized logging — enterprise observability)* | OCI Monitoring *(metrics — resource health)*<br>OCI Logging *(log aggregation — audit + app logs)*<br>OCI APM *(performance monitoring — tracing)*<br>Splunk *(external log analytics — optional integration)* |
 ---
@@ -436,6 +447,8 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 | State | Stateless | Can be stateful |
 | Cost at scale | Expensive per invocation at high volume | Better per-unit cost with reserved |
 | Infrastructure mgmt | Zero | OS patches, scaling config |
+
+Sporadic Lambda usage means workloads that occur irregularly or unpredictably rather than continuously. Lambda is well-suited for such workloads because it scales on demand and incurs cost only during execution.
 
 #### Lambda use cases — memorize 3 specific examples (Cubic asked this)
 
@@ -520,7 +533,7 @@ This came up at TJX. Memorize this answer with the specific Saffer example.
 - Memory profiling in performance testing
 
 #### Real example
-> "In a patient data service, heap usage kept growing over 6 hours until OOMKill. Root cause: in-memory cache with no eviction — patient records accumulated indefinitely. Fix: switched to Redis with 24-hour TTL. Memory usage dropped 40% and stabilized."
+> "In a patient data service, heap usage kept growing over 6 hours until OOMKill(Out Of Memory Kill). Root cause: in-memory cache with no eviction — patient records accumulated indefinitely. Fix: switched to Redis with 24-hour TTL. Memory usage dropped 40% and stabilized."
 
 ---
 
