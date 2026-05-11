@@ -43,7 +43,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ### Q2: How do you handle a production incident?
 
-**Memory Hook:** Detect → Blast Radius → Mitigate → Communicate Cadence → RCA → CAPA
+**Memory Hook:** Detect → Blast Radius → Communicate Cadence → Mitigate → RCA → CAPA
 
 > "Structured SEV framework.
 >
