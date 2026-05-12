@@ -24,7 +24,19 @@ Evidence sources include:
 
 # 1. Coverage Matrix
 
-| Topic | Coverage Status | File Name | Evidence | Depth Rating | Gaps Identified |
+| Topic | Coverage Status | File Name | Question No / Section | Evidence | Depth Rating | Gaps Identified | Correct Staff+/Principal-Level Answer for Gap |
+|---|---|---|---|---|---|---|---|
+| Idempotency | PARTIALLY COVERED | File 06 | Incident Handling – Kafka Replay Incident | Kafka replay incident references missing idempotency check | 5/10 | No idempotency key strategy, dedupe storage, transactional boundaries, replay protection details | Explain business-key-based idempotency, dedupe tables/Redis caching, replay-safe consumers, exactly-once tradeoffs, and transactional outbox patterns. |
+| Retries with backoff | FULLY COVERED | File 04 Q9, File 06 Q1/Q3 | Circuit breaker + retries + resilience patterns | 7/10 | Missing retry storm mitigation metrics and tuning strategy | Add retry budgets, jittered exponential backoff, retry exhaustion routing to DLQ, retry observability, and protection against cascading failures. |
+| Replay handling | PARTIALLY COVERED | File 06 Q2/Q3 | Kafka replay from last committed offset during incident | 6/10 | No replay orchestration, replay isolation, replay correctness validation | Explain replay pipelines, replay isolation consumers, replay throttling, validation checkpoints, and reconciliation after replay. |
+| DLQs | NOT COVERED | None | None | No explicit DLQ architecture | 1/10 | Missing poison message handling, quarantine flows, retry exhaustion | Add DLQ topics, retry topics, quarantine handling, replay tooling, poison-message tagging, and operational monitoring. |
+| Ordering guarantees | NOT COVERED | None | None | No partition-ordering discussion | 1/10 | Missing partitioning strategy, ordering tradeoffs | Explain per-entity ordering via partition keys, tradeoffs of global ordering, partition skew, and sequencing guarantees. |
+| Exactly-once semantics | NOT COVERED | None | None | No transactional Kafka discussion | 1/10 | Missing idempotent producers, EOS, dedupe guarantees | Explain Kafka idempotent producers, transactional consumers, outbox patterns, and business-level deduplication. |
+| Consistency tradeoffs | PARTIALLY COVERED | File 04 Q5 | Eventual consistency briefly mentioned | 5/10 | No CAP tradeoff analysis, consistency boundaries | Explain consistency boundaries, CAP tradeoffs, acceptable staleness windows, and business impact. |
+| Saga/compensation | NOT COVERED | None | None | No distributed transaction handling | 1/10 | Missing orchestration/choreography discussion | Explain saga orchestration, compensating events, rollback semantics, and failure recovery flows. |
+| Schema evolution | PARTIALLY COVERED | File 08 Q1/Q2 | Canonical schema references | 4/10 | No schema registry/version compatibility strategy | Add Avro/Protobuf schema registry, backward compatibility rules, producer-consumer version governance. |
+| Event versioning | NOT COVERED | None | None | No event contract governance | 1/10 | Missing backward compatibility approach | Explain event versioning strategy, compatibility guarantees, and phased consumer upgrades. |
+| Consumer isolation | NOT COVERED | None | None | No Kafka consumer isolation strategy | 1/10 | Missing retry-topic separation, independent scaling | Explain consumer groups per workload, retry isolation, independent autoscaling, and QoS controls. |
 |---|---|---|---|---|---|
 | Idempotency | PARTIALLY COVERED | File 06 | Kafka replay incident references missing idempotency check | 5/10 | No idempotency key strategy, dedupe storage, transactional boundaries, replay protection details |
 | Retries with backoff | FULLY COVERED | File 04, File 06 | Circuit breaker + retries + resilience patterns | 7/10 | Missing retry storm mitigation metrics and tuning strategy |
