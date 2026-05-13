@@ -298,6 +298,16 @@ With deployment event at 14:30:
 - Automated rollback on failure
 
 ---
+### Q9.1: A/B testing — when to use?
+A/B Testing — Simple Definition
+
+A/B Testing is an experiment technique where two versions of something are shown to different groups of users to determine which version performs better.
+
+Version A = current/original version (control)
+Version B = modified/new version (variant)
+
+The goal is to make data-driven decisions instead of relying on assumptions.
+---
 
 ## SECTION D — CLOUD ARCHITECTURE
 
@@ -473,7 +483,7 @@ Sporadic Lambda usage means workloads that occur irregularly or unpredictably ra
 
 | Capability | How | Why |
 |-----------|-----|-----|
-| Horizontal scaling | HPA on CPU/memory threshold | Auto-handles traffic spikes |
+| Horizontal scaling | HPA(Horizontal Pod Autoscaler) on CPU/memory threshold | Auto-handles traffic spikes |
 | Self-healing | Liveness + readiness probes | Unhealthy pods replaced automatically |
 | Rolling deployments | Replace pods gradually | Zero downtime releases |
 | Network isolation | Services + Ingress + NetworkPolicy | Internal vs external routing control |
