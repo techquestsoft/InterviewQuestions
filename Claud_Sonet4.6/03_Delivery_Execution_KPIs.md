@@ -246,11 +246,13 @@ If interviewer probes the formal governance:
 
 > "I define KPIs across three dimensions so engineering aligns with business outcomes rather than measuring activity.
 >
-> **Business impact** — cost reduction, time to market, customer satisfaction (NPS, adoption). Tells the business whether engineering is creating value.
+> **Business impact** — For example, a quarterly goal could be reducing cloud infrastructure cost by 15%, improving feature adoption by 20%, or improving customer onboarding completion rates. Tells the business whether engineering is creating value.
 >
-> **Engineering efficiency** — lead time from feature sign-off to production, deployment frequency, delivery predictability. Tells me whether my processes are working.
+> **Engineering efficiency** — lead time from feature sign-off to production, deployment frequency, delivery predictability. For example, reducing average lead time from 4 hours to 1 hour, increasing deployment frequency from weekly to daily, or improving sprint predictability from 70% to 90%. Tells me whether my engineering processes are working efficiently.
 >
-> **System reliability** — SLO adherence, incident rate, MTTR. Tells me whether the systems I own are trustworthy.
+> reduce defect escape rate to below 2% for the features I own this quarter -- where can i add this goal?
+>
+> ** System reliability and quality** — SLO adherence, incident rate, MTTR, and defect escape rate. For example, one quarterly goal may be reducing defect escape rate below 2% for the features my team owns. Tells me whether our systems and engineering practices are truly production-ready.
 >
 > Balanced scorecard, not a single metric. Velocity alone can be gamed. Deployment frequency alone ignores quality. The combination is harder to game and more informative."
 
