@@ -315,7 +315,7 @@ Don't force it — but if a generic example fits, prefer the phrasing the hiring
 Always prepare 2 questions before the interview.
 
 **Universally good:**
-- -  What are the biggest engineering challenges this team is navigating right now?
+- What are the biggest engineering challenges this team is navigating right now?
 - If I joined and later developed a strong data-backed perspective that one of the team’s priorities should change, how would that discussion typically happen here?
 - "What does success look like for this role at the end of the first six months?"
 - "How does your organization balance standardization across teams with team-level autonomy?"
