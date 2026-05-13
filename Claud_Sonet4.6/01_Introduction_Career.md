@@ -267,7 +267,7 @@ Don't quote the list verbatim — pick 2 or 3 that genuinely resonate with how y
 
 | Question | Answer |
 |---------|--------|
-| **Strengths?** | Ownership – I take end-to-end ownership from planning to production stability <br>**Problem Solving** – I handle complex and production issues using a structured approach <br>**Team Leadership** – I build strong teams through clear expectations, mentoring, and feedback <br>**Technical Judgment** – I make balanced decisions across scalability, reliability, cost, and timelines <br>**Business Alignment** – I align engineering work with business goals and customer impact|
+| **Strengths?** | **Ownership** – I take end-to-end ownership from planning to production stability <br>**Problem Solving** – I handle complex and production issues using a structured approach <br>**Team Leadership** – I build strong teams through clear expectations, mentoring, and feedback <br>**Technical Judgment** – I make balanced decisions across scalability, reliability, cost, and timelines <br>**Business Alignment** – I align engineering work with business goals and customer impact|
 | **Weaknesses?** | **Technical Depth Bias** – Earlier, I tended to go deep technically even in leadership scenarios <br>**Structured Communication** – I used to start with detailed explanations instead of summarizing first <br>**Delegation** – I sometimes took on critical problem-solving myself |
 | **Why JPMorgan Chase / BBAO?** | (See dedicated section below — do not give a one-liner here. This deserves a real answer.) |
 | **What kind of role are you looking for?** | I am looking for a role where I can combine engineering leadership with platform thinking and AI-driven transformation to drive meaningful business impact at scale|
@@ -315,8 +315,9 @@ Don't force it — but if a generic example fits, prefer the phrasing the hiring
 Always prepare 2 questions before the interview.
 
 **Universally good:**
+- -  What are the biggest engineering challenges this team is navigating right now?
+- If I joined and later developed a strong data-backed perspective that one of the team’s priorities should change, how would that discussion typically happen here?
 - "What does success look like for this role at the end of the first six months?"
-- "What are the biggest engineering challenges this team is navigating right now?"
 - "How does your organization balance standardization across teams with team-level autonomy?"
 - "What does the tech debt and platform maturity situation look like today — what is working, what is not?"
 - "What does a great engineering day look like on this team versus a frustrating one?"
