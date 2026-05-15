@@ -246,7 +246,7 @@ A categorized reference of metrics commonly used at Senior EM / Engineering Dire
 
 | KPI | Engineering KPI | Business KPI | Executive KPI | Quality Maturity KPI | Operational / Reliability KPI | Delivery / Efficiency KPI | Typical Target | Owner |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|---|---|
-| **Lead Time for Changes** (sign-off → production) | ✅ | | ✅ | | | ✅ | < 1 hour (elite) / < 1 day (high) | Engineering |
+| **Lead Time for Changes** (code commit → production) | ✅ | | ✅ | | | ✅ | < 1 hour (elite) / < 1 day (high) | Engineering |
 | **Deployment Frequency** | ✅ | | ✅ | | | ✅ | Daily or on-demand | Engineering |
 | **Delivery Predictability** (% committed work shipped on commit date) | ✅ | | ✅ | ✅ | | ✅ | ≥ 85% | Engineering |
 | **Change Failure Rate** (% deploys causing incident/rollback within 24h) | ✅ | | ✅ | ✅ | ✅ | | < 5% | Engineering |
