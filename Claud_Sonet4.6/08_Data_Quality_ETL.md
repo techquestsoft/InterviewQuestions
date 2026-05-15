@@ -20,8 +20,6 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## SECTION A — DATA QUALITY FOUR-LEVEL FRAMEWORK
 
-This was the question Sridhar at Deloitte pushed on. Memorize the four levels.
-
 ---
 
 ### Q1: How do you ensure data integrity and quality in a heterogeneous data pipeline?
@@ -32,13 +30,13 @@ This was the question Sridhar at Deloitte pushed on. Memorize the four levels.
 >
 > **Level 1 — Completeness.** Does every record that should exist actually exist? Run count reconciliation at each pipeline stage — source count vs landing count vs processed count. Any variance stops the pipeline and alerts.
 >
-> **Level 2 — Validity.** Does each field conform to its expected format and range? Date fields are actually dates, code fields match valid code lists, mandatory fields are not null. Schema-level and business-rule level checks built into the processing layer.
+> **Level 2 — Validity.** Does each value conform to its rule? This is deterministic, per-record checking — date fields are actually dates, code fields match valid code lists, mandatory fields are not null per contract. Schema-level and business-rule checks built into the processing layer. Example: patient_id is NOT NULL by contract, so any row violating that fails validity.
 >
-> **Level 3 — Consistency.** Are relationships between entities coherent? In patient data, every encounter links to a valid patient. Every procedure has a valid encounter. No orphaned records.
+> **Level 3 — Consistency.** Are relationships and logic coherent? Two dimensions here. Referential consistency — every encounter links to a valid patient, every procedure has a valid encounter, no orphaned records. Temporal and logical consistency — discharge_date >= admit_date, lab result dates fall within the encounter window. Both matter, especially in healthcare data.
 >
-> **Level 4 — Accuracy.** Does the data reflect reality? Hardest to automate. Validate against known reference data. Statistical distribution checks for anomalies — if a dataset suddenly has 40% nulls on a field that was historically 2% null, that signals a source system change.
+> **Level 4 — Accuracy.** Does the data reflect reality? This is the hardest to automate directly — true accuracy means matching truth, which usually requires reference data validation. As a proxy, I run statistical distribution checks: if a field's null rate jumps from 2% to 40%, that's not a validity failure per se — nulls may be allowed by schema — but it signals a source-side change that likely impacts accuracy downstream. So the distinction matters: validity asks 'does this value conform to the rule?' while accuracy asks 'does the data reflect reality?
 >
-> **Plus governance:** every field has a data dictionary entry. Every transformation is documented. Every lineage step is traceable — if a downstream report is wrong, I can trace back to which source record caused it."
+> **Plus governance:** — the operating model around the controls. Every field has a data dictionary entry. Every transformation is documented. Every lineage step is traceable — if a downstream report is wrong, I can trace back to which source record caused it. And every dataset has a named data steward and a freshness SLA, so quality isn't just a technical control — it has ownership and accountability."
 
 ---
 
