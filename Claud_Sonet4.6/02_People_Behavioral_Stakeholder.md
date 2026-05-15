@@ -1,6 +1,8 @@
 # Interview Prep — File 2 of 8
 # People Management, Behavioral & Stakeholder
 
+> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team.
+
 > **Rule 1:** Management questions get management answers first. Technical design comes last, if at all.
 > **Rule 2:** Every behavioral answer needs a specific example. Generic STAR scores 5/10. Specific STAR scores 9/10.
 > **Rule 3:** Use STAR — Situation, Task, Action, Result — and keep the spoken version under 90 seconds.
@@ -111,9 +113,9 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ### Q4: How do you handle low performers?
 
-**Memory Hook:** Diagnose System First → Coach with Evidence → PIP Only on Sustained Gap → Evidence, Never Bell Curve
+**Memory Hook:** Identify → Diagnose → System First → Improve → PIP if needed
 
-> "My first question is always: is this individual or systemic? Unclear priorities, unmanaged interrupts, and missing psychological safety cause most apparent low performance. I fix the system before coaching the individual.
+> "My first question is always: is this individual or systemic? Unclear priorities, unmanaged interrupts, and missing psychological safety cause most low performance. I fix the system before coaching the individual.
 >
 > Real example: I had an engineer consistently missing sprint commitments. Before any feedback conversation, I pulled his velocity, code review turnaround, and QA feedback for the past quarter. Then I had a 1:1 — not a performance review, just an honest conversation about what was in the way.
 >
@@ -121,65 +123,35 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 >
 > I restructured his allocation, set one focus area per sprint, and removed the cross-team requests formally. Six weeks later, velocity improved and QA friction dropped.
 >
-> If after the system is fixed and coaching is given the gap still persists across two sprint cycles, then I move to a formal PIP — with documented expectations, weekly checkpoints, specific success criteria, and honest framing of what happens if the plan is not met. That conversation is direct, not adversarial, and never vague.
+> If coaching does not move the needle after two sprint cycles, I escalate to a formal PIP with documented expectations, specific timelines, and clear consequences. That conversation is direct and honest — not adversarial, but not vague.
 >
-> One principle I hold firmly: PIPs are driven by sustained, documented performance gaps — not by calibration cycles or bell-curve forcing functions. The bell curve is a calibration tool across the org; it is not a reason to put a specific person on a plan. If I cannot point to specific evidence of sustained underperformance after coaching, that engineer does not belong on a PIP regardless of where they fall on the curve."
-
-**Probing follow-ups and how to answer them:**
-
-**Q4a: "Tell me about a specific time you put someone on a PIP — what made it the hardest call?"**
-
-> "I will share one that genuinely tested me. At one of my prior orgs, I had two engineers on my team where, after a full performance cycle of observation, the gap was real — one was missing technical depth expected at his level despite repeated coaching, and the other had a collaboration and ownership pattern that was affecting team execution.
->
-> The hard part was not the decision. The data was clear — I had two quarters of 1:1 notes, sprint commitments versus delivery, code review feedback, and peer signals. The hard part was the human weight: these are people with families, careers, and self-image tied to their work.
->
-> Before initiating the PIP, I did three things. First, I sat with the tech lead and walked through the evidence together — I wanted a second pair of eyes to challenge whether I was being fair, whether system factors were still in play, whether I had given enough coaching runway. Second, I went back through my own 1:1 history and asked myself honestly: did I give this person clear, specific feedback early enough? In one case, I had — multiple times. In the other, I realized I had been softer than I should have, so I extended the coaching window by another sprint cycle with very explicit expectations before considering a plan.
->
-> Then I had the PIP conversation directly — no HR script, no euphemisms. I told each of them exactly what the gap was, what 'meeting expectations' looked like in measurable terms, what support I would provide, and what the consequence was if the plan was not met. I also told them what I genuinely believed about their potential — because a PIP is not a termination notice, it is a structured chance to recover.
->
-> What I learned: the difficulty of a PIP is not the process — it is the responsibility of being honest with someone in a way that respects them. Vague feedback feels kinder in the moment but is actually the unkindest thing a manager can do, because it denies the person the chance to actually improve."
-
-**Q4b: "Were you aware of the bell curve? Did that drive the decision?"** *(This is the trap question — handle it cleanly.)*
-
-> "I was aware of the calibration approach. But to be direct: bell curve calibration and individual PIP decisions are two different conversations, and I do not let one drive the other.
->
-> Bell curve is an org-wide calibration mechanism to ensure rating consistency across managers — it surfaces whether a manager is over-rating or under-rating relative to peers. A PIP is a decision based on a specific engineer's sustained performance against the expectations of their level, supported by documented evidence.
->
-> If an engineer falls in the bottom of the curve but is meeting the expectations of their level, they do not go on a PIP. If an engineer is sitting in the middle of the curve but is sustainably underperforming against their level expectations after coaching, they may need a PIP regardless of where the curve places them. The two decisions are independent, and conflating them is how managers end up with unfair plans that do not hold up under HR or legal scrutiny."
-
-**Q4c: "How do you make sure you are being fair before putting someone on a PIP?"**
-
-> "Four checks I run on myself before any PIP decision.
->
-> One — Evidence sufficiency. Do I have at least two quarters of documented, specific observations? Not impressions, not 'I feel like…' but examples I could write down with dates.
->
-> Two — System check. Have I genuinely removed system-level blockers? Unclear scope, conflicting priorities, lack of mentorship, wrong project fit? If any of those is still present, the issue may not be the person.
->
-> Three — Coaching runway. Has the engineer received explicit, specific feedback with enough time and support to act on it? If feedback has been soft or implicit, I have not given them a fair chance.
->
-> Four — Calibration with peers. I walk the case through with my skip-level or an HR partner — not for permission, but to stress-test my own bias. If a peer manager looks at the same evidence and reaches a different conclusion, I need to understand why before proceeding."
+> Track record: 2 PIPs at Optum over 6 years — both resolved within plan, no surprise terminations."
 
 ---
 
 ### Q5: How do you build and motivate a high-performing team?
 
-**Memory Hook:** Motivation is Level-Specific → Meaning, Mastery, Autonomy → Recognition is Specific → IDP is Real, Not Ceremonial
+**Memory Hook:** Clarity → Ownership → Recognition → Growth → Connect to Impact
 
-> "Motivation is not a one-size pattern — it changes by level and by individual. I anchor my approach on three things engineers consistently respond to: meaning in the work, mastery in their craft, and autonomy in how they execute. Recognition and growth are how I deliver those three.
+> As a manager, I focus on four things to build a high-performing team: clarity, ownership, recognition, and growth.
+> 
+> First is clarity — I make sure engineers understand not just what they are building, but why it matters to the business and customers. I connect sprint work to outcomes, not just tickets.
+> 
+> Second is ownership — I involve engineers in design discussions and decision-making so they feel accountable for outcomes, not just task completion.
+> 
+> Third is recognition —  I acknowledge strong contributions publicly in sprint reviews and team channels and common forums. Specific acknowledgment, not generic praise. 'How you handled the scope negotiation in Tuesday's planning showed mature judgment' lands. 'Good job' does not.
+> 
+> Fourth is growth — I invest in IDPs (individual development plans) for every engineer. Where do they want to be in 12 months? What specific experiences do they need? I make those experiences available within our roadmap."
+---
+> "Four things.
 >
-> **For early-career engineers (IC1/IC2),** motivation comes from clarity, growth, and feeling seen. In 1:1s, I focus on three things: removing blockers so they can actually deliver, helping them build a real Individual Development Plan tied to skills they want to grow into over the next 12 to 18 months, and understanding them as people — what energizes them, what frustrates them, what they want their next role to look like. The IDP is not a form we fill once a year — we revisit it every quarter, and I align project assignments to it wherever the roadmap allows.
+> Clarity — people perform best when they know exactly what they are responsible for and why it matters. I connect sprint work to product outcomes explicitly, not just Jira tickets.
 >
-> **For senior engineers (IC3/IC4),** motivation shifts. They already have execution mastery. What they need is meaning and visibility. I connect their work explicitly to business impact — not 'you built feature X' but 'this capability enabled three customer onboardings worth $X in ARR.' I give them platforms to be heard: leading architecture reviews, presenting design decisions in cross-team forums, representing the team in townhalls. And I give them autonomy over how the problem gets solved, not just what gets built. Senior engineers disengage fast when they feel like ticket-takers.
+> Ownership — I assign responsibility, not just tasks. Ownership means an engineer cares about the outcome, not just completion. I create that by involving them in design decisions, not just handing them requirements.
 >
-> **For everyone,** recognition has to be specific or it loses meaning. 'Good job on the release' lands as noise. 'The way you handled the rollback decision on Tuesday — calling it before customer impact — is exactly the operational judgment I want this team known for' lands as signal. I look for opportunities to recognize specific behaviors in townhalls, sprint reviews, and skip-level forums — because visibility outside the team matters as much as inside.
+> Recognition — I acknowledge strong contributions publicly in sprint reviews and team channels. Specific acknowledgment, not generic praise. 'How you handled the scope negotiation in Tuesday's planning showed mature judgment' lands. 'Good job' does not.
 >
-> Real example: at Cerner, I had a senior engineer who was technically strong but visibly disengaged — doing the work but not bringing energy to it. In our 1:1, what came out was that he felt his work was invisible, and he had stopped seeing where it was going. I gave him end-to-end ownership of our V3 Java/Spark POC — design, implementation, and the architecture review with the HDI AI team. Within a quarter he went from quiet contributor to the technical lead the team turned to. Same engineer, same skills — the change was meaning and visibility, not capability."
-
-**Probing follow-up: "What if someone is intrinsically motivated by money or title rather than meaning?"**
-
-> "I take that at face value and work with it honestly. If someone is motivated by promotion velocity, I tell them clearly what evidence I need to build their case — specific impact, specific scope, specific level expectations — and I help them get the experiences that produce that evidence. If someone is motivated by compensation, I am transparent about what is and is not within my control, and where the levers actually are — usually promotion or scope expansion, not annual raises alone.
->
-> What I avoid is pretending all motivation has to be intrinsic. Engineers are adults with real life constraints — mortgages, families, visa situations, aging parents. A manager who only speaks the language of 'meaning' loses credibility fast with engineers who need to talk about career trajectory in concrete terms."
+> Growth — I invest in IDPs (individual development plans) for every engineer. Where do they want to be in 12 months? What specific experiences do they need? I make those experiences available within our roadmap."
 
 ---
 
@@ -190,30 +162,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 **Framing principle:** The most challenging people situations are rarely about *what to decide* — they are about *how to decide humanely when there is no clean answer*. Lead with that framing, not with the mechanics.
 
 ---
-
-#### Story A — The Honest PIP Decision (use when probed on performance management or hard calls)
-
-**Memory Hook:** Real Gap → Self-Check → Honest Conversation → Documented Plan → Humane Outcome
-
-> "The most challenging people management situation I have faced was making the call to put two engineers on a Performance Improvement Plan during my first full performance cycle leading a new team.
->
-> The difficulty was not whether the data supported it — by the time I made the call, I had two quarters of documented evidence: 1:1 notes, sprint commitments versus delivery, peer feedback, and code review patterns. One engineer had a sustained technical-depth gap despite repeated coaching; the other had a collaboration and ownership pattern that was visibly affecting team execution.
->
-> The difficulty was the weight of it. These are people with families, visa situations, and self-image tied to their work. I knew the decision would change their year, possibly their career trajectory.
->
-> Before initiating either PIP, I forced myself through three checks. **First** — I walked the evidence through with the tech lead, specifically asking him to challenge me. Was I being fair? Were there system factors I had not addressed? Was there a project-fit issue I was reading as a capability issue? **Second** — I went back through my own 1:1 notes and asked honestly whether I had given clear, specific, early feedback. In one case I had. In the other I realized I had been softer than I should have been, so I extended the coaching window by another sprint cycle with very explicit expectations before considering a plan. **Third** — I calibrated the case with HR and my skip-level, not for permission but to stress-test my own bias.
->
-> When I did have the PIP conversations, I did them myself — no HR script, no euphemisms. I told each engineer exactly what the gap was, what 'meeting expectations' looked like in measurable terms, what support I would commit to providing, and what the consequence was if the plan was not met. I also told them what I genuinely believed about their potential — because a PIP is a structured chance to recover, not a termination notice in disguise.
->
-> The outcomes were different for each. One engineer engaged seriously with the plan, improved measurably within the timeline, and came off PIP successfully — he is still with the org. The other ultimately chose to move on, but did so with clarity and on his own terms, with a transition plan rather than a surprise exit.
->
-> What I carry from that experience: vague feedback feels kinder in the moment but is actually the unkindest thing a manager can do, because it denies the person the chance to actually improve. The hardest part of people management is being honest in a way that respects the person — not avoiding the hard conversation in the name of being nice."
-
-**If probed on the bell curve:** *(See Q4b above — same answer applies)*
-
----
-
-#### Story B — Retaining a Disengaged Senior Engineer (use when probed on attrition or motivation)
+#### Story A — Retaining a Disengaged Senior Engineer (use when probed on attrition or motivation)
 
 **Memory Hook:** Signal Spotted Early → Honest 1:1 → Diagnosed Cause → Real Stretch, Not Patch → Outcome
 
@@ -231,7 +180,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
-#### Story C — Managing a Conflict Between Two Strong Engineers (use when probed on team conflict)
+#### Story B — Managing a Conflict Between Two Strong Engineers (use when probed on team conflict)
 
 **Memory Hook:** Direct Conversation → Listen to Both → Surface the Real Issue → Realign Scope → Reset Norms
 
@@ -584,10 +533,7 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 | Topic | Memory Hook | One-Line Answer |
 |-------|------------|----------------|
 | Team management | Clarity → Track → Engage → Intervene | Clear goals, weekly tracking, real 1:1s, remove blockers fast |
-| Low performers / PIP | Diagnose System First → Coach with Evidence → PIP Only on Sustained Gap | System first, evidence-based PIP, never bell-curve driven |
-| Motivation | Level-Specific → Meaning, Mastery, Autonomy → Specific Recognition | IC2: clarity & IDP; IC3/IC4: meaning & visibility |
-| Most challenging people situation | Real Gap → Self-Check → Honest Conversation → Humane Outcome | Have 3 stories ready: PIP, attrition risk, team conflict |
-| Difficult feedback | Specific → Timely → Private → Forward-Looking | Within 48 hours, behavior not character, with a path forward |
+| Low performers | Identify → Diagnose → System First → PIP if needed | Fix system before individual, PIP only if coaching fails |
 | High performers | Deliver → Own → Influence → Stretch | Stretch work, visibility, evidence-based promotion |
 | Hiring | Skill Matrix → Structured Rubric → 90-day onboarding | Gap first, calibrated rubric, retention plan |
 | Stakeholder conflict | Shared Context → Transparent Capacity → Facilitate | One conversation, show capacity, business decides |
