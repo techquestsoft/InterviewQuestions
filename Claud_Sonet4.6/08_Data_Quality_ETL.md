@@ -1,8 +1,6 @@
 # Interview Prep — File 8 of 8
 # Data Quality, ETL Pipelines & Deep Observability
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Background context — likely lower priority for this specific JPMC role, but valuable if data integrity / event quality / Kafka pipeline reliability comes up.
-
 > **Rule 1:** Data quality has FOUR levels (Completeness, Validity, Consistency, Accuracy). Memorize them.
 > **Rule 2:** Every quality answer needs healthcare-specific examples — patient encounters, EPMI mapping, ICD-10 codes.
 > **Rule 3:** When asked about data integrity, lead with quality gates at every stage, not just at the end.
