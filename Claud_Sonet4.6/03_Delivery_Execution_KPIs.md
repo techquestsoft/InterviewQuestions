@@ -1,8 +1,6 @@
 # Interview Prep — File 3 of 8
 # Delivery, Execution & KPIs
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team.
-
 > **Rule 1:** Lead with outcomes, not process. Numbers before frameworks.
 > **Rule 2:** Executive KPI questions need 3 clean metrics — no jargon. Two sets memorized below.
 > **Rule 3:** Spillovers, sprint discipline, tech debt — every answer needs a real example.
@@ -237,6 +235,97 @@ If interviewer probes the formal governance:
 ---
 
 ## SECTION C — KPIs & METRICS
+
+# Consolidated KPI Reference for Engineering Leaders
+
+A categorized reference of metrics commonly used at Senior EM / Engineering Director level. Each KPI is tagged by lens: which audience cares, which dimension it belongs to, and what target you'd typically commit to.
+
+---
+
+## Master KPI Table
+
+| KPI | Engineering KPI | Business KPI | Executive KPI | Quality Maturity KPI | Operational / Reliability KPI | Delivery / Efficiency KPI | Typical Target | Owner |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|---|---|
+| **Lead Time for Changes** (sign-off → production) | ✅ | | ✅ | | | ✅ | < 1 hour (elite) / < 1 day (high) | Engineering |
+| **Deployment Frequency** | ✅ | | ✅ | | | ✅ | Daily or on-demand | Engineering |
+| **Delivery Predictability** (% committed work shipped on commit date) | ✅ | | ✅ | ✅ | | ✅ | ≥ 85% | Engineering |
+| **Change Failure Rate** (% deploys causing incident/rollback within 24h) | ✅ | | ✅ | ✅ | ✅ | | < 5% | Engineering |
+| **Defect Escape Rate** (% defects found by customers vs internally) | ✅ | | | ✅ | | | < 2–5% | Engineering / QA |
+| **MTTD** (Mean Time to Detect) | ✅ | | ✅ | | ✅ | | < 5 min (P1) | SRE / Engineering |
+| **MTTR** (Mean Time to Restore) | ✅ | | ✅ | | ✅ | | < 30 min (P1) | SRE / Engineering |
+| **SLO Adherence** (% of SLOs met) | ✅ | | ✅ | ✅ | ✅ | | ≥ 99.9% (customer APIs) | SRE / Engineering |
+| **Incident Rate** (count of P1/P2 per period) | ✅ | | | | ✅ | | Trending down quarter-over-quarter | SRE / Engineering |
+| **Cloud Infrastructure Cost Reduction** | | ✅ | ✅ | | | | -15% YoY (illustrative) | Engineering + Finance |
+| **Feature Adoption Rate** | | ✅ | ✅ | | | | +20% per quarter (illustrative) | Product (Eng contributes) |
+| **Customer Onboarding Completion Rate** | | ✅ | ✅ | | | | Domain-dependent | Product (Eng contributes) |
+
+Legend: ✅ = belongs to that lens. A KPI may appear under multiple lenses — that's expected; the same metric can be relevant to engineering, executives, and quality maturity simultaneously.
+
+---
+
+## How to Use This Table by Interview Question
+
+| Interview Question | KPIs to Pull |
+|---|---|
+| "How do you set goals for your engineering team?" | Pick across three dimensions: 1 business, 2 delivery/efficiency, 2 reliability/quality |
+| "What three metrics would you present to an executive?" | MTTD, MTTR, Change Failure Rate |
+| "How do you measure engineering quality maturity?" | Defect Escape Rate, MTTR, Delivery Predictability |
+| "How do you measure delivery throughput?" | Lead Time, Deployment Frequency, Change Failure Rate, MTTR (the four DORA metrics) |
+| "How does engineering create business value?" | Cost reduction, feature adoption, onboarding completion — engineering *contributes*, doesn't *own* |
+
+---
+
+## Three-Dimension KPI Framework (for goal-setting answers)
+
+| Dimension | Purpose | Example KPIs | Example Quarterly Goal |
+|---|---|---|---|
+| **Business Impact** | Tells the business whether engineering is creating value | Cloud cost reduction, feature adoption, onboarding completion | Reduce cloud infrastructure cost by 15% |
+| **Engineering Efficiency** | Tells me whether engineering processes are working | Lead Time, Deployment Frequency, Delivery Predictability | Reduce average lead time from 4 hours to 1 hour |
+| **System Reliability & Quality** | Tells me whether systems and practices are production-ready | SLO Adherence, Incident Rate, MTTR, Defect Escape Rate | Reduce defect escape rate below 2% for features my team owns |
+
+---
+
+## DORA Metrics — The Engineering Core Four
+
+The four DORA metrics deserve special attention; they are the industry standard for engineering delivery performance.
+
+| DORA Metric | Measures | Elite Target | High Target |
+|---|---|---|---|
+| **Lead Time for Changes** | Speed | < 1 hour | < 1 day |
+| **Deployment Frequency** | Speed | On-demand / multiple per day | Daily to weekly |
+| **Change Failure Rate** | Stability | 0–15% | 16–30% |
+| **MTTR** | Stability | < 1 hour | < 1 day |
+
+Speed metrics without stability metrics is a red flag — and vice versa. The pairing is the point.
+
+---
+
+## Engineering vs Business KPI — The Ownership Distinction
+
+| Aspect | Engineering KPI | Business KPI |
+|---|---|---|
+| **Who owns it** | Engineering, fully | Product / Business, with engineering contributing |
+| **What it measures** | Engineering function health | Business outcome |
+| **Example** | Deployment Frequency | Feature Adoption Rate |
+| **Accountability** | Engineering hits or misses alone | Shared across product, engineering, GTM |
+| **Used for** | Team performance, process improvement | Strategic prioritization, ROI |
+
+A team can have great DORA metrics and still fail the business. A team can hit business numbers while accumulating engineering debt. Track both, but don't conflate them.
+
+---
+
+## The Balanced Scorecard Principle
+
+Single metrics get gamed:
+
+- **Velocity alone** → teams inflate story points
+- **Deployment frequency alone** → teams ship junk to hit the number
+- **Defect rate alone** → teams under-report or over-classify
+- **MTTR alone** → teams declare incidents resolved prematurely
+
+The combination is harder to game and more informative. A senior engineering leader presents a **portfolio** of metrics, not a single dashboard number.
+
+---
 
 ---
 
