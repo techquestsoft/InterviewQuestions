@@ -2,7 +2,9 @@
 # Data Quality, ETL Pipelines & Deep Observability
 
 > **Rule 1:** Data quality has FOUR levels (Completeness, Validity, Consistency, Accuracy). Memorize them.
+>
 > **Rule 2:** Every quality answer needs healthcare-specific examples — patient encounters, EPMI mapping, ICD-10 codes.
+>
 > **Rule 3:** When asked about data integrity, lead with quality gates at every stage, not just at the end.
 
 ---
