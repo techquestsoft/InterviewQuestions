@@ -78,7 +78,7 @@ When asked about… | Open file |
 
 1. **Manager-first, IC-last.** Lead with the management answer, pull in technical depth only when asked.
 2. **Numbers consistent.** $5M (not $9M), 110+ services (not 600), 120+ customers (not 180), 14 engineers, 20% productivity gain, 40% V3 accuracy improvement.
-3. **STAR with specificity.** Generic STAR scores 5/10. Specific STAR scores 9/10.
+3. **STAR(Situation, Task, Action, and Result) with specificity.** Generic STAR scores 5/10. Specific STAR scores 9/10.
 4. **90-second introduction.** Stop. Let the interviewer ask follow-ups. Do not volunteer Layer 2 / Layer 3 detail unprompted.
 5. **Honest framing where appropriate.** UI hands-on depth, fully autonomous agents in production, fine-tuning experience — calibrated honesty beats inflated claims every time.
 6. **Memory hooks before content.** Each Q&A starts with a 3-5 word mnemonic. Use it to anchor the answer under pressure.
