@@ -1,8 +1,6 @@
 # Interview Prep — File 6 of 8
 # Production Reliability, Cloud, DevSecOps, Observability & Databases
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Stack: AWS / Cloud Foundry, Docker / Kubernetes, Oracle / NoSQL (Cassandra, MongoDB).
-
 > **Rule 1:** Production questions — lead with management response (blast radius, communication, mitigation), THEN technical root cause.
 > **Rule 2:** Cloud questions — be specific about which services and WHY. Generic answers score 5/10.
 > **Rule 3:** Observability — four pillars (logs, metrics, traces, events). Most candidates miss events.

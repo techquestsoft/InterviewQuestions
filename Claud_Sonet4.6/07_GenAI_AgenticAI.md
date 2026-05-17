@@ -1,8 +1,6 @@
 # Interview Prep — File 7 of 8
 # GenAI, Agentic AI, AI Adoption & Productivity
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. JPMC explicitly calls out AI-enabled capabilities and agent-driven tools as preferred qualifications — this file is a **differentiator**, not just background.
-
 > **Rule 1:** Be honest about what is in production vs design. Interviewers catch inflated claims immediately.
 > **Rule 2:** Your GenAI architecture diagram is your strongest asset — refer to it consistently.
 > **Rule 3:** RAG vs direct query has ONE clean answer. Don't contradict yourself across the conversation.

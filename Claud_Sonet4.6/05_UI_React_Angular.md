@@ -1,8 +1,6 @@
 # Interview Prep — File 5 of 8
 # UI Development — React & Angular
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. UI scope: customer acquisition and account origination journeys.
->
 > **Rule 1:** You are interviewing as an Engineering Manager, not as a senior front-end IC. Lead with architecture, quality, team practices, and trade-offs — not framework syntax.
 > **Rule 2:** Be honest about depth. You worked on JavaScript/jQuery in 2014, then moved to middleware and data engineering. Modern React/Angular is your team's craft, not your daily code. Frame answers from that lens.
 > **Rule 3:** UI quality in banking = security + accessibility + performance + reliability. All four are non-negotiable.

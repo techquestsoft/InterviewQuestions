@@ -1,8 +1,6 @@
 # Interview Prep — File 4 of 8
 # System Design, Architecture, Java/Spring Boot & Kafka
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team. Stack focus: Java/Spring Boot microservices, REST APIs, Kafka event-driven architecture.
-
 > **Rule 1:** Never start with architecture. Always: Goals → Metrics → Constraints → NFRs → Levers → Options → Architecture.
 > **Rule 2:** Every design decision needs a trade-off. No trade-off = not senior-level thinking.
 > **Rule 3:** Use real numbers from your experience — 5M weekly transactions, 110+ services, 500M patient records.
