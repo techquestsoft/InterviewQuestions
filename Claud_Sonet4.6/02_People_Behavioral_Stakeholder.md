@@ -143,17 +143,6 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > 
 > Fourth is growth — I invest in IDPs (individual development plans) for every engineer. Where do they want to be in 12 months? What specific experiences do they need? I make those experiences available within our roadmap."
 ---
-> "Four things.
->
-> Clarity — people perform best when they know exactly what they are responsible for and why it matters. I connect sprint work to product outcomes explicitly, not just Jira tickets.
->
-> Ownership — I assign responsibility, not just tasks. Ownership means an engineer cares about the outcome, not just completion. I create that by involving them in design decisions, not just handing them requirements.
->
-> Recognition — I acknowledge strong contributions publicly in sprint reviews and team channels. Specific acknowledgment, not generic praise. 'How you handled the scope negotiation in Tuesday's planning showed mature judgment' lands. 'Good job' does not.
->
-> Growth — I invest in IDPs (individual development plans) for every engineer. Where do they want to be in 12 months? What specific experiences do they need? I make those experiences available within our roadmap."
-
----
 
 ### Q5a: Most challenging situation you faced in people management — and how did you handle it?
 
