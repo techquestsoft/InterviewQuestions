@@ -1,8 +1,6 @@
 # Interview Prep — File 1 of 8
 # Introduction, Career Story & Day-to-Day Activities
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team (customer acquisition & account origination journeys).
-
 > **Rule 1:** Introduction = 90 seconds max. Stop, let them ask follow-ups.
 > **Rule 2:** Lead with impact. Numbers first, context second.
 > **Rule 3:** Use resume numbers consistently — $5M (not $9M), 110+ services (not 600), 120+ customers (not 180).
