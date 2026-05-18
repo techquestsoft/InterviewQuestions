@@ -6,7 +6,7 @@
 
 # SECTION A — TEAM MANAGEMENT
 
-## Q: How do you manage your team?
+## Q1: How do you manage your team?
 
 **Memory Hook:** Clarity → Tracking → Remove Blockers
 
@@ -22,7 +22,7 @@
 
 ---
 
-## Q: What is your leadership style?
+## Q2: What is your leadership style?
 
 **Memory Hook:** Servant → Ownership → Accountability
 
@@ -38,7 +38,7 @@
 
 ---
 
-## Q: How do you evaluate team performance?
+## Q3: How do you evaluate team performance?
 
 **Memory Hook:** Delivery → Quality → Ownership
 
@@ -54,7 +54,7 @@
 
 ---
 
-## Q: How do you identify and grow high performers?
+## Q4: How do you identify and grow high performers?
 
 **Memory Hook:** Ownership → Influence → Stretch Opportunities
 
@@ -70,7 +70,7 @@
 
 ---
 
-## Q: How do you handle low performers?
+## Q5: How do you handle low performers?
 
 **Memory Hook:** Diagnose → Coach → Escalate if Needed
 
@@ -86,7 +86,7 @@
 
 ---
 
-## Q: How do you build and motivate a high-performing team?
+## Q6: How do you build and motivate a high-performing team?
 
 **Memory Hook:** Clarity → Ownership → Growth
 
@@ -102,7 +102,7 @@
 
 ---
 
-## Q: How do you build engineering culture?
+## Q7: How do you build engineering culture?
 
 **Memory Hook:** Ownership → Safety → Excellence
 
@@ -118,7 +118,7 @@
 
 ---
 
-## Q: How do you attract and retain strong engineering talent?
+## Q8: How do you attract and retain strong engineering talent?
 
 **Memory Hook:** Meaningful Work → Growth → Trust
 
@@ -134,7 +134,7 @@
 
 ---
 
-## Q: How do you mentor and develop team members?
+## Q9: How do you mentor and develop team members?
 
 **Memory Hook:** Plan → Expose → Feedback
 
@@ -150,7 +150,7 @@
 
 ---
 
-## Q: How do you scale an engineering organization?
+## Q10: How do you scale an engineering organization?
 
 **Memory Hook:** Structure → Platform → Standards
 
@@ -166,7 +166,7 @@
 
 ---
 
-## Q: A developer says they are not getting challenging work. What do you do?
+## Q11: A developer says they are not getting challenging work. What do you do?
 
 **Memory Hook:** Listen → Align Interests → Give Ownership
 
@@ -182,7 +182,7 @@
 
 ---
 
-## Q: How do you handle a team with low morale and missed deadlines?
+## Q12: How do you handle a team with low morale and missed deadlines?
 
 **Memory Hook:** Listen → Diagnose → Quick Wins
 
@@ -202,7 +202,7 @@
 
 # SECTION B — BEHAVIORAL
 
-## Q: What are your key strengths?
+## Q13: What are your key strengths?
 
 **Memory Hook:** Ownership → Problem Solving → Leadership
 
@@ -218,7 +218,7 @@
 
 ---
 
-## Q: What are your weaknesses?
+## Q14: What are your weaknesses?
 
 **Memory Hook:** Technical Depth → Communication → Delegation
 
@@ -234,7 +234,7 @@
 
 ---
 
-## Q: Tell me about a time you handled pressure well.
+## Q15: Tell me about a time you handled pressure well.
 
 **Memory Hook:** Stabilize → Communicate → Learn
 
@@ -250,7 +250,7 @@
 
 ---
 
-## Q: Biggest leadership failure?
+## Q16: Biggest leadership failure?
 
 **Memory Hook:** External Dependencies → Recovery → Structural Fix
 
@@ -268,7 +268,7 @@
 
 # SECTION C — STAKEHOLDER MANAGEMENT
 
-## Q: How do you manage conflicting priorities from multiple stakeholders?
+## Q17: How do you manage conflicting priorities from multiple stakeholders?
 
 **Memory Hook:** Shared Context → Transparent Capacity → Trade-offs
 
@@ -284,7 +284,7 @@
 
 ---
 
-## Q: Business wants a feature in 6 weeks but engineering estimates 14 weeks. What do you do?
+## Q18: Business wants a feature in 6 weeks but engineering estimates 14 weeks. What do you do?
 
 **Memory Hook:** Validate → Options → Avoid False Commitments
 
@@ -300,7 +300,7 @@
 
 ---
 
-## Q: How do you influence without authority?
+## Q19: How do you influence without authority?
 
 **Memory Hook:** Context → Alignment → Trust
 
@@ -316,7 +316,7 @@
 
 ---
 
-## Q: How do you build trust with stakeholders?
+## Q20: How do you build trust with stakeholders?
 
 **Memory Hook:** Transparency → Reliability → Collaboration
 
@@ -332,3 +332,146 @@
 
 ---
 
+## Q21: How do you manage offshore-onshore engineering teams?
+
+**Memory Hook:** Ownership → Overlap → Transparency
+
+> **Core Answer**
+>
+> I focus on creating ownership-driven collaboration rather than dependency-driven execution. Clear ownership boundaries, structured overlap hours, and execution transparency are critical.
+>
+> I also invest heavily in relationship building because cross-geo trust improves delivery quality significantly.
+>
+> **Example**
+>
+> At Cerner, the India team gradually moved from execution support to independently owning multiple services through structured governance and shared architecture reviews.
+
+---
+
+## Q22: Business wants a feature in 6 weeks but engineering estimates 14 weeks. What do you do?
+
+**Memory Hook:** Validate → Options → Trade-offs
+
+> **Core Answer**
+>
+> I first validate both the technical estimate and the business driver behind the timeline.
+>
+> Then I present phased delivery options such as MVP, reduced scope, or staged rollout with clear trade-offs around timeline, quality, and risk.
+>
+> **Example**
+>
+> I avoid unrealistic commitments because transparent negotiation builds far more trust than missed deadlines later.
+
+---
+
+## Q23: How do you influence senior leadership decisions?
+
+**Memory Hook:** Context → Options → Data
+
+> **Core Answer**
+>
+> I focus on enabling decisions, not just presenting solutions. I first understand leadership priorities and constraints, then present multiple options with explicit trade-offs.
+>
+> I support recommendations using business impact, risks, timelines, and operational data.
+>
+> **Example**
+>
+> My goal is not winning arguments — it is helping leadership make informed decisions.
+
+---
+
+## Q24: How do you influence without authority?
+
+**Memory Hook:** Context → Alignment → Trust
+
+> **Core Answer**
+>
+> Influence without authority starts with understanding the other team’s priorities before proposing solutions.
+>
+> I align stakeholders around shared business goals, risks, and trade-offs instead of relying on escalation.
+>
+> **Example**
+>
+> During a modernization initiative, I aligned platform and product teams around a phased roadmap without escalation.
+
+---
+
+## Q25: How do you handle a difficult or resistant stakeholder?
+
+**Memory Hook:** Listen → Align → Escalate if Needed
+
+> **Core Answer**
+>
+> I first try to understand what is driving the resistance. Most difficult stakeholder situations are caused by missing context, unclear expectations, or concerns not being heard.
+>
+> I prefer direct one-on-one conversations, alignment on priorities, and phased compromises before considering escalation.
+>
+> **Example**
+>
+> Most resistance reduces significantly once stakeholders feel heard and see a realistic path forward.
+
+---
+
+## Q26: How do you handle resistance to modernization?
+
+**Memory Hook:** Understand → Phase → Enable
+
+> **Core Answer**
+>
+> Resistance to modernization is usually driven by operational fear or delivery concerns rather than technology itself.
+>
+> I reduce resistance through phased modernization, clear business value, mentoring, and visible early wins.
+>
+> **Example**
+>
+> During Kubernetes adoption, starting with a small pilot service helped teams gain confidence before broader rollout.
+
+---
+
+## Q27: How do you build trust with stakeholders?
+
+**Memory Hook:** Transparency → Reliability → Collaboration
+
+> **Core Answer**
+>
+> I build trust through clear communication, predictable execution, and involving stakeholders early in decisions.
+>
+> I share risks early, communicate revised plans proactively, and avoid surprises.
+>
+> **Example**
+>
+> Stakeholders usually trust teams that communicate problems early more than teams that stay silent until deadlines slip.
+
+---
+
+## Q28: External API is unreliable — what do you do?
+
+**Memory Hook:** Protect → Monitor → Fallback
+
+> **Core Answer**
+>
+> I protect the platform using retries, timeouts, and circuit breakers so external instability does not become internal instability.
+>
+> I also monitor dependency health separately and design fallback strategies such as caching, queuing, or graceful degradation.
+>
+> **Example**
+>
+> Adding retries, fallback handling, and dependency-level monitoring significantly reduced customer impact during external authorization failures.
+
+---
+
+## Q29: How do you work with vendors and external partners?
+
+**Memory Hook:** Expectations → Governance → Accountability
+
+> **Core Answer**
+>
+> I treat vendor management as engineering governance, not just procurement. I establish clear expectations around delivery, architecture standards, security controls, SLAs, and operational ownership.
+>
+> I also maintain structured governance through delivery reviews, architecture reviews, and dependency tracking.
+>
+> **Example**
+>
+> During a modernization initiative, standardizing CI/CD controls, observability, deployment reviews, and escalation paths significantly improved delivery predictability across vendor and internal teams.
+
+---
