@@ -59,7 +59,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > **Example**
 > 
 > At Cerner, I inherited a team with delivery inconsistency and heavy context switching. I simplified ownership boundaries, reduced parallel initiatives, increased technical mentoring, and improved delivery predictability significantly within two quarters while also improving team morale.
-
+---
 
 ### Q2: How do you evaluate team performance?
 
@@ -211,6 +211,19 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
+### Q: How do you build engineering culture?
+**Memory Hook:** Ownership → Safety → Excellence → Learning
+
+> **Core Answer**
+>
+> I believe engineering culture is built through daily behaviors, not slogans. I focus on ownership, psychological safety, engineering excellence, and continuous learning. Teams should feel comfortable raising risks early while maintaining high standards around quality, resiliency, and operational excellence.
+>
+> **Example**
+>
+> At Cerner, I introduced architecture review sessions and operational RCA discussions across the broader engineering organization. Over time, engineers became more proactive in identifying design risks and operational improvements.
+
+---
+
 ### Q6: How do you hire and build a team from scratch?
 
 **Memory Hook:** Skill Matrix → Structured Assessment → Onboard for Retention
@@ -226,6 +239,20 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > I also serve as Bar Raiser at Cerner — across teams, not just my own — to help raise the overall hiring quality bar."
 
 ---
+
+### Q: How do you attract and retain strong engineering talent?
+**Memory Hook:** Meaningful Work → Growth → Visibility → Trust
+
+> **Core Answer**
+>
+> Strong engineers usually stay where they see meaningful impact, growth opportunities, and transparent leadership. I focus on giving engineers ownership, visibility, mentoring, and opportunities to solve challenging problems rather than limiting them to repetitive execution work.
+>
+> **Example**
+>
+> At Cerner, a senior engineer became disengaged after repeated maintenance assignments. I gave him ownership of a modernization initiative involving architecture discussions and cross-team coordination. He later became one of the strongest technical leads on the team.
+
+---
+
 
 ### Q7: How do you mentor and develop team members?
 
@@ -444,6 +471,18 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 > For ongoing alignment, I run a monthly stakeholder sync — roadmap review, capacity update, upcoming trade-off decisions. Surprises are the enemy of trust. If a stakeholder first hears about a delay when a deadline is missed, I have failed at communication, not just at delivery."
 
 ---
+### Q: How do you manage offshore-onshore engineering teams?
+**Memory Hook:** Ownership → Overlap → Transparency → Trust
+
+> **Core Answer**
+>
+> For offshore-onshore teams, I focus on creating ownership-driven collaboration rather than dependency-driven execution. I establish clear ownership boundaries, maintain structured overlap hours, and ensure strong execution transparency through governance reviews and operational visibility.
+>
+> **Example**
+>
+> While working with US healthcare teams, we established shared architecture governance sessions and weekly dependency reviews between Hyderabad and US teams. Over time, the India team moved from execution support to independently owning multiple services.
+
+---
 
 ### Q17: Business wants a feature in 6 weeks, team estimates 14 weeks. What do you do?
 
@@ -482,6 +521,19 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 > And I stay open to the decision going differently. If leadership has context I do not, I want to hear it. My goal is a well-informed decision, not winning."
 
 ---
+### Q: How do you influence without authority?
+**Memory Hook:** Context → Data → Alignment → Trust
+
+> **Core Answer**
+>
+> Influence without authority starts with understanding the other team’s priorities and constraints before proposing solutions. I prefer aligning stakeholders using business impact, risks, trade-offs, and shared organizational goals rather than relying on escalation.
+>
+> **Example**
+>
+> During a modernization initiative, platform teams wanted observability work prioritized while product teams focused on delivery commitments. I aligned stakeholders around business impact and proposed a phased roadmap that both sides accepted without escalation.
+
+---
+
 
 ### Q19: How do you handle a difficult or resistant stakeholder?
 
@@ -492,6 +544,19 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 > Then I look for overlap between what they need and what we can deliver. Often a phased approach or a small concession on timing resolves 80% of resistance.
 >
 > If resistance persists despite good-faith effort, I escalate — not as a complaint, but as a decision needing leadership input. I bring both perspectives, the trade-offs, and a recommendation."
+
+---
+
+### Q: How do you handle resistance to modernization?
+**Memory Hook:** Understand → Educate → Phase → Enable
+
+> **Core Answer**
+>
+> Resistance to modernization is usually driven by operational fear or delivery concerns rather than resistance to technology itself. I focus on explaining business value, reducing migration risk through phased modernization, and enabling teams through mentoring and architecture guidance.
+>
+> **Example**
+>
+> During cloud modernization efforts, some teams were hesitant about Kubernetes adoption due to operational complexity. We started with a pilot service, standardized deployment templates, and gradually expanded adoption after teams saw operational improvements.
 
 ---
 
