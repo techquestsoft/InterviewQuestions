@@ -39,6 +39,19 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ---
 
+### Q: How do you ensure platform resiliency?
+**Memory Hook:** Prevent → Isolate → Recover → Observe
+
+> **Core Answer**
+>
+> Platform resiliency starts with assuming failures will happen and designing systems to absorb them gracefully. I focus on prevention through engineering standards, isolation through resiliency patterns, recovery through failover and replay strategies, and strong observability for early detection.
+>
+> **Example**
+>
+> In distributed healthcare platforms, we implemented retries, circuit breakers, Kafka replay strategies, and proactive observability improvements that significantly reduced operational incidents and improved SLA adherence.
+
+---
+
 ### Q2: How do you handle a production incident?
 
 **Memory Hook:** Detect → Blast Radius → Communicate Cadence → Mitigate → RCA → CAPA
@@ -166,6 +179,18 @@ With deployment event at 14:30:
 - **Business** — business outcomes (patients processed, orders picked, SLAs met)
 - **Service** — p50/p95/p99 latency, error rate, consumer lag
 - **Infrastructure** — pod CPU/memory, DB connection pool, GC pause time
+
+---
+### Q: How do you proactively monitor and improve production systems?
+**Memory Hook:** Observe → Detect → Analyze → Improve
+
+> **Core Answer**
+>
+> I believe monitoring should be proactive rather than reactive. I establish visibility across logs, metrics, traces, and deployment events, define actionable SLO-based alerts, and use operational trend analysis to identify systemic risks early.
+>
+> **Example**
+>
+> After metadata-related processing failures in our healthcare platform, we introduced anomaly detection for abnormal data volume spikes and proactive operational alerts, significantly improving operational stability.
 
 ---
 

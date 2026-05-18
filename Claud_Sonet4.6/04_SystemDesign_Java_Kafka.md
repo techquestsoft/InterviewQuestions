@@ -89,6 +89,19 @@ Step 10: PHASES     — Build incrementally
 | Network latency | None | Real cost |
 
 ---
+### Q: What is the Strangler Pattern?
+**Memory Hook:** Incremental Replacement → Low Risk → Business Continuity
+
+> **Core Answer**
+>
+> The Strangler Pattern is a modernization strategy where legacy functionality is gradually replaced piece by piece rather than rewriting the entire system at once. It reduces operational risk while allowing continuous business delivery during modernization.
+>
+> **Example**
+>
+> In healthcare systems, modernization often starts with supporting services like notifications, APIs, or reporting before core transactional workflows are decomposed. This allows modernization without destabilizing the broader platform.
+
+---
+
 
 ### Q3: 12-Factor App Principles
 
@@ -121,6 +134,31 @@ Step 10: PHASES     — Build incrementally
 > Process and team structure — domain ownership, standardized practices across teams to avoid fragmentation.
 >
 > Real example at Cerner: as we scaled, we introduced CI/CD quality gates with security scans, defined SLOs with centralized observability, added CAB approvals and audit trails for production releases. System reliability and compliance improved without crushing delivery velocity."
+
+---
+### Q: Architecture Governance vs Architecture Review
+**Memory Hook:** Review = Point-in-Time → Governance = Continuous Alignment
+
+> **Core Answer**
+>
+> Architecture review is a point-in-time validation of a specific solution design focusing on scalability, resiliency, security, and operational readiness. Architecture governance is broader and continuous — it ensures teams consistently follow enterprise standards, security controls, observability practices, and strategic technology direction.
+>
+> **Example**
+>
+> An architecture review may validate whether a microservice design is appropriate, while architecture governance ensures all engineering teams follow common API, resiliency, and observability standards across the organization.
+
+---
+
+### Q: How do you modernize legacy monolithic systems?
+**Memory Hook:** Assess → Decompose → Incremental → Govern
+
+> **Core Answer**
+>
+> My approach to legacy modernization is incremental rather than big-bang replacement. I first identify operational bottlenecks and bounded contexts, then gradually modernize through APIs, event-driven integration, and phased decomposition while maintaining operational stability.
+>
+> **Example**
+>
+> In healthcare platforms, modernization often started with high-change or operationally expensive areas such as reporting, notifications, and integrations before addressing core transactional domains.
 
 ---
 

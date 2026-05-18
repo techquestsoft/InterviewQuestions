@@ -36,6 +36,19 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ---
 
+### Q: What is RAID tracking and how do you use it?
+**Memory Hook:** Risks → Assumptions → Issues → Dependencies
+
+> **Core Answer**
+>
+> RAID tracking is one of the primary execution governance mechanisms I use for large engineering programs. It provides structured visibility into risks, assumptions, active issues, and cross-team dependencies so problems are identified early rather than surfacing late in delivery.
+>
+> **Example**
+>
+> During a multi-stream modernization initiative involving cloud migration, ML transformation, and security rollout, RAID tracking helped identify cross-team dependencies early and prevented timeline slippages.
+
+---
+
 ### Q2: How do you ensure delivery predictability?
 
 **Memory Hook:** Small Work → Track → Balance
@@ -174,6 +187,19 @@ If interviewer probes the formal governance:
 
 ---
 
+### Q: How do you balance modernization work with business delivery commitments?
+**Memory Hook:** Incremental → Risk-Based → Business-Aligned
+
+> **Core Answer**
+>
+> I do not treat modernization and business delivery as competing priorities. I focus on phased modernization approaches that improve scalability, resiliency, or engineering efficiency while still maintaining predictable customer delivery.
+>
+> **Example**
+>
+> During platform modernization efforts, we balanced cloud migration and operational improvements alongside active client commitments by sequencing work carefully and avoiding large disruptive rewrites.
+
+---
+
 ### Q9: How do you handle multiple competing initiatives?
 
 **Memory Hook:** Split → Own → Track
@@ -187,6 +213,18 @@ If interviewer probes the formal governance:
 > Stakeholder communication happens at program level, not per-workstream. One coherent narrative to leadership, not three competing ones.
 >
 > Real example at Cerner: I was simultaneously running V3 ML transformation, AWS-to-OCI cloud migration, and CrowdStrike security rollout. Three workstreams, three named owners. I ran a weekly 30-minute integration sync — that single ceremony surfaced 80% of the cross-workstream conflicts before they became blockers."
+
+---
+### Q: How do you manage large cross-functional engineering programs?
+**Memory Hook:** Structure → Ownership → Governance → Visibility
+
+> **Core Answer**
+>
+> For large engineering programs, I focus heavily on workstream decomposition, clear ownership, execution governance, and stakeholder visibility. Most enterprise delivery issues happen at integration points between teams, so dependency management becomes critical.
+>
+> **Example**
+>
+> At Cerner, I managed parallel initiatives involving cloud migration, ML modernization, and security rollout. Structured governance reviews and dependency tracking helped maintain delivery predictability while balancing operational stability.
 
 ---
 
