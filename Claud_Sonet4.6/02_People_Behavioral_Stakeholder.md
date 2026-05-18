@@ -1,8 +1,6 @@
 # Interview Prep — File 2 of 8
 # People Management, Behavioral & Stakeholder
 
-> **Tailored for:** JPMorgan Chase — Senior Manager of Software Engineering, BBAO team.
-
 > **Rule 1:** Management questions get management answers first. Technical design comes last, if at all.
 > **Rule 2:** Every behavioral answer needs a specific example. Generic STAR scores 5/10. Specific STAR scores 9/10.
 > **Rule 3:** Use STAR — Situation, Task, Action, Result — and keep the spoken version under 90 seconds.
@@ -50,6 +48,18 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > Real example: at Cerner, I inherited a team where engineers were context-switching across four parallel initiatives. Velocity was inconsistent, morale was low. I reduced active initiatives to two per engineer. Velocity improved 40% in six weeks with no personnel changes."
 
 ---
+
+### Q: What is your leadership style?
+**Memory Hook:** Servant Leadership → Ownership → Clarity → Growth → Accountability
+> 
+> **Core Answer**
+> 
+> I believe strong engineering culture comes from ownership, clarity, and trust. I operate with a servant leadership mindset where I remove blockers, enable decision-making, and help teams grow technically and professionally. At the same time, I maintain strong accountability around engineering quality, delivery predictability, and operational excellence.
+> 
+> **Example**
+> 
+> At Cerner, I inherited a team with delivery inconsistency and heavy context switching. I simplified ownership boundaries, reduced parallel initiatives, increased technical mentoring, and improved delivery predictability significantly within two quarters while also improving team morale.
+
 
 ### Q2: How do you evaluate team performance?
 
@@ -517,6 +527,49 @@ You have **two solid conflict stories** — pick based on the interviewer's fram
 
 ---
 
+### Q22: How do you work with vendors and external partners?
+
+**Memory Hook:** Expectations → Governance → Visibility → Risk → Partnership
+
+> In large enterprises, vendors and implementation partners are often an extension of the engineering organization, so I treat vendor management as an engineering governance responsibility rather than only a procurement activity.
+> 
+> The first step is establishing very clear ownership boundaries upfront.
+> 
+> We define delivery expectations, architecture standards, coding standards, CI/CD expectations, security controls, SLAs, escalation paths, documentation requirements, and operational responsibilities early in the engagement.
+> 
+> Second is governance and execution visibility.
+> 
+> I prefer structured governance cadences such as weekly delivery reviews, architecture reviews, dependency tracking, operational reviews, and escalation checkpoints.
+> 
+> This helps identify risks early instead of discovering issues during production releases.
+> 
+> Third is engineering quality enforcement.
+> 
+> Even if implementation work is done by vendors, engineering standards should remain consistent.
+> 
+> Vendor teams must follow the same PR review process, Sonar quality gates, security scanning, observability standards, deployment controls, and release governance as internal teams.
+> 
+> Fourth is accountability.
+> 
+> One mistake organizations sometimes make is fully depending on vendors for operational knowledge.
+> 
+> I always ensure knowledge transfer, internal documentation, runbooks, and shadow ownership exist so operational continuity remains within the organization.
+> 
+> Real example:
+> 
+> In one modernization initiative, part of the implementation involved external partner teams working alongside internal engineering teams across multiple services.
+> 
+> Initially, delivery quality and operational readiness varied significantly across teams.
+> 
+> To address this, we standardized architecture reviews, CI/CD controls, deployment checklists, observability requirements, and release governance across all teams regardless of whether the work was internal or vendor-led.
+> 
+> We also established clear escalation paths and weekly operational reviews.
+> 
+> Over time, delivery predictability, deployment quality, and operational stability improved significantly because expectations and accountability became standardized across the program.
+> 
+> The key lesson was that vendors should operate as integrated engineering partners, but accountability for architecture, reliability, security, and operational excellence must always remain internal.
+>
+> My philosophy is that vendors can extend engineering capability, but accountability for reliability, security, observability, and customer impact must always remain internal.
 ## QUICK REFERENCE TABLE — MEMORY HOOKS
 
 | Topic | Memory Hook | One-Line Answer |
