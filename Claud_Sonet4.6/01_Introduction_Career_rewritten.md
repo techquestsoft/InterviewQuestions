@@ -6,20 +6,6 @@
 >
 > **Rule 3:** Use resume numbers consistently — $5M, 110+ services, 120+ customers.
 
-## CROSS-FILE INDEX
-
-| Topic | File |
-|-------|------|
-| Self-introduction, career walkthrough, why-leaving, day-to-day | **This file (01)** |
-| Strengths, weaknesses, leadership failure, behavioral STAR stories, stakeholder, conflict | File 02 |
-| Delivery, SAFe, sprint discipline, KPIs (including 3 executive KPI sets) | File 03 |
-| System design, architecture patterns, scaling, Java/Spring Boot, Kafka, REST APIs | File 04 |
-| UI development — React/Angular | File 05 |
-| Production incidents, observability, cloud, CI/CD, security, Kubernetes, Oracle/NoSQL | File 06 |
-| GenAI architecture, AI productivity, RAG vs direct query, LLM integration & agents | File 07 |
-| Data quality, ETL pipelines, deep observability | File 08 |
-
----
 
 ## MASTER INTRODUCTION (90 SECONDS — TIMED)
 
@@ -51,8 +37,6 @@
 
 **Memory Hook:** Start → Build → Lead → Scale
 
-### Q: Walk me through your career.
-
 > **Core Answer**
 >
 > I started 21 years ago at Kanbay in quality engineering, which gave me a strong quality-first mindset. I then moved into development at Bank of America, where I spent 11 years. Two highlights there were leading a real-time credit card decision engine that cut credit loss by 20 to 40%, and building a Hadoop-based fraud analytics platform that reduced fraud loss by approximately 20%, translating to around $10 million annually.
@@ -70,8 +54,6 @@
 ## Q2: Why did you leave each role / why are you looking now?
 
 **Memory Hook:** Growth → Scope → Fit → Timing
-
-### Q: Why did you leave each role?
 
 > **Core Answer**
 >
@@ -91,8 +73,6 @@
 
 **Memory Hook:** Impact → Complexity → Growth
 
-### Q: Why did you move from banking to healthcare?
-
 > **Core Answer**
 >
 > After 11 years in banking, I wanted to work on systems where the output directly affects people’s lives, not just financial transactions.
@@ -110,8 +90,6 @@
 ## Q4: What is your biggest achievement?
 
 **Memory Hook:** Problem → Action → Result → Beyond-Numbers Impact
-
-### Q: What is your biggest achievement?
 
 > **Core Answer**
 >
@@ -131,8 +109,6 @@
 
 **Memory Hook:** Own → Deliver → Lead → Align
 
-### Q: Tell me about your most recent role.
-
 > **Core Answer**
 >
 > I led two products within Oracle Cerner’s Health Data Intelligence platform — Care Management and Readmission Prevention. Both are clinical decision-support products serving 120+ healthcare providers and generating $20M+ in annual revenue.
@@ -150,8 +126,6 @@
 ## Q6: How does your day look? (Day-to-Day Activities)
 
 **Memory Hook:** Strategic → Execution → Operational + Platform Vigilance
-
-### Q: How does your day look?
 
 > **Core Answer**
 >
@@ -171,11 +145,9 @@
 
 ---
 
-## Q6a: Release management chain — what does it actually look like at Oracle?
+## Q7: Release management chain — what does it actually look like at Oracle?
 
 **Memory Hook:** OHRM → HDI CAB → Remedy CR → JFORMs → TTP
-
-### Q: How does release management work?
 
 > **Core Answer**
 >
@@ -197,11 +169,9 @@
 
 ---
 
-## Q6b: What recurring stakeholder meetings did you participate in?
+## Q8: What recurring stakeholder meetings did you participate in?
 
 **Memory Hook:** Product → Operational → Platform → Initiative
-
-### Q: What recurring meetings were part of your role?
 
 > **Core Answer**
 >
@@ -221,11 +191,9 @@
 
 ---
 
-## Q7: What is your management style?
+## Q9: What is your management style?
 
 **Memory Hook:** Servant Leadership → High Accountability
-
-### Q: What is your management style?
 
 > **Core Answer**
 >
@@ -241,11 +209,9 @@
 
 ---
 
-## Q8: How do you stay technical as a manager?
+## Q10: How do you stay technical as a manager?
 
 **Memory Hook:** Architecture → Code Reviews → Design Reviews → POCs
-
-### Q: How do you stay technical as a manager?
 
 > **Core Answer**
 >
@@ -265,11 +231,9 @@
 
 ---
 
-## Q9: Where do you see yourself in 3 years?
+## Q11: Where do you see yourself in 3 years?
 
 **Memory Hook:** Lead → Scale → AI → Platform
-
-### Q: Where do you see yourself in 3 years?
 
 > **Core Answer**
 >
@@ -285,7 +249,7 @@
 
 ## QUICK-FIRE ANSWERS
 
-### Q: What are your strengths?
+### Q12: What are your strengths?
 
 **Memory Hook:** Ownership → Problem Solving → Team Leadership → Technical Judgment → Business Alignment
 
@@ -299,7 +263,7 @@
 >
 > I consistently build teams that can run independently rather than teams that depend on me for every decision.
 
-### Q: What are your weaknesses?
+### Q13: What are your weaknesses?
 
 **Memory Hook:** Depth Bias → Structured Communication → Delegation
 
@@ -317,7 +281,7 @@
 >
 > These are all areas I have consciously improved through experience and feedback.
 
-### Q: What kind of role are you looking for?
+### Q14: What kind of role are you looking for?
 
 **Memory Hook:** Leadership → Platform Thinking → AI Transformation
 
@@ -329,7 +293,7 @@
 >
 > I want to work on problems where engineering, architecture, and business outcomes are tightly connected.
 
-### Q: When can you start?
+### Q15: When can you start?
 
 **Memory Hook:** Immediate → Flexible → Ready
 
@@ -341,7 +305,7 @@
 >
 > I frame immediate availability as a hiring advantage because it reduces timeline friction.
 
-### Q: What are your compensation expectations?
+### Q16: What are your compensation expectations?
 
 **Memory Hook:** Flexible → Total Package → Role First
 
@@ -359,7 +323,7 @@
 
 **Memory Hook:** Domain → Stack → Scale → AI → Fit
 
-### Q: Why JPMorgan Chase / BBAO?
+### Q17: Why JPMorgan Chase / BBAO?
 
 > **Core Answer**
 >
@@ -379,7 +343,7 @@
 
 ## QUESTIONS TO ASK THE INTERVIEWER
 
-### Q: What should I ask the interviewer?
+### Q18: What should I ask the interviewer?
 
 **Memory Hook:** Challenge → Success → Direction → Ownership
 
@@ -401,7 +365,7 @@
 
 ## CREDENTIALS TO MENTION
 
-### Q: What credentials are worth mentioning if asked?
+### Q19: What credentials are worth mentioning if asked?
 
 **Memory Hook:** Awards → Certifications → Education
 
@@ -421,7 +385,7 @@
 
 ## KEY NUMBERS TO HAVE READY
 
-### Q: What numbers should I remember?
+### Q20: What numbers should I remember?
 
 **Memory Hook:** 20 years → 110+ services → $5M savings → 120+ customers
 
