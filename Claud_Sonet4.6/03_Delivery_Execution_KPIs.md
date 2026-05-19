@@ -186,19 +186,27 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q9: What do you do if quality drops while scaling?
 
-**Memory Hook:** Diagnose Systemic vs Individual → Tighten Gates → Invest in Maturity
+**Memory Hook:** Clarify Which Scaling → Diagnose → Tighten Gates → Invest in Maturity
+
+> **Discipline Rule**
+>
+> "Scaling" is ambiguous in this question. **Briefly clarify** what kind of scaling — team, system, or delivery velocity — because the diagnosis and fix differ for each.
 
 > **Core Answer**
 >
-> First question: **is this individual or systemic?** If multiple engineers are introducing defects, it is a system problem — unclear requirements, insufficient test coverage standards, or time pressure that compressed review.
+> Three flavors of scaling, each with a different quality-drop pattern.
 >
-> **Analyze by defect type:** test coverage gaps? Integration issues? Regressions from tech debt? Different causes need different fixes.
+> **Team scaling (more engineers).** Quality drops because **standards don't propagate to new hires automatically**. Symptoms: defects clustered around recent joiners or newly formed teams. Fixes: structured onboarding with paired reviews for the first month, explicit coding standards in CI gates rather than in tribal knowledge, **senior engineer ratio protected** when expanding (you can't dilute past a threshold without quality cost).
 >
-> **For immediate control:** tighten release gates. A release introducing known P1/P2 defects does not go out — period. Non-negotiable even under business pressure.
+> **System scaling (more load, more customers).** Quality drops because **edge cases that didn't matter at small scale now surface**. Symptoms: incidents on hot paths, race conditions, performance regressions under load. Fixes: load testing as a gate before major customer onboarding, observability on p99 and tail latency rather than averages, and **chaos engineering** for failure modes you can't predict.
 >
-> **For improvement:** enforce the practices that were slipping — coverage thresholds, integration tests, design reviews before implementation.
+> **Delivery scaling (shipping faster, parallel sprints).** Quality drops because **pressure compresses review and testing time**, and tech debt accumulates. Symptoms: spike in escaped defects, recurring incidents in the same areas, rising rework rate. Fixes: tighten release gates — **a release introducing known P1/P2 defects doesn't go out, period** — enforce coverage thresholds, mandate design reviews, and protect the 20% tech-debt allocation.
 >
-> **For prevention:** invest in engineering maturity. **Defect rates are lagging indicators of process and skill gaps. Fix the gap, not just the symptom.**
+> **Common thread across all three**
+>
+> First question is always: **is this individual or systemic?** If multiple engineers or services are showing the same defect pattern, it's a system problem — unclear requirements, missing standards, or compressed review. Fix the system before coaching individuals.
+>
+> **Defect rates are lagging indicators of process and skill gaps. Fix the gap, not just the symptom.**
 
 ---
 
