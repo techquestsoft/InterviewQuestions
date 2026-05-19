@@ -25,7 +25,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q1: What is your overall approach to production reliability?
 
-**Memory Hook:** Observe → Resilience → Improve → SLO Buffer
+**Memory Hook:** Observability → Resilience → Continuous Improvement → Operating Discipline (SLO Buffer)
 
 > **Core Answer**
 >
@@ -67,7 +67,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q3: How do you handle a production incident?
 
-**Memory Hook:** Detect → Blast Radius → Communicate Cadence → Mitigate → RCA → CAPA
+**Memory Hook:** Declare + Blast Radius → Communicate Cadence → Mitigate Before Root Cause → Post-Incident RCA → CAPA Action Items
 
 > **Core Answer**
 >
@@ -169,7 +169,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q7: How do you ensure logging is adequate, especially for legacy systems?
 
-**Memory Hook:** Transaction Sampling → Throughput Correlation → Error Coverage
+**Memory Hook:** Transaction Sampling → Throughput Correlation → Error Classification Coverage
 
 > **Discipline Rule**
 >
@@ -251,7 +251,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q10: Distributed tracing setup (New Relic + Splunk)
 
-**Memory Hook:** Agent → traceId → Cross-Tool Linking → Debug Flow
+**Memory Hook:** Agent Setup → traceId → Cross-Tool Linking → Debug Flow
 
 > **Core Answer**
 >
@@ -295,7 +295,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q11: How do you handle support, on-call, and recurring issues?
 
-**Memory Hook:** Own → Prioritize → Track → Analyze → Fix Permanently
+**Memory Hook:** Ownership → Prioritization → Tracking → Analysis → Fix Permanently
 
 > **Core Answer**
 >
@@ -323,7 +323,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q12: Walk me through your CI/CD pipeline end-to-end
 
-**Memory Hook:** Quality → Security → Build → Deploy → Govern → Monitor
+**Memory Hook:** Code Quality → Security → Build & Packaging → Deployment Pipeline → Governance & Compliance → Post-Deployment Monitoring
 
 > **Core Answer**
 >
@@ -372,7 +372,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q13: Deployment strategies — when to use which?
 
-**Memory Hook:** Rolling = Routine | Canary = Risky | Blue-Green = Major
+**Memory Hook:** Rolling = Routine Releases | Canary = New Features | Blue-Green = Major Releases
 
 > **Core Answer**
 >
@@ -395,7 +395,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q14: A/B testing — when to use it?
 
-**Memory Hook:** Two Versions → Compare Metric → Data Beats Opinion
+**Memory Hook:** Two Versions (A/B) → Compare Against Metric → Data-Driven Decision-Making
 
 > **Core Answer**
 >
@@ -422,7 +422,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q15: Cloud Services — AWS vs Azure vs OCI (layered comparison)
 
-**Memory Hook:** 6 Layers — Edge → API → Compute → Data → Security → Observability
+**Memory Hook:** Edge → API & Gateway → Compute & Orchestration → Data & Storage → Security → Observability
 
 > **Discipline Rule**
 >
@@ -455,7 +455,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q16: Lessons learned from cloud-to-cloud migration (AWS → OCI)
 
-**Memory Hook:** IaC From Day One → Cloud-Agnostic Apps → Decoupled Observability → IAM/Network/Data Are Hardest
+**Memory Hook:** IaC From Day One → Cloud-Agnostic Application Design → Decoupled Observability → IAM/Networking/Data Are Hardest
 
 > **Discipline Rule**
 >
@@ -485,7 +485,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q17: EC2 vs Lambda — when to use which?
 
-**Memory Hook:** Lambda = Short + Event-Driven | EC2 = Long + Continuous
+**Memory Hook:** Lambda = Short + Event-Driven | EC2 = Long-Running + Continuous
 
 > **Core Answer**
 >
@@ -516,7 +516,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q18: Kubernetes — capabilities and real usage
 
-**Memory Hook:** Deploy → Scale → Network → Secure → Observe
+**Memory Hook:** Horizontal Scaling → Self-Healing → Rolling Deployments → Network Isolation → Security → Observability
 
 > **Core Answer**
 >
@@ -553,7 +553,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q19: Memory Leaks — Detection, Diagnosis, Fix
 
-**Memory Hook:** Detect → Diagnose → Fix → Prevent
+**Memory Hook:** Detection → Diagnosis → Fix → Prevention
 
 > **Core Answer**
 >
@@ -597,7 +597,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q20: Deadlocks
 
-**Memory Hook:** Lock Order → Avoid Nesting → Timeout → Async
+**Memory Hook:** Consistent Lock Ordering → Avoid Nested Locks → Timeout-Based Locking → Async Concurrency
 
 > **Core Answer**
 >
@@ -637,7 +637,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q21: How do you approach API security?
 
-**Memory Hook:** WAF → OWASP → SAST/DAST → Governance
+**Memory Hook:** Infrastructure (WAF) → Application (OWASP) → Pipeline (SAST/DAST) → Governance
 
 > **Core Answer**
 >
@@ -683,7 +683,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q22: How do you decide between Oracle (relational) and NoSQL (Cassandra/MongoDB)?
 
-**Memory Hook:** Schema → Consistency → Scale → Query Pattern
+**Memory Hook:** Schema Needs → Consistency Requirements → Scale and Throughput → Query Patterns
 
 > **Core Answer**
 >
@@ -705,7 +705,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q23: How do you guide your team on data access patterns in microservices?
 
-**Memory Hook:** Own Data → No Shared DB → Right Tool → Cache Wisely
+**Memory Hook:** Each Service Owns Its Data → No Shared Databases → Right Tool Per Service → Cache Wisely
 
 > **Core Answer**
 >
@@ -725,7 +725,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q24: How do you tune Oracle performance at the team level?
 
-**Memory Hook:** Index → Plan → Monitor → Optimize → Govern
+**Memory Hook:** Index Strategy → Execution Plans → Monitoring → Optimization → Governance
 
 > **Core Answer**
 >
@@ -749,7 +749,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q25: How do you model data in Cassandra?
 
-**Memory Hook:** Query First → Partition Wisely → Avoid Joins → Time Bucket
+**Memory Hook:** Model Around Queries → Partition Key Choice → Denormalize (No Joins) → Time-Bucket Time-Series
 
 > **Core Answer**
 >
@@ -771,7 +771,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q26: How do you model data in MongoDB?
 
-**Memory Hook:** Embed vs Reference → Schema Discipline → Index → Aggregation
+**Memory Hook:** Embed vs Reference → Schema Discipline → Indexes → Aggregation Pipeline
 
 > **Core Answer**
 >
@@ -793,7 +793,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q27: How do you handle data migrations safely?
 
-**Memory Hook:** Backward Compat → Dual Write → Validate → Cut Over → Decommission
+**Memory Hook:** Backward-Compatible Changes → Dual-Write → Validate in Parallel → Gradual Traffic Shift → Decommission Carefully
 
 > **Core Answer**
 >
@@ -817,7 +817,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q28: How do you handle DB connection management in Spring Boot microservices?
 
-**Memory Hook:** Pool → Size → Timeout → Monitor → Leak Detection
+**Memory Hook:** Connection Pool → Right-Size → Configure Timeouts → Monitor Pool Health → Detect Leaks Early
 
 > **Core Answer**
 >
@@ -837,7 +837,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ## Q29: How do you ensure data security and PII protection?
 
-**Memory Hook:** Encrypt → Mask → Access Control → Audit → Tokenize
+**Memory Hook:** Encryption → Data Masking → Strict Access Control → Audit Logging → Tokenization
 
 > **Core Answer**
 >
@@ -859,35 +859,35 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 | # | Topic | Memory Hook |
 |---|---|---|
-| Q1 | Production reliability approach | Observe → Resilience → Improve → SLO Buffer |
+| Q1 | Production reliability approach | Observability → Resilience → Continuous Improvement → Operating Discipline (SLO Buffer) |
 | Q2 | Platform resiliency | Prevent → Isolate → Recover → Observe |
-| Q3 | Handle production incident | Detect → Blast Radius → Cadence → Mitigate → RCA → CAPA |
-| Q4 | Faraday external dependency | Intermittent 500s → Retries + Backoff + Fallback |
-| Q5 | Metadata 10x spike | Cleanup Script → API-Controlled Updates + Anomaly Detection |
-| Q6 | HBase → OpenSearch migration | Upstream Failure → 4hr Loss → Service Dependency Registry |
-| Q7 | Adequate logging (legacy) | Transaction Sampling → Throughput Correlation → Error Coverage |
-| Q8 | Observability design | Logs + Metrics + Traces + Events |
+| Q3 | Handle production incident | Declare + Blast Radius → Communicate Cadence → Mitigate Before Root Cause → Post-Incident RCA → CAPA Action Items |
+| Q4 | Faraday external dependency | Intermittent 500s → Faraday → Retries + Backoff + Fallback + Observability |
+| Q5 | Metadata 10x spike | 10x Spike → Cleanup Script → API-Controlled Updates + Anomaly Detection |
+| Q6 | HBase → OpenSearch migration | Upstream Cluster Failure → No Downstream Comms → 4-Hour Visibility Loss → Service Dependency Registry |
+| Q7 | Adequate logging (legacy) | Transaction Sampling → Throughput Correlation → Error Classification Coverage |
+| Q8 | Observability design | Logs + Metrics + Traces + Events = Complete Observability |
 | Q9 | Proactive monitoring | Observe → Detect → Analyze → Improve |
-| Q10 | Distributed tracing | Agent → traceId → Cross-Tool Linking → Debug Flow |
-| Q11 | Support / on-call / recurring | Own → Prioritize → Track → Analyze → Fix Permanently |
-| Q12 | CI/CD pipeline | Quality → Security → Build → Deploy → Govern → Monitor |
-| Q13 | Deployment strategies | Rolling = Routine / Canary = Risky / Blue-Green = Major |
-| Q14 | A/B testing | Two Versions → Compare Metric → Data Beats Opinion |
-| Q15 | Cloud services (AWS/Azure/OCI) | 6 Layers — Edge → API → Compute → Data → Security → Observability |
-| Q16 | AWS → OCI migration lessons | IaC From Day One → Cloud-Agnostic Apps → Decoupled Observability |
-| Q17 | EC2 vs Lambda | Lambda = Short + Event-Driven / EC2 = Long + Continuous |
-| Q18 | Kubernetes capabilities | Deploy → Scale → Network → Secure → Observe |
-| Q19 | Memory leaks | Detect → Diagnose → Fix → Prevent |
-| Q20 | Deadlocks | Lock Order → Avoid Nesting → Timeout → Async |
-| Q21 | API security | WAF → OWASP → SAST/DAST → Governance |
-| Q22 | Oracle vs NoSQL | Schema → Consistency → Scale → Query Pattern |
-| Q23 | Microservices data access | Own Data → No Shared DB → Right Tool → Cache Wisely |
-| Q24 | Oracle tuning | Index → Plan → Monitor → Optimize → Govern |
-| Q25 | Cassandra modeling | Query First → Partition Wisely → Avoid Joins → Time Bucket |
-| Q26 | MongoDB modeling | Embed vs Reference → Schema → Index → Aggregation |
-| Q27 | Data migrations | Backward Compat → Dual Write → Validate → Cut Over → Decommission |
-| Q28 | DB connection management | Pool → Size → Timeout → Monitor → Leak Detection |
-| Q29 | Data security & PII | Encrypt → Mask → Access Control → Audit → Tokenize |
+| Q10 | Distributed tracing | Agent Setup → traceId → Cross-Tool Linking → Debug Flow |
+| Q11 | Support / on-call / recurring | Ownership → Prioritization → Tracking → Analysis → Fix Permanently |
+| Q12 | CI/CD pipeline | Code Quality → Security → Build & Packaging → Deployment Pipeline → Governance & Compliance → Post-Deployment Monitoring |
+| Q13 | Deployment strategies | Rolling = Routine Releases / Canary = New Features / Blue-Green = Major Releases |
+| Q14 | A/B testing | Two Versions (A/B) → Compare Against Metric → Data-Driven Decision-Making |
+| Q15 | Cloud services (AWS/Azure/OCI) | Edge → API & Gateway → Compute & Orchestration → Data & Storage → Security → Observability |
+| Q16 | AWS → OCI migration lessons | IaC From Day One → Cloud-Agnostic Application Design → Decoupled Observability → IAM/Networking/Data Are Hardest |
+| Q17 | EC2 vs Lambda | Lambda = Short + Event-Driven / EC2 = Long-Running + Continuous |
+| Q18 | Kubernetes capabilities | Horizontal Scaling → Self-Healing → Rolling Deployments → Network Isolation → Security → Observability |
+| Q19 | Memory leaks | Detection → Diagnosis → Fix → Prevention |
+| Q20 | Deadlocks | Consistent Lock Ordering → Avoid Nested Locks → Timeout-Based Locking → Async Concurrency |
+| Q21 | API security | Infrastructure (WAF) → Application (OWASP) → Pipeline (SAST/DAST) → Governance |
+| Q22 | Oracle vs NoSQL | Schema Needs → Consistency Requirements → Scale and Throughput → Query Patterns |
+| Q23 | Microservices data access | Each Service Owns Its Data → No Shared Databases → Right Tool Per Service → Cache Wisely |
+| Q24 | Oracle tuning | Index Strategy → Execution Plans → Monitoring → Optimization → Governance |
+| Q25 | Cassandra modeling | Model Around Queries → Partition Key Choice → Denormalize (No Joins) → Time-Bucket Time-Series |
+| Q26 | MongoDB modeling | Embed vs Reference → Schema Discipline → Indexes → Aggregation Pipeline |
+| Q27 | Data migrations | Backward-Compatible Changes → Dual-Write → Validate in Parallel → Gradual Traffic Shift → Decommission Carefully |
+| Q28 | DB connection management | Connection Pool → Right-Size → Configure Timeouts → Monitor Pool Health → Detect Leaks Early |
+| Q29 | Data security & PII | Encryption → Data Masking → Strict Access Control → Audit Logging → Tokenization |
 
 ---
 
