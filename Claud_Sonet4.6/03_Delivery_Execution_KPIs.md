@@ -183,7 +183,6 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 > **Feedback loop:** production incidents go back into the backlog as corrective actions. **Every incident produces at least one structural fix, not just a workaround.**
 
 ---
-
 ## Q9: What do you do if quality drops while scaling?
 
 **Memory Hook:** Clarify Which Scaling → Diagnose → Tighten Gates → Invest in Maturity
