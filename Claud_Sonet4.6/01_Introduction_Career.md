@@ -272,7 +272,7 @@
 
 > **Core Answer**
 >
-> Servant leadership with high accountability. My job is to remove blockers, give engineers clear ownership, and create the conditions for them to do their best work. Their job is to own their commitments and flag risks early. Both sides matter.
+> Servant leadership with high accountability. My job is to remove blockers, give clear ownership, protect focus from context-switching, and make sure engineers have the tools and information they need to make decisions independently. Their job is to own their commitments and flag risks early.
 >
 > I keep technical depth — architecture reviews, second-level PR approvals, occasional pairing on hard problems — but I do not become a bottleneck. I delegate execution and stay engaged on direction and decisions.
 >
