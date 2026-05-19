@@ -609,19 +609,23 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
-## Q27: How do you influence without authority?
-
-**Memory Hook:** Understand Their Priorities → Business Framing → Alignment Over Escalation
-
-> **Core Answer**
+ wanted observability work prioritized for a Q4 audit. The product team had a committed V3 delivery date to clients. Both were legitimate. **I had authority over neither team.**
 >
-> Influence without authority starts with understanding the **other team's priorities and constraints** before proposing anything. I align stakeholders around business impact, operational risk, and shared organizational goals rather than relying on escalation.
+> Three things made it work:
 >
-> Long-term trust matters more than short-term pressure.
+> **First, I learned the real deadline behind each ask** — not the stated priority, the actual pressure. Platform had an audit date. Product had a client commitment.
 >
-> **Example**
+> **Second, I reframed it as sequence, not priority.** My team would adopt telemetry standards in week 1 alongside V3, deliver V3 in weeks 2–7, then lead OCI APM migration in weeks 8–10. **Both deadlines met. Same quarter. Different order than either side originally asked for.**
 >
-> During a modernization initiative, platform teams wanted observability work prioritized while product teams focused on delivery commitments. I aligned stakeholders around business impact and proposed a phased roadmap that both sides accepted **without escalation.**
+> **Third, I absorbed the coordination cost myself** — took on the cross-team meetings, my engineers carried slightly more in the planning sprint. That cost made the trade work.
+>
+> **Result**
+>
+> V3 delivered on the original client commitment. Telemetry adopted before the audit. OCI APM completed same quarter. **Zero escalation.**
+>
+> **Close**
+>
+> Influence without authority is mostly **preparation, not persuasion**. By the time of the joint meeting, the proposal was almost pre-agreed — because each side had already told me, separately, what they actually needed.
 
 ---
 
