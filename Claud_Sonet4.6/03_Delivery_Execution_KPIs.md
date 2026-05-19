@@ -23,7 +23,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q1: How do you manage delivery end-to-end?
 
-**Memory Hook:** Plan → Execute → Risk → Predictability
+**Memory Hook:** Planning → Execution Discipline → Risk Management → Delivery Predictability
 
 > **Core Answer**
 >
@@ -62,7 +62,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q3: How do you ensure delivery predictability?
 
-**Memory Hook:** Right-Size → Track Mid-Sprint → 20% Debt Capacity
+**Memory Hook:** Right-Sized Work → Track Planned vs Actual Weekly → 20% Sprint Capacity for Debt
 
 > **Core Answer**
 >
@@ -82,7 +82,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q4: How do you prioritize work across competing demands?
 
-**Memory Hook:** Production → Features → Platform → Value Over Volume
+**Memory Hook:** Production Stability → Committed Features → Tech Debt and Platform → Business Impact Over Volume
 
 > **Core Answer**
 >
@@ -100,7 +100,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q5: How do you handle sprint spillovers?
 
-**Memory Hook:** 3 Causes, 3 Responses, Burndown Mid-Sprint
+**Memory Hook:** Underestimated Complexity + External Dependency Blocked + Wrong Estimate → Burndown Mid-Sprint
 
 > **Core Answer**
 >
@@ -122,7 +122,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q6: How do you manage releases?
 
-**Memory Hook:** Approve → Validate → Deploy → Monitor
+**Memory Hook:** Approval → Validation → Deployment → Monitoring
 
 > **Core Answer**
 >
@@ -168,7 +168,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q8: How do you balance execution and quality?
 
-**Memory Hook:** Built-In Gates → Code Review → Demo → Feedback Loop
+**Memory Hook:** In the Pipeline → In Code Review → In Sprint Review → Feedback Loop
 
 > **Core Answer**
 >
@@ -185,7 +185,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 ---
 ## Q9: What do you do if quality drops while scaling?
 
-**Memory Hook:** Clarify Which Scaling → Diagnose → Tighten Gates → Invest in Maturity
+**Memory Hook:** Clarify Scaling Type → Team / System / Delivery → Individual vs Systemic → Fix the Gap
 
 > **Discipline Rule**
 >
@@ -211,7 +211,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q10: How do you manage technical debt?
 
-**Memory Hook:** 20% Rule → Visible Register → WSJF(Weighted Shortest Job First) → Platform Health Sprints
+**Memory Hook:** The 20% Rule → Visible Register → WSJF Prioritization → Platform-Health Sprints
 
 > **Core Answer**
 >
@@ -233,7 +233,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q11: How do you balance modernization work with business delivery commitments?
 
-**Memory Hook:** Incremental → Risk-Based → Business-Aligned
+**Memory Hook:** Phased Modernization → Sequenced Value → Alongside Business Commitments
 
 > **Core Answer**
 >
@@ -249,7 +249,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q12: How do you handle multiple competing initiatives?
 
-**Memory Hook:** Split → Named Owners → Weekly Integration Sync
+**Memory Hook:** Workstream-Based Management → Named Owners → Weekly Integration Sync
 
 > **Core Answer**
 >
@@ -291,7 +291,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q14: How do you align delivery with business outcomes?
 
-**Memory Hook:** Map → Track → Communicate
+**Memory Hook:** Map to Business Outcome → Track Outcome Metrics → Communicate Back to Engineering
 
 > **Core Answer**
 >
@@ -313,7 +313,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q15: How do you scale delivery using SAFe?
 
-**Memory Hook:** PI Pre-Work → Dual Tracking → Own Dependencies → Protect Scope
+**Memory Hook:** PI Planning Quality → Dual Tracking → Dependency Management → Scope Protection
 
 > **Core Answer**
 >
@@ -337,7 +337,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 >
 > The purpose of retrospective is **structural improvement, not catharsis** (emotional release).
 >
-> Three parts: what produced good outcomes (preserve), what caused friction (change), what we will do differently next sprint **with specific owners and dates**.
+> Three parts: what produced good outcomes (preserve), what caused friction (change), what we will do differently in the next sprint **with specific owners and dates**.
 >
 > The third part is the one most teams skip — vague action items with no owners. I enforce specifics: *"Add integration test for payment flow — owner: [name] — done by next sprint review."*
 >
@@ -353,7 +353,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q17: How do you define and use KPIs for your team?
 
-**Memory Hook:** Business → Engineering → Reliability (Three Dimensions, Balanced)
+**Memory Hook:** Business Impact → Engineering Efficiency → System Reliability and Quality (Balanced)
 
 > **Core Answer**
 >
@@ -427,7 +427,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q19: How do you measure productivity and performance?
 
-**Memory Hook:** Outcome > Activity → Trends Over Points
+**Memory Hook:** Outcomes Over Activity → Individual Performance Signals → Trends Over Points
 
 > **Core Answer**
 >
@@ -467,7 +467,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q21: How do you prevent KPI gaming?
 
-**Memory Hook:** Balance → Cross-Validate → Trends → Outcomes Over Activity
+**Memory Hook:** Balanced Scorecard → Cross-Validate Across Dimensions → Trends Over Quarters → Outcomes Over Activity
 
 > **Core Answer**
 >
@@ -507,7 +507,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q23: How do you align KPIs with business goals?
 
-**Memory Hook:** Align → Map → Review Quarterly
+**Memory Hook:** Align KPIs → Map to Business Outcomes → Review Quarterly
 
 > **Core Answer**
 >
@@ -529,29 +529,29 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 | # | Topic | Memory Hook |
 |---|---|---|
-| Q1 | Manage delivery end-to-end | Plan → Execute → Risk → Predictability |
+| Q1 | Manage delivery end-to-end | Planning → Execution Discipline → Risk Management → Delivery Predictability |
 | Q2 | RAID tracking | Risks → Assumptions → Issues → Dependencies |
-| Q3 | Delivery predictability | Right-Size → Track Mid-Sprint → 20% Debt Capacity |
-| Q4 | Prioritize work | Production → Features → Platform → Value Over Volume |
-| Q5 | Sprint spillovers | 3 Causes, 3 Responses, Burndown Mid-Sprint |
-| Q6 | Manage releases | Approve → Validate → Deploy → Monitor (24h) |
+| Q3 | Delivery predictability | Right-Sized Work → Track Planned vs Actual Weekly → 20% Sprint Capacity for Debt |
+| Q4 | Prioritize work | Production Stability → Committed Features → Tech Debt and Platform → Business Impact Over Volume |
+| Q5 | Sprint spillovers | Underestimated Complexity + External Dependency Blocked + Wrong Estimate → Burndown Mid-Sprint |
+| Q6 | Manage releases | Approval → Validation → Deployment → Monitoring |
 | Q7 | Oracle release chain | OHRM → HDI CAB → Remedy CR → JFORMs → TTP |
-| Q8 | Execution vs quality | Built-In Gates → Code Review → Demo → Feedback Loop |
-| Q9 | Quality drops while scaling | Diagnose Systemic → Tighten → Invest in Maturity |
-| Q10 | Technical debt | 20% Rule → Register → WSJF → Platform-Health Sprints |
-| Q11 | Modernization vs delivery | Incremental → Risk-Based → Business-Aligned |
-| Q12 | Multiple initiatives | Split → Named Owners → Weekly Integration Sync |
+| Q8 | Execution vs quality | In the Pipeline → In Code Review → In Sprint Review → Feedback Loop |
+| Q9 | Quality drops while scaling | Clarify Scaling Type → Team / System / Delivery → Individual vs Systemic → Fix the Gap |
+| Q10 | Technical debt | The 20% Rule → Visible Register → WSJF Prioritization → Platform-Health Sprints |
+| Q11 | Modernization vs delivery | Phased Modernization → Sequenced Value → Alongside Business Commitments |
+| Q12 | Multiple initiatives | Workstream-Based Management → Named Owners → Weekly Integration Sync |
 | Q13 | Large cross-functional programs | Structure → Ownership → Governance → Visibility |
-| Q14 | Delivery to business outcomes | Map → Track → Communicate |
-| Q15 | SAFe | PI Pre-Work → Dual Track → Own Deps → Protect Scope |
-| Q16 | Retrospectives | Preserve → Change → Specific Owners & Dates |
-| Q17 | Team KPIs | Business → Engineering → Reliability (Balanced) |
+| Q14 | Delivery to business outcomes | Map to Business Outcome → Track Outcome Metrics → Communicate Back to Engineering |
+| Q15 | SAFe | PI Planning Quality → Dual Tracking → Dependency Management → Scope Protection |
+| Q16 | Retrospectives | Preserve → Change → Specific Owners and Dates |
+| Q17 | Team KPIs | Business Impact → Engineering Efficiency → System Reliability and Quality (Balanced) |
 | Q18 | 3 executive KPIs | **Set A**: MTTD + MTTR + CFR / **Set B**: Escaped Defect + MTTR + Predictability |
-| Q19 | Productivity & performance | Outcome > Activity → Trends Over Points |
+| Q19 | Productivity & performance | Outcomes Over Activity → Individual Performance Signals → Trends Over Points |
 | Q20 | ROI of initiatives | Cost → Speed → Business Value |
-| Q21 | Prevent KPI gaming | Balance → Cross-Validate → Trends → Outcomes |
+| Q21 | Prevent KPI gaming | Balanced Scorecard → Cross-Validate Across Dimensions → Trends Over Quarters → Outcomes Over Activity |
 | Q22 | Reliability KPIs | Availability → Stability → Performance |
-| Q23 | Align KPIs to business | Align → Map → Review Quarterly |
+| Q23 | Align KPIs to business | Align KPIs → Map to Business Outcomes → Review Quarterly |
 
 ---
 
