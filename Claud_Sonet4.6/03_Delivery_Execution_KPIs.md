@@ -211,7 +211,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 ## Q10: How do you manage technical debt?
 
-**Memory Hook:** 20% Rule → Visible Register → WSJF → Platform Health Sprints
+**Memory Hook:** 20% Rule → Visible Register → WSJF(Weighted Shortest Job First) → Platform Health Sprints
 
 > **Core Answer**
 >
@@ -361,7 +361,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 >
 > **Business impact** — for example, reducing cloud infrastructure cost by 15%, improving feature adoption by 20%, or improving customer onboarding completion. Tells the business whether engineering is creating value.
 >
-> **Engineering efficiency** — lead time from feature sign-off to production, deployment frequency, delivery predictability. Example goals: reducing average lead time from 4 hours to 1 hour; increasing deployment frequency from weekly to daily; improving sprint predictability from 70% to 90%. Tells me whether my engineering processes are working.
+> **Engineering efficiency** — lead time for changes (commit to production), deployment frequency, and delivery predictability. Example goals for a regulated healthcare environment: reducing lead time from two weeks to one week through better automation in the pre-CAB stages; increasing deployment frequency from bi-weekly to weekly with feature flags decoupling deployment from release; improving sprint predictability from 70% to 90% through better story decomposition. These metrics tell me whether my engineering processes are working.
 >
 > **System reliability and quality** — SLO adherence, incident rate, MTTR, and defect escape rate. Example goal: **reducing defect escape rate below 2% for the features my team owns this quarter.** Tells me whether systems and engineering practices are truly production-ready.
 >
