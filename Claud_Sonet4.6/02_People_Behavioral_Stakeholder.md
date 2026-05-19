@@ -98,7 +98,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 >
 > **Example**
 >
-> **8 engineer promotions in 6 years at Optum, 2 promotions in 2 years at Cerner** — every one backed by documented evidence, not narrative.
+> **8 engineer promotions in 6 years at Optum, 3 promotions in 2 years at Cerner** — every one backed by documented evidence, not narrative.
 
 ---
 
@@ -410,23 +410,32 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q19: Tell me about a time you handled pressure well
 
-**Memory Hook:** Blast Radius → Mitigate → Communicate Cadence → Structural Fix
+**Memory Hook:** Stay Calm Visibly → Make the Hard Call → Protect the Team
 
 > **Core Answer**
 >
-> Three principles when under pressure: communicate early and often, mitigate before root-causing, and every incident produces a structural fix — not just a workaround.
+> Under pressure, three things matter: **stay visibly calm** (the team mirrors the leader), **make the hard call** when information is incomplete, and **protect the team from the noise** so they can focus on the fix.
 >
 > **Example**
 >
-> Our readmission prevention pipeline had a data processing failure affecting **three health systems simultaneously**. I owned the incident response.
+> Our readmission prevention pipeline failed during peak hours. **Three health systems impacted, one approaching SLA breach in under an hour.** A senior client stakeholder joined the war room within 15 minutes asking for status. The on-call engineer was newer and visibly stressed.
 >
-> **First**, I assessed blast radius — three clients impacted, one approaching SLA breach. Declared SEV2 immediately, opened a war-room channel, assigned an incident commander.
+> Three things I did under pressure:
 >
-> **Communicated to stakeholders within 10 minutes:** *"Three clients impacted. Root cause under investigation. Next update in 15 minutes."* Maintained that cadence throughout — every 15 minutes, even when the update was "still investigating."
+> **First, I made a judgment call with incomplete information.** Two mitigation options were on the table — rollback the latest deploy, or replay Kafka from the last committed offset. Rollback was safer but slower. Replay was faster but risked duplicate processing because we didn't yet know if idempotency was clean. The SLA clock made the call: I went with Kafka replay and accepted the duplication risk, planning to reconcile after. **That call was mine to make and I made it in under 5 minutes — not by committee.**
 >
-> **Mitigation first:** we replayed Kafka from the last committed offset to restore data for the SLA-critical client. **Restored in 47 minutes.**
+> **Second, I absorbed the stakeholder pressure so the engineers could work.** I took the client conversation myself rather than letting the on-call engineer field it. *"Three clients impacted. We're executing recovery now. Next update in 15 minutes."* That freed the engineer to focus on the actual fix instead of explaining the fix.
 >
-> **Postmortem within 48 hours:** surfaced a missing idempotency check that caused duplicate processing under retry. Fixed within the sprint. **Zero recurrence for six months.**
+> **Third, I stayed visibly calm even when I wasn't.** When a leader looks panicked, the team starts making panic decisions — skipping verification steps, deploying without review. I kept my voice steady, asked clarifying questions slowly, and made sure every step was confirmed before execution. **Restored in 47 minutes.**
+>
+> **Result**
+>
+> No SLA breach. Postmortem surfaced the missing idempotency check; fixed within the sprint; **zero recurrence for six months.**
+>
+> **What I learned about myself under pressure**
+>
+> The hardest part wasn't the technical decision — it was resisting the urge to take over the keyboard. **My instinct under pressure is to do it myself because it feels faster.** I had to consciously slow down and coach the on-call engineer through the recovery, because **the team that handles the next incident needs to know how, and they only learn by doing it.**
+
 
 ---
 
