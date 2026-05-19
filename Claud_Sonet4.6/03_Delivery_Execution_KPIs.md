@@ -385,11 +385,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 
 **Memory Hook:** TWO SETS — Operational (Set A) or Quality/Delivery (Set B)
 
-> **Discipline Rule**
->
-> This question came up multiple times across interviews. **Memorize both sets.** Pick based on whether the framing is operational (incident-focused) or delivery-focused. **Never say "give me time to think"** — that hurt the Deloitte interview.
-
-> ### SET A — Operational / Reliability framing (Deloitte/Santosh-tested)
+> ### SET A — Operational / Reliability framing
 >
 > **Memory Hook:** MTTD + MTTR + CFR
 >
@@ -403,7 +399,7 @@ This file owns: delivery management, SAFe, sprint discipline, tech debt, KPIs, p
 >
 > These three together tell the executive: **how quickly we find problems, how quickly we fix them, and how well we prevent them in the first place.** No technical jargon.
 
-> ### SET B — Quality / Delivery framing (Ananth/Availity-tested)
+> ### SET B — Quality / Delivery framing
 >
 > **Memory Hook:** Escaped Defect Rate + MTTR + Delivery Predictability
 >
@@ -589,7 +585,7 @@ A KPI may appear under multiple lenses — that's expected; the same metric can 
 | "How do you set goals for your engineering team?" | 1 business + 2 delivery/efficiency + 2 reliability/quality |
 | "What three metrics would you present to an executive?" | **Set A:** MTTD + MTTR + Change Failure Rate |
 | "How do you measure engineering quality maturity?" | **Set B:** Defect Escape Rate + MTTR + Delivery Predictability |
-| "How do you measure delivery throughput?" | The four DORA: Lead Time, Deployment Frequency, CFR, MTTR |
+| "How do you measure delivery throughput?" | The four DORA: Lead Time for changes, Deployment Frequency, CFR, MTTR |
 | "How does engineering create business value?" | Cost reduction, feature adoption, onboarding completion — engineering *contributes*, doesn't *own* |
 
 ---

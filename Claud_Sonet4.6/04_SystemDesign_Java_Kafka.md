@@ -50,7 +50,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q1: How do you approach system design?
 
-**Memory Hook:** Problem → Break → Options → Trade-offs → Align
+**Memory Hook:** Clarify Problem → Break Into Layers → Evaluate Options → Evaluate Trade-offs → Align With Enterprise Standards
 
 > **Core Answer**
 >
@@ -70,7 +70,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q2: Monolith vs Microservices
 
-**Memory Hook:** Team + Domain + Scale → Architecture Choice
+**Memory Hook:** Team Structure + Domain Complexity + Scaling Granularity → Architecture Choice
 
 > **Core Answer**
 >
@@ -99,7 +99,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q3: What is the Strangler Pattern?
 
-**Memory Hook:** Incremental Replacement → Low Risk → Business Continuity
+**Memory Hook:** Gradual Replacement → Reduce Operational Risk → Continuous Business Delivery
 
 > **Core Answer**
 >
@@ -115,7 +115,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q4: 12-Factor App Principles
 
-**Memory Hook:** Stateless → Config → Logs → Backing Services → Parity
+**Memory Hook:** Stateless Processes → Config Via Environment → Logs As Streams → Backing Services Attached → Dev/Prod Parity
 
 > **Core Answer**
 >
@@ -135,7 +135,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q5: What changes beyond architecture when systems scale?
 
-**Memory Hook:** Tech + Quality + Operations + Governance + Team
+**Memory Hook:** Technology → Operational Maturity → Governance → Process and Team Structure
 
 > **Core Answer**
 >
@@ -173,7 +173,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q7: How do you modernize legacy monolithic systems?
 
-**Memory Hook:** Assess → Decompose → Incremental → Govern
+**Memory Hook:** Assess → Decompose Strategically → Incremental Cutover → Govern the Transition
 
 > **Core Answer**
 >
@@ -201,7 +201,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q8: How do you design for scalability?
 
-**Memory Hook:** Stateless → Distribute → Optimize Data → Async
+**Memory Hook:** Stateless Services → Distribute Traffic → Optimize Data Layer → Asynchronous Processing
 
 > **Core Answer**
 >
@@ -237,7 +237,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q10: Scale from 120 to 1200 customers
 
-**Memory Hook:** Diagnose → Quick Wins → Horizontal → Data → Ops → Team → Incremental
+**Memory Hook:** Diagnose → Quick Wins → Horizontal Scaling → Data Layer Scaling → Operational Readiness → Team Scaling → Incremental Rollout
 
 > **Discipline Rule**
 >
@@ -275,7 +275,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q11: Design a high-throughput system
 
-**Memory Hook:** Edge → App → Data → Resilience
+**Memory Hook:** Edge → Application → Data → Resilience
 
 > **Core Answer**
 >
@@ -305,7 +305,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q12: Backpressure handling
 
-**Memory Hook:** Rate Limit → Circuit Breaker → Queue Buffer → Reactive → Bulkhead
+**Memory Hook:** Rate Limiting → Circuit Breaker → Queue Buffering → Reactive Streams → Bulkhead
 
 > **Simple analogy:** Water tank fills at 100L/min, pipe to bucket empties at 20L/min. Without flow control, bucket overflows. Backpressure tells the tank to slow down.
 
@@ -362,7 +362,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q13: Data consistency in distributed systems
 
-**Memory Hook:** Correctness → Strong | Scale → Eventual | Workflow → Saga + Outbox
+**Memory Hook:** Strong Consistency for Correctness | Eventual Consistency for Scale | Saga + Outbox for Workflow
 
 > **Core Answer**
 >
@@ -382,7 +382,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q14: SAGA Pattern — Choreography vs Orchestration
 
-**Memory Hook:** Distributed Tx → Saga | Choreo = Simple | Orchestrator = Control
+**Memory Hook:** Saga for Distributed Transactions | Choreography for Simple Flows | Orchestration for Critical Workflows
 
 > **Core Answer**
 >
@@ -416,7 +416,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q15: Outbox Pattern — Why SAGA Alone Is Not Enough
 
-**Memory Hook:** DB ✅ Event ❌ → Outbox
+**Memory Hook:** DB Commit ✅ Event Publish ❌ → Outbox
 
 > **Core Answer**
 >
@@ -463,7 +463,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q16: Payment service failure — design response
 
-**Memory Hook:** Fail Fast → Retry → Protect → Compensate
+**Memory Hook:** Fail Fast → Retry With Backoff → Circuit Breaker → Saga Compensation
 
 > **Core Answer**
 >
@@ -489,7 +489,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q17: How do you design for failure?
 
-**Memory Hook:** Assume → Isolate → Recover → Degrade
+**Memory Hook:** Assume Failures → Isolation → Recovery → Graceful Degradation
 
 > **Core Answer**
 >
@@ -515,7 +515,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q18: How do you design for high availability?
 
-**Memory Hook:** No SPOF → Redundancy → Failover → Multi-Region
+**Memory Hook:** No Single Point of Failure → Replication → Failover → Multi-Region
 
 > **Core Answer**
 >
@@ -539,7 +539,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q19: Active-Active design — what happens when the local DB goes down mid-transaction?
 
-**Memory Hook:** Atomicity Local → User Failure → Retry → Other Zone → Eventual Catch-up
+**Memory Hook:** Local Atomicity → User Sees Failed Request → Retry Routes to Healthy Zone → Eventual Catch-up Via Kafka
 
 > **Discipline Rule**
 >
@@ -577,7 +577,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q20: Design a Notification System
 
-**Memory Hook:** Event → Queue → Processor → Channel → Retry → Status
+**Memory Hook:** Business Event → Kafka Topic → Notification Service → Channel → Retry → Status Callback
 
 > **Core Answer — Architecture**
 >
@@ -621,7 +621,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q21: Scale notification service from 1M to 5M orders/day
 
-**Memory Hook:** Pod Scale + Partition Scale + Provider Limits
+**Memory Hook:** Pod Scaling → Partition Scaling → Provider Rate Limits
 
 > **Core Answer**
 >
@@ -731,7 +731,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q24: How do you design REST APIs and Spring Boot microservices for production?
 
-**Memory Hook:** Contract → Boundary → Resilience → Observability → Secure
+**Memory Hook:** Contract First → Service Boundaries → Resilience → Observability → Secure by Default
 
 > **Core Answer**
 >
@@ -751,7 +751,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q25: How do you decide REST vs Kafka for inter-service communication?
 
-**Memory Hook:** Sync for Reads → Async for Writes → Saga for Distributed Workflow
+**Memory Hook:** Synchronous for Queries → Asynchronous for State Changes → Saga for Distributed Transactions
 
 > **Core Answer**
 >
@@ -771,7 +771,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q26: How do you ensure Spring Boot service performance and tune it?
 
-**Memory Hook:** Measure → Hot Path → Cache → JVM → Async
+**Memory Hook:** Measure First → Persistence Hot Path → Intelligent Caching → Tune JVM → Async Where It Fits
 
 > **Core Answer**
 >
@@ -791,7 +791,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q27: How do you secure REST APIs in a banking context?
 
-**Memory Hook:** Auth → AuthZ → Validate → Encrypt → Audit
+**Memory Hook:** Authentication → Authorization → Input Validation → Encryption → Audit Logging
 
 > **Core Answer**
 >
@@ -811,7 +811,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q28: How do you handle errors and exceptions consistently across services?
 
-**Memory Hook:** Centralize → Standardize → No Leaks
+**Memory Hook:** Centralize With Global Interceptors → Standardize Via RFC 7807 → Zero-Leakage Policy
 
 > **Core Answer**
 >
@@ -843,7 +843,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q29: How do you design Kafka topics, partitions, and retention?
 
-**Memory Hook:** Partitions for Scale → Replication for Durability → Retention for Use Case
+**Memory Hook:** Partitions → Partition Key → Replication Factor → Retention
 
 > **Core Answer**
 >
@@ -863,7 +863,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q30: How do you ensure exactly-once or at-least-once delivery?
 
-**Memory Hook:** Idempotent Producer → Transaction → Idempotent Consumer
+**Memory Hook:** Idempotent Producer → Transactions for Atomic Writes → Idempotent Consumer
 
 > **Core Answer**
 >
@@ -881,7 +881,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q31: How do you handle errors and dead letter queues in Kafka consumers?
 
-**Memory Hook:** Categorize → Retry → DLQ → Replay → Alert
+**Memory Hook:** Categorize Errors → Retry Transient → DLQ Permanent → Replay → Alert on Growth
 
 > **Core Answer**
 >
@@ -901,7 +901,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q32: How do you monitor Kafka pipelines in production?
 
-**Memory Hook:** Lag → Throughput → Errors → Cluster → SLO Alerts
+**Memory Hook:** Consumer Lag → Throughput → Error Rate → Cluster Health → Alert on SLO Breach
 
 > **Core Answer**
 >
@@ -921,7 +921,7 @@ Step 10: PHASES      — Build incrementally
 
 ## Q33: How do you handle Kafka schema evolution?
 
-**Memory Hook:** Registry → Compatibility → Additive → Version Explicit
+**Memory Hook:** Schema Registry → Compatibility Rules → Additive Changes Only → Version Explicitly When Breaking
 
 > **Core Answer**
 >
@@ -987,41 +987,41 @@ Step 10: PHASES      — Build incrementally
 
 | # | Topic | Memory Hook |
 |---|---|---|
-| Q1 | Approach to system design | Problem → Break → Options → Trade-offs → Align |
-| Q2 | Monolith vs microservices | Team + Domain + Scale → Architecture Choice |
-| Q3 | Strangler Pattern | Incremental → Low Risk → Business Continuity |
-| Q4 | 12-Factor App | Stateless → Config → Logs → Backing → Parity |
-| Q5 | When systems scale | Tech + Quality + Ops + Governance + Team |
+| Q1 | Approach to system design | Clarify Problem → Break Into Layers → Evaluate Options → Evaluate Trade-offs → Align With Enterprise Standards |
+| Q2 | Monolith vs microservices | Team Structure + Domain Complexity + Scaling Granularity → Architecture Choice |
+| Q3 | Strangler Pattern | Gradual Replacement → Reduce Operational Risk → Continuous Business Delivery |
+| Q4 | 12-Factor App | Stateless Processes → Config Via Environment → Logs As Streams → Backing Services Attached → Dev/Prod Parity |
+| Q5 | When systems scale | Technology → Operational Maturity → Governance → Process and Team Structure |
 | Q6 | Governance vs Review | Review = Point-in-Time / Governance = Continuous |
-| Q7 | Modernize legacy | Assess → Decompose → Incremental → Govern |
-| Q8 | Design for scalability | Stateless → Distribute → Optimize Data → Async |
-| Q9 | Multi-layer scaling | Edge → Gateway → Compute → Data → Async |
-| Q10 | Scale 120 → 1200 customers | Diagnose → Quick Wins → Horizontal → Data → Ops → Team → Incremental |
-| Q11 | High-throughput design | Edge → App → Data → Resilience |
-| Q12 | Backpressure | Rate Limit → CB → Buffer → Reactive → Bulkhead |
-| Q13 | Distributed consistency | Strong / Eventual / Saga + Outbox |
-| Q14 | SAGA choreo vs orchestration | Choreo = Simple / Orchestrator = Control |
-| Q15 | Outbox Pattern | DB ✅ Event ❌ → Outbox |
-| Q16 | Payment failure | Fail Fast → Retry → Protect → Compensate |
-| Q17 | Design for failure | Assume → Isolate → Recover → Degrade |
-| Q18 | High availability | No SPOF → Redundancy → Failover → Multi-Region |
-| Q19 | Active-Active DB failure | Atomicity Local → Retry → Other Zone → Eventual Catch-up |
-| Q20 | Notification system | Event → Queue → Processor → Channel → Retry → Status |
-| Q21 | Scale notifications 1M→5M | Pod Scale + Partition Scale + Provider Limits |
-| Q22 | Partitioning vs Sharding | ONE machine vs MANY machines |
+| Q7 | Modernize legacy | Assess → Decompose Strategically → Incremental Cutover → Govern the Transition |
+| Q8 | Design for scalability | Stateless Services → Distribute Traffic → Optimize Data Layer → Asynchronous Processing |
+| Q9 | Multi-layer scaling | Edge → API Gateway → Compute → Data → Async |
+| Q10 | Scale 120 → 1200 customers | Diagnose → Quick Wins → Horizontal Scaling → Data Layer Scaling → Operational Readiness → Team Scaling → Incremental Rollout |
+| Q11 | High-throughput design | Edge → Application → Data → Resilience |
+| Q12 | Backpressure | Rate Limiting → Circuit Breaker → Queue Buffering → Reactive Streams → Bulkhead |
+| Q13 | Distributed consistency | Strong Consistency for Correctness / Eventual Consistency for Scale / Saga + Outbox for Workflow |
+| Q14 | SAGA choreo vs orchestration | Saga for Distributed Transactions / Choreography for Simple Flows / Orchestration for Critical Workflows |
+| Q15 | Outbox Pattern | DB Commit ✅ Event Publish ❌ → Outbox |
+| Q16 | Payment failure | Fail Fast → Retry With Backoff → Circuit Breaker → Saga Compensation |
+| Q17 | Design for failure | Assume Failures → Isolation → Recovery → Graceful Degradation |
+| Q18 | High availability | No Single Point of Failure → Replication → Failover → Multi-Region |
+| Q19 | Active-Active DB failure | Local Atomicity → User Sees Failed Request → Retry Routes to Healthy Zone → Eventual Catch-up Via Kafka |
+| Q20 | Notification system | Business Event → Kafka Topic → Notification Service → Channel → Retry → Status Callback |
+| Q21 | Scale notifications 1M→5M | Pod Scaling → Partition Scaling → Provider Rate Limits |
+| Q22 | Partitioning vs Sharding | Partitioning = ONE machine / Sharding = MANY machines |
 | Q23 | DB access patterns | Datastore Dictates Pattern |
-| Q24 | Spring Boot prod design | Contract → Boundary → Resilience → Observability → Secure |
-| Q25 | REST vs Kafka | Sync Reads / Async Writes / Saga for Workflows |
-| Q26 | Spring Boot tuning | Measure → Hot Path → Cache → JVM → Async |
-| Q27 | Secure REST (banking) | Auth → AuthZ → Validate → Encrypt → Audit |
-| Q28 | Error handling | Centralize → Standardize → No Leaks |
-| Q29 | Kafka topics/partitions | Partitions = Scale / Replication = Durability / Retention = Use Case |
-| Q30 | Exactly-once vs at-least-once | Idempotent Producer + Transaction + Idempotent Consumer |
-| Q31 | Kafka DLQ | Categorize → Retry → DLQ → Replay → Alert |
-| Q32 | Monitor Kafka | Lag → Throughput → Errors → Cluster → SLO Alerts |
-| Q33 | Kafka schema evolution | Registry → Compatibility → Additive → Version |
+| Q24 | Spring Boot prod design | Contract First → Service Boundaries → Resilience → Observability → Secure by Default |
+| Q25 | REST vs Kafka | Synchronous for Queries / Asynchronous for State Changes / Saga for Distributed Transactions |
+| Q26 | Spring Boot tuning | Measure First → Persistence Hot Path → Intelligent Caching → Tune JVM → Async Where It Fits |
+| Q27 | Secure REST (banking) | Authentication → Authorization → Input Validation → Encryption → Audit Logging |
+| Q28 | Error handling | Centralize With Global Interceptors → Standardize Via RFC 7807 → Zero-Leakage Policy |
+| Q29 | Kafka topics/partitions | Partitions → Partition Key → Replication Factor → Retention |
+| Q30 | Exactly-once vs at-least-once | Idempotent Producer → Transactions for Atomic Writes → Idempotent Consumer |
+| Q31 | Kafka DLQ | Categorize Errors → Retry Transient → DLQ Permanent → Replay → Alert on Growth |
+| Q32 | Monitor Kafka | Consumer Lag → Throughput → Error Rate → Cluster Health → Alert on SLO Breach |
+| Q33 | Kafka schema evolution | Schema Registry → Compatibility Rules → Additive Changes Only → Version Explicitly When Breaking |
 | Q34 | Account origination flow | Capture → Orchestrate → Aggregate → Notify → Audit |
-| Q35 | OAuth 1.0 vs 2.0 | Courier Package vs Hotel Access Card |
+| Q35 | OAuth 1.0 vs 2.0 | OAuth 1.0 = Signed Courier Package / OAuth 2.0 = Hotel Access Card |
 
 ---
 
