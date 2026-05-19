@@ -1,0 +1,32 @@
+Feedback:
+Keep slide chanding device with you--- its distracting and eating time as well.
+Interacton with audience could have been a little more. For example questions, or guess work for audience.
+Adding a little storyline with examples can also enhance the audience experience signficantly.
+
+you were confident while you were presenting and i have not observed anywhere that you were losing the same as well.
+You were exceptionally well, pitch was moderated, extremeley confident.
+
+Sharing API Security Knowledge: OWASP Top 10 API Security at @Optum
+
+Great discussion yesterday at the @Optum town hall on API security! Aadhar and I presented on the topic that is more critical than ever: API Security and OWASP Top 10 API Security Risks – 2023, a valuable framework for identifying and preventing API vulnerabilities.
+
+With the rapid evolution of technology and the increasing reliance on APIs, understanding and mitigating risks has become essential for every organization. APIs are the backbone of modern applications, and securing them is crucial. If you're interested in learning more about the OWASP Top 10 or API security in general, feel free to connect with me! #APIsecurity #OWASP #cybersecurity.
+
+We delved into the OWASP Top 10 API Security Risks – 2023, highlighting the key threats and best practices to safeguard our systems. From injection vulnerabilities to improper asset management, it's crucial that we stay vigilant and proactive.
+
+
+Key Takeaways:
+
+API Security is beyond software or common library vulnerabilities, which includes flaws in business logic, authentication, data validation, improper asset management etc.,
+Ensure robust authentication and authorization mechanisms.
+Implement strong input validation to prevent injection attacks.
+Regularly monitor and log API activity.
+Keep your API inventory updated and well-managed.
+With APIs is you don't lose 10, 20, a hundred or a thousand records. You lose millions.
+
+Gartner: Most frequent attack vector and Major target attack are APIs
+
+
+#CyberSecurity #APISecurity #OWASP #TechTalk #ProfessionalGrowth #SecurityFirst
+
+https://owasp.org/API-Security/editions/2023/en/0x11-t10/
