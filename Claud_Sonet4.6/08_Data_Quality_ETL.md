@@ -133,11 +133,11 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ---
 
-# SECTION B — BRONZE-SILVER-GOLD PATTERN
+# SECTION B — BRONZE-SILVER-GOLD PATTERN / Medallion architecture
 
 ---
 
-## Q4: Bronze-Silver-Gold data architecture
+## Q4: Bronze-Silver-Gold data architecture / Medallion architecture
 
 **Memory Hook:** Bronze (raw) → Silver (cleaned + validated) → Gold (business-ready)
 

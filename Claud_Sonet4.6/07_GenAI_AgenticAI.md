@@ -4,8 +4,6 @@
 > **Rule 2:** Your GenAI architecture diagram is your strongest asset — refer to it consistently.
 > **Rule 3:** RAG vs direct query has **ONE clean answer**. Don't contradict yourself across the conversation.
 
-**Structure of every answer:** Memory Hook → Core Answer (framework + reasoning) → Example or Discipline Rule (specific scene, anti-pattern to avoid, or honesty framing).
-
 ---
 
 ## CROSS-FILE INDEX
@@ -24,11 +22,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q1: How are you using GenAI currently?
 
-**Memory Hook:** Engineering Productivity + Product Use Case (POC Stage Honestly)
-
-> **Discipline Rule**
->
-> **This honesty point is what cost ground at Availity** (Sheshagiri caught the inconsistency between "MVP" and "not started"). **Always say POC or proposal stage.** Never say *"we are doing the MVP"* if you have not started.
+**Memory Hook:** Engineering Productivity + Product Use Case (POC Stage)
 
 > **Core Answer**
 >
@@ -138,10 +132,6 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 **Memory Hook:** Structured = Direct Query | Unstructured = RAG | Multi-Step = LangGraph
 
-> **Discipline Rule**
->
-> **This is the question that tripped you up at Deloitte across both rounds.** **Memorize this clean answer.** Saying *"RAG not needed... actually maybe needed... LangGraph might handle it"* is what cost grade. **The clean rule: Structured = direct query. Unstructured = RAG. Multi-step = LangGraph.**
-
 > **Core Answer**
 >
 > | Scenario | Approach | Reasoning |
@@ -214,7 +204,9 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 >
 > **Structured prompting standards.** Prompting templates defined for common engineering tasks — feature scaffolding, test generation, code review, documentation. **Engineers do not free-form prompt.** Templates embed our coding standards, security patterns, exception handling.
 >
-> **CI pipeline gates.** **AI-generated code is not exempt from code review or coverage requirements.** I would add a step that flags large blocks of code matching common AI patterns — high cyclomatic complexity with no exception handling, test files with only happy-path cases. Mandatory senior review.
+> **CI pipeline gates.** **AI-generated code is not exempt from code review or coverage requirements.** I would enforce CI/CD pipeline quality checks so AI-generated code follows the same standards as manually written code. AI-generated code should still require proper code reviews, test coverage, and security validation.
+> 
+> I would also add automated checks to identify risky patterns often seen in AI-generated code, such as overly complex logic, missing exception handling, or tests covering only successful scenarios. For high-risk or large AI-generated changes, I would require mandatory senior engineer review before merge.
 >
 > **Measurement.** Track AI-assisted code review pass rate on first submission vs rework rate. **If AI-assisted code escapes more defects than manually coded features, the guardrails are not working — tighten them.**
 >
@@ -350,7 +342,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q14: How do you measure productivity improvement from AI tools?
 
-**Memory Hook:** Team Velocity = Signal / Cost-per-Feature + Time-to-Market = Business Metrics
+**Memory Hook:** Team Velocity = Signal,  Cost-per-Feature + Time-to-Market = Business Metrics
 
 > **Discipline Rule**
 >
@@ -487,38 +479,6 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ---
 
-## Q20: How would you integrate AI into the BBAO account origination journey specifically?
-
-**Memory Hook:** Pain Point → Three AI Plays → Architecture → Measure
-
-> **Core Answer**
->
-> I'd start where customer pain is concrete and measurable.
->
-> **Pain point.** Customers abandon onboarding because of **complex forms, document-upload friction, slow KYC verification, and unclear status during processing.**
->
-> **Three high-value AI plays**
->
-> **1. Smart document understanding** — vision + LLM extracts data from uploaded IDs and supporting documents, pre-fills forms, reduces typing. **Confidence threshold; below threshold routes to human review with summarized context.**
->
-> **2. Conversational assistant** — answers customer questions in real time during the journey. RAG over policies, FAQ, regulatory disclosures. **Scoped strictly — never gives investment or eligibility advice.** Hand-off to human agent when out of scope or low confidence.
->
-> **3. Intelligent agent triage** — classifies edge cases for human reviewers and surfaces a structured summary so the agent isn't reading through every uploaded document. Reduces handle time per escalation.
->
-> **Architecture**
->
-> Document processor → entity extraction → form pre-fill API → **guardrails (PII redaction, accuracy threshold, content policy)** → human fallback when confidence is low. Conversational layer is a separate service with its own RAG store and model gateway.
->
-> **Measure**
->
-> Onboarding completion rate, time-to-complete, customer satisfaction, agent handle time on escalations, accuracy of auto-extracted data. **Bias and fairness metrics across customer demographics.**
->
-> **Honest framing**
->
-> I'd lead the engineering side and partner closely with **Risk, Compliance, and Legal** on responsible AI requirements. **I would not propose AI for the core credit or eligibility decision itself** — that's a regulated decision space where human-in-the-loop and explainability requirements are highest, and where the bank likely has existing model governance frameworks I'd plug into rather than reinvent.
-
----
-
 # QUICK REFERENCE — MEMORY HOOKS
 
 | # | Topic | Memory Hook |
@@ -542,7 +502,6 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 | Q17 | Agent adoption | Identify High-Toil Workflows → Pilot With One Team → Measure Honestly → Scale With Templates → Govern From Day One |
 | Q18 | LLM reliability patterns | Timeouts + Retries → Fallback Strategy → Aggressive Caching → Rate Limiting → Cost Controls |
 | Q19 | Responsible AI (banking) | Bias Testing → Explainability → Human Review → Audit Logging → Kill Switches |
-| Q20 | BBAO origination AI | Pain Point → Three AI Plays → Architecture → Measure |
 
 ---
 

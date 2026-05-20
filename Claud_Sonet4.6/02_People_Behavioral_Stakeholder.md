@@ -22,7 +22,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q1: How do you manage your team?
 
-**Memory Hook:** Clarity → Track → Engage → Intervene
+**Memory Hook:** Clarity → Tracking → Engagement → Intervention
 
 > **Core Answer**
 >
@@ -44,7 +44,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q2: What is your leadership style?
 
-**Memory Hook:** Servant → Ownership → Accountability
+**Memory Hook:** Servant Leadership → Ownership Culture → Strong Accountability
 
 > **Core Answer**
 >
@@ -84,7 +84,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q4: How do you identify and grow high performers?
 
-**Memory Hook:** Deliver → Own → Influence → Stretch → Evidence
+**Memory Hook:** Consistent Delivery → Ownership Beyond Scope → Influence Over Peers → Stretch Assignments → Evidence Case
 
 > **Core Answer**
 >
@@ -150,7 +150,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 > *Use when the interviewer probes attrition risk, motivation, or retention.*
 
-**Memory Hook:** Spot Signal Early → Honest 1:1 → Diagnose → Real Stretch (not patch) → Outcome
+**Memory Hook:** Spot Signal Early → Honest 1:1 → Diagnose Honestly → Real Stretch Not Token Fix
 
 > **Core Answer**
 >
@@ -178,7 +178,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 > *Use when the interviewer probes team conflict or peer dynamics.*
 
-**Memory Hook:** Observe → Individual Conversations → Surface Real Issue → Redraw Scope → Reset Recognition
+**Memory Hook:** Observe First → Individual Conversations → Surface The Real Issue → Redraw Scope → Make Recognition Visible
 
 > **Core Answer**
 >
@@ -228,7 +228,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q10: How do you build engineering culture?
 
-**Memory Hook:** Ownership → Safety → Excellence → Learning
+**Memory Hook:** Ownership → Psychological Safety → Engineering Excellence → Learning
 
 > **Core Answer**
 >
@@ -262,7 +262,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q12: How do you mentor and develop team members?
 
-**Memory Hook:** Quarterly Plan → Roadmap Exposure → Specific Feedback
+**Memory Hook:** Quarterly Development Conversations → Roadmap Exposure → Specific Feedback
 
 > **Core Answer**
 >
@@ -346,7 +346,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q16: How do you manage offshore-onshore engineering teams?
 
-**Memory Hook:** Ownership → Overlap → Transparency → Trust
+**Memory Hook:** Ownership Boundaries → Structured Overlap → Execution Transparency → Trust
 
 > **Core Answer**
 >
@@ -366,7 +366,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q17: What are your key strengths?
 
-**Memory Hook:** Ownership → Solve → Judgment → Align → Lead
+**Memory Hook:** End-to-End Ownership → Structured Problem-Solving → Technical Judgment → Business Alignment → Team Leadership
 
 > **Core Answer**
 >
@@ -390,7 +390,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q18: What are your weaknesses?
 
-**Memory Hook:** Depth → Structure → Delegate
+**Memory Hook:** Technical Depth Bias → Communication Structure → Delegation
 
 > **Core Answer**
 >
@@ -435,7 +435,6 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 > **What I learned about myself under pressure**
 >
 > The hardest part wasn't the technical decision — it was resisting the urge to take over the keyboard. **My instinct under pressure is to do it myself because it feels faster.** I had to consciously slow down and coach the on-call engineer through the recovery, because **the team that handles the next incident needs to know how, and they only learn by doing it.**
-
 
 ---
 
@@ -491,7 +490,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 > *Use when asked about disagreeing with architects or peer leaders.*
 
-**Memory Hook:** Compliance Project Has Priority → Acknowledge Direction → Path Forward with a Date
+**Memory Hook:** Compliance Project Has Priority → Cost-of-Delay Framing → Path Forward With a Specific Date
 
 > **Core Answer**
 >
@@ -609,7 +608,17 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
- wanted observability work prioritized for a Q4 audit. The product team had a committed V3 delivery date to clients. Both were legitimate. **I had authority over neither team.**
+## Q27: How do you influence without authority?
+
+**Memory Hook:** Understand Their Pressure → Reframe as Sequence → Absorb the Cost
+
+> **Core Answer**
+>
+> Influence without authority works through **reframing trade-offs, not winning arguments**. I understand what the other team is actually under pressure to deliver, then find a sequence where both sides get what they need — just not at the same time.
+>
+> **Example**
+>
+> At Cerner, the platform team wanted observability work prioritized for a Q4 audit. The product team had a committed V3 delivery date to clients. Both were legitimate. **I had authority over neither team.**
 >
 > Three things made it work:
 >
@@ -651,7 +660,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q29: How do you handle resistance to modernization?
 
-**Memory Hook:** Understand Fear → Educate on Value → Phase It → Enable the Teams
+**Memory Hook:** Understand Fear → Educate on Business Value → Phased Modernization → Enable Teams
 
 > **Core Answer**
 >
@@ -693,7 +702,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 >
 > Four-layer response.
 >
-> **Protect** — retries with exponential backoff, timeouts, and circuit breakers using **Resilience4j**. The external system's instability cannot become my system's instability.
+> **Protect** — retries with exponential backoff, timeouts, and circuit breakers using **Resilience4j**. The blast radius of the external system's instability stays contained — it cannot become my system's instability.
 >
 > **Monitor** — track latency and failure patterns by dependency. Separate dashboards for external vs internal failures so we can distinguish "their problem" from "our problem" in seconds, not hours.
 >
@@ -709,7 +718,7 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ## Q32: How do you work with vendors and external partners?
 
-**Memory Hook:** Expectations → Governance → Standards → Accountability
+**Memory Hook:** Expectations Upfront → Governance Cadence → Engineering Standards → Accountability Stays Internal
 
 > **Core Answer**
 >
@@ -737,38 +746,38 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 | # | Topic | Memory Hook | One-Line Answer |
 |---|---|---|---|
-| Q1 | Manage your team | Clarity → Track → Engage → Intervene | Clear goals, weekly tracking, real 1:1s, remove blockers fast |
-| Q2 | Leadership style | Servant → Ownership → Accountability | Enable people, hold a high bar |
+| Q1 | Manage your team | Clarity → Tracking → Engagement → Intervention | Clear goals, weekly tracking, real 1:1s, remove blockers fast |
+| Q2 | Leadership style | Servant Leadership → Ownership Culture → Strong Accountability | Enable people, hold a high bar |
 | Q3 | Evaluate performance | Delivery → Quality → Behavior | Three dimensions, calibrate by level |
-| Q4 | Grow high performers | Deliver → Own → Influence → Stretch → Evidence | Stretch work, visibility, evidence-based promotion |
-| Q5 | Low performers | Diagnose System First → 1:1 → Restructure → PIP | Fix system before individual, PIP only if coaching fails |
+| Q4 | Grow high performers | Consistent Delivery → Ownership Beyond Scope → Influence Over Peers → Stretch Assignments → Evidence Case | Stretch work, visibility, evidence-based promotion |
+| Q5 | Low performers | Diagnose System First → 1:1 → Restructure → PIP If Needed | Fix system before individual, PIP only if coaching fails |
 | Q6 | Build motivated team | Clarity → Ownership → Recognition → Growth | Connect work to impact; specific recognition |
-| Q7 | Disengaged senior engineer | Signal → 1:1 → Diagnose → Real Stretch | Have the conversation six weeks before the resignation |
-| Q8 | Peer engineer conflict | Observe → 1:1s → Surface → Redraw Scope → Reset Recognition | Fix structure, not personality |
+| Q7 | Disengaged senior engineer | Spot Signal Early → Honest 1:1 → Diagnose Honestly → Real Stretch Not Token Fix | Have the conversation six weeks before the resignation |
+| Q8 | Peer engineer conflict | Observe First → Individual Conversations → Surface The Real Issue → Redraw Scope → Make Recognition Visible | Fix structure, not personality |
 | Q9 | Difficult feedback | Specific → Timely → Private → Forward-Looking | Within 48 hours, observable, behavior not character |
-| Q10 | Engineering culture | Ownership → Safety → Excellence → Learning | Built through daily behaviors, especially during failures |
+| Q10 | Engineering culture | Ownership → Psychological Safety → Engineering Excellence → Learning | Built through daily behaviors, especially during failures |
 | Q11 | Attract & retain | Meaningful Work → Growth → Visibility → Trust | Stretch + transparency = retention |
-| Q12 | Mentor & develop | Quarterly Plan → Roadmap Exposure → Specific Feedback | Structured, not informal |
+| Q12 | Mentor & develop | Quarterly Development Conversations → Roadmap Exposure → Specific Feedback | Structured, not informal |
 | Q13 | Scale org | Structure → Platform → Standards → People | Domain teams, shared platform, hire + upskill |
-| Q14 | Developer wants growth | Data → Growth Conversation → Roadmap Alignment → E2E Ownership | NOT a performance conversation |
-| Q15 | New manager, low morale | Listen 30 → Diagnose 60 → Quick Wins 90 | Sequence: listen, diagnose, act |
-| Q16 | Offshore-onshore | Ownership → Overlap → Transparency → Trust | Ownership-driven, not dependency-driven |
-| Q17 | Strengths | Ownership → Solve → Judgment → Align → Lead | Five strengths |
-| Q18 | Weaknesses | Depth → Structure → Delegate | Three areas actively worked on |
-| Q19 | Handled pressure | Blast Radius → Mitigate → Cadence → Structural Fix | Mitigate first, communicate every 15 min, structural fix |
-| Q20 | Leadership failure | Plan for Ecosystem Readiness, not just Engineering | Data governance is critical path, not assumption |
-| Q21 | Security vs feature | Security First → Data → Phased → Own Comms | Quantify both risks |
-| Q22 | Platform vs delivery | Compliance First → Acknowledge → Path Forward With Date | "Not now, here's when, here's why" |
-| Q23 | Disagree with manager | Data + Alternatives → Commit → Keep Tracking | Data eventually makes the case |
-| Q24 | Conflicting priorities | Shared Context → Transparent Capacity → Facilitate | Engineering facilitates, business decides |
-| Q25 | 6 vs 14 weeks | Validate → Ask Why → Three Options → Never False Commit | A/B/C framework with clear trade-offs |
-| Q26 | Influence leadership | Context → Options → Trade-offs → Data → Align | Enable decisions, not present solutions |
-| Q27 | Influence without authority | Understand Priorities → Business Framing → Alignment | Alignment > escalation |
-| Q28 | Difficult stakeholder | Diagnose → Direct 1:1 → Find Overlap → Escalate With Recommendation | Most resistance = unheard or missing info |
-| Q29 | Modernization resistance | Understand → Educate → Phase → Enable | Phased adoption, pilot first |
+| Q14 | Developer wants growth | Two Sprints of Data → Growth Conversation (NOT performance) → Align to Roadmap → End-to-End Ownership | NOT a performance conversation |
+| Q15 | New manager, low morale | Listen (Days 1–30) → Diagnose (31–60) → Quick Wins (61–90) | Sequence: listen, diagnose, act |
+| Q16 | Offshore-onshore | Ownership Boundaries → Structured Overlap → Execution Transparency → Trust | Ownership-driven, not dependency-driven |
+| Q17 | Strengths | End-to-End Ownership → Structured Problem-Solving → Technical Judgment → Business Alignment → Team Leadership | Five strengths |
+| Q18 | Weaknesses | Technical Depth Bias → Communication Structure → Delegation | Three areas actively worked on |
+| Q19 | Handled pressure | Stay Calm Visibly → Make the Hard Call → Protect the Team | Judgment under uncertainty, absorb the noise, coach not take over |
+| Q20 | Leadership failure | Plan for Ecosystem Readiness, Not Just Engineering Readiness | Data governance is critical path, not assumption |
+| Q21 | Security vs feature | Security First → Quantify Both Risks → Phased Plan → Own the Communication | Quantify both risks |
+| Q22 | Platform vs delivery | Compliance Project Has Priority → Cost-of-Delay Framing → Path Forward With a Specific Date | "Not now, here's when, here's why" |
+| Q23 | Disagree with manager | Data + Alternatives → Align After Decision → Keep Tracking → Let Evidence Build the Case | Data eventually makes the case |
+| Q24 | Conflicting priorities | Shared Context → Transparent Capacity → Facilitate, Don't Referee | Engineering facilitates, business decides |
+| Q25 | 6 vs 14 weeks | Validate Estimate → Ask Why → Three Options → Never False Commit | A/B/C framework with clear trade-offs |
+| Q26 | Influence leadership | Context → Options → Trade-offs → Data → Align | Enable decisions, not push solutions |
+| Q27 | Influence without authority | Understand Their Pressure → Reframe as Sequence → Absorb the Cost | Influence is preparation, not persuasion |
+| Q28 | Difficult stakeholder | Diagnose Resistance → Direct 1:1 → Find Overlap → Escalate Only With Recommendation | Most resistance = unheard or missing info |
+| Q29 | Modernization resistance | Understand Fear → Educate on Business Value → Phased Modernization → Enable Teams | Phased adoption, pilot first |
 | Q30 | Build stakeholder trust | Transparency → Reliability → Collaboration | Bad news early; people support what they build |
-| Q31 | External API failure | Protect → Monitor → Govern → Fallback | Resilience4j + SLAs + degradation |
-| Q32 | Vendors & partners | Expectations → Governance → Standards → Accountability | Vendors extend capability; accountability stays internal |
+| Q31 | External API failure | Protect → Monitor → Govern → Fallback | Resilience4j + SLAs + fallback; blast radius stays contained |
+| Q32 | Vendors & partners | Expectations Upfront → Governance Cadence → Engineering Standards → Accountability Stays Internal | Vendors extend capability; accountability stays internal |
 
 ---
 
