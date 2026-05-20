@@ -53,7 +53,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 >
 > **Prevent** through engineering standards — code reviews, automated testing, security scanning, capacity planning.
 >
-> **Isolate** through resiliency patterns — circuit breakers, bulkheads, timeouts, rate limits. Failures stay contained.
+> **Isolate** Isolate through resiliency patterns — circuit breakers, bulkheads, timeouts, rate limits. The blast radius of any single failure stays small.
 >
 > **Recover** through failover strategies, Kafka replay, idempotent retries, automatic rollback.
 >
@@ -465,7 +465,7 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 >
 > The biggest lesson: **invest in infrastructure-as-code from day one, even if you never plan to migrate.**
 >
-> At Cerner, the **Saffer health product — acquired by Oracle four years ago — didn't have Terraform**. It had per-team scripts and manual provisioning. That meant migration from AWS to OCI took significantly more effort than it should have. Every EMR cluster, every networking rule, every IAM role had to be **discovered, documented, and rebuilt** — rather than re-applied from version-controlled IaC.
+> **Cerner acquired by Oracle four years ago — didn't have Terraform for some products**. It had per-team scripts and manual provisioning. That meant migration from AWS to OCI took significantly more effort than it should have. Every EMR cluster, every networking rule, every IAM role had to be **discovered, documented, and rebuilt** — rather than re-applied from version-controlled IaC.
 >
 > The lesson I now apply: **even if you never plan to migrate, infrastructure-as-code is essential for reproducibility, audit, and disaster recovery.** Migration becomes a near-side-effect benefit.
 >

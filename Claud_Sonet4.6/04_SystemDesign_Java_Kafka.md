@@ -469,7 +469,7 @@ Step 10: PHASES      — Build incrementally
 >
 > When payment fails, the priority is **system stability while maintaining good user experience.**
 >
-> **Fail fast** — do not block the system. Prevents cascading failures.
+> **Fail fast** — for hard failures do not block the system. Prevents cascading failures.
 >
 > **Retry with backoff** — exponential backoff for transient failures.
 >
@@ -531,7 +531,7 @@ Step 10: PHASES      — Build incrementally
 >
 > **Trade-offs**
 >
-> Multi-region adds cost, cross-region consistency complexity, and latency. Justify based on RTO/RPO requirements — **not every system needs multi-region.**
+> Multi-region adds cost, cross-region consistency complexity, and latency. Justify based on RTO(Recovery Time Objective)/RPO(Recovery Point Objective) requirements — **not every system needs multi-region.**
 >
 > For critical systems, also consider: active-active vs active-passive multi-region, RTO/RPO planning, DNS-based or global load balancing for failover, regular failover testing.
 

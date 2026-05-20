@@ -50,7 +50,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q2: 15 heterogeneous sources — how do you ensure integrity?
 
-**Memory Hook:** Canonical Schema → Per-Source Mapping → Quarantine → Reconciliation
+**Memory Hook:** Canonical Schema → Per-Source Mapping Layer → Quarantine Zone → Reconciliation Reports
 
 > **Core Answer**
 >
@@ -68,7 +68,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q3: Healthcare data quality — concrete code examples
 
-**Memory Hook:** Identity → Mapping → EPMI → Temporal
+**Memory Hook:** Patient Identity → Oncology Mapping → EPMI Association → Temporal Consistency
 
 > **Core Answer**
 >
@@ -177,7 +177,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 > - **Bronze** allows replay if business rules change later
 > - **Silver** enforces quality without business logic coupling
 > - **Gold** serves application needs without re-running quality
-> - **Failures at any stage are visible and isolatable**
+> - **A failure at any stage is isolated to that stage** — bronze is untouched if silver transformations break, silver is untouched if gold aggregations break. **The blast radius of any pipeline failure stays small**, and we can diagnose, fix, and re-run only the affected layer instead of reprocessing the entire pipeline.
 >
 > **Example (Cerner readmission prevention pipeline)**
 >
@@ -195,7 +195,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q5: Quality gates per stage — Millennium Oracle to S3 example
 
-**Memory Hook:** Extract → Transform → Load → Post-Load Monitoring
+**Memory Hook:** Extraction Checkpoint → Transformation Checkpoint → Load Checkpoint → Post-Load Monitoring
 
 > **Core Answer**
 >
@@ -241,7 +241,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q6: Statistical anomaly detection — how it catches real issues
 
-**Memory Hook:** Volume Anomaly + Null Drift + Coverage Trend
+**Memory Hook:** Volume Anomaly + Null Rate Drift + Mapping Coverage Trend
 
 > **Core Answer**
 >
@@ -309,7 +309,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q8: KPIs to track for data pipeline health
 
-**Memory Hook:** Volume → Drop Rate → Coverage → Latency
+**Memory Hook:** Volume → Drop Rate → Coverage → Latency → Null Rate Drift
 
 > **Core Answer**
 >
@@ -332,11 +332,11 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q9: How do you debug when a downstream report shows wrong data?
 
-**Memory Hook:** Lineage Trace → Specific Record → Specific Transformation → Root Cause
+**Memory Hook:** Lineage Trace → Trace Through Layers → First Divergence = Failure Point
 
 > **Core Answer**
 >
-> **Use lineage.** Every record carries provenance — which source, which version of the mapping, which pipeline run. If a downstream report shows an anomaly, I can trace back to the exact source record and transformation that produced it.
+> **Use lineage.** Every record carries provenance — which source, which version of the mapping, which pipeline run. If a downstream report shows a wrong value, I can trace back to the exact source record and transformation that produced it.
 >
 > **Investigation flow**
 >
@@ -436,7 +436,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q13: Pipeline observability — beyond standard APM
 
-**Memory Hook:** Logs + Metrics + Traces + Events + Data Quality Metrics
+**Memory Hook:** Logs + Metrics + Traces + Events + Data Quality Metrics as Time Series
 
 > **Core Answer**
 >
@@ -468,7 +468,7 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ## Q14: Reactive vs proactive monitoring shift
 
-**Memory Hook:** Job Failure Alerts (reactive) → Anomaly Detection (proactive)
+**Memory Hook:** Job Failure Alerts (Reactive) → Anomaly Detection (Proactive)
 
 > **Core Answer**
 >
@@ -493,19 +493,19 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 | # | Topic | Memory Hook |
 |---|---|---|
 | Q1 | Data quality framework | Completeness → Validity → Consistency → Accuracy + Governance |
-| Q2 | Heterogeneous sources | Canonical Schema → Per-Source Mapping → Quarantine → Reconciliation |
-| Q3 | Healthcare quality examples | Identity → Mapping → EPMI → Temporal |
-| Q4 | Bronze-Silver-Gold | Raw → Cleaned → Business-Ready |
-| Q5 | Quality gates per stage | Extract → Transform → Load → Post-Load Monitoring |
-| Q6 | Statistical anomaly detection | Volume Anomaly + Null Drift + Coverage Trend |
+| Q2 | Heterogeneous sources | Canonical Schema → Per-Source Mapping Layer → Quarantine Zone → Reconciliation Reports |
+| Q3 | Healthcare quality examples | Patient Identity → Oncology Mapping → EPMI Association → Temporal Consistency |
+| Q4 | Bronze-Silver-Gold | Bronze (Raw) → Silver (Cleaned + Validated) → Gold (Business-Ready) |
+| Q5 | Quality gates per stage | Extraction Checkpoint → Transformation Checkpoint → Load Checkpoint → Post-Load Monitoring |
+| Q6 | Statistical anomaly detection | Volume Anomaly + Null Rate Drift + Mapping Coverage Trend |
 | Q7 | Idempotency | Same Operation, Same Result |
-| Q8 | Pipeline KPIs | Volume → Drop Rate → Coverage → Latency |
-| Q9 | Debug wrong data | Lineage Trace → First Divergence = Failure Point |
-| Q10 | C360 (Optum) | Spark + Kafka + Cassandra + Hive |
-| Q11 | Hadoop Fraud (BoA) | Real-Time + Batch → 20% Reduction, ~$10M Saved |
+| Q8 | Pipeline KPIs | Volume → Drop Rate → Coverage → Latency → Null Rate Drift |
+| Q9 | Debug wrong data | Lineage Trace → Trace Through Layers → First Divergence = Failure Point |
+| Q10 | C360 (Optum) | Spark + Kafka + Cassandra + Hive — Tens of Millions of Records |
+| Q11 | Hadoop Fraud (BoA) | Real-Time Decision + Batch Analytics → 20% Fraud Reduction, ~$10M Saved |
 | Q12 | Real-time vs batch | Latency Requirement Drives the Choice |
-| Q13 | Deep observability | 4 Pillars + Data Quality Time Series |
-| Q14 | Reactive → Proactive | Detect Before Impact, Not After |
+| Q13 | Deep observability | Logs + Metrics + Traces + Events + Data Quality Metrics as Time Series |
+| Q14 | Reactive → Proactive | Job Failure Alerts (Reactive) → Anomaly Detection (Proactive) |
 
 ---
 

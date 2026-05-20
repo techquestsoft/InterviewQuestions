@@ -24,7 +24,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q1: How are you using GenAI currently?
 
-**Memory Hook:** Productivity Layer + Product Layer (POC honestly)
+**Memory Hook:** Engineering Productivity + Product Use Case (POC Stage Honestly)
 
 > **Discipline Rule**
 >
@@ -112,7 +112,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q3: How do you design a GenAI solution?
 
-**Memory Hook:** Input → Process → Output, Layered Architecture
+**Memory Hook:** Input Layer → Processing Layer → Output Layer (Layered Architecture)
 
 > **Core Answer**
 >
@@ -136,7 +136,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q4: RAG vs Direct Query — when to choose each
 
-**Memory Hook:** Structured = Direct | Unstructured = RAG | Multi-step = LangGraph
+**Memory Hook:** Structured = Direct Query | Unstructured = RAG | Multi-Step = LangGraph
 
 > **Discipline Rule**
 >
@@ -178,7 +178,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q6: Hallucination handling
 
-**Memory Hook:** Ground → Constrain → Validate → Human-in-the-Loop
+**Memory Hook:** Grounding via Retrieval → Prompt Constraints → Output Validation → Human-in-the-Loop
 
 > **Core Answer**
 >
@@ -200,7 +200,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q7: How do you build guardrails for GenAI in an engineering team?
 
-**Memory Hook:** Approved Tools → Structured Prompting → CI Gates → Measurement
+**Memory Hook:** Approved Tooling → Structured Prompting Standards → CI Pipeline Gates → Measurement
 
 > **Discipline Rule**
 >
@@ -224,7 +224,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q8: How do you advise an architect to use GenAI for 30% efficiency gain?
 
-**Memory Hook:** First Draft → Critique → Devil's Advocate → Documentation
+**Memory Hook:** First-Draft Architecture → Critique > Creation → Devil's-Advocate Reviews → Documentation Generation
 
 > **Discipline Rule**
 >
@@ -246,7 +246,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q9: GenAI Security
 
-**Memory Hook:** Boundary → Auth → Audit → No PII Leakage → Tenant Isolation
+**Memory Hook:** Cloud Boundary → Role-Based Access → Audit Logging → No PHI in Prompt → Data Isolation
 
 > **Core Answer**
 >
@@ -266,7 +266,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q10: Cost vs Performance trade-off
 
-**Memory Hook:** Cap Per User → Cache → Smaller Models Where Possible
+**Memory Hook:** Usage Budget Cap → Cache Common Queries → Smaller Models Where Possible → Batching → Token Optimization
 
 > **Core Answer**
 >
@@ -282,7 +282,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q11: Scaling GenAI
 
-**Memory Hook:** Rate Limit → Async → Smaller Models → Cost Controls → Cache
+**Memory Hook:** Rate Limiting → Async Processing → Model Optimization → Cost Control → Caching
 
 > **Core Answer**
 >
@@ -350,7 +350,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q14: How do you measure productivity improvement from AI tools?
 
-**Memory Hook:** Velocity is a SIGNAL, Cost-per-Feature is the METRIC
+**Memory Hook:** Team Velocity = Signal / Cost-per-Feature + Time-to-Market = Business Metrics
 
 > **Discipline Rule**
 >
@@ -372,7 +372,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q15: Three KPIs for AI adoption (executive view)
 
-**Memory Hook:** Velocity + Quality Rate + Business Realization
+**Memory Hook:** Feature Delivery Velocity + AI-Assisted Code Quality Rate + Business Case Realization
 
 > **Core Answer**
 >
@@ -390,7 +390,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q16: How do you build a GenAI engineering team?
 
-**Memory Hook:** Platform → Product → Governance → Upskill
+**Memory Hook:** Platform Team → Product Teams → Governance → Upskilling
 
 > **Core Answer**
 >
@@ -419,7 +419,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q17: How would you drive adoption of agent-style tools and workflows for automation?
 
-**Memory Hook:** Identify Toil → Pilot → Measure → Scale → Govern
+**Memory Hook:** Identify High-Toil Workflows → Pilot With One Team → Measure Honestly → Scale With Templates → Govern From Day One
 
 > **Core Answer**
 >
@@ -443,7 +443,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q18: What reliability patterns do you apply to LLM applications?
 
-**Memory Hook:** Timeout → Retry → Fallback → Cache → Cost Control
+**Memory Hook:** Timeouts + Retries → Fallback Strategy → Aggressive Caching → Rate Limiting → Cost Controls
 
 > **Core Answer**
 >
@@ -465,7 +465,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q19: What does responsible AI mean to you in a banking context?
 
-**Memory Hook:** Bias → Explainability → Human Review → Audit → Kill Switch
+**Memory Hook:** Bias Testing → Explainability → Human Review → Audit Logging → Kill Switches
 
 > **Core Answer**
 >
@@ -489,7 +489,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ## Q20: How would you integrate AI into the BBAO account origination journey specifically?
 
-**Memory Hook:** Pain Point → Solution → Architecture → Measure
+**Memory Hook:** Pain Point → Three AI Plays → Architecture → Measure
 
 > **Core Answer**
 >
@@ -523,26 +523,26 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 | # | Topic | Memory Hook |
 |---|---|---|
-| Q1 | Current GenAI usage | Productivity + Product (POC honestly) |
+| Q1 | Current GenAI usage | Engineering Productivity + Product Use Case (POC Stage Honestly) |
 | Q2 | GenAI architecture | Access → Orchestrate → Retrieve → LLM → Guard → Observe |
-| Q3 | Design a GenAI solution | Input → Process → Output, Layered |
-| Q4 | RAG vs Direct Query | Structured = Direct / Unstructured = RAG / Multi-step = LangGraph |
+| Q3 | Design a GenAI solution | Input Layer → Processing Layer → Output Layer (Layered Architecture) |
+| Q4 | RAG vs Direct Query | Structured = Direct Query / Unstructured = RAG / Multi-Step = LangGraph |
 | Q5 | Chunking & Embeddings | Chunk → Embed → Index → Retrieve |
-| Q6 | Hallucination handling | Ground → Constrain → Validate → Human-in-the-Loop |
-| Q7 | Engineering guardrails | Approved Tools → Structured Prompts → CI Gates → Measurement |
-| Q8 | Architect 30% efficiency | First Draft → Critique → Devil's Advocate → Documentation |
-| Q9 | GenAI security | Boundary → Auth → Audit → No PII → Tenant Isolation |
-| Q10 | Cost vs performance | Cap Per User → Cache → Smaller Models |
-| Q11 | Scaling GenAI | Rate Limit → Async → Smaller Models → Cost Controls → Cache |
-| Q12 | Build vs Buy | Buy Model, Build Orchestration + Domain |
+| Q6 | Hallucination handling | Grounding via Retrieval → Prompt Constraints → Output Validation → Human-in-the-Loop |
+| Q7 | Engineering guardrails | Approved Tooling → Structured Prompting Standards → CI Pipeline Gates → Measurement |
+| Q8 | Architect 30% efficiency | First-Draft Architecture → Critique > Creation → Devil's-Advocate Reviews → Documentation Generation |
+| Q9 | GenAI security | Cloud Boundary → Role-Based Access → Audit Logging → No PHI in Prompt → Data Isolation |
+| Q10 | Cost vs performance | Usage Budget Cap → Cache Common Queries → Smaller Models Where Possible → Batching → Token Optimization |
+| Q11 | Scaling GenAI | Rate Limiting → Async Processing → Model Optimization → Cost Control → Caching |
+| Q12 | Build vs Buy | Buy Model, Build Orchestration + Domain Layer |
 | Q13 | Prompt engineering | Role → Task → Context → Constraints → Format |
-| Q14 | Productivity measurement | Velocity = Signal, Cost-per-Feature = Metric |
-| Q15 | AI executive KPIs | Velocity + Quality Rate + Business Realization |
-| Q16 | Building a GenAI team | Platform → Product → Governance → Upskill |
-| Q17 | Agent adoption | Identify Toil → Pilot → Measure → Scale → Govern |
-| Q18 | LLM reliability patterns | Timeout → Retry → Fallback → Cache → Cost Control |
-| Q19 | Responsible AI (banking) | Bias → Explainability → Human Review → Audit → Kill Switch |
-| Q20 | BBAO origination AI | Pain Point → Solution → Architecture → Measure |
+| Q14 | Productivity measurement | Team Velocity = Signal / Cost-per-Feature + Time-to-Market = Business Metrics |
+| Q15 | AI executive KPIs | Feature Delivery Velocity + AI-Assisted Code Quality Rate + Business Case Realization |
+| Q16 | Building a GenAI team | Platform Team → Product Teams → Governance → Upskilling |
+| Q17 | Agent adoption | Identify High-Toil Workflows → Pilot With One Team → Measure Honestly → Scale With Templates → Govern From Day One |
+| Q18 | LLM reliability patterns | Timeouts + Retries → Fallback Strategy → Aggressive Caching → Rate Limiting → Cost Controls |
+| Q19 | Responsible AI (banking) | Bias Testing → Explainability → Human Review → Audit Logging → Kill Switches |
+| Q20 | BBAO origination AI | Pain Point → Three AI Plays → Architecture → Measure |
 
 ---
 
