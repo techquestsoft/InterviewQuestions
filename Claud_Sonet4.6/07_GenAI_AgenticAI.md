@@ -50,7 +50,7 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 >     Captures query, renders structured results
 >     │
 >     ▼
-> API Gateway / BFF (Spring Boot / FastAPI)
+> API Gateway / Backend for Frontend (BFF) (Spring Boot / FastAPI)
 >     Auth, rate limiting, role validation
 >     │
 >     ▼
