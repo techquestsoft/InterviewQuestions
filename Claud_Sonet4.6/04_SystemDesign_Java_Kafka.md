@@ -1083,6 +1083,89 @@ Step 10: PHASES      — Build incrementally
 
 ---
 
+# SECTION G — ANSWER STRUCTURE & OPENING DISCIPLINE
+
+## The universal opening sequence — use on every design question
+
+**Why it exists:** Across Trianz, Ciklum, Availity — the failures were not knowledge failures. They were delivery failures in the first 60 seconds: answering before clarifying, leading with the wrong layer, recovering into structure instead of leading with it.
+
+**Memory Hook:** Playback → Clarify → Frame → then design
+
+```
+MOVE 1 — PLAYBACK (10 sec)
+"Let me play that back: you've got [scale], the goal is [X], the part you want me to focus on is [Y]. Right?"
+
+MOVE 2 — CLARIFY (20 sec) — ask 2–3 that change the design
+"A few quick questions that'll change the design:
+  - Is data pushed to us, or do we pull/poll the source?
+  - Real-time seconds or near-real-time acceptable?
+  - Zero-loss or some tolerance?
+  - Read/write ratio? Peak vs average?"
+
+MOVE 3 — FRAME (15 sec)
+"At a high level I'd design this as [pollers → queue → consumers → failure handling].
+Let me walk the end-to-end shape first, then drill into each layer."
+```
+
+Only after these three moves do you design anything. Junior candidates draw boxes immediately.
+
+## Clarifying questions by question shape — memorise 2–3 per shape
+
+| Shape | Key clarifiers |
+|---|---|
+| **Ingestion / capture all events** | Push or pull? Zero-loss or tolerant? Real-time or near-real-time? Ordering required per-key or global? |
+| **High-throughput / scaling** | Read-heavy or write-heavy? What's the actual bottleneck? p99 SLO? Strong or eventual consistency? |
+| **Greenfield design** | Users and core use case? Scale (QPS, data volume)? Hard constraints? Top NFR — latency, availability, or cost? |
+| **AI / agentic** | Structured, unstructured, or both? Accuracy/safety bar? Single workflow or independent sub-tasks? |
+| **Behavioral / leadership** | "Do you want a cross-team conflict, or a people/performance situation?" — lets you pick your strongest story |
+
+## Claim → Mechanism → Example — the answer structure
+
+Most technically correct answers arrived in the wrong order. Fix: always go Claim first.
+
+1. **One-sentence claim** — what you believe or do
+2. **Mechanism** — how it works / why it works that way
+3. **Your example** — what actually happened in your work
+
+*Example done right:* "I hold 20% of every sprint for tech debt. The mechanism: it is in the sprint plan before feature work is discussed, not negotiated away afterward. At Cerner, this let us complete the Java 17 upgrade in two sprints without disrupting the feature roadmap."
+
+## The anchoring antidote — one breath before answering
+
+| You hear… | Reflex (wrong) | What to ask yourself first |
+|---|---|---|
+| "PR" | code review (your daily context) | Could be ingesting PR data at scale |
+| "your AI work" | describe the whole stack | They want the agent / the hard part |
+| "migration" | your K8s story on autopilot | Could be data migration, cloud, or org change |
+| "scale" | infrastructure | Often operational + team readiness |
+| "tough stakeholder" | general philosophy | They want ONE story with an outcome |
+
+When a familiar keyword lands — **one breath** — silently ask "what's the actual question?" before the first word.
+
+## Pull-based ingestion — worked problem (Trianz question you got)
+
+**Situation:** Ingest ~200 PRs/min (peak 500) from many Git repos. Zero-loss. Near-real-time. No webhooks — you must poll.
+
+**Memory Hook:** poll with cursor → Kafka → partition by repo → consumer group → retry/DLQ → idempotent by PR id
+
+> **Opening (move 1 + 2):**
+> "Playback: many repos, ~200/min average, 500 peak, zero-loss, near-real-time, no push so I must poll. Quick checks: roughly how many repos? Do we have a reliable cursor per repo — a last-seen PR ID or updated-timestamp? Does downstream need per-repo ordering?"
+
+> **Architecture:**
+> - **Poller:** scheduled job per repo. Queries source API for PRs newer than the last-seen cursor. Advance cursor only AFTER Kafka write is acknowledged — not before. Respects rate limits with exponential backoff on 429s.
+> - **Kafka:** each fetched PR published immediately to Kafka topic. Kafka is the zero-loss backbone — events sit durably even if downstream is slow or crashes.
+> - **Partitioning:** partition by repo ID. Preserves per-repo ordering, spreads load across consumer group.
+> - **Consumer group:** N partitions → up to N consumers. Commit offsets after successful processing only.
+> - **Failure:** retry with backoff → DLQ (split transient vs permanent) → alert on consumer lag and DLQ growth.
+> - **Idempotency:** keyed on PR ID — at-least-once delivery cannot create duplicates.
+
+> **No-Kafka alternative (if asked):**
+> "Pollers write to a durable table. A scheduled worker advances status PENDING → DONE → ERROR. Failures go to an error table reprocessed on schedule. Same shape — durable buffer + decoupled processing + retry — just without Kafka's built-in partitioning and replay."
+
+> **DB choice (if pushed):**
+> "At 200–500/min, PostgreSQL handles this trivially. I default to Postgres for operability — lower overhead than a distributed NoSQL cluster. I only reach for NoSQL if volume grows to where horizontal scale genuinely pays for the added ops cost."
+
+---
+
 # SECTION H — CORRECTIONS FROM REAL INTERVIEWS
 
 > These are questions where you got it wrong or incomplete in actual interviews. Memorize the correct answer.

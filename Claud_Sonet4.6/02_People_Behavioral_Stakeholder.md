@@ -781,4 +781,36 @@ This file owns: team management, behavioral STAR stories, leadership failure, st
 
 ---
 
-*File 2 of 8 — People Management, Behavioral & Stakeholder (merged master)*
+---
+
+# SECTION D — AD/DIRECTOR-LEVEL FRAMING
+
+> Use this section for Evernorth AD, Globalogic EM Portfolio, or any Director+ interview. Every answer at this level should ladder to one of three themes: risk and compliance first, value creation over cost arbitrage, or commercial acumen.
+
+## Interview type — what to lead with
+
+| Interview type | Lead with | What they're checking |
+|---|---|---|
+| **Technical screen** (Availity R1, Cubic, Optum OCM) | System design framework → claim → mechanism → example | Do you know the patterns and when to use them |
+| **Management / leadership round** (Availity R2, Deloitte R1, TJX) | Management action first — team, communication, decision. Technical is last third | Do you think like a leader or an architect |
+| **Director / VP / AD level** (Deloitte R2, Evernorth AD, Globalogic R3) | Business outcome, P&L language, organisational scale | Can you operate at strategy level, not just execution |
+| **Competency-based behavioral** (Optum R3, Evernorth AD panel) | STAR, strict. 90 seconds spoken. End with one-sentence reflection | Are the stories real and do they show AD-level judgment |
+
+## How to talk about managing margins (AD-level question)
+
+> "Margin pressure in Hyderabad is real with rising talent costs. I work it on three levers. First, the team pyramid — rebalance so senior engineers are not doing tier-2 support work that junior engineers can own. Second, automation — every repetitive manual step in deployment, reporting, or support gets automated, freeing capacity for value-adding work. Third, retention — every senior exit costs 6 to 9 months of ramp. Keeping good people through meaningful work and real growth protects margin more than any other lever."
+
+## India as a centre of excellence — not a delivery hub
+
+> "The shift I drive is from extension model — US defines architecture, India writes code — to genuine end-to-end ownership. Three moves: build domain depth so engineers understand the clinical or business why, not just the technical what. Shift ownership one capability at a time — one module, full lifecycle, prove it before scaling. Embed India in upstream conversations — product planning and architecture — so the team shapes requirements rather than receives them. At Cerner, my India team owned two products end to end. 120+ customers. $20M+ revenue. That is the model."
+
+## Compensation handling — never give numbers in a screening call
+
+If pressed: *"I am flexible — happy to share once I understand the full role scope and compensation structure."*
+
+Never give a number in a screening call. Wait for the offer/negotiation stage.
+
+---
+
+*File 2 of 8 — People Management, Behavioral & Stakeholder*
+*Updated June 2026 — added Section D: AD-level framing, India CoE answer, interview type approach, compensation handling*
