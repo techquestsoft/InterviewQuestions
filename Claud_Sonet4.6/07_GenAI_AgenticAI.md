@@ -564,4 +564,83 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ---
 
-*File 7 of 8 — GenAI, Agentic AI, AI Adoption & Productivity (merged master)*
+---
+
+# SECTION F — CORRECTIONS AND ADDITIONS FROM REAL INTERVIEWS
+
+## F1: LLM tool invocation — LLMs CAN invoke tools
+
+**Correction source:** Globalogic Round 2 (Fazeq). You said or implied LLMs cannot perform any action. Wrong.
+
+**Memory Hook:** LLM selects the tool and parameters → host application executes → result back to LLM
+
+> **Correct answer:**
+>
+> Modern LLMs support function calling and tool use natively. You define tools as JSON schemas — name, description, parameters. When the LLM receives a user query, it reads the tool descriptions and decides which tool to invoke and with what parameters. The host application executes the tool call, gets the result, passes it back to the LLM, which generates the final response.
+>
+> **The LLM selects the tool and provides parameters. The orchestration layer (LangChain/LangGraph) executes it.** This is the foundation of agentic AI. Never say "LLM cannot invoke tools."
+
+---
+
+## F2: Data containment — lead with infrastructure, not system prompting
+
+**Correction source:** Globalogic Round 2 (Fazeq). You said system prompting contains the data. Fazeq corrected: install the LLM in your own infrastructure.
+
+**Memory Hook:** Infrastructure (strongest) → System Prompting (behavioral) → Contractual (legal)
+
+> **Correct answer — three layers in order of strength:**
+>
+> **First and strongest — infrastructure containment.** Deploy the LLM within your own cloud boundary. Azure: Azure OpenAI Service with private endpoints — traffic never reaches the public OpenAI API. OCI: Oracle GenAI within the OCI boundary. AWS: Bedrock with VPC endpoints. When the model runs inside your infrastructure, data physically cannot leave. This is the only truly reliable technical containment.
+>
+> **Second — system prompting and grounding.** Instruct the model to answer only from retrieved context, not general knowledge. This is a behavioral control — the model follows the instruction but it is not a technical guarantee. A model can sometimes deviate.
+>
+> **Third — contractual controls.** Vendor agreements that your data won't be used for model training. Legal, not technical.
+>
+> In a HIPAA environment, all three layers are required. Infrastructure containment is non-negotiable — you cannot rely on system prompting alone.
+
+---
+
+## F3: AI Delivery Lifecycle (AI DLC)
+
+**Source:** Globalogic Round 3 prep. Biju explicitly said to prepare this. It extends traditional SDLC with AI-specific phases.
+
+**Memory Hook:** Plan → Data → Model → Integrate → Govern → Operate → Improve
+
+> **Core Answer**
+>
+> Traditional SDLC covers requirements through deployment. AI DLC extends that with phases specific to model development and governance.
+>
+> **Plan** — define the AI use case, success metrics, data requirements, build-vs-buy decision. Most teams skip this. That's why AI projects fail to deliver value.
+>
+> **Data** — discovery, quality assessment, labeling, pipeline setup. In healthcare: de-identification, consent, HIPAA compliance. Data phase is typically 40% of total effort.
+>
+> **Model** — select or fine-tune the model, validate, measure accuracy against baseline. For most enterprise use cases: select a foundation model and do RAG or fine-tuning, not train from scratch.
+>
+> **Integrate** — embed the model into the product. API design, tool configuration for agentic flows, UI integration, latency testing, safety testing.
+>
+> **Govern** — security review, compliance review, bias testing, explainability, audit logging, human-in-the-loop design. In regulated industries this is a gate, not optional.
+>
+> **Operate** — deploy, monitor model performance, track cost per query, alert on drift or accuracy degradation, manage LLM provider SLAs.
+>
+> **Improve** — feedback loops from production usage, retraining triggers, prompt optimization, model upgrades. AI systems degrade over time without active maintenance — this is model drift.
+
+---
+
+## F4: Shadow mode — AI validation before go-live
+
+**Source:** Globalogic Round 2 (Fazeq). Use this term when describing AI rollout strategy.
+
+**Memory Hook:** AI runs in parallel → outputs logged internally → nothing affects real users → validate before cutover
+
+> **Correct answer:**
+>
+> Shadow mode means running the AI model in parallel with the existing system. AI generates outputs, those outputs are logged internally and compared against the existing system's outputs or against ground truth. Nothing reaches real users until accuracy is validated.
+>
+> This is the only responsible way to introduce clinical AI into a production environment. "Trust but verify" before you flip the switch.
+>
+> Shadow mode is how we validated the V3 ML model accuracy improvement before replacing V1/V2 as the primary scoring engine.
+
+---
+
+*File 7 of 8 — GenAI, Agentic AI, AI Adoption & Productivity*
+*Updated June 2026 — added Section F: LLM tool invocation correction, data containment correction (Globalogic), AI DLC framework, shadow mode (Globalogic preparation)*

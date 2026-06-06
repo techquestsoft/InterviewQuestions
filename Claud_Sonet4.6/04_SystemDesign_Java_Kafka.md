@@ -1081,4 +1081,90 @@ Step 10: PHASES      — Build incrementally
 
 ---
 
-*File 4 of 8 — System Design, Architecture, Java/Spring Boot & Kafka (merged master)*
+---
+
+# SECTION H — CORRECTIONS FROM REAL INTERVIEWS
+
+> These are questions where you got it wrong or incomplete in actual interviews. Memorize the correct answer.
+
+## H1: Rate limiter across multiple pods — the distributed counter
+
+**Correction source:** Optum OCM Round 1 (Ashok/Paneer). You said "static variable" — wrong for multi-pod Kubernetes.
+
+**Memory Hook:** Static variable fails across pods → Redis atomic increment is correct
+
+> **Correct Answer**
+>
+> The constraint is: enforce a per-consumer rate limit across a multi-pod Kubernetes deployment. A static variable in the application fails immediately — each pod has its own memory, so a static counter only tracks requests hitting that pod, not the global rate.
+>
+> The correct solution: **Redis atomic counter with a sliding window or token bucket.**
+>
+> An interceptor runs before the controller. It reads the consumer ID from the request header, then does an atomic increment (`INCR`) against a Redis key scoped to that consumer and a time window. If the count is within the limit, the request proceeds. If it exceeds it, return 429 with a Retry-After header. Redis provides atomic operations and TTL-based window reset automatically.
+>
+> **Fixed-window implementation:**
+> ```
+> Key: rl:{consumer_id}:{epoch_second}
+> INCR key, set TTL = 1 second
+> If value > limit: return 429
+> ```
+>
+> **Trade-off:** Fixed window allows bursts at window boundaries. Token bucket is smoother but more complex. Fixed window is the right starting point unless boundary bursts are a proven problem.
+
+---
+
+## H2: Microservices consolidation — the consumer contract trap
+
+**Correction source:** Optum OCM Round 1. You said "why should there be any change for the customer?" as a dismissal. The interviewer pounced because it sounded like you were ignoring the constraint.
+
+**Memory Hook:** Consumer contract is sacred → consolidation happens behind it, not visible to it
+
+> **Correct Answer**
+>
+> My first principle is that **the consumer contract is sacred — URLs, request, and response stay exactly as they are**. The consolidation happens entirely behind that boundary.
+>
+> Ten existing endpoints stay published. Internally, they route to two services: one for reads, one for writes. The consumer sees ten unchanged endpoints; we maintain two. Both goals are met simultaneously.
+>
+> If they ask "how do you keep ten URLs alive but run only two services?" — the published endpoints become thin routing entries at the gateway or ingress layer mapping the ten legacy paths to the two consolidated services. No business logic at the old paths; they are just stable addresses.
+>
+> **Key line:** *"I never make a customer absorb the cost of my internal refactor."*
+
+---
+
+## H3: API schema-break — additive vs breaking
+
+**Correction source:** Optum OCM Round 1. Correct but tangled delivery. **Claim first, mechanism second.**
+
+**Memory Hook:** Additive = safe → Rename/Type change = breaking
+
+> **Correct Answer**
+>
+> It depends on whether the change is additive or breaking.
+>
+> **Additive changes are safe.** If the producer adds a new field, our DTO simply does not bind it — we deserialize only the fields we declare, so unknown fields are ignored and nothing downstream sees them.
+>
+> **Breaking changes are renames or type changes to a field we already consume.** If `firstName` becomes `fname`, that breaks deserialization into our DTO. Anything in our business or persistence layer that relied on that field fails.
+>
+> Rule: additive is backward-compatible and safe to absorb silently. Any rename or type change must go through a new version with a migration path.
+>
+> **Proactive protection:** configure the deserializer to ignore unknown properties so additive changes can never break you by surprise. Pin to a specific version of the producer's schema contract. Contract tests in CI that fail the moment a field you depend on changes shape.
+
+---
+
+## H4: API versioning philosophy — cap at 2-3 versions
+
+**Correction source:** Optum OCM Round 1 — you correctly identified the problem with 16 versions but didn't state a clean principle.
+
+**Memory Hook:** Cap at 2-3 → deprecation cycle → cost of N versions is real
+
+> **Correct Answer**
+>
+> I would cap at 2-3 active versions maximum. Beyond that, the maintenance burden — testing matrix, compatibility guarantees, consumer confusion, deployment complexity — grows faster than the value of keeping old versions alive.
+>
+> The 16-version situation at Optum survived because changes were purely additive — new fields, never renamed fields. That is the right discipline, but it doesn't justify keeping all 16 alive. I would apply a 6-month deprecation cycle per version with mandatory consumer migration support.
+>
+> **Infrastructure cost of N versions:** separate deployment targets, regression test matrix for each version, documentation for each. When a version has zero active consumers, retire it immediately. Monitor consumer counts per version.
+
+---
+
+*File 4 of 8 — System Design, Architecture, Java/Spring Boot & Kafka*
+*Updated June 2026 — added Section H: corrections from Optum OCM Round 1 (rate limiter, consumer contract, schema-break, versioning)*

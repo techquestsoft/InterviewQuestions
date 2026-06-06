@@ -247,4 +247,17 @@ This answer is stronger than fake fluency. Hiring managers respect calibrated se
 
 ---
 
+---
+
+## Q11: What is your React experience? (Direct probe)
+
+**Correction source:** Optum Round 3 (Srikanth). Be precise about depth. Don't overclaim or underclaim.
+
+> "My frontend exposure has been at the integration level rather than deep component development. In our Care Management and Readmission Prevention products, we had React-based UI components built as pluggable modules inside the Cerner MPages framework — they lived inside a clinical workstation shell. My involvement was making sure those components integrated cleanly with our backend APIs and that the data contracts were right.
+>
+> Direct enhancements to the React components themselves were limited, so I won't claim deep React expertise. What I do bring is a clear understanding of the frontend-backend contract, API design for UI consumption, and how to work effectively with frontend engineers to define what they need. I know enough to review their designs, challenge their decisions, and ensure quality — but the engineers on my team are the ones writing production React daily."
+
+---
+
 *File 5 of 8 — UI Development (React / Angular)*
+*Updated June 2026 — added frontend depth framing from Optum R3*

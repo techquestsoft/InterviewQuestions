@@ -939,4 +939,75 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 
 ---
 
-*File 6 of 8 — Production Reliability, Cloud, DevSecOps, Observability & Databases (merged master)*
+---
+
+# SECTION H — CORRECTIONS AND ADDITIONS FROM REAL INTERVIEWS
+
+## H1: S3 security — all 6 layers (VPC endpoint was missing)
+
+**Correction source:** Globalogic Round 2 (Fazeq). You listed only 5 layers. VPC endpoint was missing. Fazeq pushed you for it.
+
+**Memory Hook:** Encrypt → Encrypt-Transit → RBAC → VPC Endpoint → Masking/Anonymization → Retention
+
+> **Complete 6-layer answer for HIPAA:**
+>
+> **1. Encryption at rest.** AES-256 server-side encryption (SSE-S3 or SSE-KMS).
+>
+> **2. Encryption in transit.** TLS for all data movement. No plain HTTP to S3.
+>
+> **3. RBAC and ABAC via IAM policies.** Only authorized system accounts per tenant access their specific bucket or prefix. No cross-tenant access.
+>
+> **4. VPC endpoint for S3.** S3 traffic stays within the VPC — never traverses the public internet even within AWS. This is the correct network-level control. Not subnets — subnets don't prevent traffic from hitting S3 public endpoints. VPC endpoint does.
+>
+> **5. Data masking and anonymization before cross-team sharing.** PII fields like SSN are masked. PHI anonymized before sharing with AI or analytics teams. HIPAA Safe Harbor de-identification standard.
+>
+> **6. Retention policy with automated deletion.** Data retained for contract period, automatically deleted by batch job after expiry. Audit logging of every deletion event.
+
+---
+
+## H2: Masking vs Anonymization — be precise
+
+**Correction source:** Globalogic Round 2 (Fazeq). You used both terms interchangeably. They are not the same.
+
+**Memory Hook:** Masking = reversible symbols → Anonymization = irreversible → HIPAA requires anonymization
+
+> **Correct distinction:**
+>
+> **Masking** replaces sensitive values with symbols — SSN becomes `***-**-1234` — structure preserved, potentially reversible. Used for internal debugging where reversibility is needed.
+>
+> **Anonymization** is irreversible — the individual cannot be re-identified even with other data. HIPAA Safe Harbor de-identification standard requires anonymization. Used for external vendor sharing, AI team data, analytics.
+>
+> **Rule:** masking for internal use where you need the original back. Anonymization for anything leaving the clinical data perimeter.
+
+---
+
+## H3: Java 11 vs 17 vs 21 quick reference
+
+**Source:** Optum Round 3 prep. Have this ready for any Java-stack role.
+
+| Version | Status | Key additions | Migration concern |
+|---------|--------|--------------|-------------------|
+| **Java 11** | LTS, EOL for free Oracle support | `var` keyword, HTTP Client API | Most teams were here — stable |
+| **Java 17** | LTS, current enterprise standard | Sealed classes, Records, Pattern matching instanceof, Text blocks | Strong encapsulation of JDK internals breaks some libraries |
+| **Java 21** | LTS, forward-looking | **Virtual Threads** (Project Loom) — millions of lightweight JVM-managed threads | Main reason teams are looking at 21 for high-I/O services |
+
+**Your migration story:**
+> "We were on Java 11 and planned a phased move to Java 17. The main work was identifying libraries using internal JDK APIs that Java 17 restricts — we used `jdeps` to scan before touching code. We also used the migration as an opportunity to refactor key DTOs into Records and clean up boilerplate. I scoped and estimated it separately at PI planning — not mixed into feature work, because mixing migrations with features makes rollback very hard. Java 21 is on the radar specifically for Virtual Threads, which would benefit our high-I/O patient data processing."
+
+---
+
+## H4: Rolling update — clean definition
+
+**Correction source:** Cubic interview. You stumbled on this. "Rolling update — pardon, maybe... I heard rolling update, I am thinking rolling." This is a basic deployment strategy.
+
+**Memory Hook:** Rolling = replace pods gradually, no downtime
+
+> **Correct answer:**
+> Rolling update replaces pods gradually — for example, 2 at a time out of 10. Each new pod is health-checked before the next pair is replaced. **Zero downtime.** Rollback is slower than blue-green — you roll forward or backward pod by pod.
+>
+> When to use: routine releases with low risk, where you don't need instant rollback capability. Blue-green is for major releases where instant rollback is required.
+
+---
+
+*File 6 of 8 — Production Reliability, Cloud, DevSecOps, Observability & Databases*
+*Updated June 2026 — added Section H: S3 6-layer security, masking vs anonymization (Globalogic corrections), Java versions reference, rolling update definition (Cubic correction)*

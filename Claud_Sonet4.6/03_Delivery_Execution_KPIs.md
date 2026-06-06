@@ -670,4 +670,29 @@ The combination is harder to game and more informative. **A senior engineering l
 
 ---
 
-*File 3 of 8 — Delivery, Execution & KPIs (merged master)*
+---
+
+## Q24: How do you manage a platform where the deadline is regulatory and cannot slip?
+
+**Memory Hook:** Fixed Deadline → Steady-State Tracking → Alert at 70% Window → Escalation Protocol → Crisis Parallel Tracks
+
+> **Core Answer**
+>
+> Regulatory deadlines are different from sprint deadlines. You cannot negotiate a two-day extension with the regulator. My approach operates in three modes: steady-state, early-warning, and crisis.
+>
+> **Steady-State.**
+> Pipeline SLAs expressed as countdown to regulatory cutoff — not just job duration. If a regulatory report is due at T+0, I track all upstream pipelines against their must-complete-by times to keep the chain unbroken. Daily reconciliation reports showing source vs processed counts. Any variance logged and investigated before the next pipeline run — never carry forward unresolved variance.
+>
+> **Early Warning.**
+> Alert at **70% of the SLA window remaining** — not at breach. If a report is due at 8 AM and the pipeline has not completed by 5 AM, escalate immediately — don't wait for 7:55 AM. This gives time to activate contingencies, not just sound an alarm. Defined escalation tree per report: pipeline engineer → data platform lead → EM → business stakeholder. Each level has a response time SLA.
+>
+> **Crisis.**
+> Incident commander model — one person owns resolution, not a committee. Parallel tracks: technical team diagnoses and resolves; I communicate status to stakeholders on 15-minute cadence. For regulatory decisions — if a report cannot be filed accurately, the **business** makes the call, not engineering. Engineering's job is to provide accurate data on pipeline status and options.
+>
+> **Audit trail.**
+> Complete data lineage from source through every transformation to the regulatory report. Any auditor can trace any number in any report back to the source record. Gold-layer snapshot locking at cutoff — subsequent corrections apply to a corrections layer, not the locked snapshot.
+
+---
+
+*File 3 of 8 — Delivery, Execution & KPIs*
+*Updated June 2026 — added regulatory deadline management (Wells Fargo framing), 70% SLA window alerting*

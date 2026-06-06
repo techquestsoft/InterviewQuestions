@@ -542,4 +542,77 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ---
 
-*File 8 of 8 — Data Quality, ETL Pipelines & Deep Observability (merged master)*
+---
+
+# SECTION G — APACHE ICEBERG & REGULATORY DATA PLATFORMS
+
+> **Source:** Wells Fargo JD — explicitly listed as desired qualification. Not covered in any prior file.
+
+## G1: Apache Iceberg — what it is and why it matters for Risk/Finance
+
+**Memory Hook:** Table Format → ACID on Data Lakes → Time Travel → Schema Evolution → Partition Evolution
+
+> **Core Answer — What It Is**
+>
+> Apache Iceberg is an open table format for large-scale analytic datasets on data lakes (S3, HDFS, OCI Object Storage). It solves three problems that traditional Hive tables could not:
+> - ACID transactions on data lakes
+> - Reliable schema evolution without breaking downstream consumers
+> - Time-travel queries for historical data access
+
+> **Capability table for Risk/Finance:**
+>
+> | Capability | Why It Matters |
+> |---|---|
+> | **ACID Transactions** | Multiple writers update safely — critical when multiple Risk pipelines land data concurrently |
+> | **Time Travel** | Query data as-of any point in time — essential for regulatory reporting ("show me risk exposure as of quarter-end") |
+> | **Schema Evolution** | Add columns without breaking existing readers — finance schemas evolve with regulatory requirements |
+> | **Partition Evolution** | Change partitioning strategy without rewriting all data — critical for large historical datasets |
+> | **Snapshot Isolation** | Readers see consistent snapshots even while writers are updating — no dirty reads |
+> | **Incremental Processing** | Efficiently process only changed data since last checkpoint |
+
+> **Iceberg vs Traditional Hive Tables:**
+>
+> Hive: partition-based, no ACID (append-mostly), schema changes are dangerous, no time travel.
+> Iceberg: file-level tracking via manifest files, full ACID, safe schema/partition evolution, built-in time travel via snapshots.
+
+> **How I would use Iceberg for a Risk/Finance platform:**
+>
+> **Bronze layer:** append-only Iceberg tables — immutable, time-travel capable for audit.
+> **Silver layer:** Iceberg with merge-on-read for corrections and reconciliation updates.
+> **Gold layer (reporting):** Iceberg partitioned by reporting date. Snapshot isolation ensures quarter-end data is frozen even if post-period corrections arrive.
+> **Regulatory point-in-time:** time travel query reconstructs exactly what the data looked like at regulatory cutoff — no manual archiving needed.
+
+> **If asked: Iceberg competes with Delta Lake (Databricks) and Apache Hudi.** Wells Fargo listed Iceberg specifically. Don't pivot to Delta Lake.
+
+---
+
+## G2: Late-arriving data corrections in Iceberg
+
+**Memory Hook:** Merge-on-Read → Corrections Table → Snapshot Locked for Reporting Date
+
+> **Answer:**
+>
+> Iceberg's merge-on-read pattern — write corrections as new files, merge at read time. For financial reconciliation, I maintain a corrections table alongside the base table, with a reconciliation job that produces the official view. Correction records are immutable once written — complete audit trail. The Iceberg snapshot for any reporting date is locked and queryable even after corrections are applied to subsequent snapshots.
+
+---
+
+## G3: Regulatory data platform — reconciliation and audit trail
+
+**Memory Hook:** Count Reconciliation → Immutable Bronze → Data Lineage → Snapshot Locking → Sign-Off Gate
+
+> **How do you ensure data is reconciled and auditable for regulatory purposes?**
+>
+> **Count reconciliation at every stage** — source count, landing count, validation count, output count. Any break triggers investigation before processing continues.
+>
+> **Immutable raw (bronze) layer** — source data is never overwritten, only appended. Complete audit history from day one.
+>
+> **Data lineage metadata** — every record carries source system ID, ingestion timestamp, pipeline version, transformation rules applied.
+>
+> **Gold layer snapshot locking** — regulatory report datasets locked at cutoff. Subsequent corrections applied to a corrections layer, not the locked snapshot. Auditors retrieve exactly what was submitted.
+>
+> **Reconciliation sign-off gate** — before data is used in any regulatory report, a reconciliation report must be generated and signed off by the data steward. No automated bypass of this gate.
+
+---
+
+*File 8 of 8 — Data Quality, ETL Pipelines & Deep Observability*
+*Updated June 2026 — added Section G: Apache Iceberg (Wells Fargo desired qualification), late-arriving corrections, regulatory data platform framing*
