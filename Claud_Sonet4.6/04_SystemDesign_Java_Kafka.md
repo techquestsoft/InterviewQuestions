@@ -217,24 +217,6 @@ Step 10: PHASES      — Build incrementally
 
 ---
 
-## Q9: Multi-layer scaling approach
-
-**Memory Hook:** Edge → API Gateway → Compute → Data → Async
-
-> **Core Answer**
->
-> ```
-> Edge          → CDN for static, caching at edge
-> API Gateway   → Routing, throttling, security
-> Compute       → Kubernetes HPA (Horizontal Pod Autoscaler), cloud auto-scaling
-> Data          → Partitioning, indexing, sharding for horizontal scale
-> Async         → Kafka / SQS for decoupling and spike absorption
-> ```
->
-> Each layer is independently scalable. The discipline is **scaling the constraint, not everything**. If the bottleneck is the data layer, throwing more pods at the API layer wastes money without helping latency.
-
----
-
 ## Q10: Scale from 120 to 1200 customers
 
 **Memory Hook:** Diagnose → Quick Wins → Horizontal Scaling → Data Layer Scaling → Operational Readiness → Team Scaling → Incremental Rollout
@@ -270,32 +252,6 @@ Step 10: PHASES      — Build incrementally
 > For the DB layer, connection pool exhaustion was next — we tuned **HikariCP** and added **Redis cache for reference data, cutting Oracle load by 40%**.
 >
 > **AKS HPA on API pods** scaled them automatically during peak alert windows. Each step was load-tested before the next customer cohort onboarded.
-
----
-
-## Q11: Design a high-throughput system
-
-**Memory Hook:** Edge → Application → Data → Resilience
-
-> **Core Answer**
->
-> Remove bottlenecks across all layers.
->
-> **Edge.** CDN and API gateway for traffic distribution, caching, rate limiting.
->
-> **Application.** Stateless services scale horizontally. Async processing for heavy workloads — user requests not blocked.
->
-> **Data.** Critical for throughput. Oracle: partitioning, indexing, query optimization. OpenSearch: time-based partitioning, appropriate shard counts for parallel execution.
->
-> **Resilience.** Circuit breakers, retries with backoff, observability to detect and recover from failures.
->
-> **Trade-offs**
->
-> Aggressive caching improves throughput but introduces stale data. Heavy sharding improves performance but increases operational overhead.
->
-> **Example**
->
-> Improved throughput at Cerner by introducing **Redis caching, moving heavy workflows to Kafka async, and optimizing OpenSearch shard configuration**. Significantly improved capacity and reduced response times under load.
 
 ---
 
@@ -1249,5 +1205,27 @@ When a familiar keyword lands — **one breath** — silently ask "what's the ac
 
 ---
 
+## H5: Why Kafka and not batch for incremental loading? — the real answer
+
+**Correction source:** Wells Fargo Round 2. Answer was circular — "because of incremental processing using streaming" is not a reason, it is a restatement of the question. The interviewer explicitly said "without Kafka also we can do that right if it is only incremental load — if you can do it, do it."
+
+**Memory Hook:** Real-time freshness → Fan-out to multiple consumers → Replay on failure → Decoupling producer and consumer speeds
+
+> **The correct answer — four reasons why Kafka over batch:**
+>
+> **1. Data freshness requirement.** Batch has a latency floor — minimum 5 to 15 minutes even with micro-batch, often hours for traditional batch. If the downstream system needs data within seconds or minutes of a source event, batch cannot meet that SLA. Kafka delivers events in near-real-time as they are produced.
+>
+> **2. Multiple independent consumers.** The same source event often needs to trigger several downstream systems simultaneously — a risk score update might need to feed a reporting database, a notification service, and an audit log at the same time. With batch, you either run one job that fans out (tight coupling) or run multiple jobs extracting the same data (expensive and inconsistent). With Kafka, each consumer reads from the same topic independently at its own pace. The producer has no knowledge of how many consumers exist.
+>
+> **3. Replay on failure.** If a downstream consumer fails mid-processing, Kafka allows replay from the last committed offset. With batch, a failure typically means re-extracting from the source database, which puts load on the source and may not be possible if the source does not retain change history. Kafka retains the event log for the configured retention period — replay is a configuration choice, not an extraction problem.
+>
+> **4. Decoupled throughput.** The producer publishes at its own speed. The consumer processes at its own speed. If the consumer is slower, messages queue in Kafka without back-pressuring the producer. With direct batch extraction, producer and consumer are coupled — a slow consumer blocks or delays the producer.
+>
+> **When batch IS the right answer:** low data volume, latency measured in hours not minutes, single consumer, source system cannot support continuous extraction, or the overhead of Kafka infrastructure is not justified. Batch is not wrong — it is the right tool when the requirements match.
+
+> **One sentence close:** *"Batch solves the same incremental problem but at a latency, coupling, and replay cost that Kafka eliminates — which is why we chose Kafka when freshness and fan-out were requirements."*
+
+---
+
 *File 4 of 8 — System Design, Architecture, Java/Spring Boot & Kafka*
-*Updated June 2026 — added Section H: corrections from Optum OCM Round 1 (rate limiter, consumer contract, schema-break, versioning)*
+*Updated June 2026 — added H5 (Kafka vs batch — the real four reasons) from Wells Fargo Round 2*

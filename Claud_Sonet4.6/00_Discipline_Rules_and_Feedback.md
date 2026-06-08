@@ -246,6 +246,36 @@ At AD or Director level, every answer should ladder to one of these three:
 
 > "The shift I drive is from extension model — US defines architecture, India writes code — to genuine end-to-end ownership. Three moves: build domain depth so engineers understand the clinical or business why, not just the technical what. Shift ownership one capability at a time — one module, full lifecycle, prove it before scaling. Embed India in upstream conversations — product planning and architecture — so the team shapes requirements rather than receives them. At Cerner, my India team owned two products end to end. 120-plus customers. $20M+ revenue. That is the model."
 
+## PART 7 — RULES FROM WELLS FARGO ROUNDS
+
+### Rule 8: Never push back on an interviewer's direction mid-answer
+
+If an interviewer redirects you mid-answer — "why don't you start from the other end" or "let's focus on X" — **follow their lead immediately**. Do not say "let me finish" or "I think it will cover all that stuff."
+
+The right response: briefly acknowledge and pivot. *"Sure — starting from the data layer..."* Same content, their order.
+
+Pushing back sounds like you are not listening. Following their lead shows you can adapt in real time. The interviewer's direction is always more important than your prepared sequence.
+
+### Rule 9: Never close a round with "No, I don't have anything"
+
+When asked "any questions for me?" — always have 2 questions ready. No exceptions, regardless of how the round went.
+
+Prepare 2 role-specific questions before every interview. If you have genuinely learned everything from the conversation, ask about the team:
+- *"What does success look like in the first 90 days from your team's perspective?"*
+- *"What is the biggest technical challenge the team is working through right now?"*
+
+No questions = no curiosity = no interest. At senior level, it will always be noticed.
+
+### Rule 10: Never say "there is no way to calculate it" for a measurement question
+
+If asked how you measure something — AI productivity, code quality, team performance — there is always a measurement approach. Even if it is manual, even if it is imperfect.
+
+**Never say:** "There is no way of calculating that one. That is manual work."
+
+**Say instead:** "We measure it manually at the sprint level through [specific metric]. It is not automated yet — that is an honest gap — but the data is visible at retrospective."
+
+Saying it cannot be measured signals you have not thought about it. Acknowledging it is manual but tracked signals maturity.
+
 ---
 
 *Last updated: June 2026 | Read before every interview*

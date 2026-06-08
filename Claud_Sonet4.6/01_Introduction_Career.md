@@ -375,7 +375,35 @@ When asked *"As a manager, what do you do when X happens?"* — lead with: incid
 
 Sheshagiri at Availity said directly: *"I am asking as a manager."* — after you had already answered with Saga pattern and retries. Even after his correction, you continued mixing both. Ananth at Availity redirected you three times on the 10x scale question for the same reason.
 
+## Q11: Rate yourself on data engineering vs AI on a scale of 1 to 10
+
+**Memory Hook:** Honest anchoring → justify each number → show trajectory
+
+> "Data engineering I would say 7 to 8. I have designed and operated big data platforms at scale — Hadoop, Spark, Kafka, Hive, OpenSearch, bronze-silver-gold pipelines, data quality frameworks. Done this in banking and healthcare at production scale across hundreds of clients. The 7 to 8 reflects that I am strong in architecture and delivery — and I am always building depth in newer patterns like Apache Iceberg and modern streaming.
+>
+> AI I would say 5 to 6. I have hands-on experience with AI-assisted engineering productivity tools, designed a conversational AI use case using LLMs, RAG, tool integration via JSON schema, and system prompting guardrails. The 5 to 6 reflects that my AI experience is at the POC and design stage, not a production system with years of operational history. That is an honest position."
+
+> **Rule:** Never inflate either number. Interviewers know what 8 or 9 implies and will probe accordingly. A grounded 7 with specific justification is more credible than a claimed 9 with vague evidence.
+
+---
+
+## Q12: Which LLMs do you have hands-on experience with vs knowledge of?
+
+**Memory Hook:** Honest split → hands-on first → knowledge second → willingness to learn
+
+> "Hands-on: Claude — that is the underlying model in Oracle Code Assist which my team has used for 15 months, and it is what I used in my personal AI learning outside of work. I have also worked with Claude via AWS Bedrock in a POC context. So Claude is the model I know most deeply in terms of prompting behaviour, tool invocation, and system prompt design.
+>
+> Knowledge of: OpenAI GPT models — I understand the API, the function calling syntax, the token economics, and the architectural patterns. I have not used it in a production or POC context within an org, but I have experimented with the API personally.
+>
+> Gemini — I have read the architecture and understand where it fits, but no direct usage. Honest gap.
+>
+> Open source models like Llama and Mistral — I understand when and why to use them (data residency, cost at volume, fine-tuning on proprietary data) but no direct deployment experience.
+>
+> The patterns for orchestration, tool invocation, system prompting, and RAG are largely model-agnostic once you understand them from one model. Switching from Claude to GPT-4 or Gemini is a configuration and API change, not a conceptual change. I can be productive with a new model quickly."
+
+> **Rule:** Do not claim hands-on experience with a model you have only read about. Interviewers at technical companies verify. The distinction between "I have used it" and "I have knowledge of it" is credibility-preserving, not credibility-damaging.
+
 ---
 
 *File 1 of 8 — Introduction, Career Story & Day-to-Day*
-*Updated June 2026 — added lessons from Availity, Deloitte, Cubic, Wells Fargo, Globalogic feedback*
+*Updated June 2026 — added Q11 (self-rating data vs AI), Q12 (LLM experience honest split) from Wells Fargo Round 2*

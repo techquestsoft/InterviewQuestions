@@ -104,26 +104,6 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ---
 
-## Q3: How do you design a GenAI solution?
-
-**Memory Hook:** Input Layer → Processing Layer → Output Layer (Layered Architecture)
-
-> **Core Answer**
->
-> Layered architecture with clear separation of concerns.
->
-> **Input layer** — clean and validate user input. **Strip PII before it reaches the LLM** where possible.
->
-> **Processing layer** — orchestration, intent recognition, tool selection. This is where LangChain or LangGraph lives.
->
-> **Output layer** — response generation, validation, formatting for UI.
->
-> **Combine RAG + direct query based on data type** — structured data goes through direct query (OpenSearch native vector search), unstructured documents go through RAG (Vector DB).
->
-> Multi-tenant governance, cost optimization through caching and model selection, and observability for cost-per-request and adoption.
-
----
-
 # SECTION B — RAG, RETRIEVAL & DECISION MAKING
 
 ---
@@ -256,39 +236,23 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ---
 
-## Q10: Cost vs Performance trade-off
+## Q10: Cost vs Performance — and scaling GenAI
 
-**Memory Hook:** Usage Budget Cap → Cache Common Queries → Smaller Models Where Possible → Batching → Token Optimization
-
-> **Core Answer**
->
-> Every organization needs a usage budget. **Oracle caps at $100/month per engineer for Code Assist.** Beyond that, optimize:
->
-> - **Caching common queries** — same intent across users hits cache, not the LLM
-> - **Smaller models where precision is not critical** — GPT-4 for complex reasoning, smaller models for routine tasks
-> - **Batching where latency is not critical** — async processing for non-real-time workflows
-> - **Token optimization** — concise prompts, structured output formats, no unnecessary context
-> - **Model abstraction layer** — easy to swap models as cost/capability changes
-
----
-
-## Q11: Scaling GenAI
-
-**Memory Hook:** Rate Limiting → Async Processing → Model Optimization → Cost Control → Caching
+**Memory Hook:** Usage Budget Cap → Cache Common Queries → Smaller Models Where Possible → Batching → Rate Limiting → Token Optimization
 
 > **Core Answer**
 >
-> Standard scaling principles plus AI-specific concerns.
+> Every organisation needs a usage budget. **Oracle caps at $100/month per engineer for Code Assist.** Beyond that, four levers:
 >
-> **Rate limiting.** Per user, per tenant, per LLM provider. **Prevents one tenant from exhausting shared LLM quota.**
+> **Caching common queries** — same intent across users hits cache, not the LLM. Significant cost saving for repeated patterns.
 >
-> **Async processing.** For non-real-time use cases, queue requests, process in batch. Reduces peak load.
+> **Model selection by task** — GPT-4 for complex reasoning, smaller models for routine tasks. Match model cost to task complexity.
 >
-> **Model optimization.** Use smaller, faster models for routine tasks. Reserve large models for complex reasoning.
+> **Rate limiting and async processing** — per user, per tenant, per LLM provider to prevent quota exhaustion. For non-real-time use cases, queue requests and process in batch to reduce peak load.
 >
-> **Cost control.** Per-user budgets, per-tenant quotas. **Alerts when usage exceeds threshold.**
+> **Token optimization** — concise prompts, structured output formats, no unnecessary context. Cost scales with tokens.
 >
-> **Caching.** Common queries cached. Significant cost saving for repeated patterns.
+> **Model abstraction layer** — easy to swap models as cost/capability changes. Avoids LLM vendor lock-in.
 
 ---
 
@@ -642,5 +606,124 @@ This file owns: GenAI architecture, RAG patterns, conversational AI, prompt engi
 
 ---
 
+## F5: Embedding model vs generation model — clean distinction
+
+**Correction source:** Wells Fargo Round 2. When asked "what model are you using to embed the documents?" the answer was "Claude Opus 4.3." Claude Opus is a generation model, not an embedding model. These are completely different model types.
+
+**Memory Hook:** Generation model = produces text → Embedding model = produces vectors
+
+> **The distinction:**
+>
+> **Generation models** (Claude, GPT-4, Gemini) take text in and produce text out. They generate responses, summaries, code, explanations. Claude Opus, Sonnet, Haiku are generation models.
+>
+> **Embedding models** take text in and produce a fixed-length vector (a list of numbers) that represents the semantic meaning of that text. These vectors are stored in a vector database and compared mathematically at retrieval time. Embedding models do not generate text.
+>
+> **Common embedding models:**
+> - OpenAI: `text-embedding-3-small`, `text-embedding-3-large`
+> - Cohere: `embed-english-v3.0`
+> - AWS Bedrock: Amazon Titan Embeddings G1
+> - HuggingFace open source: `sentence-transformers/all-MiniLM-L6-v2`
+>
+> **In a RAG pipeline the two are used together but separately:**
+> 1. Embedding model converts documents into vectors at index time — stored in vector DB
+> 2. Embedding model converts the user query into a vector at query time
+> 3. Vector DB finds the closest document vectors to the query vector (similarity search)
+> 4. The retrieved document chunks are passed as context to the generation model
+> 5. Generation model (Claude, GPT-4) produces the final answer using that retrieved context
+>
+> **If using AWS Bedrock for a POC:** the natural embedding choice is Amazon Titan Embeddings G1, with Claude as the generation model. They are different models serving different roles in the same pipeline.
+
+> **Rule:** Never say "we use Claude for embedding." Claude is used for generation. Embedding is a separate model. Know both.
+
+---
+
+## F6: AI code quality measurement — beyond productivity metrics
+
+**Correction source:** Wells Fargo Round 2. When asked "besides time metrics, what else are you measuring from AI use?" the answer became circular and ended with "there is no way to calculate that." That is the wrong answer.
+
+**Memory Hook:** First-submission pass rate → Rework rate → Escaped defect rate → Manual but tracked
+
+> **Core Answer**
+>
+> Three code quality metrics I track specifically for AI-generated code, alongside the productivity metrics:
+>
+> **First-submission pass rate on code review.** When an engineer submits a PR for code that was AI-assisted, how often does it pass code review without rework on the first submission? I track this at sprint level for AI-assisted PRs versus non-AI PRs. If AI-assisted code requires significantly more rework, the prompting quality or the review process is not working.
+>
+> **Rework rate.** Of the code review comments received, what percentage require actual code changes versus are discussion points? If AI-generated code produces more mandatory rework comments, the model or the prompting template is generating low-quality code for that task type.
+>
+> **Escaped defect rate of AI-assisted features.** Of defects found in production or QA for features where AI-assisted code was used, how does the rate compare to the non-AI baseline? This is the most meaningful quality signal but has the longest feedback loop.
+>
+> **Honest acknowledgment:** these metrics are captured manually at sprint level, not automated. That is an honest gap. But saying "there is no way to measure it" is wrong — the measurement exists, it is just manual. Document the baseline before AI adoption starts so you have something to compare against.
+
+---
+
+## F7: Open source LLMs vs proprietary models — when to use which
+
+**Memory Hook:** Proprietary for capability → Open source for control, cost, and data residency
+
+> **Core Answer**
+>
+> The decision comes down to four factors: capability requirement, data residency, cost at scale, and operational control.
+>
+> **Proprietary models (Claude, GPT-4, Gemini):**
+> Best-in-class capability for complex reasoning, code generation, and nuanced language tasks. Faster to integrate. Lower operational overhead — you consume an API, you do not manage the model infrastructure. The trade-off: data leaves your cloud boundary unless you use a managed deployment (Azure OpenAI, Bedrock, OCI GenAI with private endpoints). Also, cost per token adds up at high volume.
+>
+> **Open source models (Llama, Mistral, Falcon, Phi):**
+> Data stays entirely within your infrastructure. No per-token cost once deployed — only the compute cost of running the model. You can fine-tune on domain-specific data without sending that data to a third party. The trade-off: you own the infrastructure, the model updates, the serving layer, and the performance tuning. Smaller models may not match proprietary capability on complex tasks.
+>
+> **When I would choose open source:**
+> - PHI or PII in the prompts that cannot leave the cloud boundary under any circumstances
+> - Very high query volume where per-token cost would be prohibitive
+> - Need to fine-tune on proprietary domain data
+> - Regulated industry requirement that the model must be self-hosted
+>
+> **When I would choose proprietary:**
+> - Best capability is the priority and data can be contained via private endpoints
+> - Speed to value matters — no model infrastructure to manage
+> - Query volume is moderate and cost is manageable
+>
+> **Practical approach:** start with a proprietary model behind private endpoints for POCs — faster to validate the use case. If the use case proves value and volume or data residency constraints make open source the right long-term choice, plan a phased migration. Do not delay proving value to have a perfect open source deployment.
+
+---
+
+## F8: Redesign a legacy fraud detection system using AI — system design
+
+**Memory Hook:** Data Foundation → Feature Engineering → Model Selection → Real-time Scoring Pipeline → Feedback Loop
+
+> **Rule first:** When asked to design a system using AI, give an architecture, not an evaluation process. Do not describe how you would choose a model. Describe how the system works.
+
+> **Core Answer — five layers:**
+>
+> **Layer 1: Data foundation and feature engineering.**
+> Fraud detection lives or dies on features. Raw transaction data alone is not enough. Feature engineering extracts the signals that distinguish fraud from legitimate transactions:
+> - Velocity features: how many transactions in the last 1 minute, 5 minutes, 1 hour, 24 hours for this card
+> - Behavioural deviation: is this merchant category unusual for this cardholder? Is the transaction amount more than 3 standard deviations from their average?
+> - Location delta: is the physical distance between this transaction and the previous one physically impossible given the time gap?
+> - Time-of-day patterns: does this transaction occur at an unusual hour for this cardholder?
+> - Network features: is this merchant or this IP associated with previously confirmed fraud?
+>
+> These features are computed in real time for each transaction and fed to the model.
+>
+> **Layer 2: Model selection.**
+> For real-time fraud scoring, the model must be fast (milliseconds latency) and interpretable enough to explain why a transaction was flagged. Two approaches depending on the problem:
+> - **Gradient boosting (XGBoost, LightGBM):** strong performance on tabular transaction data, fast inference, good feature importance for explainability. The standard baseline for fraud detection.
+> - **Neural network / sequence model:** captures temporal patterns across a sequence of transactions — useful when the fraud signal is in the pattern of behaviour over time, not just a single transaction.
+> - **LLM is NOT the primary scoring model for real-time fraud.** LLMs are for analysis, report generation, and anomaly explanation after the fact — not for millisecond scoring decisions.
+>
+> **Layer 3: Real-time scoring pipeline.**
+> Transaction arrives → feature computation (from feature store, pre-computed where possible) → model inference → fraud score (0 to 1) → decision engine (block / flag for review / approve based on threshold) → response in under 100 milliseconds.
+>
+> Feature store is the key infrastructure piece — pre-computes and caches historical features (30-day velocity, 90-day behavioural baseline) so they are available in real time without querying raw transaction history at decision time.
+>
+> **Layer 4: Human review and feedback loop.**
+> Transactions flagged but not blocked go to a review queue. Human analysts confirm or clear them. Every confirmed fraud label and every false positive goes back into the training data. The model is retrained on a scheduled cadence (weekly or monthly) with the latest labelled data. Without this feedback loop, model accuracy degrades over time as fraud patterns evolve.
+>
+> **Layer 5: LLM augmentation (where it adds value).**
+> LLMs are useful for: generating natural language explanations of why a transaction was flagged ("this transaction was flagged because the merchant category is unusual for this cardholder and the amount is 4x their average"), summarising patterns in the fraud queue for analyst teams, and identifying emerging fraud patterns across the flagged queue that might not yet be in the training data.
+>
+> **One-sentence close:** *"The ML model scores in milliseconds, the feature store makes that possible in real time, the feedback loop keeps the model current, and the LLM adds explainability and analyst productivity on top of the core scoring system."*
+
+---
+
 *File 7 of 8 — GenAI, Agentic AI, AI Adoption & Productivity*
-*Updated June 2026 — added Section F: LLM tool invocation correction, data containment correction (Globalogic), AI DLC framework, shadow mode (Globalogic preparation)*
+*Updated June 2026 — added F5 (embedding vs generation model), F6 (AI code quality measurement), F7 (open source vs proprietary LLMs), F8 (fraud detection system design using AI) from Wells Fargo Round 2*

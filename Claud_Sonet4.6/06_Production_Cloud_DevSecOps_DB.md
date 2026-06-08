@@ -33,39 +33,19 @@ This file owns: production incidents, observability, AWS/Azure/OCI services, Kub
 >
 > **Observability** — you cannot fix what you cannot see. Metrics, logs, distributed traces, and event markers. **All four.** Without events, you cannot answer the most important incident question: *what changed just before this started?*
 >
-> **Resilience** — design assuming failures will happen. Retries with exponential backoff, circuit breakers, fallbacks, bulkheads. Every external dependency is a potential failure point.
+> **Resilience** — design assuming failures will happen. Retries with exponential backoff, circuit breakers, fallbacks, bulkheads. Every external dependency is a potential failure point. The blast radius of any single failure stays small.
 >
-> **Continuous improvement** — every incident produces a structural fix, not just a workaround. RCA within 48 hours. CAPA items with owners and dates.
+> **Continuous improvement** — every incident produces a structural fix, not just a workaround. RCA within 48 hours. CAPA items with owners and dates. Recurring incidents without a structural fix indicate a broken CAPA process.
 >
-> **Operating discipline.** I define SLOs per service and set alerts at **99.5% when the SLO target is 99.9%**. That gives me time to investigate **before** the SLO is breached, not after. Alerts must be actionable — if an alert fires and the response is *"nothing to do, it self-resolved,"* the threshold needs adjustment or the alert needs deletion. Recurring incidents without a structural fix indicate a broken CAPA process — that gets escalated.
->
-> **Goal: move from incident handling to incident prevention.**
-
----
-
-## Q2: How do you ensure platform resiliency?
-
-**Memory Hook:** Prevent → Isolate → Recover → Observe
-
-> **Core Answer**
->
-> Platform resiliency starts with **assuming failures will happen** and designing systems to absorb them gracefully.
->
-> **Prevent** through engineering standards — code reviews, automated testing, security scanning, capacity planning.
->
-> **Isolate** Isolate through resiliency patterns — circuit breakers, bulkheads, timeouts, rate limits. The blast radius of any single failure stays small.
->
-> **Recover** through failover strategies, Kafka replay, idempotent retries, automatic rollback.
->
-> **Observe** through strong telemetry and proactive alerting so issues are caught before customer impact.
+> **Operating discipline.** I define SLOs per service and set alerts at **99.5% when the SLO target is 99.9%** — time to investigate before the SLO is breached, not after. Alerts must be actionable. If an alert fires and self-resolves with nothing to do, the threshold needs adjustment or the alert gets deleted.
 >
 > **Example**
 >
-> In distributed healthcare platforms at Cerner, we implemented **retries with exponential backoff, circuit breakers for external dependencies, Kafka replay strategies for downstream failures, and proactive observability improvements** — including alerting on dependency-level failure trends. Result: **significantly reduced operational incidents and improved SLA adherence above 95%** across Care Coordination products serving 120+ customers.
+> At Cerner, we implemented retries with exponential backoff, circuit breakers for external dependencies, Kafka replay strategies for downstream failures, and proactive observability improvements including alerting on dependency-level failure trends. Result: **>95% SLA adherence across 120+ customers** and significantly reduced operational incidents.
 
 ---
 
-## Q3: How do you handle a production incident?
+## Q2: How do you handle a production incident?
 
 **Memory Hook:** Declare + Blast Radius → Communicate Cadence → Mitigate Before Root Cause → Post-Incident RCA → CAPA Action Items
 

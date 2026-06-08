@@ -614,5 +614,37 @@ This file owns: data quality framework, ETL pipeline integrity, observability ga
 
 ---
 
+# SECTION H — BIG DATA OPERATIONAL ISSUES
+
+## H1: Small part file problem — what it is, why it happens, and how to fix it
+
+**Memory Hook:** Many small files → HDFS namenode overload → MapReduce/Spark task explosion → Consolidate at output or compact after
+
+> **What is the small part file problem?**
+>
+> In Hadoop and Spark, data is written in files. When a job produces many small files instead of a few large ones, it creates two problems. First, HDFS namenode memory is consumed by metadata for each file — the namenode stores one metadata entry per file regardless of file size. Thousands of 1 KB files consume the same namenode memory as thousands of 1 GB files. Second, downstream jobs that read those files spawn one task per file by default, so many small files means many tasks with tiny payloads and disproportionate task-startup overhead relative to actual processing time.
+>
+> **When does it happen?**
+>
+> Primarily in jobs that receive data from many small upstream sources — for example, 12 source systems each sending small batches, each batch written as a separate file. Also in Spark streaming jobs where micro-batches write frequent small checkpoint files. Also in jobs that filter heavily and produce sparse output files.
+>
+> **Three ways to fix it:**
+>
+> **1. Output consolidation at write time.** Before writing the final output, use `coalesce(N)` in Spark to reduce the number of output partitions to N files, where N is sized so each file is 128 MB to 256 MB. `coalesce` avoids a full shuffle; `repartition` does a full shuffle but gives more balanced file sizes when data is skewed.
+>
+> ```python
+> df.coalesce(8).write.parquet("/output/path")
+> ```
+>
+> **2. Compaction job.** Run a periodic compaction job (daily or weekly) that reads the small files in a partition, consolidates them into target-size files, and overwrites the partition. This is the right approach when you cannot control the write pattern — for example, streaming jobs that must write frequently.
+>
+> **3. Minimum file size configuration.** In MapReduce, set the minimum split size so that the input format does not spawn a task for a file below the threshold. In Spark, configure `spark.files.maxPartitionBytes` to control the maximum partition size at read time, which influences task count.
+>
+> **Target file size:** 128 MB to 512 MB per file is the standard guidance for HDFS. Below 64 MB starts to create meaningful overhead. Above 1 GB can create skew problems at task level.
+>
+> **Rule:** If you see task counts in the tens of thousands for a job processing a moderate data volume, the first thing to check is the number of input files. Small file problem is a very common cause of unexpectedly slow Hadoop and Spark jobs.
+
+---
+
 *File 8 of 8 — Data Quality, ETL Pipelines & Deep Observability*
-*Updated June 2026 — added Section G: Apache Iceberg (Wells Fargo desired qualification), late-arriving corrections, regulatory data platform framing*
+*Updated June 2026 — added Section H: small part file problem (Wells Fargo Round 1)*
